@@ -28,7 +28,11 @@ export const ProgramaBNG: ResumenPrograma = {
       { texto: 'Adaptar el bono joven de vivienda a los pisos compartidos.', pagina: 16 },
     ],
     empleo: [
-      { texto: 'Derogar del todo las reformas laborales: 45 días de despido, salarios de tramitación y autorización de ERE.', pagina: 16 },
+      {
+        texto:
+          'Derogar del todo las reformas laborales: 45 días de despido, salarios de tramitación y autorización de ERE.',
+        pagina: 16,
+      },
       { texto: 'Prioridad de los convenios sectoriales y gallegos sobre los de empresa y estatales.', pagina: 16 },
       { texto: 'Jornada de 35 horas sin reducción salarial.', pagina: 16 },
       { texto: 'Salario mínimo al 60 % del salario medio.', pagina: 16 },
@@ -54,7 +58,10 @@ export const ProgramaBNG: ResumenPrograma = {
     igualdad: [
       { texto: 'Incluir el término feminicidio en la ley y un Estatuto de Víctima de Feminicidio.', pagina: 22 },
       { texto: 'Consentimiento como eje de los delitos sexuales.', pagina: 22 },
-      { texto: 'Juzgados exclusivos de violencia machista en Lugo, Ourense, Santiago, Ferrol y Pontevedra.', pagina: 22 },
+      {
+        texto: 'Juzgados exclusivos de violencia machista en Lugo, Ourense, Santiago, Ferrol y Pontevedra.',
+        pagina: 22,
+      },
       { texto: 'Prohibir los vientres de alquiler y medidas hacia la abolición de la prostitución.', pagina: 23 },
       { texto: 'Retirar ayudas y sancionar a organizaciones que nieguen derechos LGBT.', pagina: 26 },
     ],
@@ -64,7 +71,10 @@ export const ProgramaBNG: ResumenPrograma = {
       { texto: 'Referendos vinculantes, incluida la autodeterminación.', pagina: 28 },
       { texto: 'Denunciar el Concordato con la Santa Sede; Estado laico.', pagina: 29 },
       { texto: 'Ley electoral: reparto proporcional (cuota Hare) y Galicia como circunscripción única.', pagina: 29 },
-      { texto: 'Inhabilitar a cargos con fraude fiscal o en paraísos fiscales; regular las puertas giratorias.', pagina: 29 },
+      {
+        texto: 'Inhabilitar a cargos con fraude fiscal o en paraísos fiscales; regular las puertas giratorias.',
+        pagina: 29,
+      },
     ],
     educacion: [
       { texto: 'Leyes gallegas propias de educación, FP y universidad.', pagina: 32 },
@@ -82,9 +92,15 @@ export const ProgramaBNG: ResumenPrograma = {
     impuestos: [
       { texto: 'IRPF más progresivo: menos impuestos al trabajo y más al capital.', pagina: 39 },
       { texto: 'Que las empresas que operan en Galicia tributen allí por Sociedades.', pagina: 39 },
-      { texto: 'IVA superreducido para alimentos básicos, productos del mar, higiene y transporte público.', pagina: 40 },
+      {
+        texto: 'IVA superreducido para alimentos básicos, productos del mar, higiene y transporte público.',
+        pagina: 40,
+      },
       { texto: 'IVA de luz y gas al 5 % de forma permanente.', pagina: 40 },
-      { texto: 'Hacer permanentes los impuestos a banca, energéticas y grandes fortunas, gestionados por Galicia.', pagina: 40 },
+      {
+        texto: 'Hacer permanentes los impuestos a banca, energéticas y grandes fortunas, gestionados por Galicia.',
+        pagina: 40,
+      },
     ],
     economia: [
       { texto: 'Plan de industrialización para comarcas en crisis como Ferrol y Vigo.', pagina: 42 },

@@ -17,7 +17,7 @@
     "android": {
       "package": "com.mangelcreator.politica",
       "adaptiveIcon": {
-        "backgroundColor": "#FAFAF7",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -29,15 +29,15 @@
       "favicon": "./assets/images/favicon.png",
       "name": "Política",
       "shortName": "Política",
-      "themeColor": "#FAFAF7",
-      "backgroundColor": "#FAFAF7"
+      "themeColor": "#FFFFFF",
+      "backgroundColor": "#FFFFFF"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#FAFAF7",
+          "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }

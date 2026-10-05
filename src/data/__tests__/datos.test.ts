@@ -5,6 +5,9 @@ import { FuentesOficiales } from '../fuentes';
 import { Partidos } from '../partidos';
 import { Resumenes } from '../programas';
 import { Temas } from '../temas';
+import { Precedentes } from '../precedentes';
+import { Historias } from '../historias';
+import { Lecciones, Preguntas, urlArticulo } from '../aprende';
 
 const FECHA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -116,5 +119,48 @@ describe('resúmenes de programas', () => {
       expect(r.ideasClave.length).toBeGreaterThanOrEqual(3);
       expect(r.ideasClave.length).toBeLessThanOrEqual(5);
     }
+  });
+});
+
+describe('precedentes', () => {
+  it('cada postura cita una página real del programa de ese partido', () => {
+    for (const pr of Precedentes) {
+      for (const po of pr.posturas) {
+        const pdf = Partidos.find((p) => p.id === po.partidoId)?.programas.find((x) => x.eleccion === '23J 2023');
+        expect(pdf).toBeDefined();
+        expect(po.pagina).toBeLessThanOrEqual(pdf!.paginas);
+      }
+    }
+  });
+
+  it('cada precedente tiene al menos dos fuentes distintas y un caso', () => {
+    for (const pr of Precedentes) {
+      expect(new Set(pr.evidencias.map((e) => e.fuente.url)).size).toBeGreaterThanOrEqual(2);
+      expect(pr.casos.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('historias', () => {
+  it('hay una por partido y todas tienen fuente', () => {
+    for (const p of Partidos) expect(Historias.find((h) => h.partidoId === p.id)).toBeDefined();
+    for (const h of Historias) expect(h.fuentes.length).toBeGreaterThan(0);
+  });
+});
+
+describe('aprende', () => {
+  it('cada artículo citado de la LOREG tiene ancla en el BOE', () => {
+    const citados = [
+      ...Lecciones.flatMap((l) => l.tarjetas.map((t) => t.articulo)),
+      ...Preguntas.map((p) => p.articulo),
+    ];
+    citados.forEach((a) => expect(urlArticulo(a)).toContain('#'));
+  });
+
+  it('cada pregunta tiene su respuesta entre las opciones y una lección que existe', () => {
+    Preguntas.forEach((p) => {
+      expect(p.opciones[p.correcta]).toBeDefined();
+      expect(Lecciones.some((l) => l.id === p.leccionId)).toBe(true);
+    });
   });
 });

@@ -1,6 +1,6 @@
 import { describe, expect, it } from '@jest/globals';
 
-import { diaSemana, diasEntre, fechaCorta, fechaLarga, hoyISO, rango } from '../fechas';
+import { diaSemana, diasEntre, fechaCorta, fechaLarga, haceCuanto, hoyISO, rango } from '../fechas';
 
 describe('fechas', () => {
   it('cuenta los días aunque haya cambio de hora por medio (25 de octubre de 2026)', () => {
@@ -27,5 +27,14 @@ describe('fechas', () => {
 
   it('da el día de hoy con ceros a la izquierda', () => {
     expect(hoyISO(new Date(2026, 0, 5, 23, 59))).toBe('2026-01-05');
+  });
+});
+
+describe('haceCuanto', () => {
+  it('redondea a minutos, horas o días', () => {
+    const ahora = Date.UTC(2026, 9, 6, 12);
+    expect(haceCuanto(ahora - 5 * 60_000, ahora)).toBe('hace 5 min');
+    expect(haceCuanto(ahora - 3 * 3600_000, ahora)).toBe('hace 3 h');
+    expect(haceCuanto(ahora - 26 * 3600_000, ahora)).toBe('hace 1 día');
   });
 });

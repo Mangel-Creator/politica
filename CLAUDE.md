@@ -31,22 +31,36 @@ qué han hecho, y cómo votar. En español de España.
 4. **Programas intocables**: se guardan los PDF originales, byte a byte, y se identifican
    por su SHA-256. Nada de resúmenes presentados como si fueran el programa.
 5. **Neutralidad**: partidos en orden alfabético por siglas, todos con el mismo diseño. Sin
-   colores de partido en la interfaz (paleta neutra en `src/constants/theme.ts`). La app no
-   recomienda voto. "Qué no cumplen" solo con hechos verificables (votaciones del Congreso,
-   BOE) enlazados.
-6. Si dos fuentes no coinciden, manda la oficial; si no hay oficial, no se publica el dato
+   color de acento: el color de cada partido (`Partido.color`) solo va en gráficos y
+   siempre junto a sus siglas (`MarcaPartido`, `Muestra`). Nada de ordenar por ideología
+   (el hemiciclo es alfabético). La app no recomienda voto.
+6. **Quién dice qué**: en "¿Funcionó?" (`src/data/precedentes.ts`) cada caso lleva varias
+   fuentes de distinto tipo y, si existen, de signo contrario; la app nunca da veredicto.
+   En noticias, solo titular y enlace, medios en orden alfabético, sin etiquetas ideológicas,
+   y no se enseña nada si se leen menos de `MINIMO_MEDIOS` medios.
+7. Casos judiciales con su desenlace completo (recursos, indultos, anulaciones).
+8. Si dos fuentes no coinciden, manda la oficial; si no hay oficial, no se publica el dato
    y se avisa al usuario.
 
-## Estado (05/10/2026)
+## Estado (06/10/2026)
 
-- Hecho: pestañas Inicio (cuenta atrás y calendario), Partidos (lista y ficha con
-  programas de 2023), Votar (voto por correo) y Fuentes. Tests de integridad de datos.
+- Diseño "papeleta" (`src/constants/theme.ts`): tinta sobre papel, bordes gruesos, esquinas
+  rectas, tipografía Archivo. Piezas comunes en `src/components/` (`Texto`, `piezas.tsx`,
+  `Pantalla`, `Hemiciclo`…). Para enlazar a otra pantalla usa `Ir`, no `Link asChild`
+  con estilos en lista (falla en la web).
+- Barra de abajo (`src/app/(tabs)`): Hoy, Partidos, Comparar, ¿Funcionó?, Aprende. Lo
+  secundario va en pantallas de la pila: `partido/[id]`, `precedente/[id]`,
+  `leccion/[id]`, `test`, `simulador`, `glosario`, `calendario`, `votar`,
+  `fuentes`, `noticias`.
+- Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
+  lecciones y test (comprobados contra el texto del BOE), calendario.
+- Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
   - Contrastar el calendario con el decreto del BOE (previsto el 06/10/2026).
   - Contrastar los escaños de 2023 con Infoelectoral (ahora solo vienen de Wikipedia).
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
-  - Programas del 29N cuando se publiquen.
-  - Comparador por temas, "Promesas y hechos" (votaciones del Congreso), test de afinidad.
+  - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
+  - "Promesas y hechos" con votaciones del Congreso.
   - Icono y pantalla de carga propios (ahora son los de Expo).
 
 ## Normas de trabajo
@@ -57,4 +71,8 @@ qué han hecho, y cómo votar. En español de España.
 - Antes de dar algo por terminado: `npx tsc --noEmit`, `npx expo lint` y `npm test` sin
   errores.
 - Windows + PowerShell 5.1: encadena comandos con `;`, no con `&&`.
-- Web de desarrollo en el puerto **8082** (Organizy usa el 8081).
+- Web de desarrollo en el puerto **8082** (Organizy usa el 8081). En la web los navegadores
+  bloquean casi todos los RSS (CORS): las noticias solo se ven en el móvil.
+- Las rutas con tipos (`.expo/types/router.d.ts`) se regeneran al arrancar el servidor; si
+  `tsc` se queja de una ruta nueva, reinícialo.
+- En jest solo cuentan los ficheros de `__tests__` (la pantalla `src/app/test.tsx` no es un test).

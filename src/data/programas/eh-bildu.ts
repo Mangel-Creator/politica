@@ -32,13 +32,19 @@ export const ProgramaEHBildu: ResumenPrograma = {
       { texto: 'Traspasar el régimen económico de la Seguridad Social a Euskadi y Navarra.', pagina: 5 },
     ],
     impuestos: [
-      { texto: 'Subir la carga fiscal y hacer permanentes los impuestos a banca, energéticas y grandes fortunas.', pagina: 8 },
+      {
+        texto: 'Subir la carga fiscal y hacer permanentes los impuestos a banca, energéticas y grandes fortunas.',
+        pagina: 8,
+      },
       { texto: 'Impuesto especial a los beneficios de las grandes cadenas de alimentación.', pagina: 5 },
     ],
     economia: [
       { texto: 'Más control de la cadena alimentaria y rebajas de productos básicos.', pagina: 5 },
       { texto: 'Prorrogar el tope al gas y la contención del precio de la luz.', pagina: 5 },
-      { texto: 'Exigir al BCE que revierta la subida de tipos y rechazar las reglas fiscales de austeridad.', pagina: 8 },
+      {
+        texto: 'Exigir al BCE que revierta la subida de tipos y rechazar las reglas fiscales de austeridad.',
+        pagina: 8,
+      },
       { texto: 'Derogar la reforma del artículo 135 de la Constitución (prioridad del pago de deuda).', pagina: 8 },
       { texto: 'Ley de Industria centrada en pymes; devolver ayudas si la empresa se deslocaliza.', pagina: 8 },
     ],
@@ -79,7 +85,10 @@ export const ProgramaEHBildu: ResumenPrograma = {
     ],
     territorio: [
       { texto: 'Reconocer Euskal Herria como nación y el derecho a decidir.', pagina: 14 },
-      { texto: 'Uso del euskera en la Administración del Estado y blindar los modelos educativos propios.', pagina: 15 },
+      {
+        texto: 'Uso del euskera en la Administración del Estado y blindar los modelos educativos propios.',
+        pagina: 15,
+      },
       { texto: 'Traspasar Seguridad Social, Cercanías, migración, puertos y aeropuertos, becas e I+D+i.', pagina: 15 },
       { texto: 'Negociar el Concierto y el Convenio Económico "de igual a igual".', pagina: 16 },
     ],

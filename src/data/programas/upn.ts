@@ -16,7 +16,10 @@ export const ProgramaUPN: ResumenPrograma = {
     territorio: [
       { texto: 'Suprimir la Disposición Transitoria Cuarta de la Constitución.', pagina: 2 },
       { texto: 'Que ningún partido sin diputados por Navarra negocie competencias de la Comunidad Foral.', pagina: 2 },
-      { texto: 'Reflejar en los Presupuestos del Estado la aportación de Navarra por el Convenio Económico.', pagina: 2 },
+      {
+        texto: 'Reflejar en los Presupuestos del Estado la aportación de Navarra por el Convenio Económico.',
+        pagina: 2,
+      },
       { texto: 'Que Navarra asuma las competencias de I+D+i y becas.', pagina: 6 },
       { texto: 'Mantener la Agrupación de Tráfico de la Guardia Civil en las carreteras navarras.', pagina: 3 },
     ],
@@ -42,7 +45,10 @@ export const ProgramaUPN: ResumenPrograma = {
       { texto: 'Libertad de los padres para elegir centro, público o concertado; derogar la LOMLOE.', pagina: 4 },
       { texto: 'No imponer el euskera.', pagina: 2 },
       { texto: 'Impulsar la FP dual, el inglés y la educación especial.', pagina: 4 },
-      { texto: 'Impedir libros de texto contrarios a la Constitución o a la realidad institucional de Navarra.', pagina: 4 },
+      {
+        texto: 'Impedir libros de texto contrarios a la Constitución o a la realidad institucional de Navarra.',
+        pagina: 4,
+      },
     ],
     social: [
       { texto: 'Defensa de la vida y la familia; impulso a los cuidados paliativos.', pagina: 4 },
@@ -60,7 +66,11 @@ export const ProgramaUPN: ResumenPrograma = {
       { texto: 'Que los agricultores paguen el canon del Canal de Navarra en 50 años en vez de 30.', pagina: 3 },
     ],
     energia: [
-      { texto: 'Apuesta por las renovables y solución para 9.000 familias navarras afectadas por el cambio de normativa.', pagina: 5 },
+      {
+        texto:
+          'Apuesta por las renovables y solución para 9.000 familias navarras afectadas por el cambio de normativa.',
+        pagina: 5,
+      },
       { texto: 'Vías verdes y limpieza de cauces de ríos.', pagina: 5 },
     ],
     vivienda: [

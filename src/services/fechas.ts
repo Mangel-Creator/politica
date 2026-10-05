@@ -4,8 +4,18 @@
  */
 
 const MESES = [
-  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre',
+  'enero',
+  'febrero',
+  'marzo',
+  'abril',
+  'mayo',
+  'junio',
+  'julio',
+  'agosto',
+  'septiembre',
+  'octubre',
+  'noviembre',
+  'diciembre',
 ];
 const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 
@@ -57,4 +67,14 @@ export function rango(inicio: string, fin?: string) {
 export function fechaCorta(iso: string) {
   const { a, m, d } = partes(iso);
   return `${String(d).padStart(2, '0')}/${String(m).padStart(2, '0')}/${a}`;
+}
+
+/** "hace 5 min", "hace 3 h", "hace 2 días" para horas de publicación. */
+export function haceCuanto(ms: number, ahora = Date.now()) {
+  const min = Math.max(0, Math.round((ahora - ms) / 60_000));
+  if (min < 60) return `hace ${min} min`;
+  const h = Math.round(min / 60);
+  if (h < 24) return `hace ${h} h`;
+  const d = Math.round(h / 24);
+  return `hace ${d} ${d === 1 ? 'día' : 'días'}`;
 }

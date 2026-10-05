@@ -1,107 +1,70 @@
-import {
-  Tabs,
-  TabList,
-  TabTrigger,
-  TabSlot,
-  TabTriggerSlotProps,
-  TabListProps,
-} from 'expo-router/ui';
-import { Pressable, StyleSheet, useWindowDimensions } from 'react-native';
+import { TabList, TabSlot, TabTrigger, Tabs, type TabListProps, type TabTriggerSlotProps } from 'expo-router/ui';
+import { Pressable, StyleSheet, View } from 'react-native';
 
-import { ThemedText } from './themed-text';
-import { ThemedView } from './themed-view';
+import { Texto } from './texto';
 
-import { MaxContentWidth, Spacing } from '@/constants/theme';
+import { Borde, MaxContentWidth, Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 
+const PESTANAS = [
+  { name: 'index', href: '/', texto: 'Hoy', simbolo: '◉' },
+  { name: 'partidos', href: '/partidos', texto: 'Partidos', simbolo: '▦' },
+  { name: 'comparar', href: '/comparar', texto: 'Comparar', simbolo: '⇆' },
+  { name: 'funciono', href: '/funciono', texto: '¿Funcionó?', simbolo: '↺' },
+  { name: 'aprende', href: '/aprende', texto: 'Aprende', simbolo: '✎' },
+] as const;
+
+/** En la web, la misma barra de abajo, dibujada como una fila de casillas. */
 export default function AppTabs() {
   return (
-    <Tabs style={{ flex: 1 }}>
+    <Tabs style={styles.raiz}>
+      <TabSlot style={styles.raiz} />
       <TabList asChild>
-        <CustomTabList>
-          <TabTrigger name="index" href="/" asChild>
-            <TabButton>Inicio</TabButton>
-          </TabTrigger>
-          <TabTrigger name="partidos" href="/partidos" asChild>
-            <TabButton>Partidos</TabButton>
-          </TabTrigger>
-          <TabTrigger name="votar" href="/votar" asChild>
-            <TabButton>Votar</TabButton>
-          </TabTrigger>
-          <TabTrigger name="fuentes" href="/fuentes" asChild>
-            <TabButton>Fuentes</TabButton>
-          </TabTrigger>
-        </CustomTabList>
+        <Barra>
+          {PESTANAS.map((p) => (
+            <TabTrigger key={p.name} name={p.name} href={p.href} asChild>
+              <Boton simbolo={p.simbolo}>{p.texto}</Boton>
+            </TabTrigger>
+          ))}
+        </Barra>
       </TabList>
-      <TabSlot style={{ flex: 1 }} />
     </Tabs>
   );
 }
 
-export function TabButton({ children, isFocused, ...props }: TabTriggerSlotProps) {
+function Barra(props: TabListProps) {
+  const t = useTheme();
   return (
-    <Pressable {...props} style={({ pressed }) => pressed && styles.pressed}>
-      <ThemedView
-        type={isFocused ? 'backgroundSelected' : 'backgroundElement'}
-        style={styles.tabButtonView}>
-        <ThemedText type="small" themeColor={isFocused ? 'text' : 'textSecondary'}>
-          {children}
-        </ThemedText>
-      </ThemedView>
+    <View {...props} style={[styles.barra, { backgroundColor: t.papel, borderTopColor: t.linea }]}>
+      <View style={styles.fila}>{props.children}</View>
+    </View>
+  );
+}
+
+function Boton({ children, isFocused, simbolo, ...props }: TabTriggerSlotProps & { simbolo: string }) {
+  const t = useTheme();
+  return (
+    <Pressable {...props} style={[styles.boton, { backgroundColor: isFocused ? t.tinta : t.papel }]}>
+      <Texto tipo="subtitulo" color={isFocused ? 'papel' : 'tinta'}>
+        {simbolo}
+      </Texto>
+      <Texto tipo="etiqueta" color={isFocused ? 'papel' : 'gris'} numberOfLines={1} style={styles.textoBoton}>
+        {children}
+      </Texto>
     </Pressable>
   );
 }
 
-export function CustomTabList(props: TabListProps) {
-  // En móvil no cabe el nombre junto a las cuatro pestañas.
-  const ancha = useWindowDimensions().width >= 600;
-
-  return (
-    <ThemedView {...props} style={styles.tabListContainer}>
-      <ThemedView type="backgroundElement" style={[styles.innerContainer, !ancha && styles.innerEstrecho]}>
-        {ancha && (
-          <ThemedText type="smallBold" style={styles.brandText}>
-            Elecciones 29N
-          </ThemedText>
-        )}
-        {props.children}
-      </ThemedView>
-    </ThemedView>
-  );
-}
-
 const styles = StyleSheet.create({
-  tabListContainer: {
-    width: '100%',
-    padding: Spacing.three,
-    justifyContent: 'center',
+  raiz: { flex: 1 },
+  barra: { borderTopWidth: Borde.grueso, alignItems: 'center' },
+  fila: { flexDirection: 'row', width: '100%', maxWidth: MaxContentWidth },
+  boton: {
+    flex: 1,
     alignItems: 'center',
-    flexDirection: 'row',
+    gap: Spacing.half,
+    paddingTop: Spacing.two,
+    paddingBottom: Spacing.two + Spacing.one,
   },
-  innerContainer: {
-    paddingVertical: Spacing.two,
-    paddingHorizontal: Spacing.three,
-    borderRadius: Spacing.five,
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    flexGrow: 1,
-    gap: Spacing.two,
-    maxWidth: MaxContentWidth,
-  },
-  innerEstrecho: {
-    paddingHorizontal: Spacing.two,
-    justifyContent: 'space-between',
-    gap: 0,
-  },
-  brandText: {
-    marginRight: 'auto',
-  },
-  pressed: {
-    opacity: 0.7,
-  },
-  tabButtonView: {
-    paddingVertical: Spacing.one,
-    paddingHorizontal: Spacing.two + Spacing.one,
-    borderRadius: Spacing.three,
-  },
+  textoBoton: { fontSize: 10, letterSpacing: 0.6 },
 });

@@ -18,7 +18,12 @@ export const Temas: Tema[] = [
   { id: 'pensiones', nombre: 'Pensiones', pregunta: '¿Cuánto suben y cómo se pagan?', glifo: '◷' },
   { id: 'educacion', nombre: 'Educación', pregunta: 'Escuela, universidad, becas y lenguas', glifo: '✎' },
   { id: 'inmigracion', nombre: 'Inmigración', pregunta: 'Fronteras, regularización y acogida', glifo: '⇄' },
-  { id: 'territorio', nombre: 'Modelo territorial', pregunta: 'Autonomías, financiación e independentismo', glifo: '▦' },
+  {
+    id: 'territorio',
+    nombre: 'Modelo territorial',
+    pregunta: 'Autonomías, financiación e independentismo',
+    glifo: '▦',
+  },
   { id: 'democracia', nombre: 'Instituciones', pregunta: 'Justicia, corrupción, memoria y transparencia', glifo: '⚖' },
   { id: 'seguridad', nombre: 'Seguridad', pregunta: 'Policía, delitos y terrorismo', glifo: '◈' },
   { id: 'igualdad', nombre: 'Igualdad', pregunta: 'Mujeres, LGTBI, aborto y violencia de género', glifo: '⚥' },

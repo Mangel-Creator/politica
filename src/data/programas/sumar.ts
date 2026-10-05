@@ -5,8 +5,15 @@ export const ProgramaSumar: ResumenPrograma = {
   partidoId: 'sumar',
   eleccion: '23J 2023',
   ideasClave: [
-    { texto: 'Jornada máxima de 37,5 horas por ley en 2024 y diálogo social para llegar a 32 horas, sin bajar el sueldo.', pagina: 7 },
-    { texto: '"Herencia universal" de 20.000 € a los 23 años, pagada con un impuesto a las grandes fortunas.', pagina: 15 },
+    {
+      texto:
+        'Jornada máxima de 37,5 horas por ley en 2024 y diálogo social para llegar a 32 horas, sin bajar el sueldo.',
+      pagina: 7,
+    },
+    {
+      texto: '"Herencia universal" de 20.000 € a los 23 años, pagada con un impuesto a las grandes fortunas.',
+      pagina: 15,
+    },
     { texto: 'Impuesto permanente a las grandes fortunas con tipos de al menos el 4 %.', pagina: 16 },
     { texto: 'Invertir el 1 % del PIB al año durante diez años en vivienda.', pagina: 76 },
     { texto: 'Prestación universal de 200 € al mes por hijo.', pagina: 93 },
@@ -24,7 +31,10 @@ export const ProgramaSumar: ResumenPrograma = {
       { texto: 'Impuesto permanente a grandes fortunas (al menos 4 %) y mínimo estatal en Sucesiones.', pagina: 16 },
       { texto: 'Tipo mínimo efectivo del 15 % en Sociedades.', pagina: 16 },
       { texto: 'Mantener los impuestos a energéticas y banca.', pagina: 16 },
-      { texto: 'IRPF: nuevos tramos desde 120.000 € hasta un 52 % a partir de 300.000 €; capital hasta el 30 %.', pagina: 17 },
+      {
+        texto: 'IRPF: nuevos tramos desde 120.000 € hasta un 52 % a partir de 300.000 €; capital hasta el 30 %.',
+        pagina: 17,
+      },
       { texto: 'Acabar con el régimen fiscal especial de las SICAV y SOCIMI.', pagina: 16 },
       { texto: 'Impuesto a bebidas azucaradas y ultraprocesados.', pagina: 91 },
     ],
@@ -122,7 +132,10 @@ export const ProgramaSumar: ResumenPrograma = {
       { texto: 'Ley de prevención y convivencia.', pagina: 130 },
     ],
     exterior: [
-      { texto: 'Revertir el cambio de posición sobre el Sáhara Occidental; solución justa en Palestina y Ucrania.', pagina: 141 },
+      {
+        texto: 'Revertir el cambio de posición sobre el Sáhara Occidental; solución justa en Palestina y Ucrania.',
+        pagina: 141,
+      },
       { texto: 'Reforma de los tratados europeos para blindar la Europa social.', pagina: 143 },
       { texto: 'Superar el Pacto de Estabilidad europeo.', pagina: 144 },
       { texto: 'Liderar un nuevo pacto de migración y asilo en el Mediterráneo.', pagina: 149 },

@@ -5,15 +5,26 @@ export const ProgramaPP: ResumenPrograma = {
   partidoId: 'pp',
   eleccion: '23J 2023',
   ideasClave: [
-    { texto: 'Deflactar el IRPF, eliminar el impuesto a las grandes fortunas y bajar temporalmente el IVA de carne y pescado.', pagina: 23 },
-    { texto: 'Derogar la Ley de Vivienda y avales para que menores de 35 años financien hasta el 95 % de la hipoteca.', pagina: 34 },
+    {
+      texto:
+        'Deflactar el IRPF, eliminar el impuesto a las grandes fortunas y bajar temporalmente el IVA de carne y pescado.',
+      pagina: 23,
+    },
+    {
+      texto: 'Derogar la Ley de Vivienda y avales para que menores de 35 años financien hasta el 95 % de la hipoteca.',
+      pagina: 34,
+    },
     { texto: 'Desalojos de okupas en un máximo de 24 horas y hasta 3 años de cárcel por usurpación.', pagina: 82 },
     { texto: 'Recuperar el delito de sedición y la malversación anterior a 2022.', pagina: 72 },
     { texto: 'Que los jueces elijan a los 12 vocales judiciales del CGPJ.', pagina: 75 },
   ],
   temas: {
     impuestos: [
-      { texto: 'Corregir la inflación en el IRPF (deflactar) y bajar temporalmente el IVA de carne, pescado y conservas.', pagina: 23 },
+      {
+        texto:
+          'Corregir la inflación en el IRPF (deflactar) y bajar temporalmente el IVA de carne, pescado y conservas.',
+        pagina: 23,
+      },
       { texto: 'Eliminar el impuesto a las grandes fortunas y simplificar IRPF y Sociedades para pymes.', pagina: 23 },
       { texto: 'Estatuto del Contribuyente con "derecho al error".', pagina: 23 },
       { texto: 'Mejor régimen fiscal para nuevos residentes que vengan a invertir.', pagina: 23 },
@@ -51,7 +62,10 @@ export const ProgramaPP: ResumenPrograma = {
       { texto: 'Desalojos de okupas en 24 horas y que no puedan empadronarse.', pagina: 82 },
     ],
     energia: [
-      { texto: 'Alargar la vida de las centrales nucleares, si lo aprueba el Consejo de Seguridad Nuclear.', pagina: 38 },
+      {
+        texto: 'Alargar la vida de las centrales nucleares, si lo aprueba el Consejo de Seguridad Nuclear.',
+        pagina: 38,
+      },
       { texto: 'Eliminar las intervenciones excepcionales del mercado eléctrico.', pagina: 39 },
       { texto: 'Un Bono Social Único que sustituya a los bonos eléctrico y térmico.', pagina: 38 },
       { texto: 'Agilizar los permisos de renovables con una "tasa por hito" pagada por el promotor.', pagina: 38 },
@@ -79,14 +93,23 @@ export const ProgramaPP: ResumenPrograma = {
       { texto: 'Selectividad (EBAU) común en toda España.', pagina: 52 },
     ],
     social: [
-      { texto: 'Pacto de Estado por la conciliación y la familia; prestación por hijo desde el 5.º mes de embarazo.', pagina: 53 },
+      {
+        texto: 'Pacto de Estado por la conciliación y la familia; prestación por hijo desde el 5.º mes de embarazo.',
+        pagina: 53,
+      },
       { texto: 'Título de familia numerosa hasta que el último hijo cumpla 26 años.', pagina: 53 },
       { texto: 'Estrategia nacional contra la soledad no deseada y más plazas residenciales.', pagina: 58 },
       { texto: 'Reformar la Constitución para quitar la palabra "disminuidos".', pagina: 60 },
     ],
     democracia: [
-      { texto: 'Reformar la ley del Tribunal Constitucional: sin vínculos políticos en los últimos 5 años.', pagina: 71 },
-      { texto: 'Jefes de AIReF, INE, CIS o Tribunal de Cuentas sin cargos políticos en los 5 años previos.', pagina: 71 },
+      {
+        texto: 'Reformar la ley del Tribunal Constitucional: sin vínculos políticos en los últimos 5 años.',
+        pagina: 71,
+      },
+      {
+        texto: 'Jefes de AIReF, INE, CIS o Tribunal de Cuentas sin cargos políticos en los 5 años previos.',
+        pagina: 71,
+      },
       { texto: 'Derogar la Ley de Memoria Democrática y hacer otra "consensuada".', pagina: 72 },
       { texto: 'Limitar el uso de decretos ley y del procedimiento de urgencia.', pagina: 73 },
       { texto: 'Fiscal General con mandato de 5 años y desvinculado del Gobierno.', pagina: 75 },
@@ -100,7 +123,10 @@ export const ProgramaPP: ResumenPrograma = {
     ],
     seguridad: [
       { texto: 'Culminar la equiparación salarial de Policía Nacional y Guardia Civil.', pagina: 80 },
-      { texto: 'Imprescriptibilidad de los delitos de terrorismo e investigar los 379 crímenes de ETA sin resolver.', pagina: 80 },
+      {
+        texto: 'Imprescriptibilidad de los delitos de terrorismo e investigar los 379 crímenes de ETA sin resolver.',
+        pagina: 80,
+      },
       { texto: 'Que los condenados por terrorismo no puedan ser candidatos sin arrepentimiento.', pagina: 81 },
       { texto: 'Ampliar la prisión permanente revisable a asesinatos con ocultación del cadáver.', pagina: 81 },
       { texto: 'Endurecer las penas por multirreincidencia en hurtos y estafas.', pagina: 81 },

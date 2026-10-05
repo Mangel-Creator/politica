@@ -7,9 +7,18 @@ export const ProgramaCC: ResumenPrograma = {
   nota: 'Manifiesto (14 páginas, 52 compromisos) firmado por CC y varias formaciones canarias.',
   ideasClave: [
     { texto: 'Formar un Grupo Canario en el Congreso y el Senado.', pagina: 1 },
-    { texto: 'No apoyar Presupuestos del Estado que incumplan el Régimen Económico y Fiscal canario (REF).', pagina: 4 },
-    { texto: 'Mantener el 75 % de descuento a residentes en vuelos y barcos, y precios máximos de referencia.', pagina: 4 },
-    { texto: 'Que todas las comunidades se impliquen en la acogida de menores migrantes que llegan a Canarias.', pagina: 13 },
+    {
+      texto: 'No apoyar Presupuestos del Estado que incumplan el Régimen Económico y Fiscal canario (REF).',
+      pagina: 4,
+    },
+    {
+      texto: 'Mantener el 75 % de descuento a residentes en vuelos y barcos, y precios máximos de referencia.',
+      pagina: 4,
+    },
+    {
+      texto: 'Que todas las comunidades se impliquen en la acogida de menores migrantes que llegan a Canarias.',
+      pagina: 13,
+    },
     { texto: 'Educación infantil de 0 a 3 años gratuita.', pagina: 6 },
   ],
   temas: {
@@ -25,14 +34,24 @@ export const ProgramaCC: ResumenPrograma = {
       { texto: 'Exención de Canarias de la nueva tasa verde europea a los vuelos.', pagina: 5 },
       { texto: 'Diversificar más allá del turismo: industria, I+D y sector primario.', pagina: 9 },
       { texto: 'Mantener la deducción fiscal al cine rodado en Canarias.', pagina: 9 },
-      { texto: 'Plan de telecomunicaciones y acabar con el cobro de IVA en vez de IGIC en compras digitales.', pagina: 11 },
+      {
+        texto: 'Plan de telecomunicaciones y acabar con el cobro de IVA en vez de IGIC en compras digitales.',
+        pagina: 11,
+      },
     ],
     impuestos: [{ texto: 'Ampliar diez años la bonificación del 60 % del IRPF a residentes en La Palma.', pagina: 5 }],
     social: [
-      { texto: '100 % de bonificación para guaguas y tranvías más allá de 2023; trenes de Gran Canaria y Tenerife en ADIF.', pagina: 5 },
+      {
+        texto:
+          '100 % de bonificación para guaguas y tranvías más allá de 2023; trenes de Gran Canaria y Tenerife en ADIF.',
+        pagina: 5,
+      },
       { texto: 'Financiación del REF contra la pobreza mientras Canarias esté por encima de la media.', pagina: 7 },
       { texto: 'El Estado debe pagar el 50 % de la dependencia y reformar la Ley 39/2006.', pagina: 7 },
-      { texto: 'Ayuda a la crianza para todas las familias y comedor escolar gratis bajo el umbral de pobreza.', pagina: 13 },
+      {
+        texto: 'Ayuda a la crianza para todas las familias y comedor escolar gratis bajo el umbral de pobreza.',
+        pagina: 13,
+      },
     ],
     empleo: [
       { texto: 'Mantener el Plan Integral de Empleo de Canarias.', pagina: 6 },

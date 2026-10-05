@@ -19,13 +19,20 @@ export const ProgramaPSOE: ResumenPrograma = {
     empleo: [
       { texto: 'Pacto por el Pleno Empleo con los agentes sociales.', pagina: 25 },
       { texto: 'Prácticas en empresa con el SMI y la Seguridad Social cubiertos.', pagina: 26 },
-      { texto: 'Plan de trabajo flexible: jornadas híbridas y posibilidad de concentrar la semana en 4 días.', pagina: 143 },
+      {
+        texto: 'Plan de trabajo flexible: jornadas híbridas y posibilidad de concentrar la semana en 4 días.',
+        pagina: 143,
+      },
       { texto: 'Seguir con el piloto de reducción de jornada sin merma salarial en la industria.', pagina: 50 },
       { texto: 'Que los salarios ganen poder adquisitivo según el acuerdo de negociación colectiva.', pagina: 32 },
     ],
     impuestos: [
       { texto: 'Evaluar la prórroga de los gravámenes temporales a banca y energéticas.', pagina: 39 },
-      { texto: 'Evaluar el impuesto a las grandes fortunas y debatir la tributación de la riqueza dentro de la financiación autonómica.', pagina: 39 },
+      {
+        texto:
+          'Evaluar el impuesto a las grandes fortunas y debatir la tributación de la riqueza dentro de la financiación autonómica.',
+        pagina: 39,
+      },
       { texto: 'Subir el mínimo por hijos y dependientes en el IRPF.', pagina: 33 },
       { texto: 'Plan contra el fraude fiscal pactado con todas las fuerzas políticas.', pagina: 38 },
       { texto: 'Herramienta para que cada persona vea a qué se destinan sus impuestos.', pagina: 39 },
@@ -34,13 +41,24 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Completar los proyectos de los fondos europeos (PERTE).', pagina: 28 },
       { texto: 'Ampliar el Kit Digital a pymes de más de 50 trabajadores.', pagina: 31 },
       { texto: 'Ampliar a rentas de hasta 37.800 € las ayudas por la subida de la hipoteca.', pagina: 32 },
-      { texto: 'Eliminar las comisiones por sacar efectivo en ventanilla y garantizar el efectivo en todo el territorio.', pagina: 33 },
+      {
+        texto:
+          'Eliminar las comisiones por sacar efectivo en ventanilla y garantizar el efectivo en todo el territorio.',
+        pagina: 33,
+      },
       { texto: 'Estrategia Española de Impulso Industrial 2030.', pagina: 49 },
     ],
     vivienda: [
-      { texto: 'Alcanzar el 20 % de vivienda pública en alquiler, como Francia, Países Bajos o Alemania.', pagina: 222 },
+      {
+        texto: 'Alcanzar el 20 % de vivienda pública en alquiler, como Francia, Países Bajos o Alemania.',
+        pagina: 222,
+      },
       { texto: 'Desarrollar las medidas de contención de precios de la Ley de Vivienda.', pagina: 221 },
-      { texto: 'Consolidar el Bono Alquiler Joven y avales del 20 % de la hipoteca para jóvenes (unas 50.000 viviendas).', pagina: 226 },
+      {
+        texto:
+          'Consolidar el Bono Alquiler Joven y avales del 20 % de la hipoteca para jóvenes (unas 50.000 viviendas).',
+        pagina: 226,
+      },
       { texto: 'El 30 % de la vivienda asequible promovida, para jóvenes de 18 a 35 años.', pagina: 131 },
       { texto: 'Desalojo de okupas ilegales en un máximo de 48 horas.', pagina: 251 },
     ],
@@ -69,18 +87,29 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Permiso por nacimiento de 20 semanas.', pagina: 143 },
       { texto: 'Prestación por crianza para familias con menores.', pagina: 173 },
       { texto: 'Ley de Familias.', pagina: 173 },
-      { texto: 'Mejorar el acceso al Ingreso Mínimo Vital y llegar a un millón de menores con el complemento de infancia.', pagina: 182 },
+      {
+        texto:
+          'Mejorar el acceso al Ingreso Mínimo Vital y llegar a un millón de menores con el complemento de infancia.',
+        pagina: 182,
+      },
       { texto: 'Erradicar el sinhogarismo de calle en 2030.', pagina: 190 },
       { texto: 'Transporte público urbano gratis para niños y estudiantes hasta 24 años.', pagina: 131 },
     ],
     igualdad: [
       { texto: 'Abolir la prostitución con un marco legal integral.', pagina: 158 },
       { texto: 'Oposición a los vientres de alquiler.', pagina: 159 },
-      { texto: 'Blindar como derechos fundamentales el aborto, la eutanasia y el matrimonio igualitario.', pagina: 235 },
+      {
+        texto: 'Blindar como derechos fundamentales el aborto, la eutanasia y el matrimonio igualitario.',
+        pagina: 235,
+      },
       { texto: 'Familias monoparentales consideradas familia numerosa.', pagina: 144 },
     ],
     democracia: [
-      { texto: 'Blindar derechos (aborto, eutanasia, pensiones, sanidad, agua) para que no los derogue una mayoría coyuntural.', pagina: 235 },
+      {
+        texto:
+          'Blindar derechos (aborto, eutanasia, pensiones, sanidad, agua) para que no los derogue una mayoría coyuntural.',
+        pagina: 235,
+      },
       { texto: 'Ley de Lobbies con registro público.', pagina: 243 },
       { texto: 'Ley de incompatibilidades contra las puertas giratorias.', pagina: 243 },
       { texto: 'Debates electorales obligatorios.', pagina: 247 },
@@ -99,7 +128,10 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Facilitar que los migrantes que ya están en España se incorporen al trabajo.', pagina: 256 },
     ],
     energia: [
-      { texto: 'Ley para identificar las zonas idóneas para renovables, con las comunidades y municipios.', pagina: 74 },
+      {
+        texto: 'Ley para identificar las zonas idóneas para renovables, con las comunidades y municipios.',
+        pagina: 74,
+      },
       { texto: 'Cierre ordenado y progresivo de las centrales nucleares.', pagina: 75 },
       { texto: 'Revisar al alza los compromisos climáticos de España.', pagina: 87 },
       { texto: 'Proteger el 30 % del territorio terrestre y marino en 2030.', pagina: 90 },

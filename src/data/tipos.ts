@@ -86,6 +86,8 @@ export type Partido = {
   id: string;
   siglas: string;
   nombre: string;
+  /** Color con que se le identifica en gráficos electorales. Solo para gráficos, siempre con siglas. */
+  color: string;
   web: string;
   /** Escaños en el Congreso el 23J 2023. `null` si no se presentó con candidatura propia. */
   escanos2023: number | null;

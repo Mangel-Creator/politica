@@ -8,13 +8,19 @@ export const ProgramaVox: ResumenPrograma = {
     { texto: 'Estado unitario: devolver al Estado Educación, Sanidad, Seguridad y Justicia.', pagina: 8 },
     { texto: 'IRPF con dos tipos (15 % hasta 70.000 € y 25 % por encima), 4 puntos menos por hijo.', pagina: 74 },
     { texto: 'Expulsar a todos los inmigrantes que entren ilegalmente y suprimir el arraigo.', pagina: 100 },
-    { texto: 'Derogar la ley de violencia de género y suprimir los juzgados de violencia sobre la mujer.', pagina: 128 },
+    {
+      texto: 'Derogar la ley de violencia de género y suprimir los juzgados de violencia sobre la mujer.',
+      pagina: 128,
+    },
     { texto: 'Derogar la Ley de Cambio Climático y salir del Acuerdo de París.', pagina: 119 },
   ],
   temas: {
     territorio: [
       { texto: 'Estado unitario descentralizado administrativamente.', pagina: 8 },
-      { texto: 'Devolver al Estado Educación, Sanidad, Seguridad y Justicia y limitar las leyes autonómicas.', pagina: 8 },
+      {
+        texto: 'Devolver al Estado Educación, Sanidad, Seguridad y Justicia y limitar las leyes autonómicas.',
+        pagina: 8,
+      },
       { texto: 'Suprimir los privilegios fiscales basados en "derechos históricos".', pagina: 8 },
       { texto: 'Garantizar el uso del español en todo el país y señalización al menos en español.', pagina: 9 },
       { texto: 'Suspender la autonomía de comunidades que atenten contra la unidad de España.', pagina: 16 },
@@ -46,13 +52,20 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Selectividad única y exámenes nacionales en varias etapas.', pagina: 32 },
       { texto: 'Derecho a estudiar en español en todo el territorio.', pagina: 33 },
       { texto: 'Cheque escolar para elegir libremente centro.', pagina: 33 },
-      { texto: 'Conocimiento previo y aceptación de los padres de cualquier contenido afectivo-sexual o ideológico en el aula.', pagina: 33 },
+      {
+        texto:
+          'Conocimiento previo y aceptación de los padres de cualquier contenido afectivo-sexual o ideológico en el aula.',
+        pagina: 33,
+      },
       { texto: 'No pasar de curso ni titular con asignaturas suspensas.', pagina: 34 },
     ],
     vivienda: [
       { texto: 'Reformar el Código Penal y las leyes procesales contra la ocupación ilegal.', pagina: 40 },
       { texto: 'Liberar todo el suelo que no deba estar protegido; nueva Ley del Suelo.', pagina: 40 },
-      { texto: 'Eliminar el IVA en la compra de la primera vivienda y recuperar la deducción por vivienda.', pagina: 40 },
+      {
+        texto: 'Eliminar el IVA en la compra de la primera vivienda y recuperar la deducción por vivienda.',
+        pagina: 40,
+      },
       { texto: 'Acabar con el control de rentas y derogar la Ley de Vivienda.', pagina: 42 },
       { texto: 'Prioridad nacional en las ayudas sociales y de acceso a la vivienda.', pagina: 64 },
     ],
@@ -80,7 +93,10 @@ export const ProgramaVox: ResumenPrograma = {
     ],
     social: [
       { texto: 'Suprimir el Ministerio de Igualdad y crear un Ministerio de Familia.', pagina: 162 },
-      { texto: 'Ley de protección integral de la familia; préstamos sin interés a parejas jóvenes con hijos.', pagina: 162 },
+      {
+        texto: 'Ley de protección integral de la familia; préstamos sin interés a parejas jóvenes con hijos.',
+        pagina: 162,
+      },
       { texto: 'Bajar el IVA de pañales, biberones y leche de fórmula.', pagina: 164 },
       { texto: 'Custodia compartida como regla general en separaciones.', pagina: 165 },
       { texto: 'Inembargabilidad de la vivienda familiar por deudas personales.', pagina: 65 },
@@ -94,7 +110,10 @@ export const ProgramaVox: ResumenPrograma = {
     ],
     inmigracion: [
       { texto: 'Consultar a los españoles en referéndum sobre la política migratoria.', pagina: 100 },
-      { texto: 'Expulsar a quien entre ilegalmente y a los inmigrantes legales que cometan delitos graves.', pagina: 100 },
+      {
+        texto: 'Expulsar a quien entre ilegalmente y a los inmigrantes legales que cometan delitos graves.',
+        pagina: 100,
+      },
       { texto: 'Repatriar a los menores no acompañados y cerrar sus centros.', pagina: 101 },
       { texto: 'Bloqueo naval frente a la inmigración irregular.', pagina: 102 },
       { texto: 'Suprimir el arraigo y revisar la nacionalidad por nacer en España.', pagina: 103 },
@@ -102,7 +121,10 @@ export const ProgramaVox: ResumenPrograma = {
     ],
     igualdad: [
       { texto: 'Ley que proteja a todas las víctimas de violencia doméstica.', pagina: 10 },
-      { texto: 'Derogar la ley de violencia de género y suprimir los juzgados de violencia sobre la mujer.', pagina: 128 },
+      {
+        texto: 'Derogar la ley de violencia de género y suprimir los juzgados de violencia sobre la mujer.',
+        pagina: 128,
+      },
       { texto: 'Derogar la Ley Trans y las leyes LGTBI.', pagina: 173 },
       { texto: 'Derogar la ley del "solo sí es sí".', pagina: 174 },
       { texto: 'Rechazo a los vientres de alquiler.', pagina: 174 },
