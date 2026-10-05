@@ -1,0 +1,117 @@
+import type { ResumenPrograma } from '../tipos';
+
+/** BNG, generales 23J 2023. Programa de 68 páginas, en gallego (resumen traducido). */
+export const ProgramaBNG: ResumenPrograma = {
+  partidoId: 'bng',
+  eleccion: '23J 2023',
+  nota: 'El original está en gallego; este resumen es una traducción.',
+  ideasClave: [
+    { texto: 'Derecho de autodeterminación de Galicia y, como horizonte, una "República da Galiza".', pagina: 10 },
+    { texto: 'Concierto económico propio: que Galicia recaude todos sus impuestos.', pagina: 11 },
+    { texto: 'Jornada de 35 horas sin bajar el sueldo y salario mínimo al 60 % del salario medio.', pagina: 16 },
+    { texto: 'AP-9 pública, gallega y sin peajes.', pagina: 54 },
+    { texto: 'Dejar de enviar armas a Ucrania y no subir el gasto militar al 2 % del PIB.', pagina: 66 },
+  ],
+  temas: {
+    territorio: [
+      { texto: 'Reconocer el derecho de autodeterminación y poder ejercerlo.', pagina: 10 },
+      { texto: 'Concierto económico bilateral y Hacienda gallega propia.', pagina: 11 },
+      { texto: 'Traspasar relaciones laborales, Seguridad Social, pensiones y Policía Gallega.', pagina: 11 },
+      { texto: 'Traspasar puertos, aeropuertos, costas, cuenca Miño-Sil y Salvamento Marítimo.', pagina: 12 },
+      { texto: 'Suprimir las diputaciones provinciales y la administración periférica del Estado.', pagina: 30 },
+      { texto: 'Selecciones deportivas gallegas en competiciones internacionales.', pagina: 65 },
+    ],
+    vivienda: [
+      { texto: 'Invertir 250 € por habitante en vivienda.', pagina: 15 },
+      { texto: 'Pasar gratis las viviendas y suelos de la SAREB al parque público gallego.', pagina: 15 },
+      { texto: 'Recargo del IBI y programas para movilizar la vivienda vacía.', pagina: 15 },
+      { texto: 'Adaptar el bono joven de vivienda a los pisos compartidos.', pagina: 16 },
+    ],
+    empleo: [
+      { texto: 'Derogar del todo las reformas laborales: 45 días de despido, salarios de tramitación y autorización de ERE.', pagina: 16 },
+      { texto: 'Prioridad de los convenios sectoriales y gallegos sobre los de empresa y estatales.', pagina: 16 },
+      { texto: 'Jornada de 35 horas sin reducción salarial.', pagina: 16 },
+      { texto: 'Salario mínimo al 60 % del salario medio.', pagina: 16 },
+      { texto: 'Eliminar las ETT, la subcontratación en cadena y los falsos autónomos.', pagina: 17 },
+    ],
+    pensiones: [
+      { texto: 'Pensiones mínimas al 60 % del salario medio y subida anual con el IPC real.', pagina: 17 },
+      { texto: 'Volver a la jubilación ordinaria a los 65 y parcial a los 61.', pagina: 18 },
+      { texto: 'Calcular la pensión con los 10 años que elija la persona.', pagina: 18 },
+      { texto: 'Financiar las pensiones también con Presupuestos e impuestos a la riqueza.', pagina: 18 },
+    ],
+    social: [
+      { texto: 'Traspasar el Ingreso Mínimo Vital a Galicia.', pagina: 14 },
+      { texto: 'Gasto en protección social al menos en la media de la UE.', pagina: 14 },
+      { texto: 'Que el Estado pague el 50 % de la dependencia y la deuda acumulada con Galicia.', pagina: 19 },
+      { texto: 'Atención presencial sin cita previa en todas las oficinas públicas.', pagina: 19 },
+      { texto: 'Voto a los 16 años.', pagina: 63 },
+    ],
+    inmigracion: [
+      { texto: 'Facilitar la regularización y garantizar derechos a migrantes.', pagina: 19 },
+      { texto: 'Cerrar los CIE y acabar con las deportaciones.', pagina: 20 },
+    ],
+    igualdad: [
+      { texto: 'Incluir el término feminicidio en la ley y un Estatuto de Víctima de Feminicidio.', pagina: 22 },
+      { texto: 'Consentimiento como eje de los delitos sexuales.', pagina: 22 },
+      { texto: 'Juzgados exclusivos de violencia machista en Lugo, Ourense, Santiago, Ferrol y Pontevedra.', pagina: 22 },
+      { texto: 'Prohibir los vientres de alquiler y medidas hacia la abolición de la prostitución.', pagina: 23 },
+      { texto: 'Retirar ayudas y sancionar a organizaciones que nieguen derechos LGBT.', pagina: 26 },
+    ],
+    democracia: [
+      { texto: 'Derogar la "Ley Mordaza" y la prisión permanente revisable.', pagina: 27 },
+      { texto: 'Derogar la Ley de Amnistía de 1977 y recuperar bienes de la familia Franco.', pagina: 28 },
+      { texto: 'Referendos vinculantes, incluida la autodeterminación.', pagina: 28 },
+      { texto: 'Denunciar el Concordato con la Santa Sede; Estado laico.', pagina: 29 },
+      { texto: 'Ley electoral: reparto proporcional (cuota Hare) y Galicia como circunscripción única.', pagina: 29 },
+      { texto: 'Inhabilitar a cargos con fraude fiscal o en paraísos fiscales; regular las puertas giratorias.', pagina: 29 },
+    ],
+    educacion: [
+      { texto: 'Leyes gallegas propias de educación, FP y universidad.', pagina: 32 },
+      { texto: 'Una sola red pública de 0 a 18 años, con libros y material gratis; eliminar conciertos.', pagina: 32 },
+      { texto: 'Sacar la Religión del currículo.', pagina: 33 },
+      { texto: 'Educación al 7 % del PIB y universidades al 1,5 %.', pagina: 34 },
+    ],
+    sanidad: [
+      { texto: 'Gasto sanitario por habitante en la media de la UE.', pagina: 35 },
+      { texto: 'Cambiar la Ley 15/97 para que la gestión sea solo pública.', pagina: 35 },
+      { texto: 'Dentista, podología, óptica y logopedia en la sanidad pública.', pagina: 36 },
+      { texto: 'Acabar con los copagos de medicamentos.', pagina: 36 },
+      { texto: 'Traspasar la formación MIR y aumentar plazas.', pagina: 36 },
+    ],
+    impuestos: [
+      { texto: 'IRPF más progresivo: menos impuestos al trabajo y más al capital.', pagina: 39 },
+      { texto: 'Que las empresas que operan en Galicia tributen allí por Sociedades.', pagina: 39 },
+      { texto: 'IVA superreducido para alimentos básicos, productos del mar, higiene y transporte público.', pagina: 40 },
+      { texto: 'IVA de luz y gas al 5 % de forma permanente.', pagina: 40 },
+      { texto: 'Hacer permanentes los impuestos a banca, energéticas y grandes fortunas, gestionados por Galicia.', pagina: 40 },
+    ],
+    economia: [
+      { texto: 'Plan de industrialización para comarcas en crisis como Ferrol y Vigo.', pagina: 42 },
+      { texto: 'Obligar a devolver ayudas a empresas que se deslocalicen.', pagina: 42 },
+      { texto: 'Navantia-Ferrol también para construcción naval civil.', pagina: 42 },
+      { texto: 'Mantener Alcoa San Cibrao, incluso con intervención pública.', pagina: 42 },
+      { texto: 'Inversión en I+D+i del 3 % del PIB en 2030.', pagina: 45 },
+    ],
+    rural: [
+      { texto: 'Reformar la Ley de la Cadena Alimentaria para impedir vender por debajo de coste.', pagina: 43 },
+      { texto: 'Galicia como "zona altamente dependiente de la pesca" y negociación directa de cuotas.', pagina: 44 },
+      { texto: 'Pesca artesanal sin cuotas y sin eólica marina en la costa gallega.', pagina: 44 },
+      { texto: 'Declarar el eucalipto especie invasora y limitar su cultivo.', pagina: 58 },
+    ],
+    energia: [
+      { texto: 'Tarifa eléctrica gallega más barata por ser productora excedentaria.', pagina: 48 },
+      { texto: 'Traspasar las competencias energéticas y decidir sobre instalaciones de más de 50 MW.', pagina: 49 },
+      { texto: 'Litoral gallego libre de eólica marina.', pagina: 49 },
+      { texto: 'Recuperar evaluación ambiental y participación en los proyectos eólicos.', pagina: 49 },
+      { texto: 'Recuperar las concesiones de embalses para una empresa pública gallega de energía.', pagina: 50 },
+    ],
+    exterior: [
+      { texto: 'Neutralidad en la guerra de Ucrania y dejar de enviar armamento.', pagina: 66 },
+      { texto: 'No subir el gasto militar al 2 % del PIB.', pagina: 66 },
+      { texto: 'Referéndum de autodeterminación en el Sáhara Occidental.', pagina: 67 },
+      { texto: 'Reconocer el Estado palestino.', pagina: 67 },
+      { texto: 'Salir de la OTAN.', pagina: 67 },
+    ],
+  },
+};

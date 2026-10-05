@@ -3,6 +3,8 @@ import { describe, expect, it } from '@jest/globals';
 import { Calendario, DIA_ELECCIONES } from '../calendario';
 import { FuentesOficiales } from '../fuentes';
 import { Partidos } from '../partidos';
+import { Resumenes } from '../programas';
+import { Temas } from '../temas';
 
 const FECHA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -84,5 +86,35 @@ describe('fuentes oficiales', () => {
     const urls = FuentesOficiales.map((f) => f.url);
     for (const u of urls) expect(u).toMatch(/^https:\/\//);
     expect(new Set(urls).size).toBe(urls.length);
+  });
+});
+
+describe('resúmenes de programas', () => {
+  it('cada medida cita una página que existe en el PDF de ese partido', () => {
+    for (const r of Resumenes) {
+      const partido = Partidos.find((p) => p.id === r.partidoId);
+      expect(partido).toBeDefined();
+      const pdf = partido!.programas.find((p) => p.eleccion === r.eleccion);
+      expect(pdf).toBeDefined();
+      const todas = [...r.ideasClave, ...Object.values(r.temas).flat()];
+      for (const m of todas) {
+        expect(m!.pagina).toBeGreaterThanOrEqual(1);
+        expect(m!.pagina).toBeLessThanOrEqual(pdf!.paginas);
+        expect(m!.texto.length).toBeGreaterThan(10);
+        expect(m!.texto.length).toBeLessThan(170);
+      }
+    }
+  });
+
+  it('solo usan temas definidos', () => {
+    const ids = new Set(Temas.map((t) => t.id));
+    for (const r of Resumenes) for (const t of Object.keys(r.temas)) expect(ids.has(t as never)).toBe(true);
+  });
+
+  it('cada resumen tiene entre 3 y 5 ideas clave', () => {
+    for (const r of Resumenes) {
+      expect(r.ideasClave.length).toBeGreaterThanOrEqual(3);
+      expect(r.ideasClave.length).toBeLessThanOrEqual(5);
+    }
   });
 });

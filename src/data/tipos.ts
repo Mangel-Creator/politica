@@ -42,6 +42,46 @@ export type Programa = {
   sha256: string;
 };
 
+/** Temas comunes para resumir y comparar programas. */
+export type TemaId =
+  | 'vivienda'
+  | 'empleo'
+  | 'impuestos'
+  | 'pensiones'
+  | 'sanidad'
+  | 'educacion'
+  | 'economia'
+  | 'energia'
+  | 'inmigracion'
+  | 'igualdad'
+  | 'seguridad'
+  | 'territorio'
+  | 'democracia'
+  | 'social'
+  | 'rural'
+  | 'exterior';
+
+/** Una medida del programa, resumida, con la página del PDF donde aparece. */
+export type Propuesta = {
+  texto: string;
+  /** Número de página del PDF (la que muestra el visor), no el número impreso. */
+  pagina: number;
+};
+
+/**
+ * Resumen de un programa. Regla: solo lo que dice el documento, con su página; se
+ * quita el relleno (diagnósticos, autoelogios, frases genéricas) pero no las medidas.
+ */
+export type ResumenPrograma = {
+  partidoId: string;
+  eleccion: Eleccion;
+  /** Las medidas que el propio documento destaca o que más lo distinguen. */
+  ideasClave: Propuesta[];
+  temas: Partial<Record<TemaId, Propuesta[]>>;
+  /** Aviso sobre el documento (por ejemplo, si es un manifiesto breve). */
+  nota?: string;
+};
+
 export type Partido = {
   id: string;
   siglas: string;
