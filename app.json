@@ -50,6 +50,17 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
-    "owner": "mangel_creator"
+    "owner": "mangel_creator",
+    "extra": {
+      "eas": {
+        "projectId": "c49c5592-17b3-412d-93c4-dbeaf95bdea0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c49c5592-17b3-412d-93c4-dbeaf95bdea0"
+    }
   }
 }
