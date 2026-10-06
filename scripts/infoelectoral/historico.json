@@ -1,0 +1,1427 @@
+{
+ "197706": [
+  {
+   "codigo": "000087",
+   "siglas": "UCD",
+   "nombre": "UNION DE CENTRO DEMOCRATICO",
+   "votos": 6310391,
+   "escanos": 165
+  },
+  {
+   "codigo": "000078",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 5371866,
+   "escanos": 118
+  },
+  {
+   "codigo": "000062",
+   "siglas": "PCE",
+   "nombre": "PARTIDO COMUNISTA DE ESPAÑA",
+   "votos": 1709890,
+   "escanos": 20
+  },
+  {
+   "codigo": "000009",
+   "siglas": "AP",
+   "nombre": "FEDERACION DE PARTIDOS DE ALIANZA POPULAR",
+   "votos": 1504771,
+   "escanos": 16
+  },
+  {
+   "codigo": "000066",
+   "siglas": "PDPC",
+   "nombre": "COALICION ELECT.PACTE DEMOCRATIC PER CATALUNYA",
+   "votos": 514647,
+   "escanos": 11
+  },
+  {
+   "codigo": "000069",
+   "siglas": "PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 296193,
+   "escanos": 8
+  },
+  {
+   "codigo": "000080",
+   "siglas": "PSP-US",
+   "nombre": "PARTIDO SOCIALISTA POPULAR - UNIDAD SOCIALISTA",
+   "votos": 816582,
+   "escanos": 6
+  },
+  {
+   "codigo": "000088",
+   "siglas": "UDC-IDCC",
+   "nombre": "UNIO DEL CENTRE I LA DEM. CRISTIANA DE CATALUNYA",
+   "votos": 172791,
+   "escanos": 2
+  },
+  {
+   "codigo": "000028",
+   "siglas": "EC-FED",
+   "nombre": "COALICION ELECTORAL ESQUERRA DE CATALUÑA",
+   "votos": 143954,
+   "escanos": 1
+  },
+  {
+   "codigo": "000029",
+   "siglas": "EE",
+   "nombre": "EUSKADIKO EZKERRA",
+   "votos": 61417,
+   "escanos": 1
+  },
+  {
+   "codigo": "000016",
+   "siglas": "CAIC",
+   "nombre": "CANDIDATURA ARAGONESA INDEPENDIENTE DE CENTRO",
+   "votos": 37183,
+   "escanos": 1
+  },
+  {
+   "codigo": "000053",
+   "siglas": "INDEP",
+   "nombre": "CANDIDATURA INDEPENDIENTE DE CENTRO",
+   "votos": 29834,
+   "escanos": 1
+  }
+ ],
+ "197903": [
+  {
+   "codigo": "000062",
+   "siglas": "UCD",
+   "nombre": "UNION DE CENTRO DEMOCRATICO",
+   "votos": 6268593,
+   "escanos": 168
+  },
+  {
+   "codigo": "000056",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 5469813,
+   "escanos": 121
+  },
+  {
+   "codigo": "000038",
+   "siglas": "PCE",
+   "nombre": "PARTIDO COMUNISTA DE ESPAÑA",
+   "votos": 1938487,
+   "escanos": 23
+  },
+  {
+   "codigo": "000007",
+   "siglas": "CD",
+   "nombre": "COALICION DEMOCRATICA",
+   "votos": 1060330,
+   "escanos": 9
+  },
+  {
+   "codigo": "000010",
+   "siglas": "CIU",
+   "nombre": "COALICION CONVERGENCIA Y UNIO",
+   "votos": 483353,
+   "escanos": 8
+  },
+  {
+   "codigo": "000047",
+   "siglas": "PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 296597,
+   "escanos": 7
+  },
+  {
+   "codigo": "000051",
+   "siglas": "PSA-PA",
+   "nombre": "PARTIDO ANDALUCISTA",
+   "votos": 325842,
+   "escanos": 5
+  },
+  {
+   "codigo": "000019",
+   "siglas": "HB",
+   "nombre": "HERRI BATASUNA",
+   "votos": 172110,
+   "escanos": 3
+  },
+  {
+   "codigo": "000067",
+   "siglas": "UN",
+   "nombre": "PARTIDO UNION NACIONAL",
+   "votos": 378964,
+   "escanos": 1
+  },
+  {
+   "codigo": "000015",
+   "siglas": "ERFN",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA - FRONT NACIONAL",
+   "votos": 123452,
+   "escanos": 1
+  },
+  {
+   "codigo": "000013",
+   "siglas": "EE",
+   "nombre": "EUSKADIKO EZKERRA",
+   "votos": 85677,
+   "escanos": 1
+  },
+  {
+   "codigo": "000005",
+   "siglas": "C-UPC",
+   "nombre": "UNION DEL PUEBLO CANARIO",
+   "votos": 58953,
+   "escanos": 1
+  },
+  {
+   "codigo": "000035",
+   "siglas": "PAR",
+   "nombre": "PARTIDO ARAGONES REGIONALISTA",
+   "votos": 38042,
+   "escanos": 1
+  },
+  {
+   "codigo": "000069",
+   "siglas": "UPN",
+   "nombre": "UNION DEL PUEBLO NAVARRO",
+   "votos": 28248,
+   "escanos": 1
+  }
+ ],
+ "198210": [
+  {
+   "codigo": "000077",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 10127392,
+   "escanos": 202
+  },
+  {
+   "codigo": "000005",
+   "siglas": "AP-PDP",
+   "nombre": "ALIANZA POPULAR - PARTIDO DEMOCRATA POPULAR",
+   "votos": 5548107,
+   "escanos": 107
+  },
+  {
+   "codigo": "000018",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 772726,
+   "escanos": 12
+  },
+  {
+   "codigo": "000081",
+   "siglas": "UCD",
+   "nombre": "UNION DE CENTRO DEMOCRATICO",
+   "votos": 1425093,
+   "escanos": 11
+  },
+  {
+   "codigo": "000020",
+   "siglas": "EAJ-PNV",
+   "nombre": "PARTIDO NACIONALISTA VASCO-EUZKO ALDERDI JELTZALEA",
+   "votos": 395656,
+   "escanos": 8
+  },
+  {
+   "codigo": "000055",
+   "siglas": "PCE",
+   "nombre": "PARTIDO COMUNISTA DE ESPAÑA",
+   "votos": 846515,
+   "escanos": 4
+  },
+  {
+   "codigo": "000015",
+   "siglas": "CDS",
+   "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
+   "votos": 604309,
+   "escanos": 2
+  },
+  {
+   "codigo": "000034",
+   "siglas": "HB",
+   "nombre": "AGRUPACION ELECTORES HERRI BATASUNA",
+   "votos": 210601,
+   "escanos": 2
+  },
+  {
+   "codigo": "000026",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 138118,
+   "escanos": 1
+  },
+  {
+   "codigo": "000021",
+   "siglas": "EE",
+   "nombre": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+   "votos": 100326,
+   "escanos": 1
+  }
+ ],
+ "198606": [
+  {
+   "codigo": "000060",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 8901718,
+   "escanos": 184
+  },
+  {
+   "codigo": "000009",
+   "siglas": "AP-PDP-PL",
+   "nombre": "COALICION POPULAR",
+   "votos": 5247677,
+   "escanos": 105
+  },
+  {
+   "codigo": "000015",
+   "siglas": "CDS",
+   "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
+   "votos": 1861912,
+   "escanos": 19
+  },
+  {
+   "codigo": "000017",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 1014258,
+   "escanos": 18
+  },
+  {
+   "codigo": "000030",
+   "siglas": "IU",
+   "nombre": "COALICION IZQUIERDA UNIDA",
+   "votos": 935504,
+   "escanos": 7
+  },
+  {
+   "codigo": "000021",
+   "siglas": "EAJ-PNV",
+   "nombre": "PARTIDO NACIONALISTA VASCO",
+   "votos": 309610,
+   "escanos": 6
+  },
+  {
+   "codigo": "000028",
+   "siglas": "HB",
+   "nombre": "HERRI BATASUNA",
+   "votos": 231722,
+   "escanos": 5
+  },
+  {
+   "codigo": "000022",
+   "siglas": "EE",
+   "nombre": "EUSKADIKO EZKERRA",
+   "votos": 107053,
+   "escanos": 2
+  },
+  {
+   "codigo": "000016",
+   "siglas": "CG",
+   "nombre": "COALICION GALEGA",
+   "votos": 79972,
+   "escanos": 1
+  },
+  {
+   "codigo": "000039",
+   "siglas": "PAR",
+   "nombre": "PARTIDO ARAGONES REGIONALISTA",
+   "votos": 73004,
+   "escanos": 1
+  },
+  {
+   "codigo": "000007",
+   "siglas": "AIC",
+   "nombre": "COALICION AGRUPACIONES INDEPENDIENTES DE CANARIAS",
+   "votos": 65664,
+   "escanos": 1
+  },
+  {
+   "codigo": "000068",
+   "siglas": "UV",
+   "nombre": "UNIO VALENCIANA",
+   "votos": 64403,
+   "escanos": 1
+  }
+ ],
+ "198910": [
+  {
+   "codigo": "000001",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 8115568,
+   "escanos": 175
+  },
+  {
+   "codigo": "000002",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 5285972,
+   "escanos": 107
+  },
+  {
+   "codigo": "000055",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 1032243,
+   "escanos": 18
+  },
+  {
+   "codigo": "000004",
+   "siglas": "IU",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 1858588,
+   "escanos": 17
+  },
+  {
+   "codigo": "000003",
+   "siglas": "CDS",
+   "nombre": "CENTRO DEMOCRATICO Y SOCIAL",
+   "votos": 1617716,
+   "escanos": 14
+  },
+  {
+   "codigo": "000094",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 254681,
+   "escanos": 5
+  },
+  {
+   "codigo": "000077",
+   "siglas": "HB",
+   "nombre": "HERRI BATASUNA",
+   "votos": 217278,
+   "escanos": 4
+  },
+  {
+   "codigo": "000025",
+   "siglas": "PA",
+   "nombre": "PARTIDO ANDALUCISTA",
+   "votos": 212687,
+   "escanos": 2
+  },
+  {
+   "codigo": "000086",
+   "siglas": "UV",
+   "nombre": "UNIO VALENCIANA",
+   "votos": 144924,
+   "escanos": 2
+  },
+  {
+   "codigo": "000074",
+   "siglas": "EA",
+   "nombre": "EUSKO ALKARTASUNA",
+   "votos": 136955,
+   "escanos": 2
+  },
+  {
+   "codigo": "000075",
+   "siglas": "EE",
+   "nombre": "EUSKADIKO EZKERRA",
+   "votos": 105238,
+   "escanos": 2
+  },
+  {
+   "codigo": "000030",
+   "siglas": "PAR",
+   "nombre": "PARTIDO ARAGONES REGIONALISTA",
+   "votos": 71733,
+   "escanos": 1
+  },
+  {
+   "codigo": "000041",
+   "siglas": "AIC",
+   "nombre": "AGRUPACIONES INDEPENDIENTES DE CANARIAS",
+   "votos": 64767,
+   "escanos": 1
+  }
+ ],
+ "199306": [
+  {
+   "codigo": "000001",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 9150083,
+   "escanos": 159
+  },
+  {
+   "codigo": "000002",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 8201463,
+   "escanos": 141
+  },
+  {
+   "codigo": "000004",
+   "siglas": "IU",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 2253722,
+   "escanos": 18
+  },
+  {
+   "codigo": "000055",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 1165783,
+   "escanos": 17
+  },
+  {
+   "codigo": "000094",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 291448,
+   "escanos": 5
+  },
+  {
+   "codigo": "000005",
+   "siglas": "CC",
+   "nombre": "COALICION CANARIA",
+   "votos": 207077,
+   "escanos": 4
+  },
+  {
+   "codigo": "000077",
+   "siglas": "HB",
+   "nombre": "HERRI BATASUNA",
+   "votos": 206876,
+   "escanos": 2
+  },
+  {
+   "codigo": "000062",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 189632,
+   "escanos": 1
+  },
+  {
+   "codigo": "000030",
+   "siglas": "PAR",
+   "nombre": "PARTIDO ARAGONES",
+   "votos": 144544,
+   "escanos": 1
+  },
+  {
+   "codigo": "000113",
+   "siglas": "EA-EUE",
+   "nombre": "COALICION EUSKO ALKARTASUNA-EUSKAL EZKERRA",
+   "votos": 129293,
+   "escanos": 1
+  },
+  {
+   "codigo": "000086",
+   "siglas": "UV",
+   "nombre": "UNIO VALENCIANA",
+   "votos": 112341,
+   "escanos": 1
+  }
+ ],
+ "199603": [
+  {
+   "codigo": "000091",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 9716006,
+   "escanos": 156
+  },
+  {
+   "codigo": "000108",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 9425678,
+   "escanos": 141
+  },
+  {
+   "codigo": "000041",
+   "siglas": "IU",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 2639774,
+   "escanos": 21
+  },
+  {
+   "codigo": "000015",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 1151633,
+   "escanos": 16
+  },
+  {
+   "codigo": "000022",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 318951,
+   "escanos": 5
+  },
+  {
+   "codigo": "000010",
+   "siglas": "CC",
+   "nombre": "COALICION CANARIA",
+   "votos": 220418,
+   "escanos": 4
+  },
+  {
+   "codigo": "000009",
+   "siglas": "BNG",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 220147,
+   "escanos": 2
+  },
+  {
+   "codigo": "000036",
+   "siglas": "HB",
+   "nombre": "HERRI BATASUNA",
+   "votos": 181304,
+   "escanos": 2
+  },
+  {
+   "codigo": "000025",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 167641,
+   "escanos": 1
+  },
+  {
+   "codigo": "000021",
+   "siglas": "EA",
+   "nombre": "EUSKO ALKARTASUNA",
+   "votos": 115861,
+   "escanos": 1
+  },
+  {
+   "codigo": "000124",
+   "siglas": "UV",
+   "nombre": "UNIO VALENCIANA",
+   "votos": 91575,
+   "escanos": 1
+  }
+ ],
+ "200003": [
+  {
+   "codigo": "000113",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 10321178,
+   "escanos": 183
+  },
+  {
+   "codigo": "000135",
+   "siglas": "PSOE-PROGR.",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+   "votos": 7918752,
+   "escanos": 125
+  },
+  {
+   "codigo": "000026",
+   "siglas": "CIU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 970421,
+   "escanos": 15
+  },
+  {
+   "codigo": "000063",
+   "siglas": "IU",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 1263043,
+   "escanos": 8
+  },
+  {
+   "codigo": "000029",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 353953,
+   "escanos": 7
+  },
+  {
+   "codigo": "000014",
+   "siglas": "CC",
+   "nombre": "COALICION CANARIA",
+   "votos": 248261,
+   "escanos": 4
+  },
+  {
+   "codigo": "000013",
+   "siglas": "BNG",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 306268,
+   "escanos": 3
+  },
+  {
+   "codigo": "000086",
+   "siglas": "PA",
+   "nombre": "PARTIDO ANDALUCISTA",
+   "votos": 206255,
+   "escanos": 1
+  },
+  {
+   "codigo": "000036",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 194715,
+   "escanos": 1
+  },
+  {
+   "codigo": "000058",
+   "siglas": "IC-V",
+   "nombre": "INICIATIVA PER CATALUNYA-VERDS",
+   "votos": 119290,
+   "escanos": 1
+  },
+  {
+   "codigo": "000028",
+   "siglas": "EA",
+   "nombre": "EUSKO ALKARTASUNA",
+   "votos": 100742,
+   "escanos": 1
+  },
+  {
+   "codigo": "000020",
+   "siglas": "CHA",
+   "nombre": "CHUNTA ARAGONESISTA",
+   "votos": 75356,
+   "escanos": 1
+  }
+ ],
+ "200403": [
+  {
+   "codigo": "000146",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 11026163,
+   "escanos": 164
+  },
+  {
+   "codigo": "000130",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 9763144,
+   "escanos": 148
+  },
+  {
+   "codigo": "000033",
+   "siglas": "CiU",
+   "nombre": "CONVERGENCIA i UNIO",
+   "votos": 835471,
+   "escanos": 10
+  },
+  {
+   "codigo": "000041",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 652196,
+   "escanos": 8
+  },
+  {
+   "codigo": "000036",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUSKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 420980,
+   "escanos": 7
+  },
+  {
+   "codigo": "000070",
+   "siglas": "IU",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 1284081,
+   "escanos": 5
+  },
+  {
+   "codigo": "000017",
+   "siglas": "CC",
+   "nombre": "COALICION CANARIA",
+   "votos": 235221,
+   "escanos": 3
+  },
+  {
+   "codigo": "000015",
+   "siglas": "BNG",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 208688,
+   "escanos": 2
+  },
+  {
+   "codigo": "000027",
+   "siglas": "CHA",
+   "nombre": "CHUNTA ARAGONESISTA",
+   "votos": 94252,
+   "escanos": 1
+  },
+  {
+   "codigo": "000035",
+   "siglas": "EA",
+   "nombre": "EUSKO ALKARTASUNA",
+   "votos": 80905,
+   "escanos": 1
+  },
+  {
+   "codigo": "000094",
+   "siglas": "Na-Bai",
+   "nombre": "NAFARROA BAI",
+   "votos": 61045,
+   "escanos": 1
+  }
+ ],
+ "200803": [
+  {
+   "codigo": "000225",
+   "siglas": "P.S.O.E.",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 11289335,
+   "escanos": 169
+  },
+  {
+   "codigo": "000209",
+   "siglas": "P.P.",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 10278010,
+   "escanos": 154
+  },
+  {
+   "codigo": "000061",
+   "siglas": "CiU",
+   "nombre": "CONVERGENCIA I UNIO",
+   "votos": 779425,
+   "escanos": 10
+  },
+  {
+   "codigo": "000084",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 306128,
+   "escanos": 6
+  },
+  {
+   "codigo": "000076",
+   "siglas": "ESQUERRA",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 298139,
+   "escanos": 3
+  },
+  {
+   "codigo": "000116",
+   "siglas": "I.U.",
+   "nombre": "IZQUIERDA UNIDA",
+   "votos": 969946,
+   "escanos": 2
+  },
+  {
+   "codigo": "000026",
+   "siglas": "B.N.G.",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 212543,
+   "escanos": 2
+  },
+  {
+   "codigo": "000050",
+   "siglas": "CC-PNC",
+   "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+   "votos": 174629,
+   "escanos": 2
+  },
+  {
+   "codigo": "000271",
+   "siglas": "UPyD",
+   "nombre": "UNION PROGRESO Y DEMOCRACIA",
+   "votos": 306079,
+   "escanos": 1
+  },
+  {
+   "codigo": "000152",
+   "siglas": "NA-BAI",
+   "nombre": "NAFARROA BAI",
+   "votos": 62398,
+   "escanos": 1
+  }
+ ],
+ "201111": [
+  {
+   "codigo": "000128",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 10866566,
+   "escanos": 186
+  },
+  {
+   "codigo": "000137",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 7003511,
+   "escanos": 110
+  },
+  {
+   "codigo": "000026",
+   "siglas": "CiU",
+   "nombre": "CONVERGÈNCIA I UNIÓ",
+   "votos": 1015691,
+   "escanos": 16
+  },
+  {
+   "codigo": "000088",
+   "siglas": "IU-LV",
+   "nombre": "IZQUIERDA UNIDA-LOS VERDES: LA IZQUIERDA PLURAL",
+   "votos": 1686040,
+   "escanos": 11
+  },
+  {
+   "codigo": "000003",
+   "siglas": "AMAIUR",
+   "nombre": "AMAIUR",
+   "votos": 334498,
+   "escanos": 7
+  },
+  {
+   "codigo": "000168",
+   "siglas": "UPyD",
+   "nombre": "UNIÓN PROGRESO Y DEMOCRACIA",
+   "votos": 1143225,
+   "escanos": 5
+  },
+  {
+   "codigo": "000054",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 324317,
+   "escanos": 5
+  },
+  {
+   "codigo": "000045",
+   "siglas": "ESQUERRA",
+   "nombre": "ESQUERRA REPUBLICANA",
+   "votos": 256985,
+   "escanos": 3
+  },
+  {
+   "codigo": "000014",
+   "siglas": "BNG",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 184037,
+   "escanos": 2
+  },
+  {
+   "codigo": "000024",
+   "siglas": "CC-NC-PNC",
+   "nombre": "COALICIÓN CANARIA-NUEVA CANARIAS",
+   "votos": 143881,
+   "escanos": 2
+  },
+  {
+   "codigo": "000012",
+   "siglas": "COMPROMÍS-Q",
+   "nombre": "BLOC-INICIATIVA-VERDS-EQUO-COALICIÓ COMPROMÍS",
+   "votos": 125306,
+   "escanos": 1
+  },
+  {
+   "codigo": "000060",
+   "siglas": "FAC",
+   "nombre": "FORO DE CIUDADANOS",
+   "votos": 99473,
+   "escanos": 1
+  },
+  {
+   "codigo": "000061",
+   "siglas": "GBAI",
+   "nombre": "GEROA BAI",
+   "votos": 42415,
+   "escanos": 1
+  }
+ ],
+ "201512": [
+  {
+   "codigo": "903316",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 7236965,
+   "escanos": 123
+  },
+  {
+   "codigo": "903484",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 5545315,
+   "escanos": 90
+  },
+  {
+   "codigo": "903736",
+   "siglas": "PODEMOS",
+   "nombre": "PODEMOS",
+   "votos": 3198584,
+   "escanos": 42
+  },
+  {
+   "codigo": "901079",
+   "siglas": "C's",
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+   "votos": 3514528,
+   "escanos": 40
+  },
+  {
+   "codigo": "905033",
+   "siglas": "EN COMÚ",
+   "nombre": "\"EN COMÚ PODEM\"",
+   "votos": 929880,
+   "escanos": 12
+  },
+  {
+   "codigo": "905008",
+   "siglas": "PODEMOS-COM",
+   "nombre": "COMPROMÍS-PODEMOS-ÉS EL MOMENT",
+   "votos": 673549,
+   "escanos": 9
+  },
+  {
+   "codigo": "905063",
+   "siglas": "ERC-CATSI",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+   "votos": 601782,
+   "escanos": 9
+  },
+  {
+   "codigo": "904991",
+   "siglas": "DL",
+   "nombre": "DEMOCRÀCIA I LLIBERTAT. CONVERGÈNCIA. DEMÒCRATES.",
+   "votos": 567253,
+   "escanos": 8
+  },
+  {
+   "codigo": "905041",
+   "siglas": "PODEMOS-En",
+   "nombre": "EN MAREA",
+   "votos": 410698,
+   "escanos": 6
+  },
+  {
+   "codigo": "901533",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 302316,
+   "escanos": 6
+  },
+  {
+   "codigo": "904850",
+   "siglas": "IU-UPeC",
+   "nombre": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+   "votos": 926783,
+   "escanos": 2
+  },
+  {
+   "codigo": "901528",
+   "siglas": "EH Bildu",
+   "nombre": "EUSKAL HERRIA BILDU",
+   "votos": 219125,
+   "escanos": 2
+  },
+  {
+   "codigo": "904744",
+   "siglas": "CCa-PNC",
+   "nombre": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+   "votos": 81917,
+   "escanos": 1
+  }
+ ],
+ "201606": [
+  {
+   "codigo": "000068",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 7941236,
+   "escanos": 137
+  },
+  {
+   "codigo": "000077",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 5443846,
+   "escanos": 85
+  },
+  {
+   "codigo": "000059",
+   "siglas": "PODEMOS-IU-EQUO",
+   "nombre": "UNIDOS PODEMOS",
+   "votos": 3227123,
+   "escanos": 45
+  },
+  {
+   "codigo": "000013",
+   "siglas": "C's",
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+   "votos": 3141570,
+   "escanos": 32
+  },
+  {
+   "codigo": "000022",
+   "siglas": "ECP",
+   "nombre": "EN COMÚ PODEM-GUANYEM EL CANVI",
+   "votos": 853102,
+   "escanos": 12
+  },
+  {
+   "codigo": "000055",
+   "siglas": "PODEMOS-COM",
+   "nombre": "COMPROMÍS-PODEMOS-EUPV: A LA VALENCIANA",
+   "votos": 659771,
+   "escanos": 9
+  },
+  {
+   "codigo": "000025",
+   "siglas": "ERC-CATSÍ",
+   "nombre": "ESQUERRA REPUBLICANA/CATALUNYA SÍ",
+   "votos": 632234,
+   "escanos": 9
+  },
+  {
+   "codigo": "000010",
+   "siglas": "CDC",
+   "nombre": "CONVERGÈNCIA DEMOCRÀTICA DE CATALUNYA",
+   "votos": 483488,
+   "escanos": 8
+  },
+  {
+   "codigo": "000056",
+   "siglas": "PODEMOS-EN MAREA-ANOVA-EU",
+   "nombre": "EN MAREA",
+   "votos": 347542,
+   "escanos": 5
+  },
+  {
+   "codigo": "000016",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 287014,
+   "escanos": 5
+  },
+  {
+   "codigo": "000023",
+   "siglas": "EH Bildu",
+   "nombre": "EUSKAL HERRIA BILDU",
+   "votos": 184713,
+   "escanos": 2
+  },
+  {
+   "codigo": "000007",
+   "siglas": "CCa-PNC",
+   "nombre": "COALICIÓN CANARIA-PARTIDO NACIONALISTA CANARIO",
+   "votos": 78253,
+   "escanos": 1
+  }
+ ],
+ "201904": [
+  {
+   "codigo": "000096",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 7513142,
+   "escanos": 123
+  },
+  {
+   "codigo": "000083",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 4373653,
+   "escanos": 66
+  },
+  {
+   "codigo": "000022",
+   "siglas": "Cs",
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+   "votos": 4155665,
+   "escanos": 57
+  },
+  {
+   "codigo": "000077",
+   "siglas": "PODEMOS-IU-",
+   "nombre": "UNIDAS PODEMOS",
+   "votos": 2897419,
+   "escanos": 33
+  },
+  {
+   "codigo": "000117",
+   "siglas": "VOX",
+   "nombre": "VOX",
+   "votos": 2688092,
+   "escanos": 24
+  },
+  {
+   "codigo": "000037",
+   "siglas": "ERC-SOBIRAN",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-SOBIRANISTES",
+   "votos": 1020392,
+   "escanos": 15
+  },
+  {
+   "codigo": "000032",
+   "siglas": "ECP-GUANYEM",
+   "nombre": "EN COMÚ PODEM - GUANYEM EL CANVI",
+   "votos": 615665,
+   "escanos": 7
+  },
+  {
+   "codigo": "000049",
+   "siglas": "JxCAT-JUNTS",
+   "nombre": "JUNTS PER CATALUNYA-JUNTS",
+   "votos": 500787,
+   "escanos": 7
+  },
+  {
+   "codigo": "000027",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 395884,
+   "escanos": 6
+  },
+  {
+   "codigo": "000033",
+   "siglas": "EH Bildu",
+   "nombre": "EUSKAL HERRIA BILDU",
+   "votos": 259647,
+   "escanos": 4
+  },
+  {
+   "codigo": "000075",
+   "siglas": "PODEMOS-EU-",
+   "nombre": "EN COMÚN-UNIDAS PODEMOS",
+   "votos": 238061,
+   "escanos": 2
+  },
+  {
+   "codigo": "000015",
+   "siglas": "CCa-PNC",
+   "nombre": "COALICION CANARIA-PARTIDO NACIONALISTA CANARIO",
+   "votos": 137664,
+   "escanos": 2
+  },
+  {
+   "codigo": "000052",
+   "siglas": "NA+",
+   "nombre": "NAVARRA SUMA",
+   "votos": 107619,
+   "escanos": 2
+  },
+  {
+   "codigo": "000020",
+   "siglas": "COMPROMÍS 2",
+   "nombre": "COMPROMÍS: BLOC-INICIATIVA-VERDSEQUO",
+   "votos": 173821,
+   "escanos": 1
+  },
+  {
+   "codigo": "000090",
+   "siglas": "PRC",
+   "nombre": "PARTIDO REGIONALISTA DE CANTABRIA",
+   "votos": 52266,
+   "escanos": 1
+  }
+ ],
+ "201911": [
+  {
+   "codigo": "000094",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 6792199,
+   "escanos": 120
+  },
+  {
+   "codigo": "000083",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 5047040,
+   "escanos": 89
+  },
+  {
+   "codigo": "000116",
+   "siglas": "VOX",
+   "nombre": "VOX",
+   "votos": 3656979,
+   "escanos": 52
+  },
+  {
+   "codigo": "000078",
+   "siglas": "PODEMOS-IU",
+   "nombre": "UNIDAS PODEMOS",
+   "votos": 2381960,
+   "escanos": 26
+  },
+  {
+   "codigo": "000031",
+   "siglas": "ERC-SOBIRANISTES",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA-SOBIRANISTES",
+   "votos": 874859,
+   "escanos": 13
+  },
+  {
+   "codigo": "000018",
+   "siglas": "Cs",
+   "nombre": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+   "votos": 1650318,
+   "escanos": 10
+  },
+  {
+   "codigo": "000041",
+   "siglas": "JxCAT-JUNTS",
+   "nombre": "JUNTS PER CATALUNYA-JUNTS",
+   "votos": 530225,
+   "escanos": 8
+  },
+  {
+   "codigo": "000028",
+   "siglas": "ECP-GUANYEM",
+   "nombre": "EN COMÚ PODEM-GUANYEM EL CANVI",
+   "votos": 549173,
+   "escanos": 7
+  },
+  {
+   "codigo": "000022",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 379002,
+   "escanos": 6
+  },
+  {
+   "codigo": "000029",
+   "siglas": "EH Bildu",
+   "nombre": "EUSKAL HERRIA BILDU",
+   "votos": 277621,
+   "escanos": 5
+  },
+  {
+   "codigo": "000046",
+   "siglas": "MÁS PAÍS-EQ",
+   "nombre": "MÁS PAÍS-EQUO",
+   "votos": 330345,
+   "escanos": 2
+  },
+  {
+   "codigo": "000020",
+   "siglas": "CUP-PR",
+   "nombre": "CANDIDATURA D'UNITAT POPULAR-PER LA RUPTURA",
+   "votos": 246971,
+   "escanos": 2
+  },
+  {
+   "codigo": "000074",
+   "siglas": "PODEMOS-EU",
+   "nombre": "EN COMÚN-UNIDAS PODEMOS",
+   "votos": 188231,
+   "escanos": 2
+  },
+  {
+   "codigo": "000013",
+   "siglas": "CCa-PNC-NC",
+   "nombre": "COALICIÓN CANARIA-NUEVA CANARIAS",
+   "votos": 124289,
+   "escanos": 2
+  },
+  {
+   "codigo": "000053",
+   "siglas": "NA+",
+   "nombre": "NAVARRA SUMA",
+   "votos": 99078,
+   "escanos": 2
+  },
+  {
+   "codigo": "000048",
+   "siglas": "MÉS COMPROM",
+   "nombre": "MÉS COMPROMÍS",
+   "votos": 176287,
+   "escanos": 1
+  },
+  {
+   "codigo": "000010",
+   "siglas": "BNG",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 120456,
+   "escanos": 1
+  },
+  {
+   "codigo": "000088",
+   "siglas": "PRC",
+   "nombre": "PARTIDO REGIONALISTA DE CANTABRIA",
+   "votos": 68830,
+   "escanos": 1
+  },
+  {
+   "codigo": "000108",
+   "siglas": "¡TERUEL EXI",
+   "nombre": "AGRUPACIÓN DE ELECTORES \"TERUEL EXISTE\"",
+   "votos": 19761,
+   "escanos": 1
+  }
+ ],
+ "202307": [
+  {
+   "codigo": "000005",
+   "siglas": "PP",
+   "nombre": "PARTIDO POPULAR",
+   "votos": 8160837,
+   "escanos": 137
+  },
+  {
+   "codigo": "000002",
+   "siglas": "PSOE",
+   "nombre": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+   "votos": 7821718,
+   "escanos": 121
+  },
+  {
+   "codigo": "000006",
+   "siglas": "VOX",
+   "nombre": "VOX",
+   "votos": 3057000,
+   "escanos": 33
+  },
+  {
+   "codigo": "000010",
+   "siglas": "SUMAR",
+   "nombre": "SUMAR",
+   "votos": 3044996,
+   "escanos": 31
+  },
+  {
+   "codigo": "000050",
+   "siglas": "ERC",
+   "nombre": "ESQUERRA REPUBLICANA DE CATALUNYA",
+   "votos": 466020,
+   "escanos": 7
+  },
+  {
+   "codigo": "000057",
+   "siglas": "JxCAT - JUNTS",
+   "nombre": "JUNTS PER CATALUNYA - JUNTS",
+   "votos": 395429,
+   "escanos": 7
+  },
+  {
+   "codigo": "000071",
+   "siglas": "EH Bildu",
+   "nombre": "EUSKAL HERRIA BILDU",
+   "votos": 335129,
+   "escanos": 6
+  },
+  {
+   "codigo": "000075",
+   "siglas": "EAJ-PNV",
+   "nombre": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+   "votos": 277289,
+   "escanos": 5
+  },
+  {
+   "codigo": "000065",
+   "siglas": "B.N.G.",
+   "nombre": "BLOQUE NACIONALISTA GALEGO",
+   "votos": 153995,
+   "escanos": 1
+  },
+  {
+   "codigo": "000031",
+   "siglas": "CCa",
+   "nombre": "COALICIÓN CANARIA",
+   "votos": 116363,
+   "escanos": 1
+  },
+  {
+   "codigo": "000074",
+   "siglas": "U.P.N.",
+   "nombre": "UNION DEL PUEBLO NAVARRO",
+   "votos": 52188,
+   "escanos": 1
+  }
+ ]
+}

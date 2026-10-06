@@ -78,6 +78,11 @@ export type ResumenPrograma = {
   /** Las medidas que el propio documento destaca o que más lo distinguen. */
   ideasClave: Propuesta[];
   temas: Partial<Record<TemaId, Propuesta[]>>;
+  /**
+   * Qué plantea el partido en cada tema, en una o dos frases fieles al documento y con su
+   * página. Va antes de las medidas en el programa detallado.
+   */
+  enfoques?: Partial<Record<TemaId, Propuesta>>;
   /** Aviso sobre el documento (por ejemplo, si es un manifiesto breve). */
   nota?: string;
 };

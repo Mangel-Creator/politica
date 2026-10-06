@@ -7,7 +7,7 @@ import { Muestra } from '@/components/marca-partido';
 import { PromesaYVoto } from '@/components/promesa-voto';
 import { ListaPropuestas } from '@/components/propuestas';
 import { Pantalla } from '@/components/pantalla';
-import { Bloque, Etiqueta, Ir, Nota, Pagina, Pulsable, Seccion, Segmentos } from '@/components/piezas';
+import { Bloque, Etiqueta, Fila, Ir, Nota, Pagina, Pulsable, Seccion, Segmentos } from '@/components/piezas';
 import { Sentidos } from '@/components/sentido';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
@@ -67,7 +67,8 @@ export default function FichaPartido() {
 
       {vista === 'programa' && <VistaPrograma p={p} resumen={resumenDe(p.id)} />}
       {vista === 'votos' && <VistaVotos p={p} />}
-      {vista === 'historia' && (historia ? <VistaHistoria h={historia} /> : <Nota>Sin historia todavía.</Nota>)}
+      {vista === 'historia' &&
+        (historia ? <VistaHistoria h={historia} id={p.id} /> : <Nota>Sin historia todavía.</Nota>)}
       {vista === 'datos' && <VistaDatos p={p} />}
     </Pantalla>
   );
@@ -118,6 +119,12 @@ function VistaPrograma({ p, resumen }: { p: Partido; resumen?: ResumenPrograma }
         hecho comprobado; cada punto lleva su página del PDF para leerlo entero.
         {resumen.nota ? `\n\n${resumen.nota}` : ''}
       </Nota>
+
+      <Fila
+        href={{ pathname: '/programa/[id]', params: { id: p.id } }}
+        titulo="Programa en detalle"
+        subtitulo="Todos los temas abiertos, con lo que plantea en cada uno"
+      />
 
       <Seccion titulo="Lo que más destaca">
         {resumen.ideasClave.map((idea, i) => (
@@ -244,9 +251,14 @@ function VistaVotos({ p }: { p: Partido }) {
   );
 }
 
-function VistaHistoria({ h }: { h: NonNullable<ReturnType<typeof historiaDe>> }) {
+function VistaHistoria({ h, id }: { h: NonNullable<ReturnType<typeof historiaDe>>; id: string }) {
   return (
     <View style={styles.vista}>
+      <Fila
+        href={{ pathname: '/historia/[id]', params: { id } }}
+        titulo="Historia completa"
+        subtitulo="Por etapas, con líderes, escaños desde 1977 y casos judiciales"
+      />
       <View style={styles.fundacion}>
         <Texto tipo="gigante">{h.fundacion}</Texto>
         <Texto>{h.origen}</Texto>

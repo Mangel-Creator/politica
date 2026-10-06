@@ -1,3 +1,4 @@
+import type { Href } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { Muestra } from '@/components/marca-partido';
@@ -16,7 +17,22 @@ export default function PantallaPartidos() {
     <Pantalla
       antetitulo="12 partidos · orden alfabético"
       titulo="Partidos"
-      entradilla="Las candidaturas que lograron escaño el 23J y Podemos, que se presentó dentro de Sumar. Programa, historia y datos de cada uno, con el mismo formato.">
+      entradilla="Las candidaturas que lograron escaño el 23J y Podemos, que se presentó dentro de Sumar. Mismo formato para todos.">
+      <View style={styles.apartados}>
+        <Apartado
+          href="/historia"
+          etiqueta="Desde 1879"
+          titulo="Historia"
+          texto="Etapas, líderes, escaños desde 1977 y casos judiciales de cada partido."
+        />
+        <Apartado
+          href="/programas"
+          etiqueta="Tema a tema"
+          titulo="Programas"
+          texto="Qué plantea cada uno y todas sus medidas, con la página del PDF."
+        />
+      </View>
+
       <View style={styles.rejilla}>
         {Partidos.map((p) => {
           const programa = p.programas.find((x) => x.eleccion === '29N 2026') ? '29N' : resumenDe(p.id) ? '23J' : null;
@@ -58,7 +74,31 @@ export default function PantallaPartidos() {
   );
 }
 
+/** Entrada grande a una sección, en negativo para que destaque sobre las fichas. */
+function Apartado({ href, etiqueta, titulo, texto }: { href: Href; etiqueta: string; titulo: string; texto: string }) {
+  const t = useTheme();
+  return (
+    <Ir href={href} style={[styles.apartado, { backgroundColor: t.tinta, borderColor: t.linea }]}>
+      <View style={styles.apartadoCabeza}>
+        <Etiqueta color="papel">{etiqueta}</Etiqueta>
+        <Texto tipo="titulo" color="papel">
+          →
+        </Texto>
+      </View>
+      <Texto tipo="titulo" color="papel">
+        {titulo}
+      </Texto>
+      <Texto tipo="pequeno" color="papel">
+        {texto}
+      </Texto>
+    </Ir>
+  );
+}
+
 const styles = StyleSheet.create({
+  apartados: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.two },
+  apartado: { flexGrow: 1, flexBasis: 150, borderWidth: Borde.grueso, padding: Spacing.three, gap: Spacing.two },
+  apartadoCabeza: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   rejilla: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.two },
   ficha: { flexGrow: 1, flexBasis: 150, borderWidth: Borde.grueso, padding: Spacing.three, gap: Spacing.one },
   cabeza: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: Spacing.two },

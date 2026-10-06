@@ -7,6 +7,9 @@ import { Resumenes } from '../programas';
 import { Temas } from '../temas';
 import { Precedentes } from '../precedentes';
 import { Historias } from '../historias';
+import { HistoriasDetalladas } from '../historias/index';
+import { Trayectorias } from '../trayectorias';
+import { GENERALES_HISTORICAS } from '../historia-detallada';
 import { Lecciones, Preguntas, urlArticulo } from '../aprende';
 import { Circunscripciones } from '../circunscripciones';
 import { Hechos, votacion } from '../hechos';
@@ -148,6 +151,88 @@ describe('historias', () => {
   it('hay una por partido y todas tienen fuente', () => {
     for (const p of Partidos) expect(Historias.find((h) => h.partidoId === p.id)).toBeDefined();
     for (const h of Historias) expect(h.fuentes.length).toBeGreaterThan(0);
+  });
+});
+
+describe('historias detalladas', () => {
+  it('hay una por partido, en el mismo orden', () => {
+    expect(HistoriasDetalladas.map((h) => h.partidoId)).toEqual(Partidos.map((p) => p.id));
+  });
+
+  it('todas tienen capítulos, líderes y fuentes válidas, con Infoelectoral entre ellas', () => {
+    for (const h of HistoriasDetalladas) {
+      expect(h.capitulos.length).toBeGreaterThan(2);
+      expect(h.lideres.length).toBeGreaterThan(0);
+      for (const c of h.capitulos) expect(c.parrafos.length).toBeGreaterThan(0);
+      for (const f of h.fuentes) {
+        expect(f.url).toMatch(/^https:\/\//);
+        expect(f.consultada).toMatch(FECHA);
+      }
+      expect(h.fuentes.some((f) => f.url.includes('infoelectoral.interior.gob.es'))).toBe(true);
+      const urls = h.fuentes.map((f) => f.url);
+      expect(new Set(urls).size).toBe(urls.length);
+    }
+  });
+
+  it('los líderes tienen años válidos y ordenados', () => {
+    for (const h of HistoriasDetalladas) {
+      for (const l of h.lideres) {
+        expect(l.desde).toMatch(/^\d{4}$/);
+        if (l.hasta) expect(l.hasta >= l.desde).toBe(true);
+      }
+    }
+  });
+
+  it('sin dobles espacios ni comillas rectas en el texto', () => {
+    for (const h of HistoriasDetalladas) {
+      const texto = [h.entradilla, h.notaTrayectoria ?? '', ...h.capitulos.flatMap((c) => [c.titulo, ...c.parrafos])];
+      for (const t of texto) {
+        expect(t).not.toMatch(/  /);
+        expect(t).not.toMatch(/"/);
+      }
+    }
+  });
+});
+
+describe('trayectorias', () => {
+  it('cada partido tiene trayectoria y ninguna elección pasa de 350 escaños', () => {
+    for (const p of Partidos) expect(Trayectorias[p.id]?.length).toBeGreaterThan(0);
+    const porEleccion = new Map<string, number>();
+    for (const t of Object.values(Trayectorias))
+      for (const tramo of t) {
+        expect(GENERALES_HISTORICAS).toContain(tramo.eleccion);
+        const n = tramo.candidaturas.reduce((s, c) => s + c.escanos, 0);
+        expect(n).toBeGreaterThan(0);
+        porEleccion.set(tramo.eleccion, (porEleccion.get(tramo.eleccion) ?? 0) + n);
+      }
+    for (const n of porEleccion.values()) expect(n).toBeLessThanOrEqual(350);
+  });
+
+  it('ninguna candidatura se asigna a dos partidos', () => {
+    const vistas = new Set<string>();
+    for (const t of Object.values(Trayectorias))
+      for (const tramo of t)
+        for (const c of tramo.candidaturas) {
+          const clave = tramo.eleccion + '|' + c.siglas + '|' + c.nombre;
+          expect(vistas.has(clave)).toBe(false);
+          vistas.add(clave);
+        }
+  });
+
+  it('una elección no aparece dos veces en el mismo partido', () => {
+    for (const t of Object.values(Trayectorias)) {
+      const elecciones = t.map((x) => x.eleccion);
+      expect(new Set(elecciones).size).toBe(elecciones.length);
+    }
+  });
+
+  it('los escaños de 2023 coinciden con los de la ficha del partido', () => {
+    for (const p of Partidos) {
+      const tramo = Trayectorias[p.id]?.find((x) => x.eleccion === '2023-07');
+      const n = tramo ? tramo.candidaturas.reduce((s, c) => s + c.escanos, 0) : 0;
+      if (p.id === 'podemos') expect(n).toBe(0);
+      else expect(n).toBe(p.escanos2023);
+    }
   });
 });
 

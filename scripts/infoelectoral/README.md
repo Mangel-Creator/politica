@@ -8,3 +8,11 @@ sale en este formato).
 
 Contrastado el 06/10/2026: los escaños del 23J de `src/data/partidos.ts` coinciden con este
 fichero.
+
+## Escaños históricos (1977–2023)
+
+`node historico.mjs` descarga los ficheros de totales de las 16 generales y escribe
+`historico.json` con las candidaturas nacionales que obtuvieron escaño (cada elección suma
+350). `node trayectorias.mjs` asigna esas candidaturas a cada partido de la app (o a su
+antecesor: AP antes del PP, CiU antes de Junts…) y genera `src/data/trayectorias.ts`. Si
+una candidatura se asignara a dos partidos, el script se detiene.
