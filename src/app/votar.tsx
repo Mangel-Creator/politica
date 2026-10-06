@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { Enlace, ListaFuentes } from '@/components/enlaces';
@@ -12,6 +13,11 @@ import { useTheme } from '@/hooks/use-theme';
 import { diaSemana, fechaLarga } from '@/services/fechas';
 
 const fecha = (id: string) => Calendario.find((f) => f.id === id)!;
+const ART_72 = { norma: 'LOREG', numero: '72' } as const;
+const ART_73 = { norma: 'LOREG', numero: '73' } as const;
+const ART_84 = { norma: 'LOREG', numero: '84' } as const;
+const ART_85 = { norma: 'LOREG', numero: '85' } as const;
+const ART_86 = { norma: 'LOREG', numero: '86' } as const;
 const ART_96 = { norma: 'LOREG', numero: '96' } as const;
 const ART_166 = { norma: 'LOREG', numero: '166' } as const;
 const ART_172 = { norma: 'LOREG', numero: '172' } as const;
@@ -19,6 +25,7 @@ const ART_172 = { norma: 'LOREG', numero: '172' } as const;
 export default function PantallaVotar() {
   const t = useTheme();
   const solicitud = fecha('solicitud-correo');
+  const envio = fecha('envio-correo');
   const deposito = fecha('deposito-correo');
   const votacion = fecha('votacion');
   const correos = FuentesOficiales.find((f) => f.url === Fuentes.correosVoto.url)!;
@@ -60,7 +67,8 @@ export default function PantallaVotar() {
           <Bloque discontinuo style={styles.mitad}>
             <Texto tipo="subtitulo">Nulo</Texto>
             <Texto tipo="pequeno">
-              Papeleta no oficial, tachada o con añadidos, o sobre con papeletas de candidaturas distintas. No cuenta.
+              Papeleta no oficial, tachada o con añadidos, papeleta sin sobre o sobre con papeletas de candidaturas
+              distintas. No cuenta.
             </Texto>
           </Bloque>
         </View>
@@ -73,13 +81,27 @@ export default function PantallaVotar() {
           <Plazo dia={deposito.inicio} texto="Último día para entregarlo en Correos" />
         </View>
         {!solicitud.confirmadaOficialmente && <Nota>Plazos pendientes de confirmar en el BOE.</Nota>}
-        <Texto>
-          Por internet necesitas certificado digital o DNI electrónico. Si la Oficina del Censo Electoral acepta tu
-          solicitud, te envía la documentación a la dirección que indiques y ya no puedes votar en la mesa.
-        </Texto>
+        <View style={styles.pasos}>
+          <Paso n={1} titulo="Pídelo">
+            En cualquier oficina de Correos, en persona y con el DNI, el pasaporte o el carnet de conducir originales
+            (fotocopias no). O por internet, con certificado digital o DNI electrónico. Si una enfermedad te impide ir,
+            puede pedirlo otra persona con autorización ante notario y certificado médico oficial.
+          </Paso>
+          <Paso n={2} titulo="Recíbelo">
+            Desde el {fechaLarga(envio.inicio)}, por correo certificado, en la dirección que indiques. Tienes que firmar
+            el recibo en persona.
+          </Paso>
+          <Paso n={3} titulo="Envíalo">
+            Mete la papeleta en el sobre de votación y ciérralo. Ese sobre y el certificado van dentro del sobre
+            dirigido a la mesa, que se manda por correo certificado desde Correos. No necesita sello.
+          </Paso>
+        </View>
+        <Texto>Una vez pedido el voto por correo, ya no puedes votar en persona en la mesa.</Texto>
         <Enlace href={correos.url} fuerte>
           {correos.nombre}
         </Enlace>
+        <Enlace href={urlArticulo(ART_72)}>{nombreArticulo(ART_72)}</Enlace>
+        <Enlace href={urlArticulo(ART_73)}>{nombreArticulo(ART_73)}</Enlace>
         <ListaFuentes fuentes={[...solicitud.fuentes, Fuentes.correosVoto]} />
       </Seccion>
 
@@ -88,14 +110,42 @@ export default function PantallaVotar() {
           <Texto tipo="titulo" color="papel">
             {diaSemana(votacion.inicio)} {fechaLarga(votacion.inicio)}
           </Texto>
-          <Texto tipo="pequeno" color="papel">
-            Dónde te toca y qué documento llevar: se añadirá cuando lo publiquen los organismos oficiales para estas
-            elecciones. Mientras, la referencia es la Oficina del Censo Electoral.
+          <Texto tipo="subtitulo" color="papel">
+            De 9:00 a 20:00
           </Texto>
         </Bloque>
+        <View style={styles.pasos}>
+          <Paso n={1} titulo="Lleva tu documento">
+            DNI, pasaporte o carnet de conducir: cualquiera de los tres, con tu foto.
+          </Paso>
+          <Paso n={2} titulo="Ve a tu mesa">
+            Solo puedes votar en la mesa que te corresponde. Dónde está te lo dice la Oficina del Censo Electoral.
+          </Paso>
+          <Paso n={3} titulo="Vota">
+            Si quieres, pasa por la cabina para elegir y meter las papeletas en los sobres sin que nadie te vea. Di tu
+            nombre y apellidos a la mesa y da los sobres cerrados al presidente. Cuando diga «Vota», te los devuelve y
+            tú mismo los metes en la urna.
+          </Paso>
+        </View>
         <Enlace href={censo.url}>{censo.nombre}</Enlace>
+        <Enlace href={urlArticulo(ART_84)}>{nombreArticulo(ART_84)}</Enlace>
+        <Enlace href={urlArticulo(ART_85)}>{nombreArticulo(ART_85)}</Enlace>
+        <Enlace href={urlArticulo(ART_86)}>{nombreArticulo(ART_86)}</Enlace>
       </Seccion>
     </Pantalla>
+  );
+}
+
+function Paso({ n, titulo, children }: { n: number; titulo: string; children: ReactNode }) {
+  const t = useTheme();
+  return (
+    <View style={[styles.paso, { borderBottomColor: t.lineaSuave }]}>
+      <Texto tipo="dato">{n}</Texto>
+      <View style={styles.flex}>
+        <Texto tipo="cuerpoFuerte">{titulo}</Texto>
+        <Texto tipo="pequeno">{children}</Texto>
+      </View>
+    </View>
   );
 }
 
@@ -125,6 +175,8 @@ const styles = StyleSheet.create({
   },
   mitad: { flexGrow: 1, flexBasis: 160 },
   plazos: { gap: Spacing.two },
+  pasos: { gap: Spacing.two },
+  paso: { flexDirection: 'row', gap: Spacing.three, paddingBottom: Spacing.two, borderBottomWidth: Borde.fino },
   plazo: {
     flexDirection: 'row',
     alignItems: 'center',

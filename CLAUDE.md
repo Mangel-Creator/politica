@@ -72,7 +72,8 @@ qué han hecho, y cómo votar. En español de España.
   (`.github/workflows/web.yml`): publica con cada push a main y cada hora con noticias nuevas
   (`noticias.json`). La app recarga noticias cada 15 min (`useCadaRato`) y la web se recarga
   sola si cambia `version.json`. Las rutas `[id]` necesitan `generateStaticParams`.
-- Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
+- Servicios con tests: D'Hondt (`dhondt.ts`, que reproduce los 350 escaños oficiales del 23J provincia a
+  provincia), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).

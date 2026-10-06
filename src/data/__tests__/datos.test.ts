@@ -10,7 +10,7 @@ import { Historias } from '../historias';
 import { HistoriasDetalladas } from '../historias/index';
 import { Trayectorias } from '../trayectorias';
 import { GENERALES_HISTORICAS } from '../historia-detallada';
-import { Lecciones, Preguntas, urlArticulo } from '../aprende';
+import { Glosario, Lecciones, Preguntas, urlArticulo } from '../aprende';
 import { Circunscripciones } from '../circunscripciones';
 import { Hechos, votacion } from '../hechos';
 import { Votaciones } from '../votaciones';
@@ -265,6 +265,7 @@ describe('aprende', () => {
     const citados = [
       ...Lecciones.flatMap((l) => l.tarjetas.map((t) => t.articulo)),
       ...Preguntas.map((p) => p.articulo),
+      ...Glosario.map((g) => g.articulo),
     ];
     citados.forEach((a) => expect(urlArticulo(a)).toContain('#'));
   });
