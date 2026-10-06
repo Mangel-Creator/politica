@@ -5,10 +5,11 @@ import { Pantalla } from '@/components/pantalla';
 import { Etiqueta, Nota } from '@/components/piezas';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
-import { Calendario } from '@/data/calendario';
+import { Calendario, DespuesDeVotar } from '@/data/calendario';
 import { useTheme } from '@/hooks/use-theme';
 import { diasEntre, hoyISO, rango } from '@/services/fechas';
 
+const FECHAS = [...Calendario, ...DespuesDeVotar];
 const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 
 export default function PantallaCalendario() {
@@ -18,14 +19,15 @@ export default function PantallaCalendario() {
   return (
     <Pantalla atras antetitulo="Proceso electoral del 29N" titulo="Calendario">
       <Nota>
-        Las fechas con borde a rayas vienen de medios y se contrastarán con el decreto de convocatoria del BOE. Si no
-        coinciden, manda el BOE.
+        {FECHAS.every((f) => f.confirmadaOficialmente)
+          ? 'Fechas contrastadas el 06/10/2026 con el decreto de convocatoria del BOE, la ley electoral (LOREG) y la nota oficial de Correos.'
+          : 'Las fechas con borde a rayas vienen de medios y se contrastarán con fuentes oficiales. Si no coinciden, manda el BOE.'}
       </Nota>
       <View>
-        {Calendario.map((f, i) => {
+        {FECHAS.map((f, i) => {
           const pasada = (f.fin ?? f.inicio) < hoy;
           const enCurso = f.inicio <= hoy && (f.fin ?? f.inicio) >= hoy;
-          const ultima = i === Calendario.length - 1;
+          const ultima = i === FECHAS.length - 1;
           return (
             <View key={f.id} style={styles.fila}>
               <View style={styles.dia}>

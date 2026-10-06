@@ -8,6 +8,7 @@ import { Temas } from '../temas';
 import { Precedentes } from '../precedentes';
 import { Historias } from '../historias';
 import { Lecciones, Preguntas, urlArticulo } from '../aprende';
+import { Circunscripciones } from '../circunscripciones';
 import { Hechos, votacion } from '../hechos';
 import { Votaciones } from '../votaciones';
 
@@ -204,6 +205,16 @@ describe('promesas y hechos', () => {
         expect(p.pagina).toBeGreaterThan(0);
         expect(p.pagina).toBeLessThanOrEqual(pdf!.paginas);
       }),
+    );
+  });
+});
+
+describe('circunscripciones del 29N', () => {
+  it('reparten 350 diputados entre 52 circunscripciones, como manda la LOREG', () => {
+    expect(Circunscripciones).toHaveLength(52);
+    expect(Circunscripciones.reduce((s, c) => s + c.diputados, 0)).toBe(350);
+    Circunscripciones.forEach((c) =>
+      expect(c.diputados).toBeGreaterThanOrEqual(['Ceuta', 'Melilla'].includes(c.nombre) ? 1 : 2),
     );
   });
 });

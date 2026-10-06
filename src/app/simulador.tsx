@@ -3,12 +3,13 @@ import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
 
 import { Enlace } from '@/components/enlaces';
 import { Pantalla } from '@/components/pantalla';
-import { Bloque, Etiqueta, Nota, Pulsable, Seccion } from '@/components/piezas';
+import { Bloque, Chip, Etiqueta, Nota, Pulsable, Seccion } from '@/components/piezas';
 import { Texto } from '@/components/texto';
 import { Borde, Familias, Spacing } from '@/constants/theme';
 import { nombreArticulo, urlArticulo } from '@/data/aprende';
 import { useTheme } from '@/hooks/use-theme';
 import { dhondt } from '@/services/dhondt';
+import { Circunscripciones, FuenteCircunscripciones } from '@/data/circunscripciones';
 
 /** Ejemplo del artículo 163 de la LOREG. */
 const EJEMPLO = [
@@ -19,6 +20,7 @@ const EJEMPLO = [
   { id: 'E', votos: 40000 },
   { id: 'F', votos: 32000 },
 ];
+const MAX_ESCANOS = Math.max(...Circunscripciones.map((c) => c.diputados));
 const ART_163 = { norma: 'LOREG', numero: '163' } as const;
 const fmt = (n: number) => Math.round(n).toLocaleString('es-ES');
 
@@ -27,6 +29,7 @@ export default function Simulador() {
   const [votos, setVotos] = useState(EJEMPLO);
   const [escanos, setEscanos] = useState(8);
   const [blancos, setBlancos] = useState(0);
+  const [provincia, setProvincia] = useState<string | null>(null);
   const r = dhondt(votos, escanos, { blancos });
   const validos = votos.reduce((s, c) => s + c.votos, 0) + blancos;
   const columnas = Math.min(escanos, 8);
@@ -42,15 +45,50 @@ export default function Simulador() {
       antetitulo="Simulador · regla D’Hondt"
       titulo="Reparto de escaños"
       entradilla="Así se reparten los diputados de una provincia. Cambia los votos o los escaños y mira qué pasa: en provincias con pocos escaños, las listas pequeñas se quedan fuera.">
+      <View style={styles.provincias}>
+        <Etiqueta>Escaños de tu provincia el 29N</Etiqueta>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.carril}>
+          {Circunscripciones.map((c) => (
+            <Chip
+              key={c.nombre}
+              texto={`${c.nombre} ${c.diputados}`}
+              activo={c.nombre === provincia}
+              onPress={() => {
+                setProvincia(c.nombre);
+                setEscanos(c.diputados);
+              }}
+            />
+          ))}
+        </ScrollView>
+        <Texto tipo="pequeno" color="gris">
+          {provincia
+            ? `${provincia} elige ${escanos} ${escanos === 1 ? 'diputado' : 'diputados'} el 29N, según el decreto de convocatoria.`
+            : 'Toca una provincia o ajusta los escaños a mano.'}
+        </Texto>
+        <Enlace href={FuenteCircunscripciones.url}>BOE: anexo del Real Decreto 806/2026</Enlace>
+      </View>
+
       <View style={styles.controles}>
         <View style={styles.flex}>
           <Etiqueta>Escaños de la provincia</Etiqueta>
           <View style={styles.stepper}>
-            <Paso texto="−" onPress={() => setEscanos(Math.max(1, escanos - 1))} />
+            <Paso
+              texto="−"
+              onPress={() => {
+                setProvincia(null);
+                setEscanos(Math.max(1, escanos - 1));
+              }}
+            />
             <View style={[styles.stepperValor, { borderColor: t.linea }]}>
               <Texto tipo="dato">{escanos}</Texto>
             </View>
-            <Paso texto="+" onPress={() => setEscanos(Math.min(37, escanos + 1))} />
+            <Paso
+              texto="+"
+              onPress={() => {
+                setProvincia(null);
+                setEscanos(Math.min(MAX_ESCANOS, escanos + 1));
+              }}
+            />
           </View>
         </View>
         <View style={styles.flex}>
@@ -132,6 +170,7 @@ export default function Simulador() {
         onPress={() => {
           setVotos(EJEMPLO);
           setEscanos(8);
+          setProvincia(null);
           setBlancos(0);
         }}
         accessibilityRole="button"
@@ -218,6 +257,8 @@ function Celda({
 
 const styles = StyleSheet.create({
   flex: { flex: 1, gap: Spacing.two },
+  provincias: { gap: Spacing.two },
+  carril: { gap: Spacing.two, paddingRight: Spacing.three },
   controles: { flexDirection: 'row', gap: Spacing.three, flexWrap: 'wrap' },
   stepper: { flexDirection: 'row' },
   stepperValor: {

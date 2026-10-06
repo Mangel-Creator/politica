@@ -1,24 +1,35 @@
 import type { Fuente } from './tipos';
 
+/** Un artículo de la LOREG en el texto consolidado del BOE (las anclas usan el número en letra). */
+export function articuloLOREG(numero: number, ancla: string): Fuente {
+  return {
+    titulo: `BOE: Ley Orgánica del Régimen Electoral General, artículo ${numero}`,
+    url: `https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672#${ancla}`,
+    consultada: '2026-10-06',
+    oficial: true,
+  };
+}
+
 /** Fuentes usadas en más de un sitio de la app. */
 export const Fuentes = {
+  boeConvocatoria: {
+    titulo:
+      'BOE: Real Decreto 806/2026, de 5 de octubre, de disolución del Congreso y del Senado y de convocatoria de elecciones',
+    url: 'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20742',
+    consultada: '2026-10-06',
+    oficial: true,
+  },
+  correosNota29N: {
+    titulo: 'Correos: Ya se puede solicitar el voto por correo para las Elecciones Generales del 29 de noviembre',
+    url: 'https://www.correos.com/sala-prensa/ya-se-puede-solicitar-el-voto-por-correo-para-las-elecciones-generales-del-29-de-noviembre/',
+    consultada: '2026-10-06',
+    oficial: true,
+  },
   moncloaConvocatoria: {
     titulo: 'La Moncloa: Pedro Sánchez anuncia la convocatoria de elecciones generales para el 29 de noviembre',
     url: 'https://www.lamoncloa.gob.es/presidente/actividades/Paginas/2026/051026-sanchez-convocatoria-elecciones.aspx',
     consultada: '2026-10-05',
     oficial: true,
-  },
-  rtvcCalendario: {
-    titulo: 'RTVC: Calendario elecciones generales 2026, fechas clave hasta el 29 de noviembre',
-    url: 'https://rtvc.es/calendario-elecciones-generales-2026-fechas-clave-hasta-29-de-noviembre/',
-    consultada: '2026-10-05',
-    oficial: false,
-  },
-  copeCalendario: {
-    titulo: 'COPE: Del decreto de convocatoria a la jornada electoral del 29 de noviembre, todas las fechas clave',
-    url: 'https://www.cope.es/actualidad/espana/noticias/decreto-convocatoria-elecciones-jornada-electoral-proximo-29-noviembre-son-todas-fechas-clave-anuncio-sanchez-20261005_3449523.html',
-    consultada: '2026-10-05',
-    oficial: false,
   },
   wikipedia23J: {
     titulo: 'Wikipedia: Elecciones generales de España de 2023 (tabla de resultados)',

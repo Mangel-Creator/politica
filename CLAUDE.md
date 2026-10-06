@@ -58,10 +58,10 @@ qué han hecho, y cómo votar. En español de España.
   `leccion/[id]`, `test`, `simulador`, `glosario`, `calendario`, `votar`,
   `fuentes`, `noticias`.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
-  lecciones y test (comprobados contra el texto del BOE), calendario.
+  lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
+  Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto.
 - Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
-  - Contrastar el calendario con el decreto del BOE (previsto el 06/10/2026).
   - Contrastar los escaños de 2023 con Infoelectoral (ahora solo vienen de Wikipedia).
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
