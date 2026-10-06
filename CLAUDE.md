@@ -72,6 +72,13 @@ qué han hecho, y cómo votar. En español de España.
   (`.github/workflows/web.yml`): publica con cada push a main y cada hora con noticias nuevas
   (`noticias.json`). La app recarga noticias cada 15 min (`useCadaRato`) y la web se recarga
   sola si cambia `version.json`. Las rutas `[id]` necesitan `generateStaticParams`.
+- **App de Android** (APK) con EAS Build, cuenta de Expo `mangel_creator` (ya con sesión en este
+  equipo): `npx eas-cli@latest build -p android --profile preview` (perfiles en `eas.json`). Los
+  cambios de código y datos llegan a la app instalada con EAS Update, sin reinstalar:
+  `npx eas-cli@latest update --channel preview --message "..."`. Hace falta un build nuevo solo si
+  cambia algo nativo (librería con código nativo, icono, splash, permisos, `version` de app.json).
+- Icono, adaptativo de Android, splash (claro y oscuro) y favicon salen de
+  `scripts/iconos/generar.mjs` (papeleta entrando en la urna, tinta sobre papel).
 - Servicios con tests: D'Hondt (`dhondt.ts`, que reproduce los 350 escaños oficiales del 23J provincia a
   provincia), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
