@@ -55,7 +55,13 @@ export default function PantallaCalendario() {
                   },
                 ]}>
                 <Etiqueta>
-                  {enCurso ? (f.fin ? 'En curso · ' : 'Hoy · ') : pasada ? 'Pasado · ' : `En ${dias(diasEntre(hoy, f.inicio))} · `}
+                  {enCurso
+                    ? f.fin
+                      ? 'En curso · '
+                      : 'Hoy · '
+                    : pasada
+                      ? 'Pasado · '
+                      : `En ${dias(diasEntre(hoy, f.inicio))} · `}
                   {f.confirmadaOficialmente ? 'confirmada' : 'pendiente del BOE'}
                 </Etiqueta>
                 <Texto tipo="subtitulo" color={pasada ? 'gris' : 'tinta'}>
