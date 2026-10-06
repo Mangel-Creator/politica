@@ -105,7 +105,7 @@ describe('resúmenes de programas', () => {
       expect(partido).toBeDefined();
       const pdf = partido!.programas.find((p) => p.eleccion === r.eleccion);
       expect(pdf).toBeDefined();
-      const todas = [...r.ideasClave, ...Object.values(r.temas).flat()];
+      const todas = [...r.ideasClave, ...Object.values(r.temas).flat(), ...Object.values(r.enfoques ?? {})];
       for (const m of todas) {
         expect(m!.pagina).toBeGreaterThanOrEqual(1);
         expect(m!.pagina).toBeLessThanOrEqual(pdf!.paginas);
@@ -118,6 +118,20 @@ describe('resúmenes de programas', () => {
   it('solo usan temas definidos', () => {
     const ids = new Set(Temas.map((t) => t.id));
     for (const r of Resumenes) for (const t of Object.keys(r.temas)) expect(ids.has(t as never)).toBe(true);
+  });
+
+  it('cada enfoque es de un tema con medidas', () => {
+    for (const r of Resumenes)
+      for (const t of Object.keys(r.enfoques ?? {}))
+        expect(r.temas[t as keyof typeof r.temas]?.length).toBeGreaterThan(0);
+  });
+
+  it('no repiten medida dentro de un mismo tema', () => {
+    for (const r of Resumenes)
+      for (const lista of Object.values(r.temas)) {
+        const textos = lista!.map((m) => m.texto);
+        expect(new Set(textos).size).toBe(textos.length);
+      }
   });
 
   it('cada resumen tiene entre 3 y 5 ideas clave', () => {
