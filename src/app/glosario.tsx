@@ -7,7 +7,11 @@ import { Borde, Familias, Spacing } from '@/constants/theme';
 import { Glosario } from '@/data/aprende';
 import { useTheme } from '@/hooks/use-theme';
 
-const normal = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+const normal = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 
 export default function PantallaGlosario() {
   const t = useTheme();

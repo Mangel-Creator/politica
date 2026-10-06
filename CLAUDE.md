@@ -38,8 +38,12 @@ qué han hecho, y cómo votar. En español de España.
    fuentes de distinto tipo y, si existen, de signo contrario; la app nunca da veredicto.
    En noticias, solo titular y enlace, medios en orden alfabético, sin etiquetas ideológicas,
    y no se enseña nada si se leen menos de `MINIMO_MEDIOS` medios.
-7. Casos judiciales con su desenlace completo (recursos, indultos, anulaciones).
-8. Si dos fuentes no coinciden, manda la oficial; si no hay oficial, no se publica el dato
+7. **Promesas y hechos** (`src/data/hechos.ts`): promesa con página del PDF al lado del voto
+   oficial de cada partido (`src/data/votaciones.ts`, generado con `scripts/congreso`, ver su
+   README). Nunca la etiqueta "incumplió": solo promesa, voto y qué significaba votar sí.
+   El desenlace (ley, decreto) se contrasta en el BOE.
+8. Casos judiciales con su desenlace completo (recursos, indultos, anulaciones).
+9. Si dos fuentes no coinciden, manda la oficial; si no hay oficial, no se publica el dato
    y se avisa al usuario.
 
 ## Estado (06/10/2026)
@@ -48,8 +52,9 @@ qué han hecho, y cómo votar. En español de España.
   rectas, tipografía Archivo. Piezas comunes en `src/components/` (`Texto`, `piezas.tsx`,
   `Pantalla`, `Hemiciclo`…). Para enlazar a otra pantalla usa `Ir`, no `Link asChild`
   con estilos en lista (falla en la web).
-- Barra de abajo (`src/app/(tabs)`): Hoy, Partidos, Comparar, ¿Funcionó?, Aprende. Lo
-  secundario va en pantallas de la pila: `partido/[id]`, `precedente/[id]`,
+- Barra de abajo (`src/app/(tabs)`): Hoy, Partidos, Comparar, Hechos (promesas y votos +
+  ¿Funcionó?), Aprende. Lo secundario va en pantallas de la pila: `partido/[id]`, `hecho/[id]`,
+  `precedente/[id]`,
   `leccion/[id]`, `test`, `simulador`, `glosario`, `calendario`, `votar`,
   `fuentes`, `noticias`.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
@@ -60,7 +65,6 @@ qué han hecho, y cómo votar. En español de España.
   - Contrastar los escaños de 2023 con Infoelectoral (ahora solo vienen de Wikipedia).
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
-  - "Promesas y hechos" con votaciones del Congreso.
   - Icono y pantalla de carga propios (ahora son los de Expo).
 
 ## Normas de trabajo

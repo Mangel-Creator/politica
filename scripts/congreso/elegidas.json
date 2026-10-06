@@ -1,0 +1,98 @@
+[
+ {
+  "id": "jornada-pnl",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion023/20240222/Votacion002/VOT_20240222110733.json"
+ },
+ {
+  "id": "jornada-devolucion",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion130/20250910/Votacion010/VOT_20250910213544.json"
+ },
+ {
+  "id": "jornada-35h",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion137/20251014/Votacion001/VOT_20251014202757.json"
+ },
+ {
+  "id": "art49-toma",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion016/20240116/Votacion001/VOT_20240116165744.json"
+ },
+ {
+  "id": "art49-lectura-unica",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion016/20240116/Votacion002/VOT_20240116165746.json"
+ },
+ {
+  "id": "okupa-junts",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion099/20250318/Votacion001/VOT_20250318201321.json"
+ },
+ {
+  "id": "okupa-pp",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion179/20260519/Votacion001/VOT_20260519203502.json"
+ },
+ {
+  "id": "cgpj-vox",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion024/20240227/Votacion002/VOT_20240227205808.json"
+ },
+ {
+  "id": "cgpj-pacto-toma",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion053/20240704/Votacion001/VOT_20240704135014.json"
+ },
+ {
+  "id": "cgpj-pacto-final",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion056/20240723/Votacion065/VOT_20240723221737.json"
+ },
+ {
+  "id": "cgpj-pp",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion196/20260910/Votacion015/VOT_20260910180649.json"
+ },
+ {
+  "id": "regularizacion-toma",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion034/20240409/Votacion001/VOT_20240409210631.json"
+ },
+ {
+  "id": "regularizacion-totalidad-vox",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion046/20240613/Votacion021/VOT_20240613125233.json"
+ },
+ {
+  "id": "regularizacion-vox",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion131/20250916/Votacion001/VOT_20250916211204.json"
+ },
+ {
+  "id": "irpf-pnl",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion034/20240409/Votacion012/VOT_20240409210642.json"
+ },
+ {
+  "id": "ap9-toma",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion044/20240611/Votacion001/VOT_20240611203611.json"
+ },
+ {
+  "id": "ap9-final",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion191/20260625/Votacion024/VOT_20260625150821.json"
+ },
+ {
+  "id": "ap9-senado",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion193/20260723/Votacion005/VOT_20260723211936.json"
+ },
+ {
+  "id": "gravamen-energetico",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion089/20250122/Votacion002/VOT_20250122154427.json"
+ },
+ {
+  "id": "pensiones-rdl-9-2024",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion089/20250122/Votacion001/VOT_20250122154425.json"
+ },
+ {
+  "id": "pensiones-rdl-1-2025",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion091/20250212/Votacion012/VOT_20250212154047.json"
+ },
+ {
+  "id": "pensiones-rdl-3-2026",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion164/20260226/Votacion023/VOT_20260226153430.json"
+ },
+ {
+  "id": "menores-ley",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion056/20240723/Votacion063/VOT_20240723221735.json"
+ },
+ {
+  "id": "menores-rdl-2-2025",
+  "json": "/webpublica/opendata/votaciones/Leg15/Sesion106/20250410/Votacion015/VOT_20250410155154.json"
+ }
+]

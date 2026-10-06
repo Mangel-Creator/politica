@@ -32,9 +32,9 @@ export default function AppTabs() {
         <NativeTabs.Trigger.Icon sf="rectangle.split.2x1" md="compare_arrows" />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="funciono">
-        <NativeTabs.Trigger.Label>¿Funcionó?</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon sf="clock.arrow.circlepath" md="history" />
+      <NativeTabs.Trigger name="hechos">
+        <NativeTabs.Trigger.Label>Hechos</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf={{ default: 'checkmark.seal', selected: 'checkmark.seal.fill' }} md="fact_check" />
       </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="aprende">

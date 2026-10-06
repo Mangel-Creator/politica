@@ -10,7 +10,7 @@ const PESTANAS = [
   { name: 'index', href: '/', texto: 'Hoy', simbolo: '◉' },
   { name: 'partidos', href: '/partidos', texto: 'Partidos', simbolo: '▦' },
   { name: 'comparar', href: '/comparar', texto: 'Comparar', simbolo: '⇆' },
-  { name: 'funciono', href: '/funciono', texto: '¿Funcionó?', simbolo: '↺' },
+  { name: 'hechos', href: '/hechos', texto: 'Hechos', simbolo: '✓' },
   { name: 'aprende', href: '/aprende', texto: 'Aprende', simbolo: '✎' },
 ] as const;
 

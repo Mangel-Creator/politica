@@ -1,23 +1,24 @@
 import { StyleSheet, View } from 'react-native';
 
-import { MarcaPartido } from '@/components/marca-partido';
-import { Pantalla } from '@/components/pantalla';
-import { Etiqueta, Ir, Nota } from '@/components/piezas';
-import { Sentidos } from '@/components/sentido';
-import { Texto } from '@/components/texto';
+import { MarcaPartido } from './marca-partido';
+import { Etiqueta, Ir, Nota } from './piezas';
+import { Sentidos } from './sentido';
+import { Texto } from './texto';
 import { Borde, Spacing } from '@/constants/theme';
 import { Precedentes } from '@/data/precedentes';
 import { buscarTema } from '@/data/temas';
 import { useTheme } from '@/hooks/use-theme';
 
-export default function Funciono() {
+/** Lista de "¿Funcionó?": ideas ya aplicadas y quién las propone. */
+export function ListaPrecedentes() {
   const t = useTheme();
 
   return (
-    <Pantalla
-      antetitulo={`${Precedentes.length} ideas ya aplicadas`}
-      titulo="¿Funcionó?"
-      entradilla="Propuestas de hoy que ya se probaron aquí o fuera. Qué pasó, según estudios, organismos y verificadores de distinto tipo. La app no da veredicto: enseña quién dice qué.">
+    <>
+      <Texto color="gris">
+        Propuestas de hoy que ya se probaron aquí o fuera. Qué pasó, según estudios, organismos y verificadores de
+        distinto tipo. La app no da veredicto: enseña quién dice qué.
+      </Texto>
       <View style={styles.lista}>
         {Precedentes.map((pr, i) => {
           const tema = buscarTema(pr.temaId);
@@ -60,7 +61,7 @@ export default function Funciono() {
         ▲ lo propone · ▼ lo rechaza · ◆ con matices, según el programa de cada partido en el 23J (con su página dentro
         de cada ficha).
       </Nota>
-    </Pantalla>
+    </>
   );
 }
 

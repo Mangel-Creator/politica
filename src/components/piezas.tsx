@@ -156,7 +156,7 @@ export function Segmentos<T extends string>({
                 borderLeftWidth: i ? Borde.grueso : 0,
               },
             ]}>
-            <Texto tipo="etiqueta" color={activo ? 'papel' : 'tinta'} numberOfLines={1}>
+            <Texto tipo="etiqueta" color={activo ? 'papel' : 'tinta'} numberOfLines={1} style={styles.segmentoTexto}>
               {o.texto}
             </Texto>
           </Pulsable>
@@ -253,6 +253,7 @@ const styles = StyleSheet.create({
     paddingVertical: Spacing.two,
   },
   segmentos: { flexDirection: 'row', borderWidth: Borde.grueso },
+  segmentoTexto: { letterSpacing: 0.6 },
   segmento: {
     flex: 1,
     alignItems: 'center',

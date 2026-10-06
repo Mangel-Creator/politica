@@ -4,12 +4,14 @@ import { StyleSheet, View } from 'react-native';
 
 import { Enlace, ListaFuentes } from '@/components/enlaces';
 import { Muestra } from '@/components/marca-partido';
+import { PromesaYVoto } from '@/components/promesa-voto';
 import { ListaPropuestas } from '@/components/propuestas';
 import { Pantalla } from '@/components/pantalla';
 import { Bloque, Etiqueta, Ir, Nota, Pagina, Pulsable, Seccion, Segmentos } from '@/components/piezas';
 import { Sentidos } from '@/components/sentido';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
+import { Hechos } from '@/data/hechos';
 import { historiaDe, type Hito } from '@/data/historias';
 import { buscarPartido, FuentesEscanos2023 } from '@/data/partidos';
 import { Precedentes } from '@/data/precedentes';
@@ -19,7 +21,7 @@ import type { Partido, ResumenPrograma } from '@/data/tipos';
 import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
 
-type Vista = 'programa' | 'historia' | 'datos';
+type Vista = 'programa' | 'votos' | 'historia' | 'datos';
 
 export default function FichaPartido() {
   const { id, vista: vistaInicial } = useLocalSearchParams<{ id: string; vista?: Vista }>();
@@ -55,6 +57,7 @@ export default function FichaPartido() {
       <Segmentos<Vista>
         opciones={[
           { id: 'programa', texto: 'Programa' },
+          { id: 'votos', texto: 'Votos' },
           { id: 'historia', texto: 'Historia' },
           { id: 'datos', texto: 'Datos' },
         ]}
@@ -63,6 +66,7 @@ export default function FichaPartido() {
       />
 
       {vista === 'programa' && <VistaPrograma p={p} resumen={resumenDe(p.id)} />}
+      {vista === 'votos' && <VistaVotos p={p} />}
       {vista === 'historia' && (historia ? <VistaHistoria h={historia} /> : <Nota>Sin historia todavía.</Nota>)}
       {vista === 'datos' && <VistaDatos p={p} />}
     </Pantalla>
@@ -209,6 +213,33 @@ function Cronologia({ hitos }: { hitos: Hito[] }) {
           <Texto style={[styles.flex, styles.hitoTexto]}>{h.texto}</Texto>
         </View>
       ))}
+    </View>
+  );
+}
+
+function VistaVotos({ p }: { p: Partido }) {
+  const conPromesa = Hechos.filter((h) => h.promesas.some((x) => x.partidoId === p.id));
+  const resto = Hechos.filter((h) => !conPromesa.includes(h));
+  return (
+    <View style={styles.vista}>
+      <Texto color="gris">
+        {p.programas.length
+          ? `Lo que ${p.siglas} llevaba en su programa del 23J y lo que votó en el Pleno del Congreso.`
+          : `${p.siglas} no tiene programa del 23J en la app: aquí están sus votos en el Pleno del Congreso.`}{' '}
+        Los números son cada votación, en orden; dentro de cada tema se explica qué significaba votar sí.
+      </Texto>
+      {conPromesa.length > 0 && (
+        <Seccion titulo={`Con promesa en su programa · ${conPromesa.length}`}>
+          {conPromesa.map((h) => (
+            <PromesaYVoto key={h.id} hecho={h} partidoId={p.id} conTitulo />
+          ))}
+        </Seccion>
+      )}
+      <Seccion titulo={`Otros temas que votó · ${resto.length}`}>
+        {resto.map((h) => (
+          <PromesaYVoto key={h.id} hecho={h} partidoId={p.id} conTitulo />
+        ))}
+      </Seccion>
     </View>
   );
 }

@@ -8,6 +8,8 @@ import { Temas } from '../temas';
 import { Precedentes } from '../precedentes';
 import { Historias } from '../historias';
 import { Lecciones, Preguntas, urlArticulo } from '../aprende';
+import { Hechos, votacion } from '../hechos';
+import { Votaciones } from '../votaciones';
 
 const FECHA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -162,5 +164,46 @@ describe('aprende', () => {
       expect(p.opciones[p.correcta]).toBeDefined();
       expect(Lecciones.some((l) => l.id === p.leccionId)).toBe(true);
     });
+  });
+});
+
+describe('promesas y hechos', () => {
+  const pdfDe = (partidoId: string) =>
+    Partidos.find((p) => p.id === partidoId)?.programas.find((x) => x.eleccion === '23J 2023');
+
+  it('los votos por partido suman los totales oficiales', () => {
+    Object.values(Votaciones).forEach((v) => {
+      const suma = (k: 'si' | 'no' | 'abstencion' | 'noVota') => v.porPartido.reduce((s, p) => s + p[k], 0);
+      expect(suma('si')).toBe(v.totales.si);
+      expect(suma('no')).toBe(v.totales.no);
+      expect(suma('abstencion')).toBe(v.totales.abstencion);
+      expect(suma('noVota')).toBe(v.totales.noVota);
+      expect(v.url).toMatch(/^https:\/\/www\.congreso\.es\/webpublica\/opendata\/votaciones\//);
+    });
+  });
+
+  it('cada paso apunta a una votación y su resultado cuadra con las cifras', () => {
+    Hechos.forEach((h) => {
+      h.pasos.forEach((p) => {
+        const v = votacion(p.votacion);
+        expect(v).toBeDefined();
+        const gana = v!.totales.si > v!.totales.no && (!p.mayoria || v!.totales.si >= p.mayoria.necesaria);
+        expect(p.resultado).toBe(gana ? 'aprobada' : 'rechazada');
+      });
+      const fechas = h.pasos.map((p) => votacion(p.votacion)!.fecha);
+      expect([...fechas].sort()).toEqual(fechas);
+      expect(h.desenlace.fuentes.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('cada promesa cita una página que existe en el PDF de su partido', () => {
+    Hechos.forEach((h) =>
+      h.promesas.forEach((p) => {
+        const pdf = pdfDe(p.partidoId);
+        expect(pdf).toBeDefined();
+        expect(p.pagina).toBeGreaterThan(0);
+        expect(p.pagina).toBeLessThanOrEqual(pdf!.paginas);
+      }),
+    );
   });
 });
