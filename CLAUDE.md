@@ -54,9 +54,16 @@ qué han hecho, y cómo votar. En español de España.
   con estilos en lista (falla en la web).
 - Barra de abajo (`src/app/(tabs)`): Hoy, Partidos, Comparar, Hechos (promesas y votos +
   ¿Funcionó?), Aprende. Lo secundario va en pantallas de la pila: `partido/[id]`, `hecho/[id]`,
-  `precedente/[id]`,
+  `precedente/[id]`, `historia/[id]`, `programa/[id]`,
   `leccion/[id]`, `test`, `simulador`, `glosario`, `calendario`, `votar`,
-  `fuentes`, `noticias`.
+  `fuentes`, `noticias`. Desde Partidos se entra a dos apartados: Historia (`historia/`) y
+  Programas (`programas`).
+- **Historias detalladas** (`src/data/historias/`, una por partido): capítulos por etapas,
+  líderes, casos judiciales con desenlace y escaños 1977-2023 de `src/data/trayectorias.ts`
+  (generado con `scripts/infoelectoral/trayectorias.mjs`, no se edita a mano ni se formatea).
+- **Programas detallados** (`src/data/programas/`): todas las medidas del PDF resumidas por
+  tema con su página, un «qué plantea» (`enfoques`) por tema y `nota` si hace falta aclarar
+  algo. Se quita solo el relleno y las repetidas. Comillas españolas («»), nunca rectas.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
