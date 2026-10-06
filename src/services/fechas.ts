@@ -63,6 +63,31 @@ export function rango(inicio: string, fin?: string) {
   return `Del ${primera} al ${fechaLarga(fin)}`;
 }
 
+/** "1 día", "3 días". */
+export function dias(n: number) {
+  return `${n} ${n === 1 ? 'día' : 'días'}`;
+}
+
+/**
+ * La fecha del calendario que antes llega a partir de `hoy`: cuenta el inicio de las que aún
+ * no han empezado y el final de las que están en curso. Así un plazo largo (la campaña, el
+ * sorteo de mesas) no tapa los plazos que vencen mientras dura. A igualdad, la primera.
+ */
+export function proximaFecha<T extends { inicio: string; fin?: string }>(fechas: T[], hoy: string) {
+  let mejor: T | undefined;
+  let cuando = '';
+  for (const f of fechas) {
+    const fin = f.fin ?? f.inicio;
+    if (fin < hoy) continue;
+    const clave = f.inicio >= hoy ? f.inicio : fin;
+    if (!mejor || clave < cuando) {
+      mejor = f;
+      cuando = clave;
+    }
+  }
+  return mejor;
+}
+
 /** "05/10/2026" para fechas de consulta de fuentes. */
 export function fechaCorta(iso: string) {
   const { a, m, d } = partes(iso);

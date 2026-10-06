@@ -19,6 +19,13 @@ export const Fuentes = {
     consultada: '2026-10-06',
     oficial: true,
   },
+  /** PDF enlazado desde la página de la elección en curso de la JEC (leído el 06/10/2026). */
+  jecCalendario29N: {
+    titulo: 'Junta Electoral Central: calendario electoral de las Elecciones Generales del 29 de noviembre de 2026',
+    url: 'https://www.juntaelectoralcentral.es/cs/jec/documentos/eg2026_calendario.pdf',
+    consultada: '2026-10-06',
+    oficial: true,
+  },
   correosNota29N: {
     titulo: 'Correos: Ya se puede solicitar el voto por correo para las Elecciones Generales del 29 de noviembre',
     url: 'https://www.correos.com/sala-prensa/ya-se-puede-solicitar-el-voto-por-correo-para-las-elecciones-generales-del-29-de-noviembre/',

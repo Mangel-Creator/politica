@@ -7,7 +7,7 @@ import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
 import { Calendario, DespuesDeVotar } from '@/data/calendario';
 import { useTheme } from '@/hooks/use-theme';
-import { diasEntre, hoyISO, rango } from '@/services/fechas';
+import { dias, diasEntre, hoyISO, rango } from '@/services/fechas';
 
 const FECHAS = [...Calendario, ...DespuesDeVotar];
 const MESES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
@@ -20,7 +20,7 @@ export default function PantallaCalendario() {
     <Pantalla atras antetitulo="Proceso electoral del 29N" titulo="Calendario">
       <Nota>
         {FECHAS.every((f) => f.confirmadaOficialmente)
-          ? 'Fechas contrastadas el 06/10/2026 con el decreto de convocatoria del BOE, la ley electoral (LOREG) y la nota oficial de Correos.'
+          ? 'Fechas contrastadas el 06/10/2026 con el decreto de convocatoria del BOE, la ley electoral (LOREG), el calendario oficial de la Junta Electoral Central y la nota de Correos.'
           : 'Las fechas con borde a rayas vienen de medios y se contrastarán con fuentes oficiales. Si no coinciden, manda el BOE.'}
       </Nota>
       <View>
@@ -55,7 +55,7 @@ export default function PantallaCalendario() {
                   },
                 ]}>
                 <Etiqueta>
-                  {enCurso ? 'En curso · ' : pasada ? 'Pasado · ' : `En ${diasEntre(hoy, f.inicio)} días · `}
+                  {enCurso ? (f.fin ? 'En curso · ' : 'Hoy · ') : pasada ? 'Pasado · ' : `En ${dias(diasEntre(hoy, f.inicio))} · `}
                   {f.confirmadaOficialmente ? 'confirmada' : 'pendiente del BOE'}
                 </Etiqueta>
                 <Texto tipo="subtitulo" color={pasada ? 'gris' : 'tinta'}>

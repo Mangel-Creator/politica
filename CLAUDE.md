@@ -66,7 +66,8 @@ qué han hecho, y cómo votar. En español de España.
   algo. Se quita solo el relleno y las repetidas. Comillas españolas («»), nunca rectas.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
-  Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
+  Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central
+  (`eg2026_calendario.pdf`) y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
   el fichero oficial de Infoelectoral (`scripts/infoelectoral`, servirá para los del 29N).
 - **Web publicada** en https://mangel-creator.github.io/politica/ con GitHub Actions
   (`.github/workflows/web.yml`): publica con cada push a main y cada hora con noticias nuevas
@@ -87,7 +88,8 @@ qué han hecho, y cómo votar. En español de España.
   errores.
 - Windows + PowerShell 5.1: encadena comandos con `;`, no con `&&`.
 - Web de desarrollo en el puerto **8082** (Organizy usa el 8081). En la web los navegadores
-  bloquean casi todos los RSS (CORS): las noticias solo se ven en el móvil.
+  bloquean casi todos los RSS (CORS): la web publicada lee `noticias.json` (lo genera Actions
+  cada hora), pero en el servidor de desarrollo local las noticias no cargan.
 - Las rutas con tipos (`.expo/types/router.d.ts`) se regeneran al arrancar el servidor; si
   `tsc` se queja de una ruta nueva, reinícialo.
 - En jest solo cuentan los ficheros de `__tests__` (la pantalla `src/app/test.tsx` no es un test).

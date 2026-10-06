@@ -61,9 +61,8 @@ export default function Noticias() {
 
       {!suficientes && !n.cargando && (
         <Nota>
-          {process.env.EXPO_OS === 'web'
-            ? 'En la versión web, el navegador no deja leer los titulares de la mayoría de periódicos, y enseñar solo los de uno o dos no sería equilibrado. En la app del móvil sí aparecen.'
-            : `Solo se han podido leer ${leidos} medios: hacen falta al menos ${MINIMO_MEDIOS} para un repaso equilibrado.`}
+          Solo se han podido leer {leidos} medios: hacen falta al menos {MINIMO_MEDIOS} para un repaso equilibrado.
+          Comprueba la conexión y vuelve a cargar.
         </Nota>
       )}
       {suficientes && n.fallidos.length > 0 && !n.cargando && (
