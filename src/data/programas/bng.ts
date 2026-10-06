@@ -6,7 +6,7 @@ export const ProgramaBNG: ResumenPrograma = {
   eleccion: '23J 2023',
   nota: 'El original está en gallego; este resumen es una traducción. Recoge todas sus medidas concretas; se quitan el diagnóstico y la valoración de la legislatura.',
   ideasClave: [
-    { texto: 'Derecho de autodeterminación de Galicia y, como horizonte, una "República da Galiza".', pagina: 10 },
+    { texto: 'Derecho de autodeterminación de Galicia y, como horizonte, una «República da Galiza».', pagina: 10 },
     { texto: 'Concierto económico propio: que Galicia recaude todos sus impuestos.', pagina: 11 },
     { texto: 'Jornada de 35 horas sin bajar el sueldo y salario mínimo al 60 % del salario medio.', pagina: 16 },
     { texto: 'AP-9 pública, gallega y sin peajes.', pagina: 54 },

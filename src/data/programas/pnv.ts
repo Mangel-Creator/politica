@@ -7,7 +7,7 @@ export const ProgramaPNV: ResumenPrograma = {
   nota: 'Recoge todas sus medidas concretas; se quitan el balance de la legislatura y los diagnósticos.',
   ideasClave: [
     {
-      texto: 'Reconocimiento nacional de Euskadi y relación bilateral con el Estado ("soberanía compartida").',
+      texto: 'Reconocimiento nacional de Euskadi y relación bilateral con el Estado («soberanía compartida»).',
       pagina: 6,
     },
     {

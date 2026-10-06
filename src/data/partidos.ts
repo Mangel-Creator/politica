@@ -129,7 +129,7 @@ export const Partidos: Partido[] = [
     programas: [
       {
         eleccion: '23J 2023',
-        tipo: 'Programa completo ("Con voz propia")',
+        tipo: 'Programa completo («Con voz propia»)',
         paginas: 52,
         fechaDocumento: '2023-07-07',
         urlOficial: 'https://eaj-pnv.eus/es/adjuntos-documentos/20945/pdf/con-voz-propia-programa-electoral-23-j',
@@ -210,7 +210,7 @@ export const Partidos: Partido[] = [
     programas: [
       {
         eleccion: '23J 2023',
-        tipo: 'Programa completo ("Un programa para ti")',
+        tipo: 'Programa completo («Un programa para ti»)',
         paginas: 182,
         fechaDocumento: '2023-07-10',
         urlOficial: 'https://movimientosumar.es/wp-content/uploads/2023/07/Un-Programa-para-ti.pdf',

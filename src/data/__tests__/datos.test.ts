@@ -140,6 +140,16 @@ describe('resúmenes de programas', () => {
       expect(r.ideasClave.length).toBeLessThanOrEqual(5);
     }
   });
+
+  it('sin dobles espacios ni comillas rectas en el texto', () => {
+    for (const r of Resumenes) {
+      const todas = [...r.ideasClave, ...Object.values(r.temas).flat(), ...Object.values(r.enfoques ?? {})];
+      for (const t of [r.nota ?? '', ...todas.map((m) => m!.texto)]) {
+        expect(t).not.toMatch(/  /);
+        expect(t).not.toMatch(/"/);
+      }
+    }
+  });
 });
 
 describe('precedentes', () => {

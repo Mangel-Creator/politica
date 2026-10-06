@@ -7,7 +7,7 @@ export const ProgramaUPN: ResumenPrograma = {
   nota: 'Programa breve (6 páginas), centrado en Navarra. Están todas sus medidas.',
   ideasClave: [
     { texto: 'Que el Gobierno de España no dependa de EH Bildu ni de los independentistas.', pagina: 2 },
-    { texto: 'Suprimir la Disposición Transitoria Cuarta de la Constitución ("Navarra es permanente").', pagina: 2 },
+    { texto: 'Suprimir la Disposición Transitoria Cuarta de la Constitución («Navarra es permanente»).', pagina: 2 },
     { texto: 'Bajar impuestos y deflactar la tarifa del IRPF.', pagina: 2 },
     { texto: 'Derogar la Ley de Vivienda.', pagina: 6 },
     { texto: 'Terminar el Canal de Navarra, el tren de alta velocidad y la autovía a Madrid.', pagina: 2 },

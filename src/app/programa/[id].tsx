@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   ideaNumero: { width: 44 },
   subrayado: { textDecorationLine: 'underline' },
   mapa: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.two },
-  celda: { flexGrow: 1, flexBasis: 100, borderWidth: Borde.grueso, padding: Spacing.two, gap: Spacing.one },
+  celda: { flexGrow: 1, flexBasis: 140, borderWidth: Borde.grueso, padding: Spacing.two, gap: Spacing.one },
   celdaCabeza: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   celdaPista: { height: 4 },
 });

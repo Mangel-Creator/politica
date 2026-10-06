@@ -178,7 +178,7 @@ export const Historias: Historia[] = [
       { anio: '2020–2023', texto: 'Forma parte del Gobierno de coalición con el PSOE.' },
       { anio: '2023', texto: 'Concurre dentro de Sumar y en diciembre deja su grupo para irse al Mixto.' },
     ],
-    fuentes: [wiki('Podemos (partido político)', 'Podemos_(partido_político)')],
+    fuentes: [wiki('Podemos', 'Podemos')],
   },
   {
     partidoId: 'pp',
@@ -272,7 +272,7 @@ export const Historias: Historia[] = [
       { anio: '2023', texto: 'Entra en el Gobierno de coalición con el PSOE.' },
       { anio: '2024', texto: 'Yolanda Díaz deja la coordinación tras las europeas.' },
     ],
-    fuentes: [wiki('Sumar (partido político)', 'Sumar_(partido_político)')],
+    fuentes: [wiki('Movimiento Sumar', 'Movimiento_Sumar')],
   },
   {
     partidoId: 'upn',
