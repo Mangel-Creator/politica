@@ -37,3 +37,21 @@ que las huellas SHA-256 de los programas tengan el formato correcto, etc.
 - `src/data/fuentes.ts`: fuentes citadas y organismos oficiales.
 
 Las reglas del contenido están en `CLAUDE.md`.
+
+## Web publicada
+
+La web está en **https://mangel-creator.github.io/politica/** y funciona aunque el ordenador
+esté apagado. La publica GitHub Actions (`.github/workflows/web.yml`):
+
+- con cada cambio en `main`: comprueba, compila y publica;
+- cada hora: descarga los titulares de los medios (`scripts/noticias/descargar.mjs`) y
+  vuelve a publicar, porque los navegadores no pueden leer los RSS directamente.
+
+Con la app abierta, las noticias se recargan cada 15 minutos, y la web mira cada 15 minutos
+si hay una versión nueva y, si la hay, se recarga sola.
+
+Para compilar la web en local como en GitHub (en Git Bash hace falta `MSYS_NO_PATHCONV=1`):
+
+```bash
+RUTA_WEB=/politica npx expo export -p web
+```

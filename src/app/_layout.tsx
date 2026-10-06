@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useNuevaVersion } from '@/hooks/use-nueva-version';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -29,6 +30,7 @@ export default function RootLayout() {
     Archivo_900Black,
   });
   const listo = cargadas || !!error;
+  useNuevaVersion();
 
   useEffect(() => {
     if (listo) SplashScreen.hideAsync().catch(() => {});

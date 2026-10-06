@@ -1,0 +1,63 @@
+# Publica la web en GitHub Pages (https://mangel-creator.github.io/politica/).
+# - Con cada cambio en main: comprueba, compila y publica.
+# - Cada hora: vuelve a publicar con las noticias recién descargadas, porque los navegadores
+#   no pueden leer los RSS de los medios (CORS) y la web lee `noticias.json`.
+# La app abierta mira cada 15 minutos `version.json` y se recarga si el código ha cambiado.
+name: Web
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Comprobar
+        run: |
+          npx tsc --noEmit
+          npm test
+
+      - name: Compilar la web
+        run: npx expo export -p web
+        env:
+          RUTA_WEB: /politica
+          EXPO_PUBLIC_VERSION: ${{ github.sha }}
+
+      - name: Noticias, versión y página de error
+        run: |
+          node --no-warnings scripts/noticias/descargar.mjs dist/noticias.json https://mangel-creator.github.io/politica/noticias.json
+          echo "{\"version\":\"${{ github.sha }}\"}" > dist/version.json
+          cp "dist/+not-found.html" dist/404.html
+          touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: despliegue
+        uses: actions/deploy-pages@v4

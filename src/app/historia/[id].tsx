@@ -12,7 +12,7 @@ import { Borde, Spacing } from '@/constants/theme';
 import { CONSULTA_HISTORIAS, nombreEleccion, type Capitulo } from '@/data/historia-detallada';
 import { historiaDe } from '@/data/historias';
 import { historiaDetalladaDe } from '@/data/historias/index';
-import { buscarPartido } from '@/data/partidos';
+import { buscarPartido, Partidos } from '@/data/partidos';
 import { resumenDe } from '@/data/programas';
 import { Trayectorias } from '@/data/trayectorias';
 import { useTheme } from '@/hooks/use-theme';
@@ -20,6 +20,11 @@ import { fechaLarga } from '@/services/fechas';
 
 /** Capítulos que no son una etapa sino el repaso de casos ante los tribunales. */
 const esJudicial = (c: Capitulo) => /judicial|Financiación|^Caso /i.test(c.titulo);
+
+/** Para la web estática: una página por cada historia (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Partidos.map((x) => ({ id: x.id }));
+}
 
 export default function HistoriaPartido() {
   const { id } = useLocalSearchParams<{ id: string }>();

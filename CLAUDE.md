@@ -68,6 +68,10 @@ qué han hecho, y cómo votar. En español de España.
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
   el fichero oficial de Infoelectoral (`scripts/infoelectoral`, servirá para los del 29N).
+- **Web publicada** en https://mangel-creator.github.io/politica/ con GitHub Actions
+  (`.github/workflows/web.yml`): publica con cada push a main y cada hora con noticias nuevas
+  (`noticias.json`). La app recarga noticias cada 15 min (`useCadaRato`) y la web se recarga
+  sola si cambia `version.json`. Las rutas `[id]` necesitan `generateStaticParams`.
 - Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).

@@ -9,12 +9,17 @@ import { Bloque, Etiqueta, Fila, Nota, Pagina, Pulsable, Seccion } from '@/compo
 import { ListaPropuestas } from '@/components/propuestas';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
-import { buscarPartido } from '@/data/partidos';
+import { buscarPartido, Partidos } from '@/data/partidos';
 import { resumenDe } from '@/data/programas';
 import { Temas } from '@/data/temas';
 import type { TemaId } from '@/data/tipos';
 import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
+
+/** Para la web estática: una página por cada programa (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Partidos.map((x) => ({ id: x.id }));
+}
 
 export default function ProgramaDetallado() {
   const t = useTheme();

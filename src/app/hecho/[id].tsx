@@ -6,9 +6,14 @@ import { Bloque, Etiqueta, Nota, Seccion } from '@/components/piezas';
 import { Texto } from '@/components/texto';
 import { PromesaYVoto } from '@/components/promesa-voto';
 import { TableroVotacion } from '@/components/votacion';
-import { buscarHecho, Estados, votacion } from '@/data/hechos';
+import { buscarHecho, Estados, votacion, Hechos } from '@/data/hechos';
 import { Partidos } from '@/data/partidos';
 import { buscarTema } from '@/data/temas';
+
+/** Para la web estática: una página por cada hecho (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Hechos.map((x) => ({ id: x.id }));
+}
 
 export default function FichaHecho() {
   const { id } = useLocalSearchParams<{ id: string }>();

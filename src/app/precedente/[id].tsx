@@ -8,12 +8,17 @@ import { Bloque, Etiqueta, Ir, Nota, Pagina, Seccion } from '@/components/piezas
 import { Sentidos } from '@/components/sentido';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
-import { buscarPrecedente, type Evidencia, type Postura } from '@/data/precedentes';
+import { buscarPrecedente, type Evidencia, type Postura, Precedentes } from '@/data/precedentes';
 import { buscarTema } from '@/data/temas';
 import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
 
 const ORDEN: Postura['sentido'][] = ['impulsa', 'frena', 'matiza'];
+
+/** Para la web estática: una página por cada precedente (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Precedentes.map((x) => ({ id: x.id }));
+}
 
 export default function FichaPrecedente() {
   const t = useTheme();

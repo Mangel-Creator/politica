@@ -8,6 +8,11 @@ import { Texto } from '@/components/texto';
 import { Spacing } from '@/constants/theme';
 import { Lecciones, nombreArticulo, Preguntas, urlArticulo } from '@/data/aprende';
 
+/** Para la web estática: una página por cada leccion (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Lecciones.map((x) => ({ id: x.id }));
+}
+
 export default function FichaLeccion() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const i = Lecciones.findIndex((l) => l.id === id);

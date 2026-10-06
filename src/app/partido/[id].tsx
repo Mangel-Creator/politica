@@ -13,7 +13,7 @@ import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
 import { Hechos } from '@/data/hechos';
 import { historiaDe, type Hito } from '@/data/historias';
-import { buscarPartido, FuentesEscanos2023 } from '@/data/partidos';
+import { buscarPartido, FuentesEscanos2023, Partidos } from '@/data/partidos';
 import { Precedentes } from '@/data/precedentes';
 import { resumenDe } from '@/data/programas';
 import { Temas } from '@/data/temas';
@@ -22,6 +22,11 @@ import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
 
 type Vista = 'programa' | 'votos' | 'historia' | 'datos';
+
+/** Para la web estática: una página por cada partido (GitHub Pages no tiene servidor). */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  return Partidos.map((x) => ({ id: x.id }));
+}
 
 export default function FichaPartido() {
   const { id, vista: vistaInicial } = useLocalSearchParams<{ id: string; vista?: Vista }>();
