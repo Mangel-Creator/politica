@@ -31,17 +31,12 @@ export const Fuentes = {
     consultada: '2026-10-05',
     oficial: true,
   },
-  wikipedia23J: {
-    titulo: 'Wikipedia: Elecciones generales de España de 2023 (tabla de resultados)',
-    url: 'https://es.wikipedia.org/wiki/Elecciones_generales_de_España_de_2023',
-    consultada: '2026-10-05',
-    oficial: false,
-  },
-  /** Solo se ha comprobado que la web existe; sus datos aún no se han contrastado. */
-  infoelectoral: {
-    titulo: 'Ministerio del Interior: Infoelectoral (resultados oficiales)',
-    url: 'https://infoelectoral.interior.gob.es/es/inicio/',
-    consultada: '2026-10-05',
+  /** Fichero oficial de totales del Congreso del 23J (formato del Ministerio, leído el 06/10/2026). */
+  infoelectoral23J: {
+    titulo:
+      'Ministerio del Interior (Infoelectoral): resultados oficiales del Congreso del 23J 2023, fichero de totales',
+    url: 'https://infoelectoral.interior.gob.es/estaticos/docxl/apliextr/02202307_TOTA.zip',
+    consultada: '2026-10-06',
     oficial: true,
   },
   correosVoto: {

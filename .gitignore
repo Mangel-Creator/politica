@@ -46,3 +46,4 @@ example
 scripts/congreso/votos/
 scripts/congreso/indice.json
 scripts/congreso/todas.json
+scripts/infoelectoral/datos-*/

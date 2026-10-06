@@ -91,6 +91,8 @@ export type Partido = {
   web: string;
   /** Escaños en el Congreso el 23J 2023. `null` si no se presentó con candidatura propia. */
   escanos2023: number | null;
+  /** Votos al Congreso de su candidatura el 23J 2023 (Infoelectoral). `null` si no se presentó sola. */
+  votos2023: number | null;
   nota2023?: string;
   programas: Programa[];
   /** Programas que se buscaron y no se encontraron en fuente oficial. */

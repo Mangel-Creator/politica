@@ -288,7 +288,11 @@ function VistaDatos({ p }: { p: Partido }) {
     <View style={styles.vista}>
       <Seccion titulo="Elecciones del 23J 2023">
         <Texto>
-          {p.escanos2023 === null ? 'Sin candidatura propia.' : `${p.escanos2023} de 350 escaños en el Congreso.`}
+          {p.escanos2023 === null
+            ? 'Sin candidatura propia.'
+            : `${p.escanos2023} de 350 escaños en el Congreso${
+                p.votos2023 ? `, con ${p.votos2023.toLocaleString('es-ES')} votos` : ''
+              }.`}
           {p.nota2023 ? ` ${p.nota2023}` : ''}
         </Texto>
         <ListaFuentes fuentes={FuentesEscanos2023} />

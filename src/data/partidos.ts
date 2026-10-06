@@ -2,10 +2,10 @@ import { Fuentes } from './fuentes';
 import type { Partido } from './tipos';
 
 /**
- * Fuentes de los escaños del 23J. Pendiente: contrastarlos con Infoelectoral (resultados
- * oficiales del Ministerio del Interior) y añadirla aquí cuando se haya hecho.
+ * Escaños y votos del 23J: fichero oficial de totales de Infoelectoral (Ministerio del
+ * Interior), contrastado el 06/10/2026. Coinciden el total nacional y la suma por provincias.
  */
-export const FuentesEscanos2023 = [Fuentes.wikipedia23J];
+export const FuentesEscanos2023 = [Fuentes.infoelectoral23J];
 
 const wayback = (marca: string, url: string) => `https://web.archive.org/web/${marca}/${url}`;
 
@@ -26,6 +26,7 @@ export const Partidos: Partido[] = [
     color: '#76B3DD',
     web: 'https://www.bng.gal/',
     escanos2023: 1,
+    votos2023: 153995,
     programas: [
       {
         eleccion: '23J 2023',
@@ -48,6 +49,7 @@ export const Partidos: Partido[] = [
     color: '#F2C200',
     web: 'https://coalicioncanaria.org/',
     escanos2023: 1,
+    votos2023: 116363,
     programas: [
       {
         eleccion: '23J 2023',
@@ -71,6 +73,7 @@ export const Partidos: Partido[] = [
     color: '#9CBF28',
     web: 'https://ehbildu.eus/',
     escanos2023: 6,
+    votos2023: 335129,
     programas: [
       {
         eleccion: '23J 2023',
@@ -93,6 +96,7 @@ export const Partidos: Partido[] = [
     color: '#FFAA2B',
     web: 'https://www.esquerra.cat/',
     escanos2023: 7,
+    votos2023: 466020,
     programas: [],
     programasNoLocalizados: [
       { eleccion: '23J 2023', motivo: 'No se ha encontrado el PDF en la web del partido ni en el Internet Archive.' },
@@ -105,6 +109,7 @@ export const Partidos: Partido[] = [
     color: '#00A3A0',
     web: 'https://junts.cat/',
     escanos2023: 7,
+    votos2023: 395429,
     programas: [],
     programasNoLocalizados: [
       {
@@ -120,6 +125,7 @@ export const Partidos: Partido[] = [
     color: '#1E7B3C',
     web: 'https://www.eaj-pnv.eus/',
     escanos2023: 5,
+    votos2023: 277289,
     programas: [
       {
         eleccion: '23J 2023',
@@ -142,6 +148,7 @@ export const Partidos: Partido[] = [
     color: '#6B2D69',
     web: 'https://podemos.info/',
     escanos2023: null,
+    votos2023: null,
     nota2023: 'En 2023 se presentó dentro de la coalición Sumar.',
     programas: [],
   },
@@ -152,6 +159,7 @@ export const Partidos: Partido[] = [
     color: '#1D84CE',
     web: 'https://www.pp.es/',
     escanos2023: 137,
+    votos2023: 8160837,
     programas: [
       {
         eleccion: '23J 2023',
@@ -174,6 +182,7 @@ export const Partidos: Partido[] = [
     color: '#E2231A',
     web: 'https://www.psoe.es/',
     escanos2023: 121,
+    votos2023: 7821718,
     programas: [
       {
         eleccion: '23J 2023',
@@ -196,6 +205,7 @@ export const Partidos: Partido[] = [
     color: '#E0195C',
     web: 'https://movimientosumar.es/',
     escanos2023: 31,
+    votos2023: 3044996,
     nota2023: 'Coalición de varios partidos, entre ellos Podemos.',
     programas: [
       {
@@ -219,6 +229,7 @@ export const Partidos: Partido[] = [
     color: '#20407A',
     web: 'https://www.upn.org/',
     escanos2023: 1,
+    votos2023: 52188,
     programas: [
       {
         eleccion: '23J 2023',
@@ -241,6 +252,7 @@ export const Partidos: Partido[] = [
     color: '#5BBF21',
     web: 'https://www.voxespana.es/',
     escanos2023: 33,
+    votos2023: 3057000,
     programas: [
       {
         eleccion: '23J 2023',

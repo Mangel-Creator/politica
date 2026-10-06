@@ -59,10 +59,10 @@ qué han hecho, y cómo votar. En español de España.
   `fuentes`, `noticias`.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
-  Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto.
+  Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
+  el fichero oficial de Infoelectoral (`scripts/infoelectoral`, servirá para los del 29N).
 - Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
-  - Contrastar los escaños de 2023 con Infoelectoral (ahora solo vienen de Wikipedia).
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
   - Icono y pantalla de carga propios (ahora son los de Expo).
