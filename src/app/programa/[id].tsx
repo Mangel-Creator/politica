@@ -11,7 +11,7 @@ import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
 import { buscarPartido, Partidos } from '@/data/partidos';
 import { resumenDe } from '@/data/programas';
-import { Temas } from '@/data/temas';
+import { buscarTema, Temas } from '@/data/temas';
 import type { TemaId } from '@/data/tipos';
 import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
@@ -23,8 +23,9 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
 
 export default function ProgramaDetallado() {
   const t = useTheme();
-  const { id } = useLocalSearchParams<{ id: string }>();
-  const [filtro, setFiltro] = useState<TemaId | null>(null);
+  const { id, tema } = useLocalSearchParams<{ id: string; tema?: string }>();
+  // Desde Comparar se llega con el tema ya elegido.
+  const [filtro, setFiltro] = useState<TemaId | null>(buscarTema(tema ?? '')?.id ?? null);
   const p = buscarPartido(id);
   const r = p ? resumenDe(p.id) : undefined;
   if (!p || !r)
