@@ -59,6 +59,12 @@ export default function FichaPartido() {
         </View>
       </View>
 
+      <Fila
+        href={{ pathname: '/miembros/[id]', params: { id: p.id } }}
+        titulo="Miembros"
+        subtitulo="Quién lo dirige, qué ha estudiado y el Gobierno que propone"
+      />
+
       <Segmentos<Vista>
         opciones={[
           { id: 'programa', texto: 'Programa' },
