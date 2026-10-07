@@ -11,14 +11,17 @@ import { Calendario, DIA_ELECCIONES } from '@/data/calendario';
 import { Partidos } from '@/data/partidos';
 import { useNoticias } from '@/hooks/use-noticias';
 import { agrupar, mediosDistintos, MINIMO_MEDIOS, nombreMedio } from '@/services/noticias';
-import { diasEntre, diaSemana, fechaLarga, hoyISO, rango } from '@/services/fechas';
+import { dias, diasEntre, diaSemana, fechaLarga, hoyISO, proximaFecha, rango } from '@/services/fechas';
 
 const DIA = 24 * 3600 * 1000;
 
 export default function Hoy() {
   const hoy = hoyISO();
   const faltan = diasEntre(hoy, DIA_ELECCIONES);
-  const proximo = Calendario.find((f) => f.id !== 'anuncio' && (f.fin ?? f.inicio) >= hoy);
+  const proximo = proximaFecha(
+    Calendario.filter((f) => f.id !== 'anuncio'),
+    hoy,
+  );
   const noticias = useNoticias();
   const recientes = noticias.titulares.filter((t) => t.fecha >= noticias.referencia - DIA);
   const suficientes = mediosDistintos(recientes) >= MINIMO_MEDIOS;
@@ -62,7 +65,11 @@ export default function Hoy() {
             <Bloque discontinuo={!proximo.confirmadaOficialmente}>
               <View style={styles.filaProximo}>
                 <Etiqueta>
-                  {proximo.inicio <= hoy ? 'En curso' : `Próximo · en ${diasEntre(hoy, proximo.inicio)} días`}
+                  {proximo.inicio > hoy
+                    ? `Próximo · en ${dias(diasEntre(hoy, proximo.inicio))}`
+                    : proximo.fin
+                      ? 'En curso'
+                      : 'Hoy'}
                 </Etiqueta>
                 <Texto tipo="subtitulo">→</Texto>
               </View>
@@ -84,11 +91,9 @@ export default function Hoy() {
           <Nota>
             {noticias.cargando
               ? 'Leyendo los titulares de los medios…'
-              : process.env.EXPO_OS === 'web'
-                ? 'En la versión web, el navegador no deja leer los titulares de la mayoría de periódicos, y enseñar solo los de uno o dos no sería equilibrado. En la app del móvil sí aparecen.'
-                : suficientes
-                  ? 'Ninguna noticia de las últimas 24 horas la cuentan dos medios o más. Las demás están en el repaso.'
-                  : `Solo se han podido leer ${mediosDistintos(recientes)} medios: hacen falta al menos ${MINIMO_MEDIOS} para un repaso equilibrado. Comprueba la conexión.`}
+              : suficientes
+                ? 'Ninguna noticia de las últimas 24 horas la cuentan dos medios o más. Las demás están en el repaso.'
+                : `Solo se han podido leer ${mediosDistintos(recientes)} medios: hacen falta al menos ${MINIMO_MEDIOS} para un repaso equilibrado. Comprueba la conexión.`}
           </Nota>
         )}
         <Acceso href="/noticias" etiqueta="Repaso" titulo="Día y semana, medio a medio" simbolo="→" />

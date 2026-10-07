@@ -1,9 +1,9 @@
 // Paso 1. Descarga la página de cada día con votaciones y guarda título + enlaces JSON en indice.json
 import fs from 'node:fs';
-const html0 = await (await fetch('https://www.congreso.es/es/opendata/votaciones', { headers: { 'User-Agent': 'Mozilla/5.0' } })).text();
+const html0 = await (await fetch('https://www.congreso.es/es/opendata/votaciones', { headers: { 'User-Agent': 'Mozilla/5.0 (politica-app)' } })).text();
 const dias = JSON.parse(html0.match(/diasVotaciones = (\[[^\]]*\])/)[1]).map(String);
 console.log('días', dias.length, dias[0], dias.at(-1));
-const UA = { headers: { 'User-Agent': 'Mozilla/5.0' } };
+const UA = { headers: { 'User-Agent': 'Mozilla/5.0 (politica-app)' } };
 const indice = fs.existsSync('indice.json') ? JSON.parse(fs.readFileSync('indice.json', 'utf8')) : {};
 const pend = dias.filter((d) => !indice[d]);
 async function uno(d) {

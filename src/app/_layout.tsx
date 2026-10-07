@@ -8,6 +8,7 @@ import {
   useFonts,
 } from '@expo-google-fonts/archivo';
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import Head from 'expo-router/head';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
@@ -15,6 +16,7 @@ import { useEffect } from 'react';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { useNuevaVersion } from '@/hooks/use-nueva-version';
+import { TITULO_WEB } from '@/services/web';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -36,7 +38,13 @@ export default function RootLayout() {
     if (listo) SplashScreen.hideAsync().catch(() => {});
   }, [listo]);
 
-  if (!listo) return null;
+  // El título va fuera de la espera de las fuentes para que salga en el HTML compilado de la web.
+  const titulo = (
+    <Head>
+      <title>{TITULO_WEB}</title>
+    </Head>
+  );
+  if (!listo) return titulo;
 
   const base = scheme === 'dark' ? DarkTheme : DefaultTheme;
   return (
@@ -52,6 +60,7 @@ export default function RootLayout() {
           primary: c.tinta,
         },
       }}>
+      {titulo}
       <StatusBar style={scheme === 'dark' ? 'light' : 'dark'} />
       <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: c.papel } }} />
     </ThemeProvider>

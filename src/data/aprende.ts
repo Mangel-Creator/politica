@@ -51,13 +51,13 @@ export const Lecciones: Leccion[] = [
       {
         titulo: 'Senado: 4 por provincia',
         texto:
-          'En cada provincia se eligen 4 senadores; en las islas grandes, 3; en Ceuta y Melilla, 2. Además, cada comunidad designa uno más por cada millón de habitantes.',
-        articulo: { norma: 'CE', numero: '69' },
+          'En cada provincia se eligen 4 senadores; en Gran Canaria, Mallorca y Tenerife, 3; en cada una de las demás islas, 1; en Ceuta y Melilla, 2. Además, cada comunidad autónoma designa un senador y otro más por cada millón de habitantes.',
+        articulo: { norma: 'LOREG', numero: '165' },
       },
       {
         titulo: 'Senado: eliges personas',
         texto:
-          'En la papeleta del Senado marcas hasta 3 nombres en una provincia, aunque sean de partidos distintos. Si marcas más, es nulo.',
+          'En la papeleta del Senado marcas nombres, aunque sean de partidos distintos: hasta 3 en una provincia, 2 en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla, y 1 en las demás islas. Si marcas más, el voto es nulo.',
         articulo: { norma: 'LOREG', numero: '166' },
       },
       {
@@ -88,6 +88,11 @@ export const Lecciones: Leccion[] = [
         titulo: 'El ejemplo de la ley',
         texto:
           'Con 480.000 votos y 8 escaños, la lista A (168.000) saca 4, B (104.000) 2, C y D 1 cada una, y E y F ninguno.',
+        articulo: { norma: 'LOREG', numero: '163' },
+      },
+      {
+        titulo: 'Ceuta y Melilla',
+        texto: 'Eligen un solo diputado cada una: no hay reparto, gana el candidato más votado.',
         articulo: { norma: 'LOREG', numero: '163' },
       },
       {
@@ -231,7 +236,7 @@ export const Lecciones: Leccion[] = [
       {
         titulo: 'Reforma agravada',
         texto:
-          'Para la reforma total o de los derechos fundamentales y la Corona: dos tercios, disolución de las Cortes, nueva aprobación por dos tercios y referéndum obligatorio.',
+          'Para la reforma total o la que toque el título preliminar, los derechos fundamentales o la Corona: dos tercios, disolución de las Cortes, nueva aprobación por dos tercios y referéndum obligatorio.',
         articulo: { norma: 'CE', numero: '168' },
       },
     ],
@@ -472,41 +477,129 @@ export const Preguntas: Pregunta[] = [
   },
 ];
 
-export type TerminoGlosario = { termino: string; definicion: string };
+/** Cada definición lleva el artículo del que sale. */
+export type TerminoGlosario = { termino: string; definicion: string; articulo: Articulo };
+
+const LOREG = (numero: string): Articulo => ({ norma: 'LOREG', numero });
+const CE = (numero: string): Articulo => ({ norma: 'CE', numero });
 
 export const Glosario: TerminoGlosario[] = [
   {
     termino: 'Escaño',
     definicion: 'Asiento en el Congreso o el Senado; por extensión, cada puesto de diputado o senador.',
+    articulo: LOREG('163'),
   },
   {
     termino: 'Circunscripción',
-    definicion: 'Territorio donde se reparten los escaños. Para el Congreso, la provincia.',
+    definicion:
+      'Territorio donde se reparten los escaños. Para el Congreso, la provincia, y Ceuta y Melilla. Para el Senado, igual, salvo en Baleares y Canarias, donde cada isla es una circunscripción.',
+    articulo: LOREG('161'),
   },
-  { termino: 'Mayoría absoluta', definicion: 'Más de la mitad de los miembros de la cámara: 176 de 350 diputados.' },
-  { termino: 'Mayoría simple', definicion: 'Más votos a favor que en contra, sin contar abstenciones.' },
+  {
+    termino: 'Mayoría absoluta',
+    definicion: 'Más de la mitad de los miembros de la cámara: 176 de 350 diputados.',
+    articulo: CE('99'),
+  },
+  {
+    termino: 'Mayoría simple',
+    definicion: 'Más votos a favor que en contra, sin contar abstenciones.',
+    articulo: CE('99'),
+  },
   {
     termino: 'Investidura',
     definicion: 'Votación en la que el Congreso da su confianza a un candidato para ser presidente del Gobierno.',
+    articulo: CE('99'),
   },
-  { termino: 'Moción de censura', definicion: 'Votación para sustituir al presidente por otro candidato.' },
+  {
+    termino: 'Moción de censura',
+    definicion: 'Votación para sustituir al presidente por otro candidato.',
+    articulo: CE('113'),
+  },
   {
     termino: 'Decreto ley',
     definicion: 'Norma con fuerza de ley que dicta el Gobierno por urgencia y que el Congreso debe convalidar.',
+    articulo: CE('86'),
   },
-  { termino: 'Legislatura', definicion: 'Periodo entre dos elecciones generales; como máximo, cuatro años.' },
-  { termino: 'Coalición', definicion: 'Unión de partidos para presentarse juntos o para gobernar juntos.' },
+  {
+    termino: 'Legislatura',
+    definicion: 'Periodo entre dos elecciones generales; como máximo, cuatro años.',
+    articulo: CE('68'),
+  },
+  {
+    termino: 'Coalición',
+    definicion:
+      'Unión de partidos para presentarse juntos a unas elecciones; deben comunicarlo en los diez días siguientes a la convocatoria. También se llama así al Gobierno formado por varios partidos.',
+    articulo: LOREG('44'),
+  },
   {
     termino: 'Gobierno en funciones',
-    definicion: 'El Gobierno que sigue gestionando tras unas elecciones hasta que se forma el nuevo.',
+    definicion: 'El Gobierno que sigue gestionando tras unas elecciones hasta que toma posesión el nuevo.',
+    articulo: CE('101'),
   },
   {
     termino: 'Voto en blanco',
     definicion: 'Sobre sin papeleta (o papeleta del Senado sin marcar). Es un voto válido.',
+    articulo: LOREG('96'),
   },
   {
     termino: 'Voto nulo',
-    definicion: 'Voto con papeleta alterada, no oficial o con varias candidaturas. No se computa.',
+    definicion:
+      'Papeleta o sobre no oficial, papeleta sin sobre, sobre con papeletas de listas distintas o papeleta alterada. No es válido: no entra en el cálculo del 3 % ni en el reparto.',
+    articulo: LOREG('96'),
+  },
+  {
+    termino: 'Umbral del 3 %',
+    definicion:
+      'Mínimo de votos válidos (blancos incluidos) que necesita una lista en su provincia para entrar en el reparto de escaños del Congreso.',
+    articulo: LOREG('163'),
+  },
+  {
+    termino: 'Regla D’Hondt',
+    definicion:
+      'Forma de repartir los escaños: los votos de cada lista se dividen entre 1, 2, 3… y los cocientes más altos se llevan los escaños. La ley lo describe sin darle ese nombre.',
+    articulo: LOREG('163'),
+  },
+  {
+    termino: 'Lista cerrada',
+    definicion:
+      'En el Congreso se vota una lista entera y los escaños van a sus candidatos por el orden en que aparecen. Si cambias la papeleta, el voto es nulo.',
+    articulo: LOREG('163'),
+  },
+  {
+    termino: 'Senador autonómico',
+    definicion:
+      'El que no se elige en las urnas: lo designa el parlamento de cada comunidad, uno por comunidad y otro más por cada millón de habitantes.',
+    articulo: CE('69'),
+  },
+  {
+    termino: 'Censo electoral',
+    definicion:
+      'Lista de quienes pueden votar. Hay que estar inscrito para votar. Tiene dos partes: residentes en España y residentes en el extranjero.',
+    articulo: LOREG('31'),
+  },
+  {
+    termino: 'CERA',
+    definicion:
+      'Censo de españoles residentes en el extranjero. Reciben en casa, sin pedirla, la documentación para votar por correo o en el consulado.',
+    articulo: LOREG('75'),
+  },
+  {
+    termino: 'Voto por correo',
+    definicion:
+      'Para quien no podrá ir a votar: se pide en Correos, se recibe la documentación en casa y se devuelve por correo certificado antes del día marcado.',
+    articulo: LOREG('72'),
+  },
+  {
+    termino: 'Mesa electoral',
+    definicion:
+      'Un presidente y dos vocales, elegidos por sorteo entre los votantes de esa mesa, que dirigen la votación y el recuento. El cargo es obligatorio.',
+    articulo: LOREG('26'),
+  },
+  {
+    termino: 'Jornada de reflexión',
+    definicion:
+      'Nombre popular del día anterior a la votación: la campaña ya ha terminado y no se puede hacer propaganda.',
+    articulo: LOREG('53'),
   },
 ];
 
@@ -516,10 +609,22 @@ export function fuenteDe(a: Articulo): Fuente {
 
 /** Anclas del BOE para la LOREG, que usa el número en letra (comprobadas el 06/10/2026). */
 const AnclasLOREG: Record<string, string> = {
+  '26': 'aveintiseis',
+  '31': 'atreintayuno',
+  '44': 'acuarentaycuatro',
   '51': 'acincuentayuno',
+  '53': 'acincuentaytres',
+  '72': 'asetentaydos',
+  '73': 'asetentaytres',
+  '75': 'asetentaycinco',
+  '84': 'aochentaycuatro',
+  '85': 'aochentaycinco',
+  '86': 'aochentayseis',
   '96': 'anoventayseis',
+  '161': 'acientosesentayuno',
   '162': 'acientosesentaydos',
   '163': 'acientosesentaytres',
+  '165': 'acientosesentaycinco',
   '166': 'acientosesentayseis',
   '172': 'acientosetentaydos',
 };

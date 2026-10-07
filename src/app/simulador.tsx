@@ -10,6 +10,7 @@ import { nombreArticulo, urlArticulo } from '@/data/aprende';
 import { useTheme } from '@/hooks/use-theme';
 import { dhondt } from '@/services/dhondt';
 import { Circunscripciones, FuenteCircunscripciones } from '@/data/circunscripciones';
+import { Fuentes } from '@/data/fuentes';
 
 /** Ejemplo del artículo 163 de la LOREG. */
 const EJEMPLO = [
@@ -129,6 +130,12 @@ export default function Simulador() {
         })}
       </View>
 
+      {(provincia === 'Ceuta' || provincia === 'Melilla') && (
+        <Nota>
+          En Ceuta y Melilla no hay reparto: el escaño es para el candidato más votado (LOREG, art. 163.2). Con un solo
+          escaño, D’Hondt da el mismo resultado.
+        </Nota>
+      )}
       {r.sorteo && <Nota>El último escaño empata en cociente y en votos: la ley manda sortearlo.</Nota>}
 
       <Seccion titulo="Las divisiones">
@@ -165,6 +172,13 @@ export default function Simulador() {
           El ejemplo inicial (A–F, 8 escaños) es el que trae la propia ley: A obtiene 4, B 2, C 1 y D 1.
         </Texto>
         <Enlace href={urlArticulo(ART_163)}>{nombreArticulo(ART_163)}</Enlace>
+        <Texto tipo="pequeno">
+          Comprobado con el 23J: con los votos oficiales de cada provincia, este cálculo da los mismos 350 escaños que
+          el escrutinio.
+        </Texto>
+        <Enlace href={Fuentes.infoelectoral23J.url}>
+          Ministerio del Interior: resultados oficiales del 23J (fichero ZIP)
+        </Enlace>
       </Bloque>
       <Pulsable
         onPress={() => {

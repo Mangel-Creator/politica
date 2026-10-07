@@ -55,7 +55,8 @@ export type Promesa = {
 export type EstadoHecho = 'en-vigor' | 'no-salio' | 'sin-votacion-final' | 'peticion';
 
 export const Estados: Record<EstadoHecho, string> = {
-  'en-vigor': 'Es ley',
+  // No siempre es una ley: puede ser un real decreto del Gobierno.
+  'en-vigor': 'En vigor',
   'no-salio': 'No salió adelante',
   'sin-votacion-final': 'Sin votación final',
   peticion: 'Solo una petición',
@@ -81,6 +82,13 @@ const boe = (titulo: string, id: string): Fuente => ({
 const congreso: Fuente = {
   titulo: 'Congreso de los Diputados: datos abiertos de votaciones del Pleno (XV legislatura)',
   url: 'https://www.congreso.es/es/opendata/votaciones',
+  consultada: C,
+  oficial: true,
+};
+/** Artículo 207: con la disolución caduca lo que el Congreso tenía pendiente (las ILP no: ver su ley). */
+const reglamento: Fuente = {
+  titulo: 'BOE: Reglamento del Congreso de los Diputados, artículo 207 (texto consolidado)',
+  url: 'https://www.boe.es/buscar/act.php?id=BOE-A-1982-5196',
   consultada: C,
   oficial: true,
 };
@@ -250,6 +258,16 @@ export const Hechos: Hecho[] = [
     ],
     pasos: [
       {
+        votacion: 'okupa-eficiencia',
+        que: 'Ley de eficiencia de la Justicia, con muchas medidas. Una de ellas: juzgar la okupación por el procedimiento de juicio rápido.',
+        siSignifica: 'Sí = levantar el veto del Senado y aprobar la ley entera.',
+        resultado: 'aprobada',
+        mayoria: {
+          necesaria: 176,
+          texto: 'Para levantar el veto del Senado a una ley orgánica hace falta mayoría absoluta: 176 síes.',
+        },
+      },
+      {
         votacion: 'okupa-junts',
         siEsAFavor: true,
         que: 'Proposición de ley de Junts contra la ocupación ilegal.',
@@ -267,8 +285,15 @@ export const Hechos: Hecho[] = [
     desenlace: {
       estado: 'sin-votacion-final',
       texto:
-        'Las dos superaron el primer paso. Hasta el 30/09/2026, ninguna había tenido votación final en el Pleno (según los datos abiertos de votaciones).',
-      fuentes: [congreso],
+        'No hay ley de desalojo en 24 o 48 horas. Desde abril de 2025, la Ley Orgánica 1/2025 manda juzgar la usurpación y el allanamiento de morada por juicio rápido. Las proposiciones de Junts y del PP pasaron el primer paso pero no tuvieron votación final (último pleno: 30/09/2026) y caducaron al disolverse las Cortes el 05/10/2026.',
+      fuentes: [
+        boe(
+          'Ley Orgánica 1/2025, de eficiencia del Servicio Público de Justicia (nuevas letras i y j del artículo 795 de la Ley de Enjuiciamiento Criminal)',
+          'BOE-A-2025-76',
+        ),
+        congreso,
+        reglamento,
+      ],
     },
   },
   {
@@ -287,6 +312,12 @@ export const Hechos: Hecho[] = [
         partidoId: 'psoe',
         texto: 'Renovar ya el CGPJ con el sistema actual de doble legitimación (jueces y Cortes).',
         pagina: 248,
+        postura: 'en-contra',
+      },
+      {
+        partidoId: 'sumar',
+        texto: 'Mantener la elección parlamentaria de los vocales de procedencia judicial.',
+        pagina: 129,
         postura: 'en-contra',
       },
       {
@@ -386,10 +417,24 @@ export const Hechos: Hecho[] = [
       },
     ],
     desenlace: {
-      estado: 'sin-votacion-final',
+      estado: 'en-vigor',
       texto:
-        'La iniciativa popular pasó el primer paso en abril de 2024. Hasta el 30/09/2026 no había tenido votación final en el Pleno (según los datos abiertos de votaciones).',
-      fuentes: [congreso],
+        'No por ley, sino por real decreto del Gobierno, que no se vota en el Congreso. El Real Decreto 316/2026 (BOE del 15/04/2026) creó un permiso por «arraigo extraordinario» para quien estuviera en España antes del 01/01/2026, con solicitudes hasta el 30/06/2026. Lo recurrieron, entre otros, los gobiernos de Aragón y de la Comunidad Valenciana; en julio de 2026 el Tribunal Supremo rechazó suspenderlo mientras decide. La iniciativa popular pasó el primer paso en 2024 y no tuvo votación final; por ley, una iniciativa popular no caduca con la disolución.',
+      fuentes: [
+        boe(
+          'Real Decreto 316/2026, que modifica el Reglamento de extranjería (arraigo extraordinario)',
+          'BOE-A-2026-8284',
+        ),
+        {
+          titulo:
+            'Poder Judicial: el Tribunal Supremo acuerda no plantear en este momento procesal cuestión prejudicial al TJUE sobre el Real Decreto de regularización de extranjeros (08/07/2026)',
+          url: 'https://www.poderjudicial.es/cgpj/es/Poder-Judicial/Tribunal-Supremo/Noticias-Judiciales/El-Tribunal-Supremo-acuerda-no-plantear-en-este-momento-procesal-cuestion-prejudicial-al-TJUE-sobre-el-Real-Decreto-de-regularizacion-de-extranjeros',
+          consultada: C,
+          oficial: true,
+        },
+        boe('Ley Orgánica 3/1984, reguladora de la iniciativa legislativa popular (artículo 14)', 'BOE-A-1984-7249'),
+        congreso,
+      ],
     },
   },
   {
@@ -466,8 +511,14 @@ export const Hechos: Hecho[] = [
     desenlace: {
       estado: 'en-vigor',
       texto:
-        'Es ley: Ley Orgánica 3/2026, en el BOE el 31/07/2026. Fija el marco; el traspaso efectivo necesita un acuerdo de la Comisión Mixta de Transferencias aprobado por real decreto.',
-      fuentes: [boe('Ley Orgánica 3/2026, de transferencia de la AP-9 a Galicia', 'BOE-A-2026-16652')],
+        'Es ley: Ley Orgánica 3/2026, en el BOE el 31/07/2026. Fija el marco; el traspaso efectivo necesita un acuerdo de la Comisión Mixta de Transferencias aprobado por real decreto, que hasta el 06/10/2026 no se había publicado. En septiembre, Estado y Xunta acordaron negociar las «discrepancias» sobre la ley, trámite previo a un posible recurso ante el Constitucional.',
+      fuentes: [
+        boe('Ley Orgánica 3/2026, de transferencia de la AP-9 a Galicia', 'BOE-A-2026-16652'),
+        boe(
+          'Acuerdo de la Comisión Bilateral Estado-Galicia sobre la Ley Orgánica 3/2026 (05/10/2026)',
+          'BOE-A-2026-20718',
+        ),
+      ],
     },
   },
   {
@@ -501,7 +552,10 @@ export const Hechos: Hecho[] = [
     desenlace: {
       estado: 'no-salio',
       texto: 'El Congreso no convalidó el decreto en enero de 2025, así que quedó derogado.',
-      fuentes: [congreso],
+      fuentes: [
+        boe('Acuerdo de derogación del Real Decreto-ley 10/2024 (gravamen temporal energético)', 'BOE-A-2025-1137'),
+        congreso,
+      ],
     },
   },
   {
@@ -526,6 +580,13 @@ export const Hechos: Hecho[] = [
         partidoId: 'pp',
         texto: 'Garantizar la revalorización de las pensiones en el marco del Pacto de Toledo.',
         pagina: 19,
+        postura: 'a-favor',
+      },
+      {
+        partidoId: 'psoe',
+        texto:
+          'Garantizar ante cualquier circunstancia el poder adquisitivo de todas las pensiones con arreglo al IPC.',
+        pagina: 170,
         postura: 'a-favor',
       },
       {
@@ -561,10 +622,12 @@ export const Hechos: Hecho[] = [
     desenlace: {
       estado: 'en-vigor',
       texto:
-        'En vigor. El primer decreto de 2025 cayó en enero (un decreto se vota entero, con todas sus medidas); dos semanas después se convalidó otro con la subida. La de 2026 se aprobó en un decreto propio.',
+        'En vigor. El primer decreto de 2025 cayó en enero (un decreto se vota entero, con todas sus medidas); tres semanas después se convalidó otro con la misma subida del 2,8 %. La de 2026, un 2,7 %, se aprobó en un decreto propio.',
       fuentes: [
         boe('Real Decreto-ley 9/2024 (revalorización del 2,8 % y otras medidas)', 'BOE-A-2024-26915'),
         boe('Acuerdo de derogación del Real Decreto-ley 9/2024', 'BOE-A-2025-1136'),
+        boe('Real Decreto-ley 1/2025 (revalorización del 2,8 % y otras medidas)', 'BOE-A-2025-1560'),
+        boe('Real Decreto-ley 3/2026 (revalorización del 2,7 % para 2026)', 'BOE-A-2026-2548'),
         congreso,
       ],
     },
@@ -613,8 +676,10 @@ export const Hechos: Hecho[] = [
     desenlace: {
       estado: 'en-vigor',
       texto:
-        'La reforma de julio de 2024 no pasó el primer paso. En marzo de 2025 el Gobierno aprobó el Real Decreto-ley 2/2025, y el Congreso lo convalidó en abril.',
+        'La reforma de julio de 2024 no pasó el primer paso. En marzo de 2025 el Gobierno aprobó el Real Decreto-ley 2/2025, y el Congreso lo convalidó en abril. Ese día acordó también tramitarlo como ley para poder cambiarlo, pero esa ley no llegó a votación final antes de la disolución; el decreto sigue en vigor. Varias comunidades, entre ellas Madrid y Aragón, lo recurrieron ante el Tribunal Constitucional (11 recursos admitidos en 2025); hasta el 06/10/2026 no había sentencia publicada en el BOE.',
       fuentes: [
+        boe('Acuerdo de convalidación del Real Decreto-ley 2/2025', 'BOE-A-2025-7435'),
+        boe('Recurso de inconstitucionalidad n.º 2437-2025 contra el Real Decreto-ley 2/2025', 'BOE-A-2025-9146'),
         {
           titulo: 'BOE: Real Decreto-ley 2/2025, sobre menores en contingencias migratorias extraordinarias',
           url: 'https://www.boe.es/eli/es/rdl/2025/03/18/2',

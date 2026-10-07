@@ -58,7 +58,8 @@ export const Precedentes: Precedente[] = [
       {
         partidoId: 'sumar',
         sentido: 'impulsa',
-        texto: 'Endurecer la Ley de Vivienda y limitar alquiler turístico y de temporada.',
+        texto:
+          'Aplicar la regulación de alquileres a todas las zonas tensionadas y limitar el alquiler turístico y de temporada.',
         pagina: 77,
       },
       {
@@ -114,9 +115,9 @@ export const Precedentes: Precedente[] = [
         ),
       },
       {
-        quien: 'Generalitat de Cataluña (datos del Incasòl)',
+        quien: 'Generalitat de Cataluña',
         tipo: 'Gobierno',
-        dice: 'Tras un año de zonas tensionadas, el alquiler medio bajó un 3,7 % en esos municipios y un 6,4 % en Barcelona, con 11.807 contratos nuevos ajustados al índice.',
+        dice: 'Tras un año de zonas tensionadas, el alquiler medio bajó un 3,7 % en esos municipios y un 6,4 % en Barcelona, con unos 1.000 contratos nuevos al mes.',
         fuente: f(
           'Infobae: Un año del tope a los alquileres en Cataluña (2025)',
           'https://www.infobae.com/espana/2025/03/16/un-ano-del-tope-a-los-alquileres-en-cataluna-el-gobierno-destaca-una-bajada-del-37-en-los-municipios-tensionados-pero-el-sector-inmobiliario-solo-ve-una-perdida-de-oferta/',
@@ -204,8 +205,26 @@ export const Precedentes: Precedente[] = [
     titulo: 'Restringir los contratos temporales (reforma laboral de 2021)',
     pregunta: '¿Limitar los contratos temporales da trabajos más estables?',
     posturas: [
+      {
+        partidoId: 'psoe',
+        sentido: 'impulsa',
+        texto: 'Mantenerla: la ve como la mejor base para crear empleo de calidad.',
+        pagina: 25,
+      },
+      {
+        partidoId: 'sumar',
+        sentido: 'impulsa',
+        texto: 'Seguir sus avances y hacer del indefinido a tiempo completo la forma normal de empleo.',
+        pagina: 7,
+      },
       { partidoId: 'vox', sentido: 'frena', texto: 'Derogar la reforma de 2021 y hacer otra.', pagina: 24 },
-      { partidoId: 'bng', sentido: 'matiza', texto: 'Derogarla para ir más allá: 45 días de despido.', pagina: 16 },
+      {
+        partidoId: 'bng',
+        sentido: 'matiza',
+        texto:
+          'Derogar del todo las «contrarreformas» laborales que la de 2021 consolidó y volver a los 45 días de despido.',
+        pagina: 16,
+      },
       {
         partidoId: 'eh-bildu',
         sentido: 'matiza',
@@ -224,7 +243,7 @@ export const Precedentes: Precedente[] = [
       {
         quien: 'Banco de España',
         tipo: 'Organismo público',
-        dice: 'Entre finales de 2021 y de 2022 hubo 1,6 millones más de asalariados indefinidos y 1,2 millones menos de temporales; cerca de un 25 % del aumento fueron fijos discontinuos.',
+        dice: 'Entre finales de 2021 y de 2022 hubo 1,6 millones más de asalariados indefinidos y 1,2 millones menos de temporales; según la afiliación, el 25 % de los nuevos contratos indefinidos eran fijos discontinuos.',
         fuente: f(
           'Banco de España, Boletín Económico 2023/T1, artículo 19',
           'https://www.bde.es/f/webbde/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/23/T1/Fich/be2301-art19.pdf',
@@ -234,15 +253,26 @@ export const Precedentes: Precedente[] = [
       {
         quien: 'EsadeEcPol',
         tipo: 'Centro de análisis',
-        dice: 'En sus primeros meses, estimó un aumento del empleo indefinido del 2,3 % (unos 286.000) atribuible a la reforma.',
+        dice: 'En sus primeros meses atribuyó a la reforma unos 286.000 empleos indefinidos más, sin efecto en el empleo temporal ni en el empleo total.',
         fuente: f(
           'EsadeEcPol: ¿Está reduciendo la temporalidad la reforma laboral de 2021? (2022)',
           'https://www.esade.edu/ecpol/wp-content/uploads/2022/04/Reforma_lab_2021-1.pdf',
         ),
       },
+      {
+        quien: 'Banco de España (Informe Anual 2023)',
+        tipo: 'Organismo público',
+        dice: 'Un año después seguía vivo el 16,1 % de los contratos de marzo de 2022, frente al 11 % en 2017-2018. Pero los nuevos indefinidos (sin contar fijos discontinuos) duran menos: seguía vivo el 48 %, frente al 52,5 % en 2017-2018.',
+        fuente: f(
+          'Banco de España: Informe Anual 2023, capítulo 3',
+          'https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/23/Fich/InfAnual_2023_Cap3.pdf',
+          true,
+        ),
+      },
     ],
     coinciden: 'La temporalidad registrada bajó de forma clara.',
-    discrepan: 'Si los nuevos indefinidos (muchos fijos discontinuos) son de verdad más estables.',
+    discrepan:
+      'Cuánta estabilidad real hay detrás: los nuevos indefinidos duran menos que antes y muchos son fijos discontinuos.',
   },
   {
     id: 'jornada',
@@ -253,7 +283,12 @@ export const Precedentes: Precedente[] = [
       { partidoId: 'sumar', sentido: 'impulsa', texto: '37,5 horas por ley y camino a las 32.', pagina: 7 },
       { partidoId: 'eh-bildu', sentido: 'impulsa', texto: '32 horas semanales.', pagina: 3 },
       { partidoId: 'bng', sentido: 'impulsa', texto: '35 horas semanales.', pagina: 16 },
-      { partidoId: 'psoe', sentido: 'matiza', texto: 'Semana de 4 días voluntaria e incentivada.', pagina: 143 },
+      {
+        partidoId: 'psoe',
+        sentido: 'matiza',
+        texto: 'Seguir con el piloto de reducción de jornada sin bajar el sueldo en empresas industriales.',
+        pagina: 50,
+      },
       {
         partidoId: 'pp',
         sentido: 'matiza',
@@ -278,7 +313,7 @@ export const Precedentes: Precedente[] = [
       {
         quien: 'Gobierno francés (recogido por Eurofound)',
         tipo: 'Gobierno',
-        dice: 'Atribuyó a la reducción de jornada unos 300.000 empleos.',
+        dice: 'Atribuyó a la reducción de jornada, junto con la rebaja de cotizaciones que la acompañó, unos 300.000 empleos entre 1996 y 2001.',
         fuente: f(
           'Eurofound: Government issues assessment of 35-hour week legislation (2002)',
           'https://www.eurofound.europa.eu/en/publications/all/government-issues-assessment-35-hour-week-legislation',
@@ -286,12 +321,12 @@ export const Precedentes: Precedente[] = [
         ),
       },
       {
-        quien: 'Piloto de 4 días en Reino Unido',
+        quien: 'Investigadores de Cambridge y Boston College con Autonomy',
         tipo: 'Estudio académico',
         dice: '56 de las 61 empresas siguieron con la semana de 4 días; el 71 % de la plantilla dijo tener menos agotamiento. Las empresas se apuntaron voluntariamente.',
         fuente: f(
-          'IBA: UK four-day working week trial yields promising results (2023)',
-          'https://ibanet.org/uk-four-day-working-week-trial-results',
+          'Autonomy: informe de resultados del piloto británico de semana de 4 días (2023)',
+          'https://autonomy.work/portfolio/uk4dwpilotresults/',
         ),
       },
     ],
@@ -321,6 +356,11 @@ export const Precedentes: Precedente[] = [
         cuando: '2005',
         que: 'Regularización extraordinaria ligada a un contrato: unas 600.000 personas.',
       },
+      {
+        lugar: 'España',
+        cuando: '2026',
+        que: 'Real Decreto 316/2026: permiso por «arraigo extraordinario» para quien llegó antes de 2026; solicitudes hasta el 30 de junio. Sus efectos aún no se han estudiado.',
+      },
     ],
     evidencias: [
       {
@@ -328,23 +368,34 @@ export const Precedentes: Precedente[] = [
         tipo: 'Estudio académico',
         dice: 'Aumentó el empleo formal y la recaudación (unos 4.000 € al año por trabajador), sin bajar los salarios de los nativos ni crear efecto llamada; algunos trabajadores poco cualificados de la economía sumergida perdieron empleo.',
         fuente: f(
-          'EsadeEcPol: La nueva regularización de inmigrantes en España: qué nos dice la evidencia',
-          'https://www.esade.edu/ecpol/es/la-nueva-regularizacion-de-inmigrantes-en-espana-que-nos-dice-la-evidencia/',
+          'EsadeEcPol: La nueva regularización de inmigrantes en España: qué nos dice la evidencia (2026)',
+          'https://www.esade.edu/ecpol/es/blog/la-nueva-regularizacion-de-inmigrantes-en-espana-que-nos-dice-la-evidencia/',
         ),
       },
       {
-        quien: 'Observatorio Social de la Fundación "la Caixa"',
-        tipo: 'Centro de análisis',
-        dice: 'Resume el mismo estudio: regularizar no produjo efecto llamada.',
+        quien: 'Martínez-Zarzoso (Universitat Jaume I) y Elguezabal (Universidad de Gotinga)',
+        tipo: 'Estudio académico',
+        dice: 'Con datos de 196 países de origen y 32 destinos de la OCDE (1996-2022), tras una regularización aumentan las llegadas, sobre todo donde ya hay una comunidad del mismo origen. Exigir al menos ocho meses de estancia previa anula ese efecto.',
         fuente: f(
-          'Observatorio Social "la Caixa": Regularising the situation of the immigrant population does not result in a call effect',
-          'https://elobservatoriosocial.fundacionlacaixa.org/en/-/regularising-the-situation-of-the-immigrant-population-does-not-result-in-a-call-ef-fect-',
+          'The Conversation: ¿Provocan las regularizaciones de migrantes un efecto llamada? (2026)',
+          'https://theconversation.com/provocan-las-regularizaciones-de-migrantes-un-efecto-llamada-esto-dicen-los-datos-de-los-ultimos-80-anos-274500',
+        ),
+      },
+      {
+        quien: 'Gobierno de España (preámbulo del Real Decreto 316/2026)',
+        tipo: 'Gobierno',
+        dice: 'Sostiene que dar permiso de residencia a quien ya vive aquí aumenta las cotizaciones, reduce la economía sumergida y tiene un impacto fiscal neto favorable.',
+        fuente: f(
+          'BOE: Real Decreto 316/2026, que modifica el Reglamento de extranjería',
+          'https://www.boe.es/buscar/doc.php?id=BOE-A-2026-8284',
+          true,
         ),
       },
     ],
-    coinciden: 'El caso de 2005 es el más estudiado y su principal análisis no halla efecto llamada.',
+    coinciden:
+      'El resultado depende del diseño: requisitos como un contrato, una estancia previa o más inspecciones cambian el efecto.',
     discrepan:
-      'Hay pocos estudios; los partidos que se oponen sostienen que estas medidas atraen más llegadas irregulares.',
+      'Si hay efecto llamada: el estudio del caso español de 2005 no lo encuentra; el que compara 32 países sí, salvo cuando se exige una estancia previa larga.',
   },
   {
     id: 'imv',
@@ -355,7 +406,7 @@ export const Precedentes: Precedente[] = [
       {
         partidoId: 'psoe',
         sentido: 'impulsa',
-        texto: 'Mejorar el acceso y llegar a un millón de menores.',
+        texto: 'Consolidarlo, con el complemento de infancia, hasta llegar al menos a un millón de menores.',
         pagina: 182,
       },
       { partidoId: 'eh-bildu', sentido: 'impulsa', texto: 'Ampliarlo y subirlo al menos un 12 %.', pagina: 7 },
@@ -364,12 +415,21 @@ export const Precedentes: Precedente[] = [
     casos: [{ lugar: 'España', cuando: 'desde 2020', que: 'Se crea el Ingreso Mínimo Vital.' }],
     evidencias: [
       {
-        quien: 'AIReF',
+        quien: 'AIReF (datos de 2023)',
         tipo: 'Organismo público',
-        dice: 'En 2023 lo cobraba el 36 % de los hogares que podrían recibirlo; el 56 % ni lo pedía. Redujo un 30 % la brecha de pobreza y un 9,5 % la tasa de pobreza.',
+        dice: 'En 2023 lo cobraba el 36 % de los hogares que podrían recibirlo; el 56 % ni lo pedía.',
         fuente: f(
           'Noticias de Navarra: la AIReF calcula que solo el 36 % de posibles beneficiarios cobra el ingreso mínimo (2024)',
           'https://www.noticiasdenavarra.com/economia/2024/07/10/airef-calcula-36-posibles-beneficiarios-8463346.html',
+        ),
+      },
+      {
+        quien: 'AIReF (datos de 2024)',
+        tipo: 'Organismo público',
+        dice: 'Llega al 20 % de los hogares en pobreza y podría llegar al 50 %. Redujo un 30 % la brecha de pobreza y un 9,5 % la tasa de pobreza; el 55 % de quienes tienen derecho no lo pide.',
+        fuente: f(
+          'Bolsamanía: la AIReF constata que el IMV llega al 20 % de hogares en pobreza (2026)',
+          'https://www.bolsamania.com/noticias/economia/economia--airef-constata-que-el-imv-llega-al-20-de-hogares-en-pobreza-pero-advierte-de-que-podria-beneficiar-al-50--21607160.html',
         ),
       },
       {
@@ -429,16 +489,16 @@ export const Precedentes: Precedente[] = [
       {
         quien: 'Maldita.es',
         tipo: 'Verificador',
-        dice: 'Tras un año: bajó el precio mayorista, la compensación que pagaban los consumidores fue mucho menor que el ahorro y se beneficiaron más los de tarifa regulada que los del mercado libre. Dejó de aplicarse al bajar el gas.',
+        dice: 'En su primer año abarató la electricidad un 14,37 % de media frente a no tener tope (un 21,62 % los días en que se aplicó). Benefició a quien tenía tarifa regulada o un contrato libre firmado después del 26/04/2022. Dejó de aplicarse en febrero de 2023 al bajar el gas.',
         fuente: f(
           'Maldita.es: un año de la excepción ibérica (2023)',
           'https://maldita.es/clima/20230615/un-ano-excepcion-iberica/',
         ),
       },
       {
-        quien: 'Análisis citado por Noticias de Navarra',
-        tipo: 'Medio',
-        dice: 'Los cerca de 20 millones de hogares del mercado libre no se beneficiaron y pagaron de media unos 20 € al mes más en el segundo semestre de 2022.',
+        quien: 'Fuentes del sector eléctrico (citadas por Noticias de Navarra)',
+        tipo: 'Sector afectado',
+        dice: 'Unos 20 millones de hogares con contrato libre no se beneficiaron, y gran parte de ellos pagó de media unos 20 € al mes más en el segundo semestre de 2022.',
         fuente: f(
           'Noticias de Navarra: la excepción ibérica supone una subida de 20 euros al mes en casi 20 millones de hogares (2023)',
           'https://www.noticiasdenavarra.com/economia/2023/02/12/excepcion-iberica-supone-subida-20-6435208.amp.html',
@@ -462,27 +522,37 @@ export const Precedentes: Precedente[] = [
     casos: [{ lugar: 'Alemania', cuando: 'abril de 2023', que: 'Apaga sus tres últimos reactores.' }],
     evidencias: [
       {
-        quien: 'Agora Energiewende y Fraunhofer',
+        quien: 'Agencia Federal de Medio Ambiente de Alemania (UBA)',
+        tipo: 'Organismo público',
+        dice: 'En 2023 las emisiones alemanas bajaron un 10,3 %, la mayor caída desde 1990: menos carbón, más renovables, menos demanda y pasar de exportar más electricidad de la que importaba a importar más.',
+        fuente: f(
+          'UBA: Final data for 2023: climate-damaging emissions fell by ten per cent (2025)',
+          'https://www.umweltbundesamt.de/en/press/pressinformation/final-data-for-2023-climate-damaging-emissions-fell',
+          true,
+        ),
+      },
+      {
+        quien: 'Instituto Fraunhofer ISE',
         tipo: 'Centro de análisis',
-        dice: 'En 2023 las emisiones alemanas fueron las más bajas desde los años 50 y el carbón cayó a mínimos de seis décadas, en parte por menos demanda y más importaciones.',
+        dice: 'En 2023 la electricidad con carbón cayó casi un tercio, a mínimos de seis décadas, y las renovables dieron casi el 60 %. Influyeron una demanda más baja y que Alemania importó casi 12 TWh más de lo que exportó.',
         fuente: f(
           'RenewEconomy: Germany’s coal power production drops to lowest level in 60 years after nuclear exit (2024)',
           'https://reneweconomy.com.au/germanys-coal-power-production-drops-to-lowest-level-in-60-years-in-2023-after-nuclear-exit/',
         ),
       },
       {
-        quien: 'PwC',
-        tipo: 'Sector afectado',
-        dice: 'Con las nucleares abiertas, la electricidad libre de emisiones habría sido el 94 % en 2024, frente al 61 % real.',
+        quien: 'PwC (consultora)',
+        tipo: 'Centro de análisis',
+        dice: 'En un escenario ilustrativo con las nucleares abiertas, la electricidad libre de emisiones habría sido el 94 % en 2024, frente al 61 % real.',
         fuente: f(
           'PwC: Alemania y la energía nuclear, consecuencias del cierre',
           'https://www.pwc.es/es/publicaciones/energia/assets/07-alemania-energia-nuclear-consecuencias-cierre-parque-nuclear.pdf',
         ),
       },
       {
-        quien: 'Öko-Institut',
+        quien: 'Mario Ragwitz (Instituto Fraunhofer IEG)',
         tipo: 'Centro de análisis',
-        dice: 'La producción perdida se compensaría sobre todo con renovables nuevas.',
+        dice: 'Antes del apagón final, la nuclear daba menos del 4 % de la electricidad, más o menos lo que se iba a añadir en un año de solar y eólica.',
         fuente: f(
           'Bloomberg Línea: Alemania apaga sus últimas plantas nucleares (2023)',
           'https://www.bloomberglinea.com/2023/04/15/alemania-apaga-ultimas-plantas-nucleares-con-la-esperanza-de-una-economia-mas-verde/',
@@ -515,7 +585,7 @@ export const Precedentes: Precedente[] = [
       {
         quien: 'Consejo General del Poder Judicial',
         tipo: 'Organismo público',
-        dice: 'Hasta septiembre de 2023 contabilizó 1.205 rebajas de pena y 121 excarcelaciones; se rebajaron el 32 % de las condenas revisadas.',
+        dice: 'Hasta septiembre de 2023 contabilizó 1.205 rebajas de pena y 121 excarcelaciones: el 31,4 % de los casos revisados.',
         fuente: f(
           'Onda Vasca: el CGPJ eleva a 1.205 las rebajas de pena y a 121 las excarcelaciones',
           'https://www.ondavasca.com/el-cgpj-eleva-a-1-205-las-rebajas-de-pena-y-a-121-las-excarcelaciones-por-la-ley-del-solo-si-es-si/',
@@ -530,11 +600,30 @@ export const Precedentes: Precedente[] = [
           'https://www.eldiario.es/politica/judicial-confirma-978-rebajas-penas-104-excarcelaciones-ley-si-si_1_10120257.html',
         ),
       },
+      {
+        quien: 'Fiscal General del Estado (decreto de 21/11/2022)',
+        tipo: 'Organismo público',
+        dice: 'Pidió a los fiscales no revisar una condena firme si la pena impuesta seguía cabiendo en la nueva ley; solo si la superaba.',
+        fuente: f(
+          'El Derecho: decreto de la Fiscalía General del Estado para fijar criterio de actuación sobre la ley del «solo sí es sí»',
+          'https://elderecho.com/decreto-fiscalia-general-estado-para-fijar-criterio-actuacion-sobre-ley-solo-si-es-si',
+        ),
+      },
+      {
+        quien: 'Cortes Generales (preámbulo de la Ley Orgánica 4/2023)',
+        tipo: 'Organismo público',
+        dice: 'La reforma de 2023 busca evitar «el efecto no deseado» de aplicar las penas mínimas de los nuevos marcos penales, más amplios, sin tocar la definición del consentimiento.',
+        fuente: f(
+          'BOE: Ley Orgánica 4/2023, de modificación del Código Penal en los delitos contra la libertad sexual',
+          'https://www.boe.es/buscar/doc.php?id=BOE-A-2023-10213',
+          true,
+        ),
+      },
     ],
     coinciden:
       'La ley llevó a rebajar condenas ya firmes al aplicarse la pena más favorable, y por eso se reformó en 2023.',
     discrepan:
-      'Si el problema estaba en el diseño de la ley o en su interpretación, y si el consentimiento como eje debe mantenerse.',
+      'Si el problema estaba en el diseño de la ley o en cómo se revisaron las condenas, y si el consentimiento como eje debe mantenerse.',
   },
 ];
 

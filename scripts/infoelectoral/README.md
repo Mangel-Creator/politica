@@ -16,3 +16,10 @@ fichero.
 350). `node trayectorias.mjs` asigna esas candidaturas a cada partido de la app (o a su
 antecesor: AP antes del PP, CiU antes de Junts…) y genera `src/data/trayectorias.ts`. Si
 una candidatura se asignara a dos partidos, el script se detiene.
+
+## Comprobación del simulador
+
+`node provincias.mjs 202307` (después de `totales.mjs`) escribe
+`src/services/__tests__/congreso-202307.json` con los votos, blancos y escaños oficiales de
+cada circunscripción. El test `dhondt-23j.test.ts` exige que `src/services/dhondt.ts` dé
+exactamente esos escaños en las 52 (contrastado el 06/10/2026: 350 de 350).

@@ -1,7 +1,7 @@
 // utilidades: cargar JSON de una votación (con caché)
 import fs from 'node:fs';
 fs.mkdirSync('votos', { recursive: true });
-const UA = { headers: { 'User-Agent': 'Mozilla/5.0' } };
+const UA = { headers: { 'User-Agent': 'Mozilla/5.0 (politica-app)' } };
 export async function cargar(ruta) {
   const cache = 'votos/' + ruta.split('/').slice(-4).join('_');
   if (fs.existsSync(cache)) return JSON.parse(fs.readFileSync(cache, 'utf8'));
