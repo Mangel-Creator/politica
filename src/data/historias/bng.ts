@@ -26,7 +26,7 @@ export const HistoriaBNG: HistoriaDetallada = {
       titulo: 'Crecimiento',
       periodo: '1991–2001',
       parrafos: [
-        'Se incorporan el PNG-PG (1991), Esquerda Nacionalista (1992), Inzar (1993) y Unidade Galega (1994). En las autonómicas de 1993 logra trece escaños (18,5 %).',
+        'Se incorporan el PNG-PG (1991), Esquerda Nacionalista (1992) e Inzar (1993). En las autonómicas de 1993 logra trece escaños (18,5 %); después se suma también Unidade Galega.',
         'Entra en el Congreso en 1996 con dos diputados y sube a tres en 2000. En las gallegas de 1997 es segunda fuerza por primera vez, por delante del PSdeG-PSOE, con dieciocho escaños (24,8 %). En 1999 consigue un eurodiputado, Camilo Nogueira.',
       ],
     },
@@ -35,8 +35,8 @@ export const HistoriaBNG: HistoriaDetallada = {
       periodo: '2001–2012',
       parrafos: [
         'En 2001 empata a diecisiete escaños con el PSdeG. En 2003 Anxo Quintana releva a Beiras como portavoz nacional y candidato.',
-        'Tras las autonómicas de 2005, en las que el PP pierde la mayoría absoluta, el BNG entra en un gobierno de coalición con el socialista Emilio Pérez Touriño: Quintana es vicepresidente y el BNG dirige cinco consejerías. El PP recupera la mayoría absoluta en 2009 y Quintana dimite con toda la ejecutiva.',
-        'Guillerme Vázquez, con una lista apoyada por la UPG, gana la asamblea extraordinaria de 2009. En 2012 se van Encontro Irmandiño (Beiras), Máis Galiza, el PNG-PG y Esquerda Nacionalista; parte de ellos fundan Anova y Compromiso por Galicia.',
+        'Tras las autonómicas de 2005, en las que el PP pierde la mayoría absoluta, el BNG entra en un gobierno de coalición con el socialista Emilio Pérez Touriño: Quintana es vicepresidente y el BNG dirige además las consejerías de Cultura, Industria, Medio Rural y Vivienda. El PP recupera la mayoría absoluta en 2009 y Quintana dimite con toda la ejecutiva.',
+        'Guillerme Vázquez, con una lista apoyada por la UPG, gana la asamblea extraordinaria de 2009. En 2012 se van Encontro Irmandiño (Beiras), Máis Galiza, el PNG-PG y Esquerda Nacionalista; unos se integran en Anova y otros en Compromiso por Galicia.',
       ],
     },
     {

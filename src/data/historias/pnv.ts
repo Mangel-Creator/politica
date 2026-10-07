@@ -37,7 +37,7 @@ export const HistoriaPNV: HistoriaDetallada = {
       titulo: 'Estella y el Plan Ibarretxe',
       periodo: '1998–2009',
       parrafos: [
-        'El 12 de septiembre de 1998 firma el Pacto de Estella con Herri Batasuna, EA, Izquierda Unida y otras organizaciones, que plantea una solución política negociada «en ausencia de violencia»; el PP y el PSE no participan. Un mes antes, PNV y EA habían firmado con ETA un texto propuesto por esta. ETA declara una tregua el 16 de septiembre y la rompe en noviembre de 1999, responsabilizando al PNV y a EA.',
+        'El 12 de septiembre de 1998 firma el Pacto de Estella con Herri Batasuna, EA, Izquierda Unida y otras organizaciones, que plantea una solución política negociada «en ausencia de violencia»; el PP y el PSE no participan. Un mes antes, PNV y EA habían firmado con ETA un texto propuesto por esta, al que luego hicieron una contrapropuesta que ETA no respondió. ETA declara una tregua el 16 de septiembre y la rompe en noviembre de 1999, responsabilizando al PNV y a EA.',
         'Juan José Ibarretxe es lehendakari de 1999 a 2009. Su propuesta de nuevo Estatuto, conocida como Plan Ibarretxe, planteaba un «estado libre asociado» y el derecho a decidir. El Parlamento Vasco la aprueba el 30 de diciembre de 2004 por 39 votos contra 35, con tres votos decisivos del grupo de Batasuna. El Congreso la rechaza el 1 de febrero de 2005 por 313 votos contra 29.',
         'PP y PSOE la acusaron de ser secesionista e inconstitucional; el Gobierno Vasco respondió que PP y PSE no participaron en su redacción y que ETA la había condenado.',
       ],
@@ -63,7 +63,7 @@ export const HistoriaPNV: HistoriaDetallada = {
       titulo: 'Casos judiciales',
       periodo: '2009–2023',
       parrafos: [
-        'Caso De Miguel: tres exmiembros de la ejecutiva del PNV de Álava cobraban comisiones a empresas a cambio de adjudicaciones públicas. La denuncia la presentó en 2009 una abogada que administraba una de esas empresas y a la que, según su testimonio, se exigieron 100.000 euros. La Audiencia de Álava los condenó el 17 de diciembre de 2019.',
+        'Caso De Miguel: tres exmiembros de la ejecutiva del PNV de Álava cobraban comisiones a empresas a cambio de adjudicaciones públicas. La denuncia la presentó en 2009 una abogada que administraba una de esas empresas y a la que, según su testimonio, se exigieron 100.000 euros. La Audiencia de Álava los condenó en diciembre de 2019.',
         'En enero de 2023 el Supremo confirmó las condenas principales: Alfredo de Miguel, ex número dos del PNV alavés, a 12 años y 4 meses (once meses menos, al absolverlo de tráfico de influencias); Koldo Ochandiano, a 7 años y 6 meses, y Aitor Tellería, a algo más de 5 años. El fiscal había dicho en el juicio que estaban «amparados por todo el establishment del PNV»; el partido denunció «cierto afán persecutorio» contra él y, tras la sentencia, Ortuzar negó que hubiera amiguismo.',
       ],
     },

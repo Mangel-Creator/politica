@@ -5,14 +5,14 @@ const C = '2026-10-06';
 export const HistoriaEHBildu: HistoriaDetallada = {
   partidoId: 'eh-bildu',
   entradilla:
-    'Coalición independentista vasca nacida en 2012 y convertida en partido en 2017. La forman Sortu, Eusko Alkartasuna y Alternatiba. Se presenta en el País Vasco y Navarra y su objetivo declarado es una Euskal Herria independiente.',
+    'Coalición independentista vasca nacida en 2012 y refundada como organización permanente en 2017. La forman Sortu, Eusko Alkartasuna y Alternatiba. Se presenta en el País Vasco y Navarra y su objetivo declarado es una Euskal Herria independiente.',
   capitulos: [
     {
       titulo: 'Origen',
       periodo: '2011–2012',
       parrafos: [
         'La crean Eusko Alkartasuna, Aralar, Alternatiba y el sector de la izquierda abertzale cercano a Sortu. Sus precedentes inmediatos son Bildu (municipales de 2011) y Amaiur, que en las generales de 2011 logró siete diputados.',
-        'Según el artículo de referencia, la unión fue posible cuando la izquierda abertzale abandonó la estrategia «político-militar» por una solo política. Se presenta en San Sebastián el 10 de junio de 2012. Sortu, legalizado ese año por el Tribunal Constitucional, se incorpora más tarde.',
+        'Según la Wikipedia, la unión fue posible cuando la izquierda abertzale abandonó la estrategia «político-militar» por una solo política. Se presenta en San Sebastián el 10 de junio de 2012. Sortu, legalizado ese año por el Tribunal Constitucional, se incorpora más tarde.',
       ],
     },
     {
@@ -38,9 +38,9 @@ export const HistoriaEHBildu: HistoriaDetallada = {
       titulo: 'ETA y las víctimas',
       periodo: '2011–2023',
       parrafos: [
-        'Es la cuestión más discutida en torno al partido. Su coordinador, Otegi, militó en ETA en su juventud. Asociaciones de víctimas y partidos como el PP y Vox lo califican de heredero político de ETA. EH Bildu responde que integra a partidos pacifistas y que Sortu fue avalado por el Constitucional.',
+        'Es la cuestión más discutida en torno al partido. Su coordinador, Otegi, militó en ETA en su juventud, igual que algunos afiliados de Sortu. Algunos medios conservadores lo califican de heredero de ETA y asociaciones como Covite critican la presencia de sus dirigentes en homenajes a exmiembros de la banda. Integra también a partidos de corte pacifista, como Eusko Alkartasuna y Alternatiba; Sortu fue legalizado por el Constitucional, y Otegi ha reiterado el compromiso del partido contra la violencia de ETA.',
         'El 18 de octubre de 2021, en el décimo aniversario del fin de ETA, Otegi y el secretario general de Sortu dijeron a las víctimas: «Sentimos su dolor y desde ese sentimiento sincero afirmamos que el mismo nunca debió haberse producido». Covite, la AVT y Dignidad y Justicia lo consideraron insuficiente y pidieron, entre otras cosas, el fin de los homenajes a presos de ETA.',
-        'En las municipales de 2023, Covite denunció que sus listas incluían a 44 condenados por pertenencia o colaboración con ETA. Siete, condenados en causas con víctimas mortales, anunciaron que renunciarían si salían elegidos. La Fiscalía rechazó la petición de ilegalizar el partido.',
+        'En las municipales de 2023, Covite denunció que sus listas incluían a 44 condenados por pertenencia o colaboración con ETA. Siete, condenados en causas con víctimas mortales, anunciaron que renunciarían si salían elegidos. La Fiscalía rechazó la petición de Vox, Isabel Díaz Ayuso y Dignidad y Justicia de ilegalizar el partido.',
       ],
     },
     {
@@ -48,8 +48,8 @@ export const HistoriaEHBildu: HistoriaDetallada = {
       periodo: '2011–2025',
       parrafos: [
         'Otegi y otros cuatro dirigentes fueron condenados por pertenencia a ETA por intentar reconstruir Batasuna. En 2012 el Supremo fijó penas de entre seis y seis años y medio, que cumplieron.',
-        'En 2018 el Tribunal Europeo de Derechos Humanos concluyó que no tuvieron un juez imparcial. En 2020 el Supremo anuló la condena y ordenó repetir el juicio. En 2024 el Constitucional, por 7 votos a 4, impidió repetirlo porque ya habían cumplido las penas.',
-        'En octubre de 2025 el Tribunal Europeo inadmitió la nueva demanda de los cinco; según la información publicada entonces, la condena se mantiene.',
+        'En 2018 el Tribunal Europeo de Derechos Humanos concluyó que no tuvieron un juez imparcial. En 2020 el Supremo anuló la condena y ordenó repetir el juicio. En enero de 2024 el Constitucional, por 7 votos a 4, anuló esa decisión e impidió repetirlo porque ya habían cumplido las penas; la condena de 2012 siguió en vigor.',
+        'En octubre de 2025 el Tribunal Europeo inadmitió por unanimidad la nueva demanda de los cinco, que pedían anular la condena, y esta se mantiene.',
       ],
     },
   ],

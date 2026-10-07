@@ -41,7 +41,7 @@ export const HistoriaVox: HistoriaDetallada = {
       parrafos: [
         'En las generales de julio de 2023 baja a 33 diputados y el 12,4 %, aunque sigue siendo tercera fuerza. Vota a favor de la investidura fallida de Feijóo.',
         'En noviembre de 2023 Abascal encabeza concentraciones contra la ley de amnistía ante la sede del PSOE, en la calle Ferraz de Madrid, que terminan con incidentes y cargas policiales. Vox y su sindicato, Solidaridad, convocan una huelga general el 24 de noviembre.',
-        'El 11 de julio de 2024 rompe con el PP y sale de los cinco gobiernos autonómicos que compartían, porque sus presidentes aceptaron repartir unos 400 menores migrantes no acompañados llegados a Canarias y Ceuta. Ese mes se une en el Parlamento Europeo al grupo Patriotas por Europa.',
+        'El 11 de julio de 2024 rompe con el PP y sale de los cinco gobiernos autonómicos que compartían, porque sus presidentes aceptaron acoger parte de los 400 menores migrantes no acompañados que las comunidades acordaron repartirse en una conferencia sectorial en Tenerife. Ese mes se une en el Parlamento Europeo al grupo Patriotas por Europa.',
       ],
     },
     {

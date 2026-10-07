@@ -274,7 +274,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Reducción de jornada discontinua y entre convivientes, y un permiso retribuido para acompañar a familiares al médico.',
-        pagina: 24,
+        pagina: 25,
       },
       { texto: 'Más información y participación de la plantilla en jornada, horarios y horas extra.', pagina: 25 },
       {
@@ -598,10 +598,10 @@ export const ProgramaSumar: ResumenPrograma = {
         pagina: 89,
       },
       { texto: 'Acabar con la temporalidad del personal sanitario y reformar su Estatuto Marco.', pagina: 90 },
-      { texto: 'Estrategia de salud mental infantojuvenil y un plan nacional contra el suicidio.', pagina: 90 },
+      { texto: 'Estrategia de salud mental infantojuvenil y un plan nacional contra el suicidio.', pagina: 91 },
       {
         texto: 'Estrategia de «cero contenciones» para que las prácticas coercitivas sean realmente excepcionales.',
-        pagina: 90,
+        pagina: 91,
       },
       { texto: 'Más plazas de Medicina, Enfermería y Psicología y más plazas MIR, EIR y PIR.', pagina: 90 },
       { texto: 'Plan de choque en atención primaria con financiación directa a las comunidades.', pagina: 90 },
@@ -791,7 +791,7 @@ export const ProgramaSumar: ResumenPrograma = {
           'Diversidad sexual en la educación sexoafectiva y responsables de diversidad en todos los niveles educativos.',
         pagina: 114,
       },
-      { texto: 'Formación democrática en todas las etapas educativas.', pagina: 117 },
+      { texto: 'Formación democrática en todas las etapas educativas.', pagina: 118 },
       { texto: 'Memoria democrática en el currículo y en los libros de texto.', pagina: 135 },
       { texto: 'Educación para la paz y la no violencia como eje de la acción de gobierno.', pagina: 139 },
       {
@@ -801,7 +801,7 @@ export const ProgramaSumar: ResumenPrograma = {
       },
       {
         texto: 'Que la concertada sea subsidiaria de la pública y no ceder más suelo público para colegios privados.',
-        pagina: 154,
+        pagina: 155,
       },
       {
         texto:
@@ -810,8 +810,8 @@ export const ProgramaSumar: ResumenPrograma = {
       },
       {
         texto:
-          'Retirar el concierto a los centros que separen por sexo o seleccionen alumnos, y vigilar las cuotas ilegales.',
-        pagina: 154,
+          'Suprimir el concierto a los centros que discriminen por razón de sexo o seleccionen al alumnado, y vigilar que no cobren cuotas ilegales.',
+        pagina: 155,
       },
       { texto: 'Integrar las enseñanzas artísticas superiores en la universidad.', pagina: 155 },
       {
@@ -904,7 +904,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Pacto de Estado para la acogida de menores no acompañados, con permiso de residencia y trabajo al cumplir 18.',
-        pagina: 95,
+        pagina: 96,
       },
       {
         texto:
@@ -1035,7 +1035,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Recuperar plantillas en la Administración, con tasa de reposición positiva y directivos más profesionales.',
-        pagina: 17,
+        pagina: 18,
       },
       { texto: 'Administraciones más flexibles, con sistemas informáticos y bases de datos unificados.', pagina: 18 },
       { texto: 'Volver a la atención presencial plena en todas las administraciones.', pagina: 18 },
@@ -1109,7 +1109,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Órganos comunes para ejecutar las sentencias de pago pendientes, con medios como los de la Agencia Tributaria.',
-        pagina: 123,
+        pagina: 124,
       },
       { texto: 'Digitalizar la justicia con expediente electrónico y preferentemente código abierto.', pagina: 124 },
       {
@@ -1233,7 +1233,7 @@ export const ProgramaSumar: ResumenPrograma = {
           'Software libre en las administraciones y en la escuela, con código abierto obligatorio en la contratación pública.',
         pagina: 179,
       },
-      { texto: 'Limitar la concentración de medios de radio, televisión e internet en un mismo grupo.', pagina: 180 },
+      { texto: 'Limitar la concentración de medios de radio, televisión e internet en un mismo grupo.', pagina: 181 },
       {
         texto: 'Que las administraciones desarrollen su propia tecnología en lugar de externalizarla a consultoras.',
         pagina: 180,
@@ -1352,7 +1352,7 @@ export const ProgramaSumar: ResumenPrograma = {
       },
       { texto: 'Combatir la violencia y la brecha de empleo de las mujeres con discapacidad.', pagina: 100 },
       { texto: 'Ley integral contra el racismo, incluido el institucional y estructural.', pagina: 104 },
-      { texto: 'Ampliar el teléfono de información de derechos de las mujeres a la conciliación.', pagina: 108 },
+      { texto: 'Ampliar el teléfono de información de derechos de las mujeres a la conciliación.', pagina: 109 },
       { texto: 'Más planes de igualdad e inspecciones y protocolos contra el acoso laboral.', pagina: 108 },
       {
         texto:
@@ -1362,7 +1362,7 @@ export const ProgramaSumar: ResumenPrograma = {
       { texto: 'Ampliar la ley a todas las formas de violencia machista, según el Convenio de Estambul.', pagina: 110 },
       {
         texto: 'Formación obligatoria y continuada en violencia machista para quienes atienden a las víctimas.',
-        pagina: 110,
+        pagina: 111,
       },
       {
         texto: 'Incluir otras violencias en VioGén y revisar la valoración del riesgo y las órdenes de protección.',
@@ -1388,7 +1388,7 @@ export const ProgramaSumar: ResumenPrograma = {
       },
       {
         texto: 'Un teléfono de atención para hombres en crisis, sin restar fondos a los programas para mujeres.',
-        pagina: 110,
+        pagina: 111,
       },
       { texto: 'Blindar el Pacto de Estado contra la Violencia de Género con financiación estable.', pagina: 111 },
       {
@@ -1405,7 +1405,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Crear la Autoridad Independiente para la Igualdad de Trato y unidades de igualdad en todas las administraciones.',
-        pagina: 112,
+        pagina: 113,
       },
       {
         texto:
@@ -1427,11 +1427,11 @@ export const ProgramaSumar: ResumenPrograma = {
         texto: 'Red de acogida, asistencia jurídica y psicológica para víctimas de violencia LGTBI+fóbica.',
         pagina: 114,
       },
-      { texto: 'Libre movilidad de las familias LGTBI+ en la UE y un certificado de filiación europeo.', pagina: 115 },
+      { texto: 'Libre movilidad de las familias LGTBI+ en la UE y un certificado de filiación europeo.', pagina: 116 },
       { texto: 'Planes de igualdad LGTBI+ en el empleo e inserción laboral de mujeres trans.', pagina: 115 },
       {
         texto: 'Reconocer la multiparentalidad y estudiar la adopción por núcleos de más de dos personas.',
-        pagina: 115,
+        pagina: 116,
       },
       { texto: 'Residencias y centros de día que respeten la diversidad de las personas mayores LGTBI+.', pagina: 115 },
       { texto: 'Defender la autodeterminación de las personas trans, intersex y no binarias.', pagina: 116 },
@@ -1747,7 +1747,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Pacto social y territorial para llegar a unos 148.000 MW renovables en 2030, 24.000 de ellos en tejados.',
-        pagina: 45,
+        pagina: 46,
       },
       {
         texto:
@@ -1778,7 +1778,7 @@ export const ProgramaSumar: ResumenPrograma = {
       { texto: 'Auditoría pública del coste real de cada tecnología y pagar a cada una según ese coste.', pagina: 47 },
       {
         texto:
-          'Eliminar a medio plazo el mercado marginalista y sacar ya de él la nuclear, con contratos a largo plazo.',
+          'Eliminar a medio plazo el mercado marginalista y sacar de él a corto plazo la nuclear, con contratos a largo plazo.',
         pagina: 47,
       },
       { texto: 'Prohibir que un mismo grupo genere, distribuya y comercialice electricidad.', pagina: 47 },
@@ -1820,7 +1820,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Proteger al menos el 30 % de la superficie marina en 2030, con más reservas y protección de la posidonia.',
-        pagina: 51,
+        pagina: 52,
       },
       {
         texto: 'Sustituir pinos exóticos y eucaliptos por bosques autóctonos y proteger los bosques maduros.',
@@ -2243,7 +2243,7 @@ export const ProgramaSumar: ResumenPrograma = {
         pagina: 43,
       },
       {
-        texto: 'Atraer industria a la España vaciada que produce renovables, con luz más barata cerca de las plantas.',
+        texto: 'Atraer industria a la España vaciada que produce renovables y estudiar reformas para abaratar la luz cerca de las plantas.',
         pagina: 44,
       },
       {
@@ -2559,7 +2559,7 @@ export const ProgramaSumar: ResumenPrograma = {
       {
         texto:
           'Una formación del Consejo de la UE sobre igualdad y reformar los tratados para proteger los derechos de las mujeres.',
-        pagina: 113,
+        pagina: 114,
       },
       {
         texto:

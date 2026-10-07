@@ -13,7 +13,7 @@ export const HistoriaPP: HistoriaDetallada = {
       parrafos: [
         'Alianza Popular (AP) nace en 1976 como federación de pequeños partidos conservadores encabezados por antiguos dirigentes del franquismo. Su figura principal es Manuel Fraga, ministro de Información y Turismo de 1962 a 1969 y vicepresidente del Gobierno en 1975–1976.',
         'Logra 16 diputados en 1977 y retrocede en 1979, dentro de Coalición Democrática. Tras el hundimiento de UCD se alía con parte de sus restos y con partidos regionalistas, y en 1982 supera los cien escaños: primer partido de la oposición.',
-        'En 1986 pide la abstención o el voto en blanco en el referéndum de la OTAN. Ese año Fraga dimite y en 1987 Antonio Hernández Mancha gana la presidencia frente a Miguel Herrero de Miñón, en el único congreso del partido con más de un candidato. Sigue una crisis profunda.',
+        'En 1986 pide la abstención o el voto en blanco en el referéndum de la OTAN. Ese año Fraga dimite y en 1987 Antonio Hernández Mancha gana la presidencia frente a Miguel Herrero de Miñón, en el único congreso de AP con más de un candidato. Sigue una crisis profunda.',
       ],
     },
     {
@@ -71,9 +71,9 @@ export const HistoriaPP: HistoriaDetallada = {
       titulo: 'Casos judiciales',
       periodo: '2009–2026',
       parrafos: [
-        'Caso Gürtel: en 2018 la Audiencia Nacional condenó al PP como partícipe a título lucrativo, a devolver 245.492,80 euros. En 2020 el Supremo confirmó la condena y el pago, pero corrigió los párrafos que daban por acreditada una «caja B» del partido, porque no se le había acusado de eso.',
-        'Obras de la sede de Génova: en octubre de 2021 la Audiencia Nacional dio por acreditada una contabilidad paralela con la que se pagó en parte la reforma de la sede, y condenó al extesorero Luis Bárcenas. En noviembre de 2024 el Supremo rebajó su pena a ocho meses por dilaciones indebidas y confirmó al PP como responsable civil subsidiario. La Justicia, en cambio, absolvió al partido por el borrado de los ordenadores de Bárcenas.',
-        'Caso Kitchen: el exministro del Interior Jorge Fernández Díaz y otros mandos de Interior del Gobierno de Rajoy fueron juzgados entre abril y julio de 2026 por una presunta operación para quitar a Bárcenas información comprometedora para el PP. La Fiscalía pidió 15 años para el exministro, cuya defensa pidió la absolución. El PP no está acusado. A 6 de octubre de 2026 no hay sentencia.',
+        'Caso Gürtel: en 2018 la Audiencia Nacional condenó al PP como partícipe a título lucrativo, a devolver 245.492,80 euros. En 2020 el Supremo confirmó la condena y el pago, pero consideró improcedentes los párrafos que daban por acreditada una «caja B» del partido, porque no se le había acusado de ello.',
+        'Obras de la sede de Génova: la Audiencia Nacional condenó al extesorero Luis Bárcenas a dos años por ayudar a defraudar a Hacienda pagando en dinero negro parte de la reforma de la sede. En noviembre de 2024 el Supremo rebajó su pena a ocho meses, por dilaciones indebidas y al anular la condena por falsedad, y confirmó al PP como responsable civil subsidiario. La Justicia, en cambio, absolvió al partido por el borrado de los ordenadores de Bárcenas.',
+        'Caso Kitchen: el exministro del Interior Jorge Fernández Díaz y otros mandos de Interior del Gobierno de Rajoy fueron juzgados entre abril y julio de 2026 por una presunta operación para quitar a Bárcenas información comprometedora para el PP. La Fiscalía pidió 15 años para el exministro, cuya defensa pidió la absolución. Dos inspectores quedaron absueltos durante el juicio al retirarse la acusación. El PP no está acusado. A 6 de octubre de 2026 no hay sentencia.',
       ],
     },
   ],
@@ -111,6 +111,7 @@ export const HistoriaPP: HistoriaDetallada = {
       consultada: C,
       oficial: false,
     },
+    wikipedia('Caso Kitchen', 'Caso_Kitchen'),
     {
       titulo: 'Diari de Tarragona: La Audiencia Nacional deja visto para sentencia el juicio Kitchen (28/07/2026)',
       url: 'https://www.diaridetarragona.com/espana/266956/audiencia-nacional-deja-visto-sentencia-juicio-kitchen.html',

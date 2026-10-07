@@ -13,7 +13,7 @@ export const ProgramaCC: ResumenPrograma = {
     },
     {
       texto: 'Mantener el 75 % de descuento a residentes en vuelos y barcos, y precios máximos de referencia.',
-      pagina: 4,
+      pagina: 11,
     },
     {
       texto: 'Que todas las comunidades se impliquen en la acogida de menores migrantes que llegan a Canarias.',
@@ -100,6 +100,10 @@ export const ProgramaCC: ResumenPrograma = {
     economia: [
       { texto: 'Actualizar ya las ayudas al transporte de mercancías para abaratar la cesta de la compra.', pagina: 4 },
       { texto: 'Exención de Canarias de la nueva tasa verde europea a los vuelos internacionales.', pagina: 5 },
+      {
+        texto: 'Incluir los trenes de Gran Canaria y Tenerife en la red de ADIF, con financiación estatal y europea.',
+        pagina: 5,
+      },
       { texto: 'Mantener la deducción fiscal para el cine rodado en Canarias.', pagina: 9 },
       { texto: 'Prolongar la financiación de la estrategia de resiliencia turística.', pagina: 9 },
       { texto: 'Diversificar la economía hacia la industria, la I+D y el sector primario.', pagina: 9 },
@@ -137,14 +141,10 @@ export const ProgramaCC: ResumenPrograma = {
       { texto: 'Promover Canarias como plataforma atlántica para atraer inversión exterior.', pagina: 13 },
     ],
     social: [
-      { texto: 'Mantener el 75 % de descuento para residentes en el transporte aéreo y marítimo.', pagina: 4 },
+      { texto: 'Mantener el 75 % de descuento para residentes en el transporte aéreo y marítimo.', pagina: 11 },
       {
         texto:
           'Prorrogar más allá de 2023 la gratuidad total de guaguas y tranvías, o al menos para quien más lo necesite.',
-        pagina: 5,
-      },
-      {
-        texto: 'Incluir los trenes de Gran Canaria y Tenerife en la red de ADIF, con financiación estatal y europea.',
         pagina: 5,
       },
       { texto: 'Bonificación del 60 % del IRPF durante diez años para los residentes en La Palma.', pagina: 5 },

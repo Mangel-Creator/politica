@@ -126,6 +126,7 @@ export const ProgramaEHBildu: ResumenPrograma = {
         pagina: 5,
       },
       { texto: 'Hacer efectiva y accesible la tarifa TUR4 para calderas comunitarias.', pagina: 6 },
+      { texto: 'Más inversión en los trenes de Renfe y Feve en Euskadi y Navarra y más horarios.', pagina: 6 },
       { texto: 'Exigir al BCE que revierta la subida de tipos de interés iniciada en julio de 2022.', pagina: 8 },
       { texto: 'Rechazar la vuelta de las reglas fiscales y cualquier política de austeridad.', pagina: 8 },
       { texto: 'Derogar la reforma del artículo 135 de la Constitución, que prioriza pagar la deuda.', pagina: 8 },
@@ -149,8 +150,6 @@ export const ProgramaEHBildu: ResumenPrograma = {
     ],
     social: [
       { texto: 'Hacer permanentes por ley la gratuidad y los descuentos del transporte público.', pagina: 6 },
-      { texto: 'Más inversión en los trenes de Renfe y Feve en Euskadi y Navarra y más horarios.', pagina: 6 },
-      { texto: 'Traspaso completo de los trenes de Cercanías a las instituciones vascas.', pagina: 6 },
       {
         texto:
           'Prohibir siempre los cortes de suministros básicos a familias vulnerables y ampliar el Suministro Mínimo Vital.',
@@ -239,6 +238,7 @@ export const ProgramaEHBildu: ResumenPrograma = {
           'Traspasar todas las competencias pendientes: Seguridad Social, Inspección, prestaciones, I+D+i, becas, Cercanías, migración, puertos y aeropuertos.',
         pagina: 15,
       },
+      { texto: 'Traspaso completo de los trenes de Cercanías a las instituciones vascas.', pagina: 6 },
       { texto: 'Que toda nueva ley que afecte a sus competencias se transfiera de inmediato.', pagina: 16 },
       { texto: 'Negociar el Concierto y el Convenio Económico «de igual a igual».', pagina: 16 },
     ],

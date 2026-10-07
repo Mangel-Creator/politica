@@ -22,7 +22,7 @@ export const HistoriaPodemos: HistoriaDetallada = {
       parrafos: [
         'En las municipales de 2015 no se presenta con su nombre, sino dentro de candidaturas ciudadanas. En las generales de diciembre de 2015 obtiene 69 diputados contando sus alianzas autonómicas (En Comú, Compromís y En Marea).',
         'En 2016 se alía con Izquierda Unida en Unidos Podemos y logra 71 diputados. En junio de 2017 presenta una moción de censura contra Mariano Rajoy que fracasa; en 2018 apoya la de Pedro Sánchez, que sale adelante.',
-        'En la asamblea de Vistalegre II (febrero de 2017) se impone la línea de Iglesias frente a la de Errejón, que es apartado de la portavocía. En 2019 Errejón concurre a las autonómicas de Madrid con Más Madrid y en septiembre lidera la nueva candidatura Más País.',
+        'En la asamblea de Vistalegre II (febrero de 2017) se impone la línea de Iglesias frente a la de Errejón, que es apartado de la portavocía. En 2019 Errejón concurre a las autonómicas de Madrid con Más Madrid y después lidera Más País, su versión estatal.',
         'Con el nombre Unidas Podemos baja a 42 diputados en abril de 2019 y a 35 en noviembre.',
       ],
     },
@@ -41,14 +41,14 @@ export const HistoriaPodemos: HistoriaDetallada = {
       parrafos: [
         'En las generales de julio de 2023 se integra en la coalición Sumar, sin Irene Montero en las listas. Cinco de los 31 diputados de Sumar son de Podemos. Queda fuera del nuevo Gobierno al no aceptar que Montero dejara Igualdad.',
         'El 5 de diciembre de 2023 deja el grupo de Sumar y pasa al Grupo Mixto. En las europeas de 2024, en solitario y con Montero de cabeza de lista, logra el 3,28 % y dos escaños, por detrás de Se Acabó la Fiesta.',
-        'En abril de 2025 su asamblea reelige a Belarra. El 12 de septiembre de 2026 Montero anuncia que quiere ser la candidata de Podemos a las generales del 29N. Tras la convocatoria, el partido fija primarias abiertas para el 14 y 15 de octubre.',
+        'En abril de 2025 su asamblea reelige a Belarra. El 12 de septiembre de 2026 Montero anuncia que quiere ser la candidata de Podemos a las generales del 29N. Tras la convocatoria, el partido propone unas primarias abiertas el 14 y 15 de octubre para pactar una candidatura conjunta con el Frente Amplio.',
       ],
     },
     {
       titulo: 'Casos judiciales',
       periodo: '2014–2024',
       parrafos: [
-        'Financiación: desde su fundación, medios y partidos lo han vinculado con una supuesta financiación de Venezuela e Irán. Según el artículo de referencia, el Supremo ha considerado legal su financiación en tres ocasiones y en 2022 se habían archivado una veintena de querellas e investigaciones por falta de pruebas o de indicios.',
+        'Financiación: desde su fundación, medios y partidos lo han vinculado con una supuesta financiación de Venezuela e Irán. Según la Wikipedia, el Supremo ha considerado legal su financiación en tres ocasiones y en 2022 se habían archivado una veintena de querellas e investigaciones por falta de pruebas o de indicios.',
         'Caso Neurona: se investigó si un contrato de 363.000 euros con una consultora mexicana en la campaña de abril de 2019 era simulado. El juez lo archivó y la Audiencia de Madrid, en octubre de 2024, rechazó el recurso de Vox: concluyó que el precio era incluso inferior al de mercado.',
         'Alberto Rodríguez: en octubre de 2021 el Supremo condenó a este diputado de Unidas Podemos por dar una patada a un policía en una protesta de 2014; la pena de un mes y quince días de prisión se sustituyó por 540 euros de multa. La presidenta del Congreso le retiró el escaño. En enero de 2024 el Constitucional, por 7 votos a 4, anuló esa retirada.',
       ],

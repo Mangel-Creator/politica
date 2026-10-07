@@ -22,7 +22,7 @@ export const HistoriaSumar: HistoriaDetallada = {
       parrafos: [
         'Díaz presenta su candidatura el 2 de abril de 2023 con el apoyo de Izquierda Unida, Verdes Equo, Compromís o Más Madrid; Podemos no se suma entonces.',
         'Tras el adelanto electoral, el 31 de mayo se inscribe el partido Movimiento Sumar y el 9 de junio la coalición Sumar, con él y otros 19 partidos, Podemos incluido. El 23 de julio logra 31 diputados: 10 son de Movimiento Sumar y 5 de Podemos.',
-        'Apoya la investidura de Pedro Sánchez y entra en el Gobierno: Díaz sigue de vicepresidenta segunda y ministra de Trabajo; Mónica García (Más Madrid) es ministra de Sanidad, Ernest Urtasun (Comuns) de Cultura, Pablo Bustinduy de Derechos Sociales y Sira Rego (IU) de Juventud e Infancia. Podemos, sin ministerios, deja el grupo de Sumar el 5 de diciembre.',
+        'Apoya la investidura de Pedro Sánchez y entra en el Gobierno: Díaz sigue de vicepresidenta segunda y ministra de Trabajo; Mónica García (Más Madrid) es ministra de Sanidad, Ernest Urtasun de Cultura, Pablo Bustinduy de Derechos Sociales, Consumo y Agenda 2030 y Sira Rego de Juventud e Infancia. Podemos, sin ministerios, deja el grupo de Sumar el 5 de diciembre.',
       ],
     },
     {
@@ -60,6 +60,12 @@ export const HistoriaSumar: HistoriaDetallada = {
       url: 'https://orain.eus/es/politica/2026/10/06/el-anuncio-sanchez-obliga-los-partidos-acelerar-el-proceso-designar-sus-listas-electorales-asi-apuran-los-plazos/',
       consultada: C,
       oficial: false,
+    },
+    {
+      titulo: 'La Moncloa: composición del Gobierno',
+      url: 'https://www.lamoncloa.gob.es/gobierno/composiciondelgobierno/Paginas/index.aspx',
+      consultada: C,
+      oficial: true,
     },
     wikiTercerGobierno,
     infoelectoralHistorico,

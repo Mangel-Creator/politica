@@ -19,8 +19,8 @@ export const HistoriaERC: HistoriaDetallada = {
       titulo: 'Represión y exilio',
       periodo: '1939–1975',
       parrafos: [
-        'Tras la guerra, según el artículo de referencia, la mitad de sus 70.000 militantes se exilia y una cuarta parte es encarcelada, ejecutada o muere en la contienda. En 1940 la Gestapo detiene a Companys en Francia y lo entrega a las autoridades españolas; es fusilado en Montjuïc el 15 de octubre.',
-        'Josep Tarradellas dirige el partido en el exilio y en 1959 es elegido presidente de la Generalitat en el exilio. En 1964 ERC coorganiza la primera manifestación antifranquista de la Diada en Barcelona.',
+        'Tras la guerra, según la Wikipedia, la mitad de sus 70.000 militantes se exilia y una cuarta parte es encarcelada, ejecutada o muere en la contienda. En 1940 la Gestapo detiene a Companys en Francia y lo entrega a las autoridades españolas; es fusilado en Montjuïc el 15 de octubre.',
+        'Josep Tarradellas dirige el partido en el exilio y en 1959 es elegido presidente de la Generalitat en el exilio. El 11 de septiembre de 1964, día de la Diada, ERC coorganiza la primera manifestación antifranquista en Barcelona desde el final de la guerra.',
       ],
     },
     {
@@ -36,7 +36,7 @@ export const HistoriaERC: HistoriaDetallada = {
       periodo: '1989–2003',
       parrafos: [
         'En 1989, con Àngel Colom de secretario general, aprueba la independencia de los Países Catalanes como objetivo. A principios de los noventa media en la disolución del grupo armado Terra Lliure y ofrece integrar a quienes dejen la violencia.',
-        'Vuelve al Congreso en 1993 con Pilar Rahola. En 1996 Colom y Rahola se marchan y fundan el Partit per la Independència; Josep-Lluís Carod-Rovira pasa a ser secretario general y orienta el partido hacia la izquierda catalana.',
+        'Vuelve al Congreso en 1993 con Pilar Rahola. En 1996 Colom y Rahola se marchan y fundan el Partit per la Independència; Josep-Lluís Carod-Rovira pasa a dirigir el partido y orienta el partido hacia la izquierda catalana.',
       ],
     },
     {
@@ -62,7 +62,7 @@ export const HistoriaERC: HistoriaDetallada = {
       periodo: 'desde 2021',
       parrafos: [
         'Pere Aragonès preside la Generalitat desde mayo de 2021, al principio con Junts, que abandona el Govern en octubre de 2022. En 2023 ERC pacta con el PSOE la investidura de Pedro Sánchez, que incluye la ley de amnistía, el traspaso de Rodalies y condonar 15.000 millones de deuda de la Generalitat.',
-        'En las catalanas de mayo de 2024 baja de 33 a 20 escaños; Aragonès deja la primera línea política y en agosto ERC apoya la investidura del socialista Salvador Illa. Junqueras vuelve a ser elegido presidente del partido en diciembre de 2024, con Elisenda Alamany de secretaria general.',
+        'En las catalanas de mayo de 2024 baja de 33 a 20 escaños; Aragonès deja la primera línea política y en agosto ERC apoya la investidura del socialista Salvador Illa. Junqueras, que había dejado la presidencia en junio, vuelve a ser elegido en diciembre de 2024 con el 52 % de los votos, con Elisenda Alamany de secretaria general en lugar de Marta Rovira.',
         'El Tribunal Constitucional avaló la ley de amnistía en junio de 2025. El Supremo no la aplicó a la malversación de Junqueras. El 6 de octubre de 2026 el Constitucional fijó, en el recurso de la exconsellera de ERC Dolors Bassa, que esa interpretación del Supremo no se ajusta a la ley; los recursos de otros dirigentes seguían pendientes.',
       ],
     },
@@ -74,7 +74,8 @@ export const HistoriaERC: HistoriaDetallada = {
     { nombre: 'Àngel Colom', cargo: 'Secretario general', desde: '1989', hasta: '1996' },
     { nombre: 'Josep-Lluís Carod-Rovira', cargo: 'Secretario general y presidente', desde: '1996', hasta: '2008' },
     { nombre: 'Joan Puigcercós', cargo: 'Presidente', desde: '2008', hasta: '2011' },
-    { nombre: 'Oriol Junqueras', cargo: 'Presidente', desde: '2011' },
+    { nombre: 'Oriol Junqueras', cargo: 'Presidente', desde: '2011', hasta: '2024' },
+    { nombre: 'Oriol Junqueras', cargo: 'Presidente', desde: '2024' },
     { nombre: 'Marta Rovira', cargo: 'Secretaria general', desde: '2011', hasta: '2024' },
     { nombre: 'Elisenda Alamany', cargo: 'Secretaria general', desde: '2024' },
   ],
@@ -89,6 +90,18 @@ export const HistoriaERC: HistoriaDetallada = {
     {
       titulo: 'Infobae: el aval del Constitucional a la amnistía de la malversación (06/10/2026)',
       url: 'https://www.infobae.com/espana/2026/10/06/puigdemont-podra-volver-a-espana-antes-de-las-elecciones-el-aval-del-constitucional-a-la-amnistia-despeja-el-camino-para-que-el-juez-levante-su-orden-de-detencion/',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'El Salto: El PSOE y ERC llegan al acuerdo para la investidura (02/11/2023)',
+      url: 'https://www.elsaltodiario.com/partidos-politicos/psoe-erc-llegan-al-acuerdo-una-investidura-solo-falta-definitivo-junts',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'Catalan News: Oriol Junqueras re-elected president of Esquerra Republicana (15/12/2024)',
+      url: 'https://catalannews.com/politics/item/oriol-junqueras-re-elected-president-of-esquerra-republicana',
       consultada: C,
       oficial: false,
     },

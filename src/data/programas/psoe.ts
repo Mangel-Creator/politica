@@ -19,7 +19,7 @@ export const ProgramaPSOE: ResumenPrograma = {
     vivienda: {
       texto:
         'Consolidar la vivienda como «quinto pilar» del Estado del bienestar, con mucha más vivienda pública de alquiler.',
-      pagina: 222,
+      pagina: 221,
     },
     empleo: {
       texto: 'Un Pacto por el Pleno Empleo para bajar el paro a la media europea, con formación y diálogo social.',
@@ -42,14 +42,14 @@ export const ProgramaPSOE: ResumenPrograma = {
     educacion: {
       texto:
         'Educación como «ascensor social»: escolarización gratuita de 0 a 18 años, más becas y una FP para millones de personas.',
-      pagina: 103,
+      pagina: 102,
     },
     inmigracion: {
       texto: 'Reducir las llegadas irregulares y salvar vidas, con más vías de migración legal y ordenada.',
       pagina: 239,
     },
     territorio: {
-      texto: 'Cooperación entre administraciones y una nueva financiación autonómica en un año.',
+      texto: 'Cooperación entre administraciones y un nuevo sistema de financiación autonómica.',
       pagina: 231,
     },
     democracia: {
@@ -58,12 +58,12 @@ export const ProgramaPSOE: ResumenPrograma = {
       pagina: 240,
     },
     seguridad: {
-      texto: 'Más agentes y medios para las Fuerzas de Seguridad, sobre todo en el medio rural.',
+      texto: 'Más agentes y medios para las Fuerzas de Seguridad, también en el medio rural.',
       pagina: 237,
     },
     igualdad: {
       texto:
-        'Una «España feminista»: igualdad en el empleo, paridad, lucha contra la violencia machista y abolición de la prostitución.',
+        'Igualdad plena entre mujeres y hombres: en el empleo, paridad, lucha contra la violencia machista y abolición de la prostitución.',
       pagina: 139,
     },
     social: {
@@ -180,21 +180,21 @@ export const ProgramaPSOE: ResumenPrograma = {
         texto: 'Integrar los sistemas del SEPE y la Seguridad Social con IA para casar vacantes y parados.',
         pagina: 25,
       },
-      { texto: 'Microacreditaciones: cursos cortos de recualificación para la economía verde y digital.', pagina: 25 },
-      { texto: 'Plan de choque contra el paro juvenil: «formación + empleo» en 12 meses.', pagina: 25 },
+      { texto: 'Microacreditaciones: cursos cortos de recualificación para la economía verde y digital.', pagina: 26 },
+      { texto: 'Plan de choque contra el paro juvenil: «formación + empleo» en 12 meses.', pagina: 26 },
       {
         texto:
           'Prácticas en empresa con el salario mínimo y la Seguridad Social cubiertos para jóvenes con un año en paro.',
-        pagina: 25,
+        pagina: 26,
       },
       {
-        texto: 'Fijar en el Estatuto de los Trabajadores que el salario mínimo sea el 60 % del salario medio.',
-        pagina: 25,
+        texto: 'Fijar en el Estatuto de los Trabajadores que el salario mínimo se acompase al 60 % del salario medio.',
+        pagina: 26,
       },
       {
         texto:
           'Reformar la protección de los parados de larga duración e incentivar el empleo de quien cobra subsidios o el IMV.',
-        pagina: 25,
+        pagina: 26,
       },
       { texto: 'Dotar el mecanismo RED para recualificar trabajadores en crisis.', pagina: 27 },
       {
@@ -333,10 +333,10 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Uso terapéutico del cannabis.', pagina: 204 },
       { texto: 'Nutricionistas en los ayuntamientos.', pagina: 204 },
       { texto: 'Una red estatal de escuelas saludables para 300.000 alumnos.', pagina: 205 },
-      { texto: 'Poner fin a la epidemia de VIH en 2030 y contra el estigma.', pagina: 205 },
+      { texto: 'Poner fin a la pandemia del VIH en 2030 y contra el estigma.', pagina: 205 },
       { texto: 'Una ley para proteger a los menores del alcohol.', pagina: 206 },
       { texto: 'Estrategia Nacional de Adicciones 2025-2032.', pagina: 206 },
-      { texto: 'Mejor etiquetado nutricional y promoción de la dieta mediterránea.', pagina: 210 },
+      { texto: 'Mejor etiquetado nutricional y promoción de la dieta mediterránea.', pagina: 211 },
       { texto: 'Formación de profesionales contra el «chemsex».', pagina: 216 },
       { texto: 'Estrategia Nacional contra el sedentarismo.', pagina: 220 },
       {
@@ -359,7 +359,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       {
         texto:
           'Que el Estado asuma todos los gastos impropios y un Fondo de Reserva de más de 20.000 millones en 2027.',
-        pagina: 171,
+        pagina: 172,
       },
     ],
     educacion: [
@@ -544,8 +544,8 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Un informe anual sobre el cumplimiento de los derechos de la Constitución.', pagina: 244 },
       { texto: 'Oposiciones territorializadas para no tener que cambiar de provincia.', pagina: 244 },
       {
-        texto: 'Reformar la Ley de Transparencia: agendas, viajes, bienes y compatibilidades de los altos cargos.',
-        pagina: 245,
+        texto: 'Culminar la reforma de la Ley de Transparencia y publicar de oficio las agendas, los viajes, los bienes y las compatibilidades de los altos cargos.',
+        pagina: 246,
       },
       { texto: 'Suprimir los aforamientos en lo que no tenga que ver con el ejercicio del cargo.', pagina: 246 },
       { texto: 'Un nuevo Estatuto del Consejo de Transparencia.', pagina: 246 },
@@ -556,7 +556,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Estrategia Nacional contra las campañas de desinformación.', pagina: 246 },
       { texto: 'Laboratorios de participación y procesos de democracia deliberativa.', pagina: 246 },
       { texto: 'Huella normativa con participación ciudadana, también de menores.', pagina: 247 },
-      { texto: 'Renovar el CGPJ con el sistema actual, de doble legitimación.', pagina: 247 },
+      { texto: 'Renovar el CGPJ con el sistema actual, de doble legitimación.', pagina: 248 },
       { texto: 'Debates electorales obligatorios por ley.', pagina: 247 },
       { texto: 'Reforzar el Pacto Antitransfuguismo.', pagina: 247 },
       { texto: 'Desarrollar el Plan Justicia 2030 y la Carta de Derechos ante la Justicia.', pagina: 248 },
@@ -577,7 +577,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       {
         texto:
           'Retirar los símbolos franquistas y extinguir las fundaciones o ilegalizar las asociaciones que hagan apología del franquismo.',
-        pagina: 252,
+        pagina: 253,
       },
       {
         texto:
@@ -1005,7 +1005,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Conectividad ultrarrápida en el 100 % del territorio, con fibra y satélite asequible.', pagina: 29 },
       { texto: 'Impulsar el 5G para la industria e investigar el 6G.', pagina: 29 },
       { texto: 'Ampliar la Carpeta Ciudadana a empresas y autónomos.', pagina: 29 },
-      { texto: 'Plataforma pública gratuita de factura electrónica para autónomos y pymes.', pagina: 30 },
+      { texto: 'Plataforma pública gratuita de factura electrónica para autónomos y pymes.', pagina: 31 },
       { texto: 'Seguir reduciendo la morosidad comercial.', pagina: 30 },
       {
         texto:
@@ -1058,7 +1058,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       },
       { texto: 'Crear «Salas Blancas España» para investigar en semiconductores.', pagina: 59 },
       { texto: 'Cátedras y becas universidad-industria en IA y semiconductores.', pagina: 60 },
-      { texto: 'Situar a España entre los 20 países más innovadores del mundo en cuatro años.', pagina: 118 },
+      { texto: 'Situar a España entre los 20 países más innovadores del mundo en cuatro años.', pagina: 119 },
       { texto: 'Más apoyo a las empresas emergentes de base tecnológica en sus primeras fases.', pagina: 119 },
       { texto: 'Contrato indefinido para investigadores y más investigadores en cuatro años.', pagina: 119 },
       {
@@ -1094,7 +1094,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       },
       { texto: 'Reformar la Filmoteca y declarar el patrimonio audiovisual Bien de Interés Cultural.', pagina: 127 },
       { texto: 'Más ayudas a jóvenes emprendedores y a incubadoras.', pagina: 134 },
-      { texto: 'Reconocer el consumo sostenible como derecho básico de los consumidores.', pagina: 209 },
+      { texto: 'Reconocer el consumo sostenible como derecho básico de los consumidores.', pagina: 210 },
       {
         texto:
           'Ley de atención a la clientela: reclamaciones en menos de 15 días, esperas de máximo 3 minutos y sin atención solo robotizada.',
@@ -1122,7 +1122,7 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Más dinero para el Plan Renove de maquinaria agrícola.', pagina: 66 },
       { texto: 'Renovables en el campo y préstamos bonificados y avales para el sector.', pagina: 66 },
       { texto: 'Integrar cooperativas y que participen en comunidades energéticas.', pagina: 66 },
-      { texto: 'Nueva convocatoria del PERTE Agroalimentario para la industria.', pagina: 66 },
+      { texto: 'Nueva convocatoria del PERTE Agroalimentario para la industria.', pagina: 67 },
       { texto: 'Cumplir la Ley de la Cadena Alimentaria reforzando la AICA.', pagina: 67 },
       {
         texto: 'Publicar precios en origen, mayoristas y finales, costes y márgenes de los principales productos.',

@@ -27,7 +27,7 @@ export const HistoriaCC: HistoriaDetallada = {
       periodo: '2007–2019',
       parrafos: [
         'En 2007 es tercera fuerza, pero su candidato, Paulino Rivero, es investido presidente con el apoyo del PP. En 2008 Claudina Morales se convierte en la primera mujer que preside un partido en Canarias.',
-        'En las generales se presenta en coaliciones con el PNC y, en 2011 y 2019, con Nueva Canarias. Mantiene uno o dos diputados en el Congreso.',
+        'En las generales se presenta en coaliciones con el PNC y, en 2011 y en noviembre de 2019, también con Nueva Canarias. Mantiene uno o dos diputados en el Congreso.',
         'Fernando Clavijo preside Canarias desde 2015. En 2019 el PSOE gana las elecciones y forma gobierno con Nueva Canarias, Podemos y la Agrupación Socialista Gomera: CC pasa a la oposición tras 26 años en el Gobierno.',
       ],
     },
@@ -43,7 +43,7 @@ export const HistoriaCC: HistoriaDetallada = {
       titulo: 'Casos judiciales',
       periodo: '2019',
       parrafos: [
-        'Caso Las Teresitas: el Tribunal Supremo confirmó en marzo de 2019 la condena a siete años de prisión del exalcalde de Santa Cruz de Tenerife Miguel Zerolo (CC) por prevaricación y malversación, por la compra municipal de los terrenos de la playa a un precio muy superior a su valor.',
+        'Caso Las Teresitas: el Tribunal Supremo confirmó en marzo de 2019 la condena a siete años de prisión del exalcalde de Santa Cruz de Tenerife Miguel Zerolo (CC) por prevaricación y malversación, por la compra municipal de los terrenos de la playa a un precio muy superior a su valor. El 1 de abril la Audiencia de Santa Cruz de Tenerife ordenó ejecutar la condena de inmediato.',
       ],
     },
   ],
@@ -66,6 +66,12 @@ export const HistoriaCC: HistoriaDetallada = {
       oficial: true,
     },
     wikipedia('Presidente del Gobierno de Canarias', 'Presidente_del_Gobierno_de_Canarias'),
+    {
+      titulo: 'RTVC: Valido (CC) y Santana (Sumar) recogen sus actas en el Congreso (02/08/2023)',
+      url: 'https://rtvc.es/valido-santana-actas-congreso/',
+      consultada: '2026-10-06',
+      oficial: false,
+    },
     wikiTercerGobierno,
     infoelectoralHistorico,
   ],

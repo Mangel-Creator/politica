@@ -29,7 +29,7 @@ export const ProgramaPNV: ResumenPrograma = {
     },
     democracia: {
       texto: 'Transparencia, control de los poderes del Estado y garantías de derechos, también para los presos.',
-      pagina: 12,
+      pagina: 7,
     },
     igualdad: {
       texto: 'Igualdad real entre mujeres y hombres y el consentimiento como eje de los delitos sexuales.',

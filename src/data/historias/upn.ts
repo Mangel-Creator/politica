@@ -45,9 +45,9 @@ export const HistoriaUPN: HistoriaDetallada = {
     },
     {
       titulo: 'Casos judiciales',
-      periodo: '2013',
+      periodo: '2013–2014',
       parrafos: [
-        'Dietas de Caja Navarra: se investigaron las dietas que cobraban Barcina, el expresidente Sanz, el alcalde de Pamplona Enrique Maya y el exconsejero Álvaro Miranda en un órgano de la caja. En julio de 2013 el Supremo rechazó imputar a Barcina: distinguió entre el reproche moral o político y un delito, y concluyó que no era cohecho. En octubre la jueza de Pamplona archivó toda la causa.',
+        'Dietas de Caja Navarra: se investigaron las dietas que cobraban Barcina, el expresidente Sanz, el alcalde de Pamplona Enrique Maya y el exconsejero Álvaro Miranda en un órgano de la caja. En julio de 2013 el Supremo rechazó imputar a Barcina: distinguió entre el reproche moral o político y un delito, y concluyó que no era cohecho. En octubre la jueza de Pamplona archivó toda la causa. Kontuz y UPyD recurrieron, y en octubre de 2014 la Audiencia de Navarra rechazó reabrirla, en un auto sin recurso posible.',
       ],
     },
   ],
@@ -75,6 +75,12 @@ export const HistoriaUPN: HistoriaDetallada = {
     {
       titulo: 'Orain: La jueza archiva toda la causa de Caja Navarra (03/10/2013)',
       url: 'https://orain.eus/es/politica/2013/10/03/caso-caja-navarra--la-juez-benito-archiva-toda-causa/',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'Orain: La Audiencia de Navarra rechaza reabrir el caso CAN (23/10/2014)',
+      url: 'https://orain.eus/es/politica/2014/10/23/la-audiencia-navarra-rechaza-reabrir-caso-can/',
       consultada: C,
       oficial: false,
     },

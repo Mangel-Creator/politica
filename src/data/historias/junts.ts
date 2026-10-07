@@ -53,10 +53,10 @@ export const HistoriaJunts: HistoriaDetallada = {
     },
     {
       titulo: 'Casos judiciales',
-      periodo: '2019–2025',
+      periodo: '2019–2026',
       parrafos: [
         'Jordi Turull, secretario general desde 2022, fue condenado por el Supremo en 2019 a 12 años por sedición y malversación, como exconseller del Govern de Puigdemont. Fue indultado en 2021.',
-        'Laura Borràs, presidenta del partido entre 2022 y 2024, fue condenada en 2023 por el Tribunal Superior de Justicia de Cataluña a cuatro años y medio de prisión y 13 de inhabilitación por prevaricación y falsedad en contratos de la Institució de les Lletres Catalanes. El Supremo confirmó la condena y descartó aplicarle la amnistía por no estar relacionada con el procés. El propio tribunal pidió un indulto parcial, que debe decidir el Gobierno.',
+        'Laura Borràs, presidenta del partido entre 2022 y 2024, fue condenada en 2023 por el Tribunal Superior de Justicia de Cataluña a cuatro años y medio de prisión y 13 de inhabilitación por prevaricación y falsedad en contratos de la Institució de les Lletres Catalanes. El Supremo confirmó la condena y descartó aplicarle la amnistía por no estar relacionada con el procés. El propio tribunal pidió un indulto parcial. El Gobierno lo concedió el 28 de julio de 2026: rebaja la prisión a dos años, con lo que no entra en la cárcel, y mantiene los 13 años de inhabilitación y la multa, con la condición de no cometer delitos dolosos en cinco años. El TSJC lo aplicó en septiembre.',
       ],
     },
   ],
@@ -74,6 +74,7 @@ export const HistoriaJunts: HistoriaDetallada = {
     wikipedia('Carles Puigdemont', 'Carles_Puigdemont'),
     wikipedia('Esquerra Republicana de Catalunya', 'Esquerra_Republicana_de_Catalunya'),
     wikipedia('Oriol Junqueras', 'Oriol_Junqueras'),
+    wikipedia('Jordi Turull', 'Jordi_Turull'),
     wikipedia('Ley de amnistía de España de 2024', 'Ley_de_amnistía_de_España_de_2024'),
     wikiTercerGobierno,
     {
@@ -82,6 +83,25 @@ export const HistoriaJunts: HistoriaDetallada = {
       consultada: C,
       oficial: false,
     },
+    {
+      titulo: 'La Región: El Gobierno concede el indulto parcial a Laura Borràs (28/07/2026)',
+      url: 'https://www.laregion.es/espana/gobierno-indulto-parcial-laura-borras-rebaja-pena_1_20260728-4367977.html',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'El Progreso: Laura Borràs no entrará en prisión tras el indulto parcial (29/07/2026)',
+      url: 'https://www.elprogreso.es/articulo/espana/borras-entrara-prision-indulto-parcial-concedido-gobierno/202607291134301988312.html',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'Moncloa.com: El TSJC ejecuta el indulto a Laura Borràs (04/09/2026)',
+      url: 'https://www.moncloa.com/2026/09/04/tsjc-ejecuta-indulto-laura-borras-3426225',
+      consultada: C,
+      oficial: false,
+    },
+    wikipedia('Elecciones al Parlamento de Cataluña de 2024', 'Elecciones_al_Parlamento_de_Cataluña_de_2024'),
     {
       titulo: 'Infobae: el aval del Constitucional a la amnistía de la malversación (06/10/2026)',
       url: 'https://www.infobae.com/espana/2026/10/06/puigdemont-podra-volver-a-espana-antes-de-las-elecciones-el-aval-del-constitucional-a-la-amnistia-despeja-el-camino-para-que-el-juez-levante-su-orden-de-detencion/',

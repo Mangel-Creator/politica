@@ -6,9 +6,9 @@ export const ProgramaVox: ResumenPrograma = {
   eleccion: '23J 2023',
   nota: 'Están sus 381 medidas numeradas, resumidas; varias se agrupan cuando dicen lo mismo y las que solo son declaración van en el enfoque del tema. Las expresiones entre comillas son del propio programa.',
   ideasClave: [
-    { texto: 'Estado unitario: devolver al Estado Educación, Sanidad, Seguridad y Justicia.', pagina: 8 },
-    { texto: 'IRPF con dos tipos (15 % hasta 70.000 € y 25 % por encima), 4 puntos menos por hijo.', pagina: 74 },
-    { texto: 'Expulsar a todos los inmigrantes que entren ilegalmente y suprimir el arraigo.', pagina: 100 },
+    { texto: 'Estado unitario administrativamente descentralizado; mientras, devolver al Estado Educación, Sanidad, Seguridad y Justicia.', pagina: 8 },
+    { texto: 'IRPF con dos tipos (15 % hasta 70.000 € y 25 % por encima), 4 puntos menos por hijo.', pagina: 75 },
+    { texto: 'Expulsar de inmediato a todos los inmigrantes que entren ilegalmente.', pagina: 100 },
     {
       texto: 'Derogar la ley de violencia de género y suprimir los juzgados de violencia sobre la mujer.',
       pagina: 128,
@@ -52,7 +52,7 @@ export const ProgramaVox: ResumenPrograma = {
       pagina: 64,
     },
     impuestos: {
-      texto: '«La mayor reforma fiscal de la historia reciente»: bajar y simplificar impuestos.',
+      texto: '«La mayor y más profunda reforma fiscal de la historia reciente»: bajar y simplificar impuestos.',
       pagina: 74,
     },
     seguridad: {
@@ -72,7 +72,7 @@ export const ProgramaVox: ResumenPrograma = {
     democracia: {
       texto:
         'Despolitizar la justicia, que los jueces elijan el CGPJ y endurecer los delitos contra la unidad de España.',
-      pagina: 126,
+      pagina: 125,
     },
     exterior: {
       texto: 'Una UE que respete la soberanía nacional y una política exterior volcada en la Iberosfera.',
@@ -517,7 +517,7 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Paralizar la Ley de Familias que reconoce dieciséis tipos de familia.', pagina: 163 },
       { texto: 'Apoyo a la mediación familiar.', pagina: 163 },
       { texto: 'Un documento familiar con ventajas en transporte, bibliotecas y ocio.', pagina: 163 },
-      { texto: 'Guarderías gratuitas con horario como el de comercios y oficinas.', pagina: 163 },
+      { texto: 'Guarderías gratuitas con horario como el de comercios y oficinas.', pagina: 164 },
       { texto: 'Deducir los gastos en cuidadores de dependientes y apoyar a quien cuide en casa.', pagina: 164 },
       { texto: 'Filtros y formación para proteger a los menores del juego y la pornografía.', pagina: 164 },
       { texto: 'Custodia compartida como regla general en las separaciones.', pagina: 165 },
@@ -527,7 +527,7 @@ export const ProgramaVox: ResumenPrograma = {
     impuestos: [
       {
         texto: 'IRPF del 15 % hasta 70.000 € y del 25 % por encima, con 22.000 € exentos de rentas del trabajo.',
-        pagina: 74,
+        pagina: 75,
       },
       { texto: 'Cuatro puntos menos de IRPF por cada hijo.', pagina: 75 },
       { texto: 'Recuperar la deducción por los intereses de la hipoteca de la vivienda habitual.', pagina: 75 },
@@ -553,7 +553,7 @@ export const ProgramaVox: ResumenPrograma = {
       {
         texto:
           'ITP bonificado al 100 % en la vivienda habitual de hasta 300.000 €; si no, 6 % y 3 % para familias numerosas.',
-        pagina: 77,
+        pagina: 78,
       },
       { texto: 'Que la Agencia Tributaria estatal gestione todos los impuestos y cerrar las regionales.', pagina: 78 },
       { texto: 'Más bonificaciones del IBI, por ejemplo si un cónyuge cuida de los hijos.', pagina: 78 },
@@ -565,7 +565,7 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Deducciones a la inversión, sobre todo si trae de vuelta empleo deslocalizado.', pagina: 79 },
       {
         texto:
-          'Que las grandes tecnológicas tributen por los datos que obtienen en España, previa consulta en referéndum.',
+          'Que las grandes tecnológicas coticen también por los datos que obtienen en España y, como primer paso, una consulta (artículo 92 de la Constitución) sobre el control de los datos personales.',
         pagina: 80,
       },
       { texto: 'Más lucha contra la evasión fiscal de multinacionales y gigantes de internet.', pagina: 84 },
@@ -584,7 +584,7 @@ export const ProgramaVox: ResumenPrograma = {
       {
         texto:
           'Igualar sueldos y jubilación de militares, policías, guardias civiles y aduaneros, y más sanciones por resistencia.',
-        pagina: 90,
+        pagina: 91,
       },
       {
         texto: 'Un Mando Integrado de Fronteras y despliegue militar en Ceuta, Melilla y Canarias.',
@@ -627,7 +627,7 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Más seguridad en las redes de telecomunicaciones e infraestructuras críticas.', pagina: 94 },
       { texto: 'Mejores condiciones y protección para los vigilantes de seguridad.', pagina: 95 },
       { texto: 'Lucha contra mafias, bandas callejeras, narcotráfico y pequeña delincuencia.', pagina: 103 },
-      { texto: 'Cerrar las mezquitas que difundan radicalismo, yihad o desprecio a la mujer.', pagina: 102 },
+      { texto: 'Cerrar las mezquitas o centros de culto que propaguen ideas «contrarias a nuestra cultura e identidad», como el radicalismo islámico, la yihad o el menosprecio a la mujer.', pagina: 102 },
       { texto: 'Acuerdos para que los presos extranjeros cumplan condena en su país.', pagina: 128 },
       { texto: 'Una Ley de memoria, dignidad y justicia para las víctimas del terrorismo.', pagina: 128 },
       {
@@ -635,8 +635,8 @@ export const ProgramaVox: ResumenPrograma = {
         pagina: 129,
       },
       { texto: 'Plan penitenciario y fin de los beneficios a presos por terrorismo.', pagina: 129 },
-      { texto: 'Bajar la edad penal y endurecer la ley del menor.', pagina: 174 },
-      { texto: 'Más penas a los pirómanos.', pagina: 110 },
+      { texto: 'Bajar la edad penal y endurecer la ley del menor para los menores que cometan agresiones sexuales o contra mujeres.', pagina: 174 },
+      { texto: 'Más penas a los pirómanos.', pagina: 111 },
     ],
     inmigracion: [
       { texto: 'Inmigración legal, ordenada y adaptada al mercado laboral.', pagina: 23 },

@@ -30,7 +30,7 @@ export const ProgramaPP: ResumenPrograma = {
     },
     igualdad: {
       texto:
-        'Igualdad de mujeres y hombres «con leyes que generen consenso», y cumplir el Pacto de Estado contra la violencia de género.',
+        'Igualdad de mujeres y hombres «con leyes y con políticas efectivas, eficaces y que generen gran consenso», y cumplir el Pacto de Estado contra la violencia de género.',
       pagina: 21,
     },
     impuestos: { texto: 'Bajar la presión fiscal y controlar el déficit y la deuda.', pagina: 23 },
@@ -358,7 +358,7 @@ export const ProgramaPP: ResumenPrograma = {
     ],
     educacion: [
       { texto: 'Reformar la LOMLOE e impulsar un Acuerdo Social por la educación.', pagina: 50 },
-      { texto: 'Educación de 0 a 3 años universal y gratuita, cofinanciada al 50 % con las comunidades.', pagina: 50 },
+      { texto: 'Educación de 0 a 3 años universal y gratuita, cofinanciada al 50 % con las comunidades.', pagina: 53 },
       { texto: 'Programa extraordinario de tutorías para recuperar lo perdido con la covid.', pagina: 50 },
       { texto: 'Estándares nacionales de evaluación al final de cada etapa.', pagina: 50 },
       { texto: 'Reducir el abandono escolar y mejorar la comprensión lectora.', pagina: 51 },
@@ -416,7 +416,7 @@ export const ProgramaPP: ResumenPrograma = {
       { texto: 'Estrategia Nacional contra la soledad no deseada.', pagina: 58 },
       { texto: 'Viviendas compartidas y con servicios para mayores.', pagina: 58 },
       { texto: 'Adaptar viviendas y reforzar la atención en el hogar.', pagina: 58 },
-      { texto: 'Digitalización y voluntariado intergeneracional de mayores.', pagina: 58 },
+      { texto: 'Digitalización y voluntariado intergeneracional de mayores.', pagina: 59 },
       { texto: 'Un nuevo sistema sociosanitario con centros de cuidados intermedios.', pagina: 59 },
       { texto: 'Tarjeta social y sanitaria unificada e historia clínica única.', pagina: 59 },
       { texto: 'Plan Nacional de atención a la fragilidad.', pagina: 59 },
@@ -479,7 +479,7 @@ export const ProgramaPP: ResumenPrograma = {
       { texto: 'Uso transparente y no partidista de los medios de transporte oficiales.', pagina: 77 },
       { texto: 'Regular la periodicidad del Debate sobre el Estado de la Nación.', pagina: 77 },
       { texto: 'Traspaso de poderes con información completa de las cuentas.', pagina: 77 },
-      { texto: 'Menos ministerios, altos cargos y asesores.', pagina: 77 },
+      { texto: 'Menos ministerios, altos cargos y asesores.', pagina: 85 },
       { texto: 'Oficinas de atención sin cita previa con horario extendido.', pagina: 87 },
       { texto: 'Ventanilla única y un punto electrónico común con todas las administraciones.', pagina: 87 },
       { texto: 'Cita previa compatible con atención presencial y máximo 15 días para prestaciones.', pagina: 87 },

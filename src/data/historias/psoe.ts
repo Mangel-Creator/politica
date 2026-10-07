@@ -6,7 +6,7 @@ const C = '2026-10-06';
 export const HistoriaPSOE: HistoriaDetallada = {
   partidoId: 'psoe',
   entradilla:
-    'Partido socialista fundado en 1879, el más antiguo de los que existen hoy en España. Ha gobernado con Felipe González (1982–1996), José Luis Rodríguez Zapatero (2004–2011) y Pedro Sánchez, presidente desde 2018.',
+    'Partido socialista fundado en 1879, uno de los partidos obreros más antiguos de Europa. Ha gobernado con Felipe González (1982–1996), José Luis Rodríguez Zapatero (2004–2011) y Pedro Sánchez, presidente desde 2018.',
   capitulos: [
     {
       titulo: 'Fundación',
@@ -22,7 +22,7 @@ export const HistoriaPSOE: HistoriaDetallada = {
       periodo: '1923–1939',
       parrafos: [
         'Durante la dictadura de Primo de Rivera, que reprime a la CNT, el PSOE y la UGT colaboran con el régimen en la legislación laboral; Largo Caballero llega a consejero de Estado. En 1929 el partido rompe con la dictadura y se declara republicano.',
-        'En las Cortes de 1931 es el primer partido, con 131 diputados, y sostiene los gobiernos de Manuel Azaña. Tras perder en 1933 se divide entre el sector de Indalecio Prieto y Besteiro y el más radical de Largo Caballero. En octubre de 1934 el PSOE y la UGT encabezan una insurrección, la Revolución de 1934, que solo triunfa en Asturias.',
+        'En las Cortes de 1931 es el primer partido, con 116 diputados (115 según otros cómputos), y sostiene los gobiernos de Manuel Azaña. Tras perder en 1933 se divide entre el sector de Indalecio Prieto y Besteiro y el más radical de Largo Caballero. En octubre de 1934 el PSOE y la UGT encabezan una insurrección, la Revolución de 1934, que solo triunfa en Asturias.',
         'En 1936 forma parte del Frente Popular, que gana las elecciones. Durante la Guerra Civil, los socialistas Largo Caballero y Juan Negrín presiden el Gobierno de la República.',
       ],
     },
@@ -31,7 +31,7 @@ export const HistoriaPSOE: HistoriaDetallada = {
       periodo: '1939–1977',
       parrafos: [
         'La dictadura de Franco lo ilegaliza. Sus dirigentes se exilian y sus militantes en el interior son ejecutados, encarcelados o represaliados. Su actividad bajo el franquismo es muy limitada.',
-        'En el Congreso de Suresnes de 1974, una nueva generación ajena al exilio toma el mando: Rodolfo Llopis da paso a Felipe González como secretario general.',
+        'En los años setenta una nueva generación ajena al exilio desplaza a la dirección de Rodolfo Llopis, que en 1972 se separa con el llamado PSOE histórico. En el Congreso de Suresnes de 1974 Felipe González es elegido secretario general.',
       ],
     },
     {
@@ -40,7 +40,7 @@ export const HistoriaPSOE: HistoriaDetallada = {
       parrafos: [
         'Se convierte en uno de los dos grandes partidos y absorbe el Partido Socialista Popular de Enrique Tierno Galván. En 1982 logra 202 diputados y el 48,11 %, récords de la democracia. Aplica una reconversión industrial, prioriza bajar la inflación y extiende el Estado del bienestar.',
         'En 1986 España entra en la Comunidad Económica Europea. Ese año el Gobierno, pese a que el partido se había opuesto a la OTAN, gana el referéndum pidiendo el sí. El 14 de diciembre de 1988 los sindicatos le hacen una huelga general.',
-        'Se queda a un escaño de la mayoría absoluta en 1989 y baja a 159 en 1993, con un desgaste que el artículo de referencia atribuye sobre todo a los casos de corrupción y a los GAL. Alfonso Guerra dimite por un caso de corrupción que afectaba a su hermano. En 1996 pierde frente al PP.',
+        'Se queda a un escaño de la mayoría absoluta en 1989. En enero de 1991 Alfonso Guerra dimite como vicepresidente por el caso de su hermano Juan Guerra, que acabó absuelto de corrupción y condenado solo por un delito fiscal. En 1993 baja a 159 escaños, en años marcados por casos de corrupción y por el procesamiento de altos cargos por los GAL. En 1996 pierde frente al PP.',
       ],
     },
     {
@@ -48,7 +48,7 @@ export const HistoriaPSOE: HistoriaDetallada = {
       periodo: '1997–2011',
       parrafos: [
         'González deja la secretaría general en 1997 y le sucede Joaquín Almunia. El PSOE celebra sus primeras primarias: la militancia elige a Josep Borrell frente al candidato de la dirección, pero Borrell acaba renunciando. Almunia pierde en 2000 y dimite.',
-        'José Luis Rodríguez Zapatero, secretario general desde 2000, gana las generales de 2004, celebradas tres días después del 11-M. En 2005 se aprueba el matrimonio entre personas del mismo sexo. Vuelve a ganar en 2008 con 169 diputados y 11,28 millones de votos, el récord de votos en unas generales.',
+        'José Luis Rodríguez Zapatero, secretario general desde 2000, gana las generales de 2004, celebradas tres días después del 11-M. En 2005 se aprueba el matrimonio entre personas del mismo sexo. Vuelve a ganar en 2008 con 169 diputados y 11,29 millones de votos, el récord de votos en unas generales.',
         'En plena crisis económica, en 2011 baja a 110 diputados con Alfredo Pérez Rubalcaba de candidato. Ese año se destapa el caso ERE.',
       ],
     },
@@ -74,10 +74,10 @@ export const HistoriaPSOE: HistoriaDetallada = {
       titulo: 'Casos judiciales',
       periodo: '1997–2026',
       parrafos: [
-        'Caso Filesa: el Supremo dio por probado en octubre de 1997 que una trama de empresas financió ilegalmente al PSOE con más de 1.200 millones de pesetas para las campañas de 1989. Hubo ocho condenas de prisión, tres de ellas a cargos o excargos socialistas, entre ellos el senador Josep Maria Sala.',
+        'Caso Filesa: el Supremo dio por probado en octubre de 1997 que una trama de empresas financió ilegalmente al PSOE con más de 1.200 millones de pesetas para las campañas de 1989. Hubo ocho condenas de prisión, tres de ellas a cargos o excargos socialistas, entre ellos el senador Josep Maria Sala, cuya pena de tres años suspendió después el Constitucional.',
         'GAL: estos grupos parapoliciales mataron a 27 personas entre 1983 y 1987 en su «guerra sucia» contra ETA. En 1998 el Supremo condenó por el secuestro de Segundo Marey al exministro del Interior José Barrionuevo y al ex secretario de Estado Rafael Vera a 10 años de prisión. Ese mismo año el Gobierno de Aznar les concedió un indulto parcial.',
-        'Caso ERE: desvío de dinero público de la Junta de Andalucía en ayudas a empresas y trabajadores; la primera sentencia cifró el fraude en 680 millones entre 2000 y 2009. En 2019 la Audiencia de Sevilla condenó a 19 ex altos cargos, entre ellos los expresidentes José Antonio Griñán (seis años de prisión) y Manuel Chaves (nueve de inhabilitación); el Supremo lo ratificó en 2022. En julio de 2024 el Constitucional anuló esas condenas y ordenó rebajar la de prevaricación y suprimir la de malversación.',
-        'Caso Koldo: en junio de 2026 el Supremo condenó por unanimidad al exministro y ex secretario de Organización del PSOE José Luis Ábalos a 24 años y 3 meses y a su asesor Koldo García a 19 años y 8 meses, por organización criminal, cohecho, malversación y tráfico de influencias, en la pieza de los contratos de mascarillas. El PSOE había suspendido de militancia a Ábalos en 2024.',
+        'Caso ERE: desvío de dinero público de la Junta de Andalucía en ayudas a empresas y trabajadores; la primera sentencia cifró el fraude en 680 millones entre 2000 y 2009. En 2019 la Audiencia de Sevilla condenó a 19 ex altos cargos, entre ellos los expresidentes José Antonio Griñán (seis años de prisión) y Manuel Chaves (nueve de inhabilitación); el Supremo lo ratificó en 2022. En julio de 2024 el Constitucional anuló esas condenas y ordenó rebajar la de prevaricación y suprimir la de malversación. En julio de 2025 la Audiencia de Sevilla llevó esas sentencias del Constitucional al Tribunal de Justicia de la UE y suspendió su ejecución; en abril de 2026 la Comisión Europea pidió al tribunal europeo que se declare incompetente. A 6 de octubre de 2026 no ha resuelto.',
+        'Caso Koldo: en junio de 2026 el Supremo condenó por unanimidad al exministro y ex secretario de Organización del PSOE José Luis Ábalos a 24 años y 3 meses y a su asesor Koldo García a 19 años y 8 meses, por organización criminal, cohecho, malversación y tráfico de influencias, en la pieza de los contratos de mascarillas. El PSOE había suspendido de militancia a Ábalos en febrero de 2024 y después lo expulsó.',
         'Su sucesor en la secretaría de Organización, Santos Cerdán, dimitió y dejó el PSOE en junio de 2025 tras un informe de la Guardia Civil que le atribuía cobros por obra pública. Estuvo en prisión provisional de junio a noviembre de 2025 y denuncia «manipulaciones». La Audiencia Nacional mantiene abiertas esa investigación y otra sobre los pagos en efectivo del PSOE a Ábalos y Koldo García.',
       ],
     },
@@ -95,6 +95,10 @@ export const HistoriaPSOE: HistoriaDetallada = {
   notaTrayectoria: 'En Cataluña concurre con el PSC, que se cuenta dentro del PSOE.',
   fuentes: [
     wikipedia('Partido Socialista Obrero Español', 'Partido_Socialista_Obrero_Español'),
+    wikipedia('Elecciones generales de España de 1931', 'Elecciones_generales_de_España_de_1931'),
+    wikipedia('Congreso de Suresnes', 'Congreso_de_Suresnes'),
+    wikipedia('Rodolfo Llopis', 'Rodolfo_Llopis'),
+    wikipedia('Caso Guerra', 'Caso_Guerra'),
     wikipedia('Caso Filesa', 'Caso_Filesa'),
     wikipedia('Grupos Antiterroristas de Liberación', 'Grupos_Antiterroristas_de_Liberación'),
     wikipedia('Caso ERE en Andalucía', 'Caso_ERE_en_Andalucía'),
@@ -104,7 +108,20 @@ export const HistoriaPSOE: HistoriaDetallada = {
       consultada: C,
       oficial: false,
     },
+    {
+      titulo: 'Euronews: La Audiencia de Sevilla lleva al TJUE el fallo del Constitucional sobre los ERE (15/07/2025)',
+      url: 'https://es.euronews.com/2025/07/15/la-audiencia-de-sevilla-lleva-al-tjue-el-fallo-del-constitucional-sobre-los-ere',
+      consultada: C,
+      oficial: false,
+    },
+    {
+      titulo: 'Público: La Comisión Europea rechaza que el TJUE se pronuncie sobre las sentencias del caso ERE (20/04/2026)',
+      url: 'https://www.publico.es/politica/tribunales/comision-europea-rechaza-tjue-pronuncie-sobre-sentencias-caso-ere.html',
+      consultada: C,
+      oficial: false,
+    },
     wikipedia('Caso Koldo', 'Caso_Koldo'),
+    wikipedia('José Luis Ábalos', 'José_Luis_Ábalos'),
     {
       titulo: 'Demócrata: Qué queda abierto tras la condena del Supremo a Ábalos, Koldo y Aldama (06/2026)',
       url: 'https://www.democrata.es/tribunales/todas-causas-abalos-koldo-aldama/',
