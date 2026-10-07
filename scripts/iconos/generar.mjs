@@ -1,11 +1,12 @@
-// Dibuja el icono, el icono adaptativo de Android, la pantalla de carga y el favicon en el
+// Dibuja el icono, el icono adaptativo de Android, la pantalla de carga, el favicon y los iconos
+// de la web instalable (public/) en el
 // estilo «papeleta» (src/constants/theme.ts): tinta sobre papel, bordes gruesos, esquinas
 // rectas y la «X» de Archivo Black. Sin color de ningún partido.
 //
 // Uso (desde la raíz del proyecto; sharp y opentype.js no son dependencias de la app):
 //   npm i --no-save sharp opentype.js
 //   node scripts/iconos/generar.mjs
-// Escribe los PNG en assets/images.
+// Escribe los PNG en assets/images (app) y en public/ (web).
 import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import opentype from 'opentype.js';
@@ -13,7 +14,8 @@ import sharp from 'sharp';
 
 const raiz = (ruta) => fileURLToPath(new URL(`../../${ruta}`, import.meta.url));
 const FUENTE = raiz('node_modules/@expo-google-fonts/archivo/900Black/Archivo_900Black.ttf');
-const SALIDA = process.argv[2] ?? raiz('assets/images');
+const APP = raiz('assets/images');
+const WEB = raiz('public');
 
 // Mismos valores que Colors en src/constants/theme.ts.
 const TINTA = '#0E0E10';
@@ -67,21 +69,28 @@ function svg({ lado, escala, tinta, fondo, simple = false }) {
   }<g transform="translate(${x} ${y}) scale(${k})">${trazos}</g></svg>`;
 }
 
-async function png(nombre, opciones) {
+async function png(carpeta, nombre, opciones) {
   let imagen = sharp(Buffer.from(svg(opciones)));
   // Con fondo, sin canal alfa: la App Store rechaza iconos con transparencia.
   if (opciones.fondo) imagen = imagen.removeAlpha();
-  await imagen.png().toFile(`${SALIDA}/${nombre}.png`);
+  await imagen.png().toFile(`${carpeta}/${nombre}.png`);
 }
 
-fs.mkdirSync(SALIDA, { recursive: true });
+for (const carpeta of [APP, WEB]) fs.mkdirSync(carpeta, { recursive: true });
 // Icono general (y de iOS): sin transparencias, a sangre.
-await png('icon', { lado: 1024, escala: 0.74, tinta: TINTA, fondo: PAPEL });
+await png(APP, 'icon', { lado: 1024, escala: 0.74, tinta: TINTA, fondo: PAPEL });
 // Android recorta el icono adaptativo con una máscara: la marca cabe en el círculo seguro central.
-await png('android-icon-foreground', { lado: 1024, escala: 0.5, tinta: TINTA });
+await png(APP, 'android-icon-foreground', { lado: 1024, escala: 0.5, tinta: TINTA });
 // Android 13 colorea este a su gusto (iconos temáticos): solo cuenta la forma.
-await png('android-icon-monochrome', { lado: 1024, escala: 0.5, tinta: '#000000' });
-await png('splash-icon', { lado: 1024, escala: 0.9, tinta: TINTA });
-await png('splash-icon-dark', { lado: 1024, escala: 0.9, tinta: TINTA_OSCURO });
-await png('favicon', { lado: 48, escala: 0.9, tinta: TINTA, fondo: PAPEL, simple: true });
-console.log(`Iconos escritos en ${SALIDA}`);
+await png(APP, 'android-icon-monochrome', { lado: 1024, escala: 0.5, tinta: '#000000' });
+await png(APP, 'splash-icon', { lado: 1024, escala: 0.9, tinta: TINTA });
+await png(APP, 'splash-icon-dark', { lado: 1024, escala: 0.9, tinta: TINTA_OSCURO });
+await png(APP, 'favicon', { lado: 48, escala: 0.9, tinta: TINTA, fondo: PAPEL, simple: true });
+
+// Web instalable (public/manifest.json). La «maskable» deja margen porque el móvil la recorta.
+await png(WEB, 'icono-192', { lado: 192, escala: 0.74, tinta: TINTA, fondo: PAPEL });
+await png(WEB, 'icono-512', { lado: 512, escala: 0.74, tinta: TINTA, fondo: PAPEL });
+await png(WEB, 'icono-maskable-512', { lado: 512, escala: 0.6, tinta: TINTA, fondo: PAPEL });
+// iPhone y iPad al añadir a la pantalla de inicio.
+await png(WEB, 'apple-touch-icon', { lado: 180, escala: 0.74, tinta: TINTA, fondo: PAPEL });
+console.log('Iconos escritos en assets/images y public/');
