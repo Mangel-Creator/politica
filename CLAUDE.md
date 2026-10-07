@@ -66,13 +66,25 @@ qué han hecho, y cómo votar. En español de España.
   algo. Se quita solo el relleno y las repetidas. Comillas españolas («»), nunca rectas.
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
-  Decreto 806/2026, la LOREG y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
+  Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central
+  (`eg2026_calendario.pdf`) y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
   el fichero oficial de Infoelectoral (`scripts/infoelectoral`, servirá para los del 29N).
 - **Web publicada** en https://mangel-creator.github.io/politica/ con GitHub Actions
   (`.github/workflows/web.yml`): publica con cada push a main y cada hora con noticias nuevas
   (`noticias.json`). La app recarga noticias cada 15 min (`useCadaRato`) y la web se recarga
   sola si cambia `version.json`. Las rutas `[id]` necesitan `generateStaticParams`.
-- Servicios con tests: D'Hondt (`dhondt.ts`), hemiciclo, noticias (RSS + agrupado).
+- **La web es la prioridad** y se instala en el móvil desde el navegador («Añadir a pantalla de
+  inicio»): `public/manifest.json` y `src/app/+html.tsx` (idioma, descripción, iconos, vista previa al
+  compartir). El título lo pone `<Head>` en `src/app/_layout.tsx`.
+- **App de Android**, para más adelante (hay un APK de prueba del 06/10/2026). Con EAS Build y la
+  cuenta de Expo `mangel_creator` (ya con sesión en este equipo):
+  `npx eas-cli@latest build -p android --profile preview` (perfiles en `eas.json`). Los cambios de código y datos llegan a la app instalada con EAS Update, sin reinstalar:
+  `npx eas-cli@latest update --channel preview --message "..."`. Hace falta un build nuevo solo si
+  cambia algo nativo (librería con código nativo, icono, splash, permisos, `version` de app.json).
+- Icono, adaptativo de Android, splash (claro y oscuro), favicon e iconos de `public/` salen de
+  `scripts/iconos/generar.mjs` (papeleta entrando en la urna, tinta sobre papel).
+- Servicios con tests: D'Hondt (`dhondt.ts`, que reproduce los 350 escaños oficiales del 23J provincia a
+  provincia), hemiciclo, noticias (RSS + agrupado).
 - Pendiente:
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
@@ -87,7 +99,8 @@ qué han hecho, y cómo votar. En español de España.
   errores.
 - Windows + PowerShell 5.1: encadena comandos con `;`, no con `&&`.
 - Web de desarrollo en el puerto **8082** (Organizy usa el 8081). En la web los navegadores
-  bloquean casi todos los RSS (CORS): las noticias solo se ven en el móvil.
+  bloquean casi todos los RSS (CORS): la web publicada lee `noticias.json` (lo genera Actions
+  cada hora), pero en el servidor de desarrollo local las noticias no cargan.
 - Las rutas con tipos (`.expo/types/router.d.ts`) se regeneran al arrancar el servidor; si
   `tsc` se queja de una ruta nueva, reinícialo.
 - En jest solo cuentan los ficheros de `__tests__` (la pantalla `src/app/test.tsx` no es un test).

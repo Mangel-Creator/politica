@@ -8,7 +8,7 @@
     "scheme": "politica",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon",
+      "icon": "./assets/images/icon.png",
       "bundleIdentifier": "com.mangelcreator.politica",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -19,7 +19,6 @@
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
@@ -39,7 +38,11 @@
         {
           "backgroundColor": "#FFFFFF",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#0B0B0C",
+            "image": "./assets/images/splash-icon-dark.png"
+          }
         }
       ]
     ],
@@ -47,6 +50,17 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
-    "owner": "mangel_creator"
+    "owner": "mangel_creator",
+    "extra": {
+      "eas": {
+        "projectId": "c49c5592-17b3-412d-93c4-dbeaf95bdea0"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/c49c5592-17b3-412d-93c4-dbeaf95bdea0"
+    }
   }
 }

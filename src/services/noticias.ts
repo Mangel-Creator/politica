@@ -30,6 +30,8 @@ export const Medios: Medio[] = [
     id: 'elpais',
     nombre: 'El País',
     rss: 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/espana/portada',
+    // La portada de España incluye columnas de la sección de Opinión: solo noticias.
+    filtro: /^https:\/\/elpais\.com\/espana\//,
   },
   { id: 'europapress', nombre: 'Europa Press', rss: 'https://www.europapress.es/rss/rss.aspx?ch=00066' },
   { id: 'infolibre', nombre: 'infoLibre', rss: 'https://www.infolibre.es/rss/politica' },
@@ -123,11 +125,28 @@ function similitud(a: Set<string>, b: Set<string>, peso: (p: string) => number) 
   return total > 0 ? comun / total : 0;
 }
 
-/** Umbral de similitud media con el grupo, ajustado a mano con los titulares del 05/10/2026. */
-export const UMBRAL_GRUPO = 0.18;
+/**
+ * Umbral de similitud media con el grupo, ajustado a mano con los titulares del 05/10/2026 y
+ * subido de 0,18 a 0,20 tras revisar los 192 del 06/10/2026: con 0,18 juntaba noticias distintas
+ * que solo compartían palabras como «calendario» o «Junts». Mejor dos grupos de la misma noticia
+ * que uno que mezcle dos.
+ */
+export const UMBRAL_GRUPO = 0.2;
+
+/**
+ * Páginas «en directo» o de «última hora»: cada medio cuenta en ellas muchas cosas a la vez, así
+ * que no son la misma noticia aunque los titulares se parezcan. Nunca se agrupan.
+ */
+export function esDirecto(titulo: string) {
+  return /\ben directo\b|\bminuto a minuto\b|[úu]ltima hora\b/i.test(titulo);
+}
 
 /** Agrupa titulares parecidos. Los grupos con más medios van primero; a igualdad, el más reciente. */
-export function agrupar(titulares: Titular[], nombreDe: (id: string) => string = (id) => id): Grupo[] {
+export function agrupar(
+  titulares: Titular[],
+  nombreDe: (id: string) => string = (id) => id,
+  umbral = UMBRAL_GRUPO,
+): Grupo[] {
   const ordenados = [...titulares].sort((a, b) => b.fecha - a.fecha);
   const claves = ordenados.map((t) => palabras(t.titulo));
   const apariciones = new Map<string, number>();
@@ -136,16 +155,22 @@ export function agrupar(titulares: Titular[], nombreDe: (id: string) => string =
 
   const grupos: { titulares: Titular[]; claves: Set<string>[] }[] = [];
   ordenados.forEach((t, i) => {
+    // Un directo va solo: sin claves, ningún otro titular puede unirse a él.
+    if (esDirecto(t.titulo)) {
+      grupos.push({ titulares: [t], claves: [] });
+      return;
+    }
     let mejor: (typeof grupos)[number] | undefined;
     let maxima = 0;
     for (const g of grupos) {
+      if (!g.claves.length) continue;
       const media = g.claves.reduce((s, c) => s + similitud(c, claves[i], peso), 0) / g.claves.length;
       if (media > maxima) {
         maxima = media;
         mejor = g;
       }
     }
-    if (mejor && maxima >= UMBRAL_GRUPO) {
+    if (mejor && maxima >= umbral) {
       if (!mejor.titulares.some((x) => x.enlace === t.enlace)) {
         mejor.titulares.push(t);
         mejor.claves.push(claves[i]);
@@ -184,11 +209,17 @@ export async function descargarTitulares(medios: Medio[] = Medios, descargar: ty
   return { titulares, fallidos };
 }
 
-/** Une titulares nuevos con los guardados, sin repetir enlaces y sin los anteriores a `desde`. */
+/**
+ * Une titulares nuevos con los guardados, sin repetir enlaces y sin los anteriores a `desde`.
+ * Vuelve a pasar el filtro de cada medio: si cambia, los guardados de antes también se limpian.
+ */
 export function fusionar(guardados: Titular[], nuevos: Titular[], desde: number) {
   const porEnlace = new Map<string, Titular>();
   [...guardados, ...nuevos].forEach((t) => porEnlace.set(t.enlace, t));
-  return [...porEnlace.values()].filter((t) => t.fecha >= desde);
+  return [...porEnlace.values()].filter((t) => {
+    const filtro = Medios.find((m) => m.id === t.medio)?.filtro;
+    return t.fecha >= desde && (!filtro || filtro.test(t.enlace));
+  });
 }
 
 /**
