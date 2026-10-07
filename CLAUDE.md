@@ -56,7 +56,7 @@ qué han hecho, y cómo votar. En español de España.
   ¿Funcionó?), Aprende. Lo secundario va en pantallas de la pila: `partido/[id]`, `hecho/[id]`,
   `precedente/[id]`, `historia/[id]`, `programa/[id]`,
   `leccion/[id]`, `test`, `simulador`, `glosario`, `calendario`, `votar`,
-  `fuentes`, `noticias`. Desde Partidos se entra a dos apartados: Historia (`historia/`) y
+  `fuentes`, `noticias`, `miembros/[id]`. Desde Partidos se entra a dos apartados: Historia (`historia/`) y
   Programas (`programas`).
 - **Historias detalladas** (`src/data/historias/`, una por partido): capítulos por etapas,
   líderes, casos judiciales con desenlace y escaños 1977-2023 de `src/data/trayectorias.ts`
@@ -64,6 +64,15 @@ qué han hecho, y cómo votar. En español de España.
 - **Programas detallados** (`src/data/programas/`): todas las medidas del PDF resumidas por
   tema con su página, un «qué plantea» (`enfoques`) por tema y `nota` si hace falta aclarar
   algo. Se quita solo el relleno y las repetidas. Comillas españolas («»), nunca rectas.
+- **Miembros** (`miembros/[id]`, enlazado con una `Fila` desde la ficha del partido; datos en
+  `src/data/miembros/`, un fichero por partido): candidatura al 29N, 4-6 dirigentes con cargos,
+  nacimiento, estudios y trayectoria, y «Quién dice qué» (`avisos`) cuando las fuentes no
+  coinciden, hay títulos sin terminar o casos judiciales (con desenlace). Pestaña Gobierno en
+  tres bloques: Gobierno actual (solo PSOE y Sumar, de La Moncloa, `gobierno-actual.ts`), lo
+  anunciado por el partido y «Ministrables según la prensa» (siempre rotulado como especulación,
+  cada nombre con medio, fecha y enlace, medios en orden alfabético). Estudios: manda la ficha
+  del Congreso o del parlamento autonómico; Wikipedia solo para contrastar. Webs del PSOE y Vox
+  bloquean descargas automáticas (la de Vox se lee con el navegador; la del PSOE pide CAPTCHA).
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central

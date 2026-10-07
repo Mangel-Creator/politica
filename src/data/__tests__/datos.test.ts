@@ -14,6 +14,7 @@ import { Glosario, Lecciones, Preguntas, urlArticulo } from '../aprende';
 import { Circunscripciones } from '../circunscripciones';
 import { Hechos, votacion } from '../hechos';
 import { Votaciones } from '../votaciones';
+import { Miembros } from '../miembros';
 
 const FECHA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -351,5 +352,74 @@ describe('circunscripciones del 29N', () => {
     Circunscripciones.forEach((c) =>
       expect(c.diputados).toBeGreaterThanOrEqual(['Ceuta', 'Melilla'].includes(c.nombre) ? 1 : 2),
     );
+  });
+});
+
+describe('miembros y Gobierno que proponen', () => {
+  /** Todos los textos de un objeto, para revisar comillas y espacios. */
+  const textos = (x: unknown): string[] =>
+    typeof x === 'string' ? [x] : x && typeof x === 'object' ? Object.values(x).flatMap(textos) : [];
+  /** Todas las fuentes de un objeto (cualquier cosa con url y consultada). */
+  const fuentes = (x: unknown): { url: string; consultada: string }[] =>
+    !x || typeof x !== 'object'
+      ? []
+      : 'url' in x && 'consultada' in x
+        ? [x as { url: string; consultada: string }]
+        : Object.values(x).flatMap(fuentes);
+
+  it('hay un bloque por partido, en el orden de Partidos', () => {
+    expect(Miembros.map((m) => m.partidoId)).toEqual(Partidos.map((p) => p.id));
+  });
+
+  it('cada partido tiene entre 4 y 6 miembros, con cargos y fuentes', () => {
+    for (const m of Miembros) {
+      expect(m.miembros.length).toBeGreaterThanOrEqual(4);
+      expect(m.miembros.length).toBeLessThanOrEqual(6);
+      for (const x of m.miembros) {
+        expect(x.cargos.length).toBeGreaterThan(0);
+        for (const c of x.cargos) expect(c.fuentes.length).toBeGreaterThan(0);
+        expect(x.fuentesEstudios.length).toBeGreaterThan(0);
+        expect(x.fuentes.length).toBeGreaterThan(0);
+        if (x.nacimiento) {
+          expect(x.nacimiento.anio).toMatch(/^\d{4}$/);
+          expect(x.nacimiento.fuentes.length).toBeGreaterThan(0);
+        }
+      }
+      expect(m.candidatura.fuentes.length).toBeGreaterThan(0);
+      expect(m.anunciado.fuentes.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('toda fuente es https y tiene fecha de consulta no posterior a hoy', () => {
+    for (const f of fuentes(Miembros)) {
+      expect(f.url).toMatch(/^https:\/\//);
+      expect(f.consultada).toMatch(FECHA);
+      expect(f.consultada <= '2026-10-07').toBe(true);
+    }
+  });
+
+  it('la prensa va en orden alfabético de medio y cada ministrable tiene al menos una noticia', () => {
+    for (const m of Miembros)
+      for (const x of m.prensa) {
+        expect(x.menciones.length).toBeGreaterThan(0);
+        const medios = x.menciones.map((n) => n.medio);
+        expect(medios).toEqual([...medios].sort((a, b) => a.localeCompare(b, 'es')));
+        for (const n of x.menciones) expect(n.fecha).toMatch(FECHA);
+      }
+  });
+
+  it('el Gobierno actual solo aparece en los partidos que gobiernan y suma los 23 de La Moncloa', () => {
+    const conGobierno = Miembros.filter((m) => m.gobiernoActual);
+    expect(conGobierno.map((m) => m.partidoId)).toEqual(['psoe', 'sumar']);
+    const nombres = conGobierno.flatMap((m) => m.gobiernoActual!.miembros.map((x) => x.nombre));
+    expect(nombres).toHaveLength(23);
+    expect(new Set(nombres).size).toBe(23);
+  });
+
+  it('sin dobles espacios ni comillas rectas en el texto', () => {
+    for (const t of textos(Miembros)) {
+      expect(t).not.toMatch(/  /);
+      expect(t).not.toMatch(/"/);
+    }
   });
 });
