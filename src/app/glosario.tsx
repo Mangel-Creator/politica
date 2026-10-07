@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 
+import { Enlace } from '@/components/enlaces';
 import { Pantalla } from '@/components/pantalla';
 import { Texto } from '@/components/texto';
 import { Borde, Familias, Spacing } from '@/constants/theme';
-import { Glosario } from '@/data/aprende';
+import { Glosario, nombreArticulo, urlArticulo } from '@/data/aprende';
 import { useTheme } from '@/hooks/use-theme';
 
 const normal = (s: string) =>
@@ -34,6 +35,7 @@ export default function PantallaGlosario() {
           <View key={g.termino} style={[styles.termino, { borderBottomColor: t.linea }]}>
             <Texto tipo="subtitulo">{g.termino}</Texto>
             <Texto>{g.definicion}</Texto>
+            <Enlace href={urlArticulo(g.articulo)}>{nombreArticulo(g.articulo)}</Enlace>
           </View>
         ))}
         {!lista.length && <Texto color="gris">Nada con «{busca}».</Texto>}

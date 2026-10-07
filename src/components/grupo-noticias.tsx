@@ -54,18 +54,20 @@ export function GrupoNoticias({ grupo }: { grupo: Grupo }) {
       </Pulsable>
       {abierto && (
         <View style={[styles.lista, { borderTopColor: t.lineaSuave }]}>
-          {grupo.titulares.map((x) => (
-            <ExternalLink key={x.enlace} href={x.enlace as `https://${string}`} accessibilityRole="link">
-              <View style={styles.titular}>
-                <Texto tipo="etiqueta">
-                  {nombreMedio(x.medio)} · {haceCuanto(x.fecha)}
-                </Texto>
-                <Texto tipo="pequeno" style={styles.enlace}>
-                  {x.titulo} ↗
-                </Texto>
-              </View>
-            </ExternalLink>
-          ))}
+          {[...grupo.titulares]
+            .sort((a, b) => nombreMedio(a.medio).localeCompare(nombreMedio(b.medio), 'es') || b.fecha - a.fecha)
+            .map((x) => (
+              <ExternalLink key={x.enlace} href={x.enlace as `https://${string}`} accessibilityRole="link">
+                <View style={styles.titular}>
+                  <Texto tipo="etiqueta">
+                    {nombreMedio(x.medio)} · {haceCuanto(x.fecha)}
+                  </Texto>
+                  <Texto tipo="pequeno" style={styles.enlace}>
+                    {x.titulo} ↗
+                  </Texto>
+                </View>
+              </ExternalLink>
+            ))}
         </View>
       )}
     </View>

@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 
 import { MarcaPartido, Muestra } from '@/components/marca-partido';
 import { Pantalla } from '@/components/pantalla';
-import { Bloque, Chip, Etiqueta, Ir, Nota, Pagina, Segmentos } from '@/components/piezas';
+import { Bloque, Chip, Etiqueta, Ir, Nota, Pagina, Pulsable, Segmentos } from '@/components/piezas';
 import { ListaPropuestas } from '@/components/propuestas';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
@@ -12,13 +12,22 @@ import { buscarPartido, Partidos } from '@/data/partidos';
 import { Precedentes } from '@/data/precedentes';
 import { resumenDe } from '@/data/programas';
 import { buscarTema, Temas } from '@/data/temas';
-import type { TemaId } from '@/data/tipos';
+import type { Partido, Propuesta, ResumenPrograma, TemaId } from '@/data/tipos';
 import { useTheme } from '@/hooks/use-theme';
 
 type Modo = 'tema' | 'cara';
 
 const conResumen = Partidos.filter((p) => resumenDe(p.id));
 const sinResumen = Partidos.filter((p) => !resumenDe(p.id));
+
+/** Por qué un partido no tiene programa del 23J en la app, con el dato de `partidos.ts`. */
+function motivoSinPrograma(p: Partido) {
+  return (
+    p.programasNoLocalizados?.find((x) => x.eleccion === '23J 2023')?.motivo ??
+    p.nota2023 ??
+    'Sin programa del 23J en la app.'
+  );
+}
 
 export default function Comparar() {
   const params = useLocalSearchParams<{ tema?: string }>();
@@ -28,7 +37,7 @@ export default function Comparar() {
     <Pantalla
       antetitulo="Programas del 23J · el del 29N cuando se publique"
       titulo="Comparar"
-      entradilla="Qué propone cada partido sobre lo mismo, con la página del programa para comprobarlo.">
+      entradilla="Qué plantea cada partido sobre lo mismo, con la página del programa para comprobarlo.">
       <Segmentos<Modo>
         opciones={[
           { id: 'tema', texto: 'Por tema' },
@@ -56,12 +65,80 @@ function SelectorTema({ valor, onCambio }: { valor: TemaId; onCambio: (t: TemaId
   );
 }
 
-function PorTema({ inicial }: { inicial: TemaId }) {
+/** Botón que abre y cierra la lista de medidas de un tema. */
+function Desplegable({ n, abierto, onPress }: { n: number; abierto: boolean; onPress: () => void }) {
+  return (
+    <Pulsable onPress={onPress} accessibilityRole="button" accessibilityState={{ expanded: abierto }}>
+      <Texto tipo="pequenoFuerte" style={styles.subrayado}>
+        {abierto ? 'Ocultar medidas ▴' : `Ver ${n === 1 ? 'su medida' : `sus ${n} medidas`} ▾`}
+      </Texto>
+    </Pulsable>
+  );
+}
+
+/** «Qué plantea» de un partido en un tema, o el aviso de que no lo hay. */
+function Enfoque({ enfoque, n, pequeno }: { enfoque?: Propuesta; n: number; pequeno?: boolean }) {
+  if (!n)
+    return (
+      <Texto tipo="pequeno" color="gris">
+        Sin medidas sobre este tema en su programa del 23J.
+      </Texto>
+    );
+  if (!enfoque)
+    return (
+      <Texto tipo="pequeno" color="gris">
+        Sin resumen de su planteamiento en este tema: mira sus medidas.
+      </Texto>
+    );
+  return (
+    <View style={styles.enfoque}>
+      <Texto tipo={pequeno ? 'pequeno' : 'cuerpo'}>{enfoque.texto}</Texto>
+      <Pagina n={enfoque.pagina} />
+    </View>
+  );
+}
+
+/** Ficha de un partido en un tema. Todas iguales; cambia solo el texto. */
+function FichaPartido({ p, temaId }: { p: Partido; temaId: TemaId }) {
   const t = useTheme();
+  const [abierto, setAbierto] = useState(false);
+  const r = resumenDe(p.id);
+  const medidas = r?.temas[temaId] ?? [];
+
+  return (
+    <View style={[styles.partido, { borderTopColor: t.linea }]}>
+      <Ir
+        href={
+          r
+            ? { pathname: '/programa/[id]', params: medidas.length ? { id: p.id, tema: temaId } : { id: p.id } }
+            : { pathname: '/partido/[id]', params: { id: p.id } }
+        }
+        style={styles.partidoCabeza}>
+        <MarcaPartido id={p.id} tipo="subtitulo" lado={16} />
+        <Texto tipo="etiqueta" color="gris">
+          {r ? 'programa →' : 'ficha →'}
+        </Texto>
+      </Ir>
+      {r ? (
+        <>
+          <Enfoque enfoque={r.enfoques?.[temaId]} n={medidas.length} />
+          {medidas.length > 0 && (
+            <Desplegable n={medidas.length} abierto={abierto} onPress={() => setAbierto(!abierto)} />
+          )}
+          {abierto && <ListaPropuestas propuestas={medidas} />}
+        </>
+      ) : (
+        <Texto tipo="pequeno" color="gris">
+          {`Sin programa del 23J. ${motivoSinPrograma(p)}`}
+        </Texto>
+      )}
+    </View>
+  );
+}
+
+function PorTema({ inicial }: { inicial: TemaId }) {
   const [temaId, setTemaId] = useState<TemaId>(inicial);
   const tema = buscarTema(temaId)!;
-  const con = conResumen.filter((p) => resumenDe(p.id)!.temas[temaId]?.length);
-  const sin = conResumen.filter((p) => !con.includes(p));
   const precedentes = Precedentes.filter((p) => p.temaId === temaId);
 
   return (
@@ -78,16 +155,14 @@ function PorTema({ inicial }: { inicial: TemaId }) {
         </View>
       </View>
 
-      {con.map((p) => (
-        <View key={p.id} style={[styles.partido, { borderTopColor: t.linea }]}>
-          <Ir href={{ pathname: '/partido/[id]', params: { id: p.id } }} style={styles.partidoCabeza}>
-            <MarcaPartido id={p.id} tipo="subtitulo" lado={16} />
-            <Texto tipo="etiqueta" color="gris">
-              ficha →
-            </Texto>
-          </Ir>
-          <ListaPropuestas propuestas={resumenDe(p.id)!.temas[temaId]!} />
-        </View>
+      <Nota>
+        Partidos en orden alfabético. De cada uno, qué plantea sobre el tema según su programa del 23J; toca «Ver sus
+        medidas» para la lista completa o «programa» para el documento entero. Es lo que promete cada partido, no un
+        hecho comprobado.
+      </Nota>
+
+      {Partidos.map((p) => (
+        <FichaPartido key={`${p.id}-${temaId}`} p={p} temaId={temaId} />
       ))}
 
       {precedentes.map((pr) => (
@@ -100,13 +175,6 @@ function PorTema({ inicial }: { inicial: TemaId }) {
           </Bloque>
         </Ir>
       ))}
-
-      <Nota>
-        {sin.length
-          ? `Sin medidas sobre ${tema.nombre.toLowerCase()} en el resumen de su programa del 23J: ${sin.map((p) => p.siglas).join(', ')}. `
-          : ''}
-        Sin programa del 23J localizado: {sinResumen.map((p) => p.siglas).join(', ')}.
-      </Nota>
     </View>
   );
 }
@@ -142,6 +210,56 @@ function SelectorPartido({
   );
 }
 
+/** Un tema en Cara a cara: lo que plantea cada uno y, si se pide, sus medidas. */
+function TemaCaraACara({ temaId, ra, rb }: { temaId: TemaId; ra: ResumenPrograma; rb: ResumenPrograma }) {
+  const t = useTheme();
+  const tm = buscarTema(temaId)!;
+  const [abierto, setAbierto] = useState(false);
+  const total = (ra.temas[temaId]?.length ?? 0) + (rb.temas[temaId]?.length ?? 0);
+
+  return (
+    <View style={styles.tema}>
+      <View style={[styles.temaCabeza, { borderBottomColor: t.linea }]}>
+        <Texto tipo="subtitulo">{tm.glifo}</Texto>
+        <Texto tipo="subtitulo">{tm.nombre}</Texto>
+      </View>
+      <View style={styles.columnas}>
+        {[ra, rb].map((r, i) => {
+          const medidas = r.temas[temaId] ?? [];
+          return (
+            <View
+              key={r.partidoId}
+              style={[
+                styles.columna,
+                i === 1 && { borderLeftColor: t.lineaSuave, borderLeftWidth: Borde.fino, paddingLeft: Spacing.three },
+              ]}>
+              <Etiqueta>{`${buscarPartido(r.partidoId)!.siglas} · ${medidas.length} ${medidas.length === 1 ? 'medida' : 'medidas'}`}</Etiqueta>
+              <Enfoque enfoque={r.enfoques?.[temaId]} n={medidas.length} pequeno />
+              {abierto &&
+                medidas.map((x) => (
+                  <View key={x.texto} style={styles.medida}>
+                    <Texto tipo="pequeno">— {x.texto}</Texto>
+                    <Pagina n={x.pagina} />
+                  </View>
+                ))}
+            </View>
+          );
+        })}
+      </View>
+      {total > 0 && (
+        <Pulsable
+          onPress={() => setAbierto(!abierto)}
+          accessibilityRole="button"
+          accessibilityState={{ expanded: abierto }}>
+          <Texto tipo="pequenoFuerte" style={styles.subrayado}>
+            {abierto ? 'Ocultar medidas ▴' : 'Ver las medidas ▾'}
+          </Texto>
+        </Pulsable>
+      )}
+    </View>
+  );
+}
+
 function CaraACara() {
   const t = useTheme();
   const [a, setA] = useState(conResumen[0].id);
@@ -155,6 +273,15 @@ function CaraACara() {
     <View style={styles.vista}>
       <SelectorPartido rotulo="Partido A" valor={a} otro={b} onCambio={setA} />
       <SelectorPartido rotulo="Partido B" valor={b} otro={a} onCambio={setB} />
+
+      <Nota>
+        {`Solo partidos con programa del 23J en la app. Sin él: ${sinResumen
+          .map((p) => {
+            const m = motivoSinPrograma(p).replace(/\.$/, '');
+            return `${p.siglas} (${m[0].toLowerCase()}${m.slice(1)})`;
+          })
+          .join('; ')}.`}
+      </Nota>
 
       <View style={[styles.marcador, { borderColor: t.linea }]}>
         <View style={styles.marcadorLado}>
@@ -172,36 +299,7 @@ function CaraACara() {
       </View>
 
       {temas.map((tm) => (
-        <View key={tm.id} style={styles.tema}>
-          <View style={[styles.temaCabeza, { borderBottomColor: t.linea }]}>
-            <Texto tipo="subtitulo">{tm.glifo}</Texto>
-            <Texto tipo="subtitulo">{tm.nombre}</Texto>
-          </View>
-          <View style={styles.columnas}>
-            {[ra, rb].map((r, i) => (
-              <View
-                key={r.partidoId}
-                style={[
-                  styles.columna,
-                  i === 1 && { borderLeftColor: t.lineaSuave, borderLeftWidth: Borde.fino, paddingLeft: Spacing.three },
-                ]}>
-                <Etiqueta>{buscarPartido(r.partidoId)!.siglas}</Etiqueta>
-                {r.temas[tm.id]?.length ? (
-                  r.temas[tm.id]!.map((x) => (
-                    <View key={x.texto} style={styles.medida}>
-                      <Texto tipo="pequeno">{x.texto}</Texto>
-                      <Pagina n={x.pagina} />
-                    </View>
-                  ))
-                ) : (
-                  <Texto tipo="pequeno" color="grisClaro">
-                    Sin medidas sobre esto en el resumen de su programa.
-                  </Texto>
-                )}
-              </View>
-            ))}
-          </View>
-        </View>
+        <TemaCaraACara key={`${a}-${b}-${tm.id}`} temaId={tm.id} ra={ra} rb={rb} />
       ))}
     </View>
   );
@@ -215,6 +313,8 @@ const styles = StyleSheet.create({
   glifoGrande: { width: 76, textAlign: 'center', fontSize: 64, lineHeight: 72, letterSpacing: 0 },
   partido: { borderTopWidth: Borde.grueso, paddingTop: Spacing.three, gap: Spacing.three },
   partidoCabeza: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  enfoque: { gap: Spacing.one },
+  subrayado: { textDecorationLine: 'underline' },
   selector: { gap: Spacing.two },
   marcador: { flexDirection: 'row', borderWidth: Borde.grueso, alignItems: 'stretch' },
   marcadorLado: { flex: 1, padding: Spacing.three, justifyContent: 'center' },

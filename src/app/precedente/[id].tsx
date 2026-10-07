@@ -8,12 +8,14 @@ import { Bloque, Etiqueta, Ir, Nota, Pagina, Seccion } from '@/components/piezas
 import { Sentidos } from '@/components/sentido';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
+import { Partidos } from '@/data/partidos';
 import { buscarPrecedente, type Evidencia, type Postura, Precedentes } from '@/data/precedentes';
 import { buscarTema } from '@/data/temas';
 import { useTheme } from '@/hooks/use-theme';
 import { fechaCorta } from '@/services/fechas';
 
 const ORDEN: Postura['sentido'][] = ['impulsa', 'frena', 'matiza'];
+const ordenPartido = (id: string) => Partidos.findIndex((p) => p.id === id);
 
 /** Para la web estática: una página por cada precedente (GitHub Pages no tiene servidor). */
 export async function generateStaticParams(): Promise<{ id: string }[]> {
@@ -48,7 +50,10 @@ export default function FichaPrecedente() {
 
       <Seccion titulo="Qué propone cada partido · 23J">
         {ORDEN.map((s) => {
-          const lista = pr.posturas.filter((x) => x.sentido === s);
+          // Dentro de cada grupo, el orden de la app: alfabético por siglas.
+          const lista = pr.posturas
+            .filter((x) => x.sentido === s)
+            .sort((a, b) => ordenPartido(a.partidoId) - ordenPartido(b.partidoId));
           if (!lista.length) return null;
           return (
             <View key={s} style={styles.grupoPostura}>
