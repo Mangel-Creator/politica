@@ -169,6 +169,10 @@ describe('precedentes', () => {
       expect(pr.casos.length).toBeGreaterThan(0);
     }
   });
+
+  it('cada precedente tiene fuentes de al menos dos tipos distintos', () => {
+    for (const pr of Precedentes) expect(new Set(pr.evidencias.map((e) => e.tipo)).size).toBeGreaterThanOrEqual(2);
+  });
 });
 
 describe('historias', () => {
@@ -315,6 +319,27 @@ describe('promesas y hechos', () => {
         expect(p.pagina).toBeLessThanOrEqual(pdf!.paginas);
       }),
     );
+  });
+
+  it('las promesas van en el orden alfabético de la app', () => {
+    const orden = (id: string) => Partidos.findIndex((p) => p.id === id);
+    Hechos.forEach((h) => {
+      const ids = h.promesas.map((p) => orden(p.partidoId));
+      expect([...ids].sort((a, b) => a - b)).toEqual(ids);
+    });
+  });
+
+  it('la app no da veredictos: nunca «incumplió»', () => {
+    const textos = [
+      ...Hechos.flatMap((h) => [
+        h.titulo,
+        h.pregunta,
+        h.desenlace.texto,
+        ...h.pasos.flatMap((p) => [p.que, p.siSignifica]),
+      ]),
+      ...Precedentes.flatMap((pr) => [pr.coinciden, pr.discrepan, ...pr.evidencias.map((e) => e.dice)]),
+    ];
+    textos.forEach((t) => expect(t).not.toMatch(/incumpl/i));
   });
 });
 
