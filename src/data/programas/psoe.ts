@@ -544,7 +544,8 @@ export const ProgramaPSOE: ResumenPrograma = {
       { texto: 'Un informe anual sobre el cumplimiento de los derechos de la Constitución.', pagina: 244 },
       { texto: 'Oposiciones territorializadas para no tener que cambiar de provincia.', pagina: 244 },
       {
-        texto: 'Culminar la reforma de la Ley de Transparencia y publicar de oficio las agendas, los viajes, los bienes y las compatibilidades de los altos cargos.',
+        texto:
+          'Culminar la reforma de la Ley de Transparencia y publicar de oficio las agendas, los viajes, los bienes y las compatibilidades de los altos cargos.',
         pagina: 246,
       },
       { texto: 'Suprimir los aforamientos en lo que no tenga que ver con el ejercicio del cargo.', pagina: 246 },

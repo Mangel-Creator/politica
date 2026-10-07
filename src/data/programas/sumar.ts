@@ -2243,7 +2243,8 @@ export const ProgramaSumar: ResumenPrograma = {
         pagina: 43,
       },
       {
-        texto: 'Atraer industria a la España vaciada que produce renovables y estudiar reformas para abaratar la luz cerca de las plantas.',
+        texto:
+          'Atraer industria a la España vaciada que produce renovables y estudiar reformas para abaratar la luz cerca de las plantas.',
         pagina: 44,
       },
       {

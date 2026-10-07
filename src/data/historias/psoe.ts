@@ -115,7 +115,8 @@ export const HistoriaPSOE: HistoriaDetallada = {
       oficial: false,
     },
     {
-      titulo: 'Público: La Comisión Europea rechaza que el TJUE se pronuncie sobre las sentencias del caso ERE (20/04/2026)',
+      titulo:
+        'Público: La Comisión Europea rechaza que el TJUE se pronuncie sobre las sentencias del caso ERE (20/04/2026)',
       url: 'https://www.publico.es/politica/tribunales/comision-europea-rechaza-tjue-pronuncie-sobre-sentencias-caso-ere.html',
       consultada: C,
       oficial: false,

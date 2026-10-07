@@ -6,7 +6,11 @@ export const ProgramaVox: ResumenPrograma = {
   eleccion: '23J 2023',
   nota: 'Están sus 381 medidas numeradas, resumidas; varias se agrupan cuando dicen lo mismo y las que solo son declaración van en el enfoque del tema. Las expresiones entre comillas son del propio programa.',
   ideasClave: [
-    { texto: 'Estado unitario administrativamente descentralizado; mientras, devolver al Estado Educación, Sanidad, Seguridad y Justicia.', pagina: 8 },
+    {
+      texto:
+        'Estado unitario administrativamente descentralizado; mientras, devolver al Estado Educación, Sanidad, Seguridad y Justicia.',
+      pagina: 8,
+    },
     { texto: 'IRPF con dos tipos (15 % hasta 70.000 € y 25 % por encima), 4 puntos menos por hijo.', pagina: 75 },
     { texto: 'Expulsar de inmediato a todos los inmigrantes que entren ilegalmente.', pagina: 100 },
     {
@@ -565,7 +569,7 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Deducciones a la inversión, sobre todo si trae de vuelta empleo deslocalizado.', pagina: 79 },
       {
         texto:
-          'Que las grandes tecnológicas coticen también por los datos que obtienen en España y, como primer paso, una consulta (artículo 92 de la Constitución) sobre el control de los datos personales.',
+          'Que las grandes tecnológicas coticen por los datos que obtienen en España y, como primer paso, una consulta (art. 92 de la Constitución) sobre el control de esos datos.',
         pagina: 80,
       },
       { texto: 'Más lucha contra la evasión fiscal de multinacionales y gigantes de internet.', pagina: 84 },
@@ -627,7 +631,11 @@ export const ProgramaVox: ResumenPrograma = {
       { texto: 'Más seguridad en las redes de telecomunicaciones e infraestructuras críticas.', pagina: 94 },
       { texto: 'Mejores condiciones y protección para los vigilantes de seguridad.', pagina: 95 },
       { texto: 'Lucha contra mafias, bandas callejeras, narcotráfico y pequeña delincuencia.', pagina: 103 },
-      { texto: 'Cerrar las mezquitas o centros de culto que propaguen ideas «contrarias a nuestra cultura e identidad», como el radicalismo islámico, la yihad o el menosprecio a la mujer.', pagina: 102 },
+      {
+        texto:
+          'Cerrar mezquitas o centros de culto que propaguen ideas «contrarias a nuestra cultura e identidad», como el radicalismo islámico, la yihad o el menosprecio a la mujer.',
+        pagina: 102,
+      },
       { texto: 'Acuerdos para que los presos extranjeros cumplan condena en su país.', pagina: 128 },
       { texto: 'Una Ley de memoria, dignidad y justicia para las víctimas del terrorismo.', pagina: 128 },
       {
@@ -635,7 +643,11 @@ export const ProgramaVox: ResumenPrograma = {
         pagina: 129,
       },
       { texto: 'Plan penitenciario y fin de los beneficios a presos por terrorismo.', pagina: 129 },
-      { texto: 'Bajar la edad penal y endurecer la ley del menor para los menores que cometan agresiones sexuales o contra mujeres.', pagina: 174 },
+      {
+        texto:
+          'Bajar la edad penal y endurecer la ley del menor para los menores que cometan agresiones sexuales o contra mujeres.',
+        pagina: 174,
+      },
       { texto: 'Más penas a los pirómanos.', pagina: 111 },
     ],
     inmigracion: [
