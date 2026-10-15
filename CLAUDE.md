@@ -83,6 +83,12 @@ qué han hecho, y cómo votar. En español de España.
   razón. Los fallados vuelven al final de la ronda (`services/practica.ts`); racha, puntos y
   fallos se guardan solo en el dispositivo (`services/progreso.ts`, `hooks/use-progreso.ts`).
   `test` es el Repaso. Los símbolos del camino, sin emoji (salen en color en algunos móviles).
+- **Anuncios de campaña** (`src/data/anuncios.ts`, apartado «Lo que anuncian los partidos» en Hoy y
+  pantalla `anuncios`): medidas para el 29N que cada partido publica en su propia web desde el 05/10,
+  hasta que salgan los programas. Solo medidas para la próxima legislatura (no críticas, lemas ni
+  decretos del Gobierno). Cada revisión de las webs se apunta en `Revisiones`, haya o no novedades;
+  la del PSOE a veces pide CAPTCHA (se abre bien en el navegador integrado más tarde) y la de Junts
+  da 403 (se lee su copia del Internet Archive).
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y retos (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central
