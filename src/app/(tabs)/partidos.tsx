@@ -1,6 +1,7 @@
 import type { Href } from 'expo-router';
-import { StyleSheet, View } from 'react-native';
+import { type LayoutChangeEvent, StyleSheet, type TextStyle, View } from 'react-native';
 
+import { useLetraComun } from '@/components/letra-comun';
 import { Muestra } from '@/components/marca-partido';
 import { Pantalla } from '@/components/pantalla';
 import { Etiqueta, Ir, Nota } from '@/components/piezas';
@@ -10,8 +11,32 @@ import { Partidos } from '@/data/partidos';
 import { resumenDe } from '@/data/programas';
 import { useTheme } from '@/hooks/use-theme';
 
+const apartados = [
+  {
+    href: '/historia',
+    etiqueta: 'Desde 1879',
+    titulo: 'Historia',
+    texto: 'Etapas, líderes, escaños desde 1977 y casos judiciales de cada partido.',
+  },
+  {
+    href: '/programas',
+    etiqueta: 'Tema a tema',
+    titulo: 'Programas',
+    texto: 'Qué plantea cada uno y todas sus medidas, con la página del PDF.',
+  },
+] as const;
+
 export default function PantallaPartidos() {
   const t = useTheme();
+  // Mismo tamaño de siglas en todas las fichas, aunque alguna sea más larga.
+  const siglas = useLetraComun(
+    Partidos.map((p) => p.siglas),
+    'titulo',
+  );
+  const titulos = useLetraComun(
+    apartados.map((a) => a.titulo),
+    'titulo',
+  );
 
   return (
     <Pantalla
@@ -19,21 +44,14 @@ export default function PantallaPartidos() {
       titulo="Partidos"
       entradilla="Las candidaturas que lograron escaño el 23J y Podemos, que se presentó dentro de Sumar. Mismo formato para todos.">
       <View style={styles.apartados}>
-        <Apartado
-          href="/historia"
-          etiqueta="Desde 1879"
-          titulo="Historia"
-          texto="Etapas, líderes, escaños desde 1977 y casos judiciales de cada partido."
-        />
-        <Apartado
-          href="/programas"
-          etiqueta="Tema a tema"
-          titulo="Programas"
-          texto="Qué plantea cada uno y todas sus medidas, con la página del PDF."
-        />
+        {titulos.medidor}
+        {apartados.map((a) => (
+          <Apartado key={a.href} {...a} estilo={titulos.estilo} alMedir={titulos.alMedir(a.href)} />
+        ))}
       </View>
 
       <View style={styles.rejilla}>
+        {siglas.medidor}
         {Partidos.map((p) => {
           const programa = p.programas.find((x) => x.eleccion === '29N 2026') ? '29N' : resumenDe(p.id) ? '23J' : null;
           return (
@@ -47,7 +65,7 @@ export default function PantallaPartidos() {
                   {programa ? `Programa ${programa}` : 'Sin programa'}
                 </Texto>
               </View>
-              <Texto tipo="titulo" numberOfLines={1} adjustsFontSizeToFit>
+              <Texto tipo="titulo" numberOfLines={1} style={siglas.estilo} onLayout={siglas.alMedir(p.id)}>
                 {p.siglas}
               </Texto>
               <Texto tipo="pequeno" color="gris" numberOfLines={2} style={styles.nombre}>
@@ -75,7 +93,21 @@ export default function PantallaPartidos() {
 }
 
 /** Entrada grande a una sección, en negativo para que destaque sobre las fichas. */
-function Apartado({ href, etiqueta, titulo, texto }: { href: Href; etiqueta: string; titulo: string; texto: string }) {
+function Apartado({
+  href,
+  etiqueta,
+  titulo,
+  texto,
+  estilo,
+  alMedir,
+}: {
+  href: Href;
+  etiqueta: string;
+  titulo: string;
+  texto: string;
+  estilo?: TextStyle;
+  alMedir: (e: LayoutChangeEvent) => void;
+}) {
   const t = useTheme();
   return (
     <Ir href={href} style={[styles.apartado, { backgroundColor: t.tinta, borderColor: t.linea }]}>
@@ -85,7 +117,7 @@ function Apartado({ href, etiqueta, titulo, texto }: { href: Href; etiqueta: str
           →
         </Texto>
       </View>
-      <Texto tipo="titulo" color="papel">
+      <Texto tipo="titulo" color="papel" numberOfLines={1} style={estilo} onLayout={alMedir}>
         {titulo}
       </Texto>
       <Texto tipo="pequeno" color="papel">
