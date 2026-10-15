@@ -97,7 +97,6 @@ qué han hecho, y cómo votar. En español de España.
 - Pendiente:
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).
-  - Icono y pantalla de carga propios (ahora son los de Expo).
 
 ## Normas de trabajo
 

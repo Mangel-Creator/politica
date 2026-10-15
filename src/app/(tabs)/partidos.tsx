@@ -44,7 +44,7 @@ export default function PantallaPartidos() {
               <View style={styles.cabeza}>
                 <Muestra color={p.color} lado={14} />
                 <Texto tipo="etiqueta" color="gris">
-                  {programa ? `Programa ${programa}` : 'Sin resumen aún'}
+                  {programa ? `Programa ${programa}` : 'Sin programa'}
                 </Texto>
               </View>
               <Texto tipo="titulo" numberOfLines={1} adjustsFontSizeToFit>
