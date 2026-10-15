@@ -176,4 +176,10 @@ export const Glosario: TerminoGlosario[] = [
       'Rechazo del Senado a una ley que ya aprobó el Congreso. El Congreso puede levantarlo con mayoría absoluta, o con mayoría simple pasados dos meses.',
     articulo: CE('90'),
   },
+  {
+    termino: 'Presupuestos prorrogados',
+    definicion:
+      'Si el 1 de enero no hay Presupuestos nuevos aprobados, siguen valiendo los del año anterior hasta que se aprueben otros.',
+    articulo: CE('134'),
+  },
 ];

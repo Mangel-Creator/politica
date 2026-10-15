@@ -1,3 +1,4 @@
+import type { Fuente } from '../tipos';
 import { art, type Unidad } from './base';
 import { diaVot, fuenteHecho, fuentePrograma, fuenteVot, no, promesa, si, siglas } from './util';
 
@@ -14,12 +15,276 @@ const par = (hechoId: string, partidoId: string): [string, string] => [
   promesa(hechoId, partidoId).texto,
 ];
 
+const C = '2026-10-15';
+const oficial = (titulo: string, url: string): Fuente => ({ titulo, url, consultada: C, oficial: true });
+
+/** Ley Orgánica 1/2024 de amnistía en el BOE, con ancla al artículo (a1, a2, a9…). */
+const leyAmnistia = (ancla: string) =>
+  oficial(
+    'BOE: Ley Orgánica 1/2024, de 10 de junio, de amnistía para la normalización institucional, política y social en Cataluña',
+    `https://www.boe.es/buscar/act.php?id=BOE-A-2024-11776#${ancla}`,
+  );
+const STC_137 = oficial(
+  'BOE: Sentencia del Tribunal Constitucional 137/2025, de 26 de junio, sobre la Ley Orgánica 1/2024',
+  'https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-15939',
+);
+const TJUE_523 = oficial(
+  'EUR-Lex: Sentencia del Tribunal de Justicia de la UE de 16 de julio de 2026, asunto C-523/24',
+  'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:62024CJ0523',
+);
+const LEY_ESTABILIDAD = oficial(
+  'BOE: Ley Orgánica 2/2012, de Estabilidad Presupuestaria y Sostenibilidad Financiera, artículo 15',
+  'https://www.boe.es/buscar/act.php?id=BOE-A-2012-5730#a15',
+);
+const HACIENDA_PRORROGA = oficial(
+  'Ministerio de Hacienda: Prórroga del Presupuesto para 2026',
+  'https://www.sepg.pap.hacienda.gob.es/sitios/sepg/es-ES/Presupuestos/PGE/PGE2025Prorroga/Paginas/PGE2025Prorroga.aspx',
+);
+/** Todas las votaciones del Pleno de la XV legislatura: ninguna es sobre un proyecto de Presupuestos. */
+const CONGRESO_VOTACIONES = oficial(
+  'Congreso de los Diputados: datos abiertos de votaciones del Pleno (XV legislatura)',
+  'https://www.congreso.es/es/opendata/votaciones',
+);
+
 export const UnidadTemas: Unidad = {
   id: 'temas',
   titulo: 'Temas del Congreso',
   descripcion:
-    'Lo que se ha votado estos años sobre trabajo, pensiones, vivienda, inmigración, impuestos, justicia y territorio.',
+    'Lo que se ha votado estos años sobre la amnistía, los Presupuestos, el trabajo, las pensiones, la vivienda, la inmigración, los impuestos, la justicia y el territorio.',
   lecciones: [
+    {
+      id: 'tema-amnistia',
+      titulo: 'La ley de amnistía',
+      gancho: 'La ley más discutida de la legislatura, paso a paso: Congreso, Senado y tribunales.',
+      simbolo: 'LO',
+      tarjetas: [
+        {
+          titulo: 'Qué es una amnistía',
+          texto:
+            'Una ley que borra la responsabilidad penal, administrativa o contable por hechos ya cometidos. Esta cubre actos ligados a las consultas del 9 de noviembre de 2014 y del 1 de octubre de 2017 y al proceso independentista catalán, hechos entre el 1 de noviembre de 2011 y el 13 de noviembre de 2023.',
+          fuente: leyAmnistia('a1'),
+        },
+        {
+          titulo: 'Lo que queda fuera',
+          texto:
+            'No se amnistían, entre otros, el terrorismo que haya causado graves violaciones de derechos humanos, las torturas, los delitos de odio ni lo que dañe los intereses financieros de la Unión Europea. La malversación, solo si no hubo propósito de enriquecerse.',
+          fuente: leyAmnistia('a2'),
+        },
+        {
+          titulo: 'El camino en el Congreso',
+          texto: `La presentó el Grupo Socialista como proposición de ley orgánica. Pasó el primer paso el ${diaVot('amnistia-toma')} (${si('amnistia-toma')} a ${no('amnistia-toma')}). El ${diaVot('amnistia-conjunto-1')} no llegó a 176 síes (${si('amnistia-conjunto-1')} a ${no('amnistia-conjunto-1')}) y volvió a la comisión. El ${diaVot('amnistia-conjunto-2')} salió: ${si('amnistia-conjunto-2')} a ${no('amnistia-conjunto-2')}.`,
+          fuente: fuenteVot('amnistia-conjunto-1'),
+        },
+        {
+          titulo: 'El veto del Senado',
+          texto: `El Senado la vetó. El ${diaVot('amnistia-veto')} el Congreso levantó el veto con ${si('amnistia-veto')} síes, uno más de los 176 necesarios. Es la Ley Orgánica 1/2024, en el BOE desde el 11 de junio de 2024.`,
+          fuente: fuenteVot('amnistia-veto'),
+        },
+        {
+          titulo: 'El Constitucional',
+          texto:
+            'Diputados y senadores del PP la recurrieron. En la sentencia 137/2025 el Tribunal Constitucional la avaló en lo principal: declaró inconstitucional parte del artículo 1, anuló un párrafo y fijó cómo interpretar otro artículo.',
+          fuente: STC_137,
+        },
+        {
+          titulo: 'El Tribunal de Justicia de la UE',
+          texto:
+            'El 16 de julio de 2026 dijo que el Derecho europeo no se opone a esta amnistía, salvo en un punto: un juez no puede estar obligado a cerrar un caso en dos meses si tiene una pregunta pendiente en Luxemburgo.',
+          fuente: TJUE_523,
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'amnistia-1',
+          tipo: 'vf',
+          afirmacion: 'La amnistía la aprobó el Gobierno por decreto.',
+          verdadera: false,
+          explicacion: 'Es una ley orgánica: la votaron las Cortes y necesitó mayoría absoluta del Congreso.',
+          fuente: leyAmnistia('a1'),
+        },
+        {
+          id: 'amnistia-2',
+          tipo: 'elige',
+          enunciado: `¿Qué pasó en la votación final del ${diaVot('amnistia-conjunto-1')}?`,
+          opciones: [
+            'Se aprobó',
+            `No llegó a 176 síes (${si('amnistia-conjunto-1')}) y volvió a la comisión`,
+            'La vetó el Senado',
+            'La anuló el Constitucional',
+          ],
+          correcta: 1,
+          explicacion: 'Una ley orgánica que no logra la mayoría absoluta vuelve a la comisión para un nuevo dictamen.',
+          fuente: art('RC', '131'),
+        },
+        {
+          id: 'amnistia-3',
+          tipo: 'ordena',
+          enunciado: 'Ordena el camino de la ley de amnistía.',
+          pasos: [
+            'El Congreso la toma en consideración',
+            'El Congreso la aprueba por mayoría absoluta',
+            'El Senado la veta y el Congreso levanta el veto',
+            'Se publica en el BOE',
+            'El Tribunal Constitucional resuelve el recurso',
+          ],
+          explicacion: 'De diciembre de 2023 a junio de 2024 en las Cortes; la sentencia llegó en junio de 2025.',
+          fuente: STC_137,
+        },
+        {
+          id: 'amnistia-4',
+          tipo: 'elige',
+          enunciado: '¿Cuántos síes tuvo al levantar el veto del Senado?',
+          opciones: ['172', '176', String(si('amnistia-veto')), '178'],
+          correcta: 2,
+          explicacion: `Necesitaba mayoría absoluta, 176. Tuvo ${si('amnistia-veto')} síes y ${no('amnistia-veto')} noes.`,
+          fuente: fuenteVot('amnistia-veto'),
+        },
+        {
+          id: 'amnistia-5',
+          tipo: 'vf',
+          afirmacion: 'El Tribunal Constitucional declaró inconstitucional toda la ley.',
+          verdadera: false,
+          explicacion: 'Estimó el recurso solo en parte: un trozo del artículo 1 y un párrafo; en lo demás lo rechazó.',
+          fuente: STC_137,
+        },
+        {
+          id: 'amnistia-6',
+          tipo: 'empareja',
+          enunciado: 'Une cada institución con lo que hizo.',
+          pares: [
+            ['Tribunal Constitucional', 'La avaló en lo principal en 2025'],
+            ['Tribunal de Justicia de la UE', 'Dijo en 2026 que el Derecho europeo no se opone, salvo un plazo'],
+            ['Los jueces de cada caso', 'Deciden a quién se aplica'],
+          ],
+          explicacion:
+            'La ley no se aplica sola: hace falta una resolución firme del órgano competente, que para los delitos es un juez.',
+          fuente: leyAmnistia('a9'),
+        },
+        {
+          id: 'amnistia-7',
+          tipo: 'completa',
+          frase: 'Cada caso concreto de amnistía lo decide ___.',
+          opciones: ['un juez', 'el Gobierno', 'el Congreso'],
+          correcta: 0,
+          explicacion:
+            'Los órganos judiciales la aplican, de oficio o a petición, después de oír a la Fiscalía y a las partes.',
+          fuente: leyAmnistia('a9'),
+        },
+      ],
+    },
+    {
+      id: 'tema-presupuestos',
+      titulo: 'Los Presupuestos',
+      gancho: 'En 2026 el Estado funciona con las cuentas de 2023. ¿Cómo es posible?',
+      simbolo: '€',
+      tarjetas: [
+        {
+          titulo: 'Qué son',
+          texto:
+            'Las cuentas del Estado para un año: todos sus gastos e ingresos. Los elabora el Gobierno y los examinan, enmiendan y aprueban las Cortes.',
+          fuente: art('CE', '134'),
+        },
+        {
+          titulo: 'Si no hay nuevos, siguen los viejos',
+          texto:
+            'El Gobierno debe presentarlos al menos tres meses antes de que acabe el año. Si el 1 de enero no hay Presupuestos nuevos, se prorrogan solos los anteriores.',
+          fuente: art('CE', '134'),
+        },
+        {
+          titulo: 'Antes, el techo de gasto',
+          texto:
+            'Primero, el Congreso y el Senado votan los objetivos de déficit y deuda y el límite de gasto del Estado. Si los rechazan, el Gobierno tiene un mes para mandar otros. Los Presupuestos tienen que ajustarse a esos objetivos.',
+          fuente: LEY_ESTABILIDAD,
+        },
+        {
+          titulo: 'Lo que pasó en el Congreso',
+          texto: `En febrero de 2024 aprobó los objetivos para 2024-2026 (${si('senda-2024')} a ${no('senda-2024')}). Después rechazó los de 2025-2027, dos veces los de 2026-2028 y dos veces los de 2027-2029. En toda la legislatura no llegó al Pleno ningún proyecto de Presupuestos.`,
+          fuente: CONGRESO_VOTACIONES,
+        },
+        {
+          titulo: 'Cómo está',
+          texto: 'En 2026 se aplican, prorrogados, los Presupuestos aprobados para 2023.',
+          fuente: HACIENDA_PRORROGA,
+        },
+        {
+          titulo: 'Una ley para obligar a presentarlos',
+          texto: `Una proposición del PP para garantizar que se cumpla la Ley General Presupuestaria pasó el primer paso el ${diaVot('ley-presupuestaria-pp')} (${si('ley-presupuestaria-pp')} a ${no('ley-presupuestaria-pp')}). No llegó a votación final y caducó con la disolución de las Cortes.`,
+          fuente: fuenteVot('ley-presupuestaria-pp'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'presupuestos-1',
+          tipo: 'elige',
+          enunciado: '¿Quién elabora los Presupuestos Generales del Estado?',
+          opciones: ['El Congreso', 'El Gobierno', 'El Banco de España', 'Las comunidades'],
+          correcta: 1,
+          explicacion: 'Los elabora el Gobierno; las Cortes los examinan, enmiendan y aprueban.',
+          fuente: art('CE', '134'),
+        },
+        {
+          id: 'presupuestos-2',
+          tipo: 'vf',
+          afirmacion: 'Si no se aprueban Presupuestos nuevos, el Estado se queda sin presupuesto.',
+          verdadera: false,
+          explicacion: 'Se prorrogan automáticamente los del año anterior hasta que se aprueben otros.',
+          fuente: art('CE', '134'),
+        },
+        {
+          id: 'presupuestos-3',
+          tipo: 'elige',
+          enunciado: '¿Qué Presupuestos se aplican en 2026?',
+          opciones: ['Unos nuevos para 2026', 'Los aprobados para 2023, prorrogados', 'Los de 2025', 'Ninguno'],
+          correcta: 1,
+          explicacion: 'Hacienda publica el presupuesto prorrogado para 2026 con la documentación de los de 2023.',
+          fuente: HACIENDA_PRORROGA,
+        },
+        {
+          id: 'presupuestos-4',
+          tipo: 'ordena',
+          enunciado: 'Ordena cómo se aprueban unos Presupuestos.',
+          pasos: [
+            'Las Cortes votan el techo de gasto',
+            'El Gobierno presenta el proyecto al Congreso',
+            'El Congreso lo debate, lo enmienda y lo vota',
+            'Pasa al Senado',
+          ],
+          explicacion: 'Si el techo de gasto se rechaza, el Gobierno tiene que mandar otro antes de seguir.',
+          fuente: LEY_ESTABILIDAD,
+        },
+        {
+          id: 'presupuestos-5',
+          tipo: 'completa',
+          frase: 'Si las Cortes rechazan el techo de gasto, el Gobierno tiene ___ para mandar otro.',
+          opciones: ['un mes', 'un año', 'una semana'],
+          correcta: 0,
+          explicacion: 'Lo dice la Ley de Estabilidad Presupuestaria.',
+          fuente: LEY_ESTABILIDAD,
+        },
+        {
+          id: 'presupuestos-6',
+          tipo: 'elige',
+          enunciado: `¿Cómo acabó la votación del techo de gasto para 2026 del ${diaVot('senda-2026-1')}?`,
+          opciones: [
+            `${si('senda-2026-1')} síes y ${no('senda-2026-1')} noes: rechazado`,
+            `${no('senda-2026-1')} síes: aprobado`,
+            'Empate',
+            'No se votó',
+          ],
+          correcta: 0,
+          explicacion: `El Gobierno mandó otro y el ${diaVot('senda-2026-2')} también se rechazó (${si('senda-2026-2')} a ${no('senda-2026-2')}).`,
+          fuente: fuenteVot('senda-2026-1'),
+        },
+        {
+          id: 'presupuestos-7',
+          tipo: 'vf',
+          afirmacion: 'Entre 2023 y 2026 llegó al Pleno del Congreso algún proyecto de Presupuestos.',
+          verdadera: false,
+          explicacion: 'No hay ninguna votación sobre un proyecto de Presupuestos en toda la legislatura.',
+          fuente: CONGRESO_VOTACIONES,
+        },
+      ],
+    },
     {
       id: 'tema-jornada',
       titulo: 'Trabajar menos horas',

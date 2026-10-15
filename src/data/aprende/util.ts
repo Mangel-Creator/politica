@@ -2,6 +2,7 @@ import { Calendario, DespuesDeVotar } from '../calendario';
 import { buscarHecho, votacion } from '../hechos';
 import { Partidos } from '../partidos';
 import type { Fuente } from '../tipos';
+import { VotosAprende } from './votos';
 
 /**
  * Las cifras y fechas de las lecciones salen de los datos ya contrastados de la app
@@ -14,9 +15,9 @@ const C = '2026-10-15';
 /** "2025-09-10" → "10/09/2025" */
 export const dma = (iso: string) => iso.split('-').reverse().join('/');
 
-/** Votación oficial del Pleno. Falla al cargar si el id no existe, para que lo pille el test. */
+/** Votación oficial del Pleno (de votaciones.ts o de votos.ts). Falla al cargar si el id no existe. */
 export function vot(id: string) {
-  const v = votacion(id);
+  const v = votacion(id) ?? VotosAprende[id];
   if (!v) throw new Error(`Aprende: no existe la votación ${id}`);
   return v;
 }
@@ -28,7 +29,7 @@ export const diaVot = (id: string) => dma(vot(id).fecha);
 /** Enlace a los datos abiertos de una votación. */
 export function fuenteVot(id: string): Fuente {
   return {
-    titulo: `Congreso: votación del ${diaVot(id)} (datos abiertos)`,
+    titulo: `Congreso: votación del ${diaVot(id)}${VotosAprende[id]?.llamamiento ? ', por llamamiento' : ''} (datos abiertos)`,
     url: vot(id).url,
     consultada: C,
     oficial: true,

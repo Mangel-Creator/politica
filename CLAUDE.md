@@ -80,7 +80,10 @@ qué han hecho, y cómo votar. En español de España.
   enlaza al artículo del BOE). Las cifras y fechas salen de `votaciones.ts`, `hechos.ts` y
   `calendario.ts` con `util.ts`, nunca a mano. «Temas del Congreso» sale de «Promesas y hechos»:
   qué se propuso, quién lo llevaba en el programa, qué se votó y cómo acabó; nunca quién tenía
-  razón. Los fallados vuelven al final de la ronda (`services/practica.ts`); racha, puntos y
+  razón. Amnistía y Presupuestos no tienen caso en Hechos: sus votaciones están en
+  `aprende/votos.ts` (las públicas por llamamiento, como la votación final de una ley orgánica,
+  no tienen JSON y salen de la página oficial del día), y la amnistía cita la ley, la STC 137/2025
+  y las sentencias del TJUE (EUR-Lex; el comunicado de prensa de CURIA pide iniciar sesión). Los fallados vuelven al final de la ronda (`services/practica.ts`); racha, puntos y
   fallos se guardan solo en el dispositivo (`services/progreso.ts`, `hooks/use-progreso.ts`).
   `test` es el Repaso. Los símbolos del camino, sin emoji (salen en color en algunos móviles).
 - **Anuncios de campaña** (`src/data/anuncios.ts`, apartado «Lo que anuncian los partidos» en Hoy y
