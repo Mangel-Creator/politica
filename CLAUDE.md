@@ -73,8 +73,18 @@ qué han hecho, y cómo votar. En español de España.
   cada nombre con medio, fecha y enlace, medios en orden alfabético). Estudios: manda la ficha
   del Congreso o del parlamento autonómico; Wikipedia solo para contrastar. Webs del PSOE y Vox
   bloquean descargas automáticas (la de Vox se lee con el navegador; la del PSOE pide CAPTCHA).
+- **Aprende, al estilo de las apps de idiomas** (`src/data/aprende/`): camino de 5 unidades
+  (Votar el 29N, Del voto al escaño, Cómo funciona el Congreso, Temas del Congreso,
+  Instituciones), cada lección con ideas en tarjetas y retos de 5 tipos (elige, verdadero o
+  falso, completa, ordena, empareja). Cada tarjeta y reto lleva `fuente` (`art('LOREG', '72')`
+  enlaza al artículo del BOE). Las cifras y fechas salen de `votaciones.ts`, `hechos.ts` y
+  `calendario.ts` con `util.ts`, nunca a mano. «Temas del Congreso» sale de «Promesas y hechos»:
+  qué se propuso, quién lo llevaba en el programa, qué se votó y cómo acabó; nunca quién tenía
+  razón. Los fallados vuelven al final de la ronda (`services/practica.ts`); racha, puntos y
+  fallos se guardan solo en el dispositivo (`services/progreso.ts`, `hooks/use-progreso.ts`).
+  `test` es el Repaso. Los símbolos del camino, sin emoji (salen en color en algunos móviles).
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
-  lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
+  lecciones y retos (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central
   (`eg2026_calendario.pdf`) y Correos, y diputados por provincia del anexo del decreto. Escaños y votos del 23J contrastados con
   el fichero oficial de Infoelectoral (`scripts/infoelectoral`, servirá para los del 29N).
@@ -93,7 +103,7 @@ qué han hecho, y cómo votar. En español de España.
 - Icono, adaptativo de Android, splash (claro y oscuro), favicon e iconos de `public/` salen de
   `scripts/iconos/generar.mjs` (papeleta entrando en la urna, tinta sobre papel).
 - Servicios con tests: D'Hondt (`dhondt.ts`, que reproduce los 350 escaños oficiales del 23J provincia a
-  provincia), hemiciclo, noticias (RSS + agrupado).
+  provincia), hemiciclo, noticias (RSS + agrupado), progreso y práctica de Aprende.
 - Pendiente:
   - Programas de 2023 de ERC y Junts (no localizados en fuente oficial).
   - Programas del 29N cuando se publiquen (resumirlos con el mismo método y página).

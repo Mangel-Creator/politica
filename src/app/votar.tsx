@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { Enlace, ListaFuentes } from '@/components/enlaces';
 import { Pantalla } from '@/components/pantalla';
-import { Bloque, Etiqueta, Nota, Seccion } from '@/components/piezas';
+import { Bloque, Etiqueta, Fila, Nota, Seccion } from '@/components/piezas';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
 import { nombreArticulo, urlArticulo } from '@/data/aprende';
@@ -131,6 +131,26 @@ export default function PantallaVotar() {
         <Enlace href={urlArticulo(ART_84)}>{nombreArticulo(ART_84)}</Enlace>
         <Enlace href={urlArticulo(ART_85)}>{nombreArticulo(ART_85)}</Enlace>
         <Enlace href={urlArticulo(ART_86)}>{nombreArticulo(ART_86)}</Enlace>
+      </Seccion>
+
+      <Seccion titulo="Casos especiales y práctica">
+        <View>
+          <Fila
+            href={{ pathname: '/leccion/[id]', params: { id: 'mesa' } }}
+            titulo="Si te toca ser de mesa"
+            subtitulo="Sorteo, plazos para alegar y quién puede renunciar"
+          />
+          <Fila
+            href={{ pathname: '/leccion/[id]', params: { id: 'extranjero' } }}
+            titulo="Fuera de España y braille"
+            subtitulo="Residentes en el extranjero, viajes y voto accesible"
+          />
+          <Fila
+            href={{ pathname: '/leccion/[id]', params: { id: 'papeletas' } }}
+            titulo="Practica antes de votar"
+            subtitulo="Lecciones cortas con retos, en Aprende"
+          />
+        </View>
       </Seccion>
     </Pantalla>
   );

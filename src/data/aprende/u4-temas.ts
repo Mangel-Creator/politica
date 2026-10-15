@@ -1,0 +1,567 @@
+import { art, type Unidad } from './base';
+import { diaVot, fuenteHecho, fuentePrograma, fuenteVot, no, promesa, si, siglas } from './util';
+
+/**
+ * Temas de actualidad que pasaron por el Pleno en la XV legislatura (2023-2026), sacados de
+ * "Promesas y hechos" (src/data/hechos.ts). Regla de neutralidad: se cuenta qué se propuso,
+ * quién lo llevaba en su programa, qué se votó y cómo acabó; nunca quién tenía razón. Lo que
+ * votó cada partido se ve en la ficha del caso (`hechos`).
+ */
+
+/** "PP → «Paquete anti-okupación…»" para unir partido y promesa, con el texto del programa. */
+const par = (hechoId: string, partidoId: string): [string, string] => [
+  siglas(partidoId),
+  promesa(hechoId, partidoId).texto,
+];
+
+export const UnidadTemas: Unidad = {
+  id: 'temas',
+  titulo: 'Temas del Congreso',
+  descripcion:
+    'Lo que se ha votado estos años sobre trabajo, pensiones, vivienda, inmigración, impuestos, justicia y territorio.',
+  lecciones: [
+    {
+      id: 'tema-jornada',
+      titulo: 'Trabajar menos horas',
+      gancho: '¿Se ha bajado la jornada de 40 horas? Tres votaciones lo explican.',
+      simbolo: '◷',
+      hechos: ['jornada'],
+      tarjetas: [
+        {
+          titulo: 'La idea',
+          texto: `Bajar la jornada máxima de 40 horas semanales sin bajar el sueldo. En su programa del 23J lo llevaban ${siglas('bng')} (35 horas), ${siglas('eh-bildu')} (32) y ${siglas('sumar')} (37,5 y diálogo para llegar a 32).`,
+          fuente: fuentePrograma('sumar'),
+        },
+        {
+          titulo: '2024: una petición',
+          texto: `El Congreso aprobó una proposición no de ley para reducirla (${si('jornada-pnl')} síes, ${no('jornada-pnl')} noes y muchas abstenciones). Era una petición al Gobierno.`,
+          fuente: fuenteVot('jornada-pnl'),
+        },
+        {
+          titulo: '2025: el proyecto de 37,5 horas',
+          texto: `El Gobierno llevó su proyecto al Congreso. Junts, Vox y PP pidieron devolverlo y ganaron: ${si('jornada-devolucion')} a ${no('jornada-devolucion')}. El proyecto quedó rechazado.`,
+          fuente: fuenteVot('jornada-devolucion'),
+        },
+        {
+          titulo: 'Las 35 horas',
+          texto: `Una proposición del Grupo Mixto para fijarla en 35 horas no pasó el primer paso: ${si('jornada-35h')} síes y ${no('jornada-35h')} noes.`,
+          fuente: fuenteVot('jornada-35h'),
+        },
+        {
+          titulo: 'Cómo está',
+          texto: 'No hay ley nueva: sigue el máximo de 40 horas semanales.',
+          fuente: fuenteHecho('jornada'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'jornada-1',
+          tipo: 'vf',
+          afirmacion: 'Hoy hay una ley que fija la jornada máxima en 37,5 horas.',
+          verdadera: false,
+          explicacion: 'El proyecto se devolvió al Gobierno en septiembre de 2025 y no salió adelante.',
+          fuente: fuenteHecho('jornada'),
+        },
+        {
+          id: 'jornada-2',
+          tipo: 'vf',
+          afirmacion: 'En la votación de devolución, votar «sí» era apoyar las 37,5 horas.',
+          verdadera: false,
+          explicacion: 'Era al revés: «sí» era devolver el proyecto, es decir, tumbarlo.',
+          fuente: art('RC', '112'),
+        },
+        {
+          id: 'jornada-3',
+          tipo: 'elige',
+          enunciado: '¿Por cuántos votos se devolvió el proyecto de 37,5 horas?',
+          opciones: [`${si('jornada-devolucion')} a ${no('jornada-devolucion')}`, '200 a 150', '176 a 174', '310 a 33'],
+          correcta: 0,
+          explicacion: `Fue el ${diaVot('jornada-devolucion')}. ${si('jornada-devolucion') - no('jornada-devolucion')} votos de diferencia.`,
+          fuente: fuenteVot('jornada-devolucion'),
+        },
+        {
+          id: 'jornada-4',
+          tipo: 'empareja',
+          enunciado: 'Une cada partido con lo que llevaba en su programa.',
+          pares: [par('jornada', 'bng'), par('jornada', 'eh-bildu'), par('jornada', 'sumar')],
+          explicacion: 'Son sus programas del 23J; en la ficha del caso ves la página de cada uno.',
+          fuente: fuentePrograma('bng'),
+        },
+        {
+          id: 'jornada-5',
+          tipo: 'completa',
+          frase: 'La proposición no de ley de 2024 era solo una ___ al Gobierno.',
+          opciones: ['petición', 'orden', 'ley'],
+          correcta: 0,
+          explicacion: 'Una proposición no de ley no obliga a nada.',
+          fuente: art('RC', '193'),
+        },
+      ],
+    },
+    {
+      id: 'tema-pensiones',
+      titulo: 'Pensiones e IPC',
+      gancho: 'Subieron dos veces con la inflación, pero un decreto cayó por el camino.',
+      simbolo: '↗',
+      hechos: ['pensiones'],
+      tarjetas: [
+        {
+          titulo: 'La idea',
+          texto: `Subir las pensiones cada año para que no pierdan poder de compra con la inflación (el IPC). En su programa del 23J lo llevaban ${siglas('bng')}, ${siglas('pnv')}, ${siglas('pp')}, ${siglas('psoe')} y ${siglas('sumar')}.`,
+          fuente: fuentePrograma('psoe'),
+        },
+        {
+          titulo: 'El decreto que cayó',
+          texto: `Un decreto ley subía las pensiones un 2,8 % para 2025 junto a muchas otras medidas. El ${diaVot('pensiones-rdl-9-2024')} el Congreso no lo convalidó (${si('pensiones-rdl-9-2024')} síes, ${no('pensiones-rdl-9-2024')} noes) y quedó derogado.`,
+          fuente: fuenteHecho('pensiones', 1),
+        },
+        {
+          titulo: 'Tres semanas después',
+          texto: `El Gobierno aprobó otro decreto con la misma subida del 2,8 %. Se convalidó el ${diaVot('pensiones-rdl-1-2025')} con ${si('pensiones-rdl-1-2025')} síes.`,
+          fuente: fuenteHecho('pensiones', 2),
+        },
+        {
+          titulo: '2026',
+          texto: `La subida de 2026, un 2,7 %, fue en un decreto propio: ${si('pensiones-rdl-3-2026')} síes.`,
+          fuente: fuenteHecho('pensiones', 3),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'pensiones-1',
+          tipo: 'elige',
+          enunciado: '¿Cuánto subieron las pensiones en 2025?',
+          opciones: ['2,0 %', '2,7 %', '2,8 %', '3,8 %'],
+          correcta: 2,
+          explicacion: 'Un 2,8 %, aprobado finalmente con el Real Decreto-ley 1/2025.',
+          fuente: fuenteHecho('pensiones', 2),
+        },
+        {
+          id: 'pensiones-2',
+          tipo: 'vf',
+          afirmacion: 'En enero de 2025 se pudo aprobar la subida de las pensiones y rechazar el resto del decreto.',
+          verdadera: false,
+          explicacion: 'Un decreto ley se convalida o se deroga entero, con todas sus medidas.',
+          fuente: art('RC', '151'),
+        },
+        {
+          id: 'pensiones-3',
+          tipo: 'ordena',
+          enunciado: 'Ordena lo que pasó con la subida de 2025.',
+          pasos: [
+            'El Gobierno aprueba un decreto con la subida y otras medidas',
+            'El Congreso no lo convalida y queda derogado',
+            'El Gobierno aprueba otro decreto con la misma subida',
+            'El Congreso lo convalida',
+          ],
+          explicacion: 'Entre la primera y la segunda votación pasaron tres semanas.',
+          fuente: fuenteHecho('pensiones'),
+        },
+        {
+          id: 'pensiones-4',
+          tipo: 'elige',
+          enunciado: '¿Y cuánto subieron en 2026?',
+          opciones: ['2,7 %', '2,8 %', '1,5 %', 'No subieron'],
+          correcta: 0,
+          explicacion: 'Un 2,7 %, con el Real Decreto-ley 3/2026.',
+          fuente: fuenteHecho('pensiones', 3),
+        },
+        {
+          id: 'pensiones-5',
+          tipo: 'completa',
+          frase: 'Si el Congreso no convalida un decreto ley, el decreto queda ___.',
+          opciones: ['derogado', 'aprobado', 'en el Senado'],
+          correcta: 0,
+          explicacion: 'Deja de aplicarse. Por eso hubo que aprobar otro.',
+          fuente: art('CE', '86'),
+        },
+      ],
+    },
+    {
+      id: 'tema-vivienda',
+      titulo: 'Okupación',
+      gancho: 'Todos prometían desalojos más rápidos. ¿Qué ha cambiado de verdad?',
+      simbolo: '⌂',
+      hechos: ['okupacion'],
+      tarjetas: [
+        {
+          titulo: 'La idea',
+          texto: `Desalojar antes una vivienda ocupada ilegalmente. ${siglas('pp')} prometía hacerlo en 24 horas; ${siglas('psoe')}, en 48; ${siglas('upn')} y ${siglas('vox')}, cambios legales para proteger a los propietarios.`,
+          fuente: fuentePrograma('pp'),
+        },
+        {
+          titulo: 'Juicio rápido',
+          texto: `La Ley Orgánica 1/2025, de eficiencia de la Justicia, manda juzgar la usurpación y el allanamiento por juicio rápido. Salió con ${si('okupa-eficiencia')} síes, uno más de los 176 necesarios.`,
+          fuente: fuenteHecho('okupacion'),
+        },
+        {
+          titulo: 'Dos proposiciones',
+          texto: `Las de Junts (${si('okupa-junts')} síes) y del PP (${si('okupa-pp')} síes) contra la ocupación ilegal pasaron el primer paso, la toma en consideración.`,
+          fuente: fuenteVot('okupa-pp'),
+        },
+        {
+          titulo: 'Caducaron',
+          texto: 'No llegaron a votación final y caducaron al disolverse las Cortes el 5 de octubre de 2026.',
+          fuente: art('RC', '207'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'vivienda-1',
+          tipo: 'vf',
+          afirmacion: 'Hoy hay una ley que obliga a desalojar a los okupas en 24 horas.',
+          verdadera: false,
+          explicacion: 'No hay ley de desalojo en 24 o 48 horas. Lo que cambió es que se juzga por juicio rápido.',
+          fuente: fuenteHecho('okupacion'),
+        },
+        {
+          id: 'vivienda-2',
+          tipo: 'elige',
+          enunciado: '¿Qué cambió la Ley Orgánica 1/2025 sobre la okupación?',
+          opciones: [
+            'Desalojo en 24 horas',
+            'Se juzga por el procedimiento de juicio rápido',
+            'Más años de cárcel',
+            'Nada',
+          ],
+          correcta: 1,
+          explicacion: 'Añadió la usurpación y el allanamiento de morada a los delitos que van a juicio rápido.',
+          fuente: fuenteHecho('okupacion'),
+        },
+        {
+          id: 'vivienda-3',
+          tipo: 'completa',
+          frase: 'Las proposiciones de Junts y del PP ___ al disolverse las Cortes.',
+          opciones: ['caducaron', 'se aprobaron', 'pasaron al Senado'],
+          correcta: 0,
+          explicacion: 'Lo pendiente caduca con la disolución.',
+          fuente: art('RC', '207'),
+        },
+        {
+          id: 'vivienda-4',
+          tipo: 'empareja',
+          enunciado: 'Une cada partido con lo que llevaba en su programa.',
+          pares: [par('okupacion', 'pp'), par('okupacion', 'psoe'), par('okupacion', 'vox')],
+          explicacion: 'Son sus programas del 23J; en la ficha del caso ves la página de cada uno.',
+          fuente: fuentePrograma('psoe'),
+        },
+        {
+          id: 'vivienda-5',
+          tipo: 'vf',
+          afirmacion: 'Votar «sí» en una toma en consideración es aprobar la ley.',
+          verdadera: false,
+          explicacion: 'Es solo el primer paso: que el Congreso empiece a tramitarla.',
+          fuente: art('RC', '126'),
+        },
+      ],
+    },
+    {
+      id: 'tema-inmigracion',
+      titulo: 'Inmigración',
+      gancho: 'Una regularización que llegó por decreto y un reparto de menores muy ajustado.',
+      simbolo: '⇆',
+      hechos: ['regularizacion', 'menores-migrantes'],
+      tarjetas: [
+        {
+          titulo: 'Una iniciativa con firmas',
+          texto: `Una iniciativa legislativa popular pedía una regularización extraordinaria. En 2024 pasó el primer paso con ${si('regularizacion-toma')} síes, pero no tuvo votación final.`,
+          fuente: fuenteVot('regularizacion-toma'),
+        },
+        {
+          titulo: 'Llegó por real decreto',
+          texto:
+            'El Gobierno aprobó el Real Decreto 316/2026: un permiso por «arraigo extraordinario» para quien estuviera en España antes del 1 de enero de 2026, con solicitudes hasta el 30 de junio. Un real decreto no se vota en el Congreso.',
+          fuente: fuenteHecho('regularizacion'),
+        },
+        {
+          titulo: 'Menores que llegan solos',
+          texto: `Una ley para repartirlos de forma obligatoria entre comunidades no pasó el primer paso (${si('menores-ley')} síes, ${no('menores-ley')} noes). Después, un decreto ley creó un reparto obligatorio cuando una comunidad triplica su capacidad: se convalidó por ${si('menores-rdl-2-2025')} a ${no('menores-rdl-2-2025')}.`,
+          fuente: fuenteVot('menores-rdl-2-2025'),
+        },
+        {
+          titulo: 'Recurrido',
+          texto:
+            'Varias comunidades, entre ellas Madrid y Aragón, recurrieron el decreto de menores ante el Tribunal Constitucional. Hasta el 6 de octubre de 2026 no había sentencia.',
+          fuente: fuenteHecho('menores-migrantes', 1),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'inmigracion-1',
+          tipo: 'vf',
+          afirmacion: 'La regularización de 2026 se aprobó con una ley votada en el Congreso.',
+          verdadera: false,
+          explicacion: 'Fue un real decreto del Gobierno, que modifica el reglamento de extranjería.',
+          fuente: fuenteHecho('regularizacion'),
+        },
+        {
+          id: 'inmigracion-2',
+          tipo: 'elige',
+          enunciado: '¿Qué era la iniciativa de 2024 para regularizar?',
+          opciones: [
+            'Una iniciativa legislativa popular, con firmas de ciudadanos',
+            'Un decreto ley del Gobierno',
+            'Una moción de censura',
+            'Una propuesta del Senado',
+          ],
+          correcta: 0,
+          explicacion: 'Hacen falta al menos 500.000 firmas para llevarla al Congreso.',
+          fuente: art('CE', '87'),
+        },
+        {
+          id: 'inmigracion-3',
+          tipo: 'elige',
+          enunciado: '¿A quién se dirigía el arraigo extraordinario?',
+          opciones: [
+            'A quien estuviera en España antes del 1 de enero de 2026',
+            'A quien llegue durante 2026',
+            'Solo a menores',
+            'Solo a quien tenga contrato',
+          ],
+          correcta: 0,
+          explicacion: 'Las solicitudes se podían presentar hasta el 30 de junio de 2026.',
+          fuente: fuenteHecho('regularizacion'),
+        },
+        {
+          id: 'inmigracion-4',
+          tipo: 'completa',
+          frase: 'El reparto obligatorio de menores se activa cuando una comunidad ___ su capacidad de acogida.',
+          opciones: ['triplica', 'duplica', 'llena'],
+          correcta: 0,
+          explicacion: 'Es el Real Decreto-ley 2/2025, convalidado en abril de 2025.',
+          fuente: fuenteHecho('menores-migrantes', 2),
+        },
+        {
+          id: 'inmigracion-5',
+          tipo: 'vf',
+          afirmacion: 'La iniciativa popular de regularización caducó al disolverse las Cortes.',
+          verdadera: false,
+          explicacion: 'Las iniciativas legislativas populares no caducan con la disolución.',
+          fuente: fuenteHecho('regularizacion', 2),
+        },
+      ],
+    },
+    {
+      id: 'tema-impuestos',
+      titulo: 'Impuestos',
+      gancho: 'El IRPF y la inflación, y el impuesto a las energéticas.',
+      simbolo: '%',
+      hechos: ['irpf', 'gravamen-energetico'],
+      tarjetas: [
+        {
+          titulo: 'Deflactar el IRPF',
+          texto: `Es ajustar la tarifa a la inflación, para que el impuesto no suba solo porque suben los sueldos con los precios. Lo prometían ${siglas('bng')}, ${siglas('pp')} y ${siglas('upn')}.`,
+          fuente: fuentePrograma('pp'),
+        },
+        {
+          titulo: 'Solo una petición',
+          texto: `Una proposición no de ley del PP para deflactarlo se aprobó (${si('irpf-pnl')} síes, ${no('irpf-pnl')} noes). Es una petición al Gobierno: no cambia el impuesto por sí sola.`,
+          fuente: fuenteVot('irpf-pnl'),
+        },
+        {
+          titulo: 'Impuesto a las energéticas',
+          texto: `Había un gravamen temporal a las grandes energéticas. El decreto que lo prorrogaba en 2025 no se convalidó (${si('gravamen-energetico')} síes, ${no('gravamen-energetico')} noes) y quedó derogado.`,
+          fuente: fuenteHecho('gravamen-energetico'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'impuestos-1',
+          tipo: 'elige',
+          enunciado: '¿Qué es deflactar el IRPF?',
+          opciones: ['Ajustar la tarifa a la inflación', 'Bajar el IVA', 'Quitar el IRPF', 'Subir las pensiones'],
+          correcta: 0,
+          explicacion: 'Así la subida de precios no hace pagar más impuesto por sí sola.',
+          fuente: fuenteVot('irpf-pnl'),
+        },
+        {
+          id: 'impuestos-2',
+          tipo: 'vf',
+          afirmacion: 'Como se aprobó la proposición no de ley del PP, el IRPF se deflactó.',
+          verdadera: false,
+          explicacion:
+            'Una proposición no de ley es una petición: el impuesto solo cambia con una ley o un decreto ley.',
+          fuente: art('RC', '193'),
+        },
+        {
+          id: 'impuestos-3',
+          tipo: 'vf',
+          afirmacion: 'El gravamen temporal a las energéticas siguió aplicándose en 2025.',
+          verdadera: false,
+          explicacion: 'El decreto que lo prorrogaba no se convalidó en enero de 2025.',
+          fuente: fuenteHecho('gravamen-energetico'),
+        },
+        {
+          id: 'impuestos-4',
+          tipo: 'elige',
+          enunciado: '¿Cómo acabó la votación del decreto del gravamen energético?',
+          opciones: [
+            `${no('gravamen-energetico')} noes y ${si('gravamen-energetico')} síes: derogado`,
+            `${no('gravamen-energetico')} síes: convalidado`,
+            'Empate: se repitió',
+            'No se votó',
+          ],
+          correcta: 0,
+          explicacion: `Fue el ${diaVot('gravamen-energetico')}.`,
+          fuente: fuenteVot('gravamen-energetico'),
+        },
+      ],
+    },
+    {
+      id: 'tema-justicia',
+      titulo: 'Jueces y Constitución',
+      gancho: 'Quién elige al órgano de los jueces, y la última reforma de la Constitución.',
+      simbolo: 'CE',
+      hechos: ['cgpj', 'articulo-49'],
+      tarjetas: [
+        {
+          titulo: 'El CGPJ',
+          texto:
+            'Gobierna a los jueces. Tiene 20 vocales: 12 entre jueces y 8 juristas propuestos por el Congreso y el Senado.',
+          fuente: art('CE', '122'),
+        },
+        {
+          titulo: 'El debate',
+          texto: `${siglas('pp')} quería que los jueces eligieran a los 12 vocales judiciales, y ${siglas('vox')}, a todos; ${siglas('psoe')} y ${siglas('sumar')}, mantener la elección por las Cortes.`,
+          fuente: fuentePrograma('vox'),
+        },
+        {
+          titulo: 'El pacto de 2024',
+          texto: `PP y PSOE pactaron la Ley Orgánica 3/2024 (${si('cgpj-pacto-final')} síes). Encargó al propio CGPJ estudiar los sistemas europeos y proponer una reforma. El sistema no cambió.`,
+          fuente: fuenteHecho('cgpj'),
+        },
+        {
+          titulo: 'Artículo 49',
+          texto:
+            'La Constitución hablaba de «disminuidos». En 2024 se reformó para hablar de personas con discapacidad. Necesitaba tres quintos: 210 de 350.',
+          fuente: fuenteHecho('articulo-49'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'justicia-1',
+          tipo: 'vf',
+          afirmacion: 'Desde 2024, los jueces eligen a los 12 vocales judiciales del CGPJ.',
+          verdadera: false,
+          explicacion: 'La ley pactada en 2024 encargó un estudio y una propuesta; el sistema de elección no cambió.',
+          fuente: fuenteHecho('cgpj'),
+        },
+        {
+          id: 'justicia-2',
+          tipo: 'elige',
+          enunciado: '¿Qué hizo la Ley Orgánica 3/2024?',
+          opciones: [
+            'Encargar al CGPJ un estudio y una propuesta de reforma',
+            'Que los jueces elijan a todos los vocales',
+            'Suprimir el CGPJ',
+            'Reducir el número de vocales',
+          ],
+          correcta: 0,
+          explicacion: 'Le dio seis meses para estudiar los sistemas europeos y proponer una reforma.',
+          fuente: fuenteHecho('cgpj'),
+        },
+        {
+          id: 'justicia-3',
+          tipo: 'elige',
+          enunciado: '¿Cuántos votos necesitaba en el Congreso la reforma del artículo 49?',
+          opciones: ['176', '210', '233', '350'],
+          correcta: 1,
+          explicacion: 'Una reforma de la Constitución necesita tres quintos de cada cámara: 210 de 350.',
+          fuente: art('CE', '167'),
+        },
+        {
+          id: 'justicia-4',
+          tipo: 'elige',
+          enunciado: '¿Qué palabra quitó de la Constitución la reforma del artículo 49?',
+          opciones: ['Disminuidos', 'Incapaces', 'Inválidos', 'Dependientes'],
+          correcta: 0,
+          explicacion: 'Ahora el artículo habla de las personas con discapacidad. Está en vigor desde febrero de 2024.',
+          fuente: fuenteHecho('articulo-49'),
+        },
+        {
+          id: 'justicia-5',
+          tipo: 'vf',
+          afirmacion: `La proposición del PP de 2026 para que elijan los jueces se rechazó por ${no('cgpj-pp')} noes frente a ${si('cgpj-pp')} síes.`,
+          verdadera: true,
+          explicacion: `Fue el ${diaVot('cgpj-pp')}. La de Vox, en 2024, también se rechazó.`,
+          fuente: fuenteVot('cgpj-pp'),
+        },
+      ],
+    },
+    {
+      id: 'tema-ap9',
+      titulo: 'La AP-9',
+      gancho: 'Una ley que pidió Galicia y que necesitaba 176 síes.',
+      simbolo: '⇢',
+      hechos: ['ap9'],
+      tarjetas: [
+        {
+          titulo: 'La idea',
+          texto: `Que la autopista del Atlántico (AP-9), del Estado, pase a Galicia. ${siglas('bng')} lo llevaba en su programa.`,
+          fuente: fuentePrograma('bng'),
+        },
+        {
+          titulo: 'La pidió el Parlamento de Galicia',
+          texto: `Los parlamentos autonómicos pueden llevar leyes al Congreso. Esta pasó el primer paso en 2024 con ${si('ap9-toma')} síes.`,
+          fuente: art('CE', '87'),
+        },
+        {
+          titulo: 'Ley orgánica',
+          texto: `En la votación final logró ${si('ap9-final')} síes; necesitaba 176. Luego el Congreso rechazó los cambios que hizo el Senado.`,
+          fuente: fuenteVot('ap9-final'),
+        },
+        {
+          titulo: 'Cómo está',
+          texto:
+            'Es la Ley Orgánica 3/2026. Fija el marco, pero el traspaso efectivo necesita un acuerdo de la Comisión Mixta de Transferencias y un real decreto, que hasta el 6 de octubre no se había publicado.',
+          fuente: fuenteHecho('ap9'),
+        },
+      ],
+      ejercicios: [
+        {
+          id: 'ap9-1',
+          tipo: 'elige',
+          enunciado: '¿Quién presentó en el Congreso la ley de la AP-9?',
+          opciones: ['El Parlamento de Galicia', 'El Gobierno', 'El Senado', 'Ciudadanos con firmas'],
+          correcta: 0,
+          explicacion: 'Las asambleas autonómicas pueden enviar proposiciones de ley al Congreso.',
+          fuente: art('CE', '87'),
+        },
+        {
+          id: 'ap9-2',
+          tipo: 'vf',
+          afirmacion: 'Con la ley publicada, la Xunta ya gestiona la AP-9.',
+          verdadera: false,
+          explicacion: 'Falta el acuerdo de traspaso y el real decreto que lo hace efectivo.',
+          fuente: fuenteHecho('ap9'),
+        },
+        {
+          id: 'ap9-3',
+          tipo: 'elige',
+          enunciado: '¿Cuántos síes tuvo la votación final?',
+          opciones: ['176', String(si('ap9-final')), '210', String(si('ap9-toma'))],
+          correcta: 1,
+          explicacion: `${si('ap9-final')} síes y ${no('ap9-final')} noes, el ${diaVot('ap9-final')}.`,
+          fuente: fuenteVot('ap9-final'),
+        },
+        {
+          id: 'ap9-4',
+          tipo: 'completa',
+          frase: 'Como era una ley orgánica, necesitaba ___ síes.',
+          opciones: ['176', '210', '175'],
+          correcta: 0,
+          explicacion: 'Mayoría absoluta del Congreso en la votación final.',
+          fuente: art('CE', '81'),
+        },
+        {
+          id: 'ap9-5',
+          tipo: 'vf',
+          afirmacion: 'El Congreso aceptó los cambios que hizo el Senado.',
+          verdadera: false,
+          explicacion: `Los rechazó: ${si('ap9-senado')} síes y ${no('ap9-senado')} noes. Quedó el texto del Congreso.`,
+          fuente: fuenteVot('ap9-senado'),
+        },
+      ],
+    },
+  ],
+};

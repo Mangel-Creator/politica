@@ -1,176 +1,121 @@
-import { useLocalSearchParams } from 'expo-router';
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Enlace } from '@/components/enlaces';
 import { Pantalla } from '@/components/pantalla';
 import { Bloque, Etiqueta, Pulsable } from '@/components/piezas';
+import { type FinRonda, Practica, Resultado } from '@/components/practica';
 import { Texto } from '@/components/texto';
 import { Borde, Spacing } from '@/constants/theme';
-import { Lecciones, nombreArticulo, Preguntas, urlArticulo, type Pregunta } from '@/data/aprende';
+import { Ejercicios, Lecciones, type Ejercicio } from '@/data/aprende';
+import { useProgreso } from '@/hooks/use-progreso';
 import { useTheme } from '@/hooks/use-theme';
+import { elegirRepaso } from '@/services/practica';
+import { puntosDe, racha, type Progreso } from '@/services/progreso';
 
-const LETRAS = ['A', 'B', 'C', 'D', 'E'];
 const POR_RONDA = 10;
 
-function barajar<T>(lista: T[]) {
-  const copia = [...lista];
-  for (let i = copia.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copia[i], copia[j]] = [copia[j], copia[i]];
-  }
-  return copia;
+/** Ejercicios del repaso: lo fallado primero y luego de lecciones ya hechas (o de todas si no hay). */
+function prepararRonda(p: Progreso): Ejercicio[] {
+  const hechas = Lecciones.filter((l) => p.lecciones[l.id]);
+  const base = (hechas.length ? hechas : Lecciones).flatMap((l) => l.ejercicios.map((e) => e.id));
+  const ids = elegirRepaso(base, p.fallos, POR_RONDA);
+  return ids.map((id) => Ejercicios.find((e) => e.id === id)!);
 }
 
-function ronda(leccion?: string): Pregunta[] {
-  const base = leccion ? Preguntas.filter((p) => p.leccionId === leccion) : Preguntas;
-  return barajar(base).slice(0, POR_RONDA);
-}
-
-export default function Test() {
+export default function Repaso() {
   const t = useTheme();
-  const { leccion } = useLocalSearchParams<{ leccion?: string }>();
-  const [preguntas, setPreguntas] = useState(() => ronda(leccion));
-  const [n, setN] = useState(0);
-  const [elegida, setElegida] = useState<number | null>(null);
-  const [aciertos, setAciertos] = useState(0);
-  const titulo = Lecciones.find((l) => l.id === leccion)?.titulo;
+  const { progreso, listo, terminar, hoy } = useProgreso();
+  const [ronda, setRonda] = useState<Ejercicio[] | null>(null);
+  const [fin, setFin] = useState<FinRonda | null>(null);
+  const [paso, setPaso] = useState(0);
+  const [vuelta, setVuelta] = useState(0);
+  const pendientes = progreso.fallos.length;
 
-  const reiniciar = () => {
-    setPreguntas(ronda(leccion));
-    setN(0);
-    setElegida(null);
-    setAciertos(0);
-  };
-
-  if (n >= preguntas.length) {
-    return (
-      <Pantalla atras antetitulo="Resultado">
-        <View style={styles.resultado}>
-          <Texto tipo="gigante">
-            {aciertos}/{preguntas.length}
-          </Texto>
-          <Texto tipo="titulo">
-            {aciertos === preguntas.length
-              ? 'Todas bien.'
-              : aciertos >= preguntas.length / 2
-                ? 'Más de la mitad.'
-                : 'Para repasar.'}
-          </Texto>
-        </View>
-        <Pulsable onPress={reiniciar} accessibilityRole="button" style={[styles.boton, { backgroundColor: t.tinta }]}>
-          <Texto tipo="subtitulo" color="papel">
-            Otra ronda
-          </Texto>
-        </Pulsable>
-      </Pantalla>
-    );
-  }
-
-  const p = preguntas[n];
-  const respondida = elegida !== null;
-
-  const elegir = (i: number) => {
-    if (respondida) return;
-    setElegida(i);
-    if (i === p.correcta) setAciertos((a) => a + 1);
+  const empezar = () => {
+    setRonda(prepararRonda(progreso));
+    setFin(null);
+    setVuelta((v) => v + 1);
+    setPaso((p) => p + 1);
   };
 
   return (
-    <Pantalla atras antetitulo={titulo ? `Test · ${titulo}` : 'Test'}>
-      <View style={styles.progreso}>
-        {preguntas.map((x, i) => (
-          <View
-            key={x.id}
-            style={[
-              styles.paso,
-              { borderColor: t.linea, backgroundColor: i < n || (i === n && respondida) ? t.tinta : t.papel },
-            ]}
-          />
-        ))}
-      </View>
-
-      <View style={styles.enunciado}>
-        <Etiqueta>
-          Pregunta {n + 1} de {preguntas.length} · {aciertos} {aciertos === 1 ? 'acierto' : 'aciertos'}
-        </Etiqueta>
-        <Texto tipo="titulo">{p.enunciado}</Texto>
-      </View>
-
-      <View style={styles.opciones}>
-        {p.opciones.map((o, i) => {
-          const esCorrecta = i === p.correcta;
-          const marcada = i === elegida;
-          const invertir = respondida && esCorrecta;
-          return (
-            <Pulsable
-              key={o}
-              onPress={() => elegir(i)}
-              disabled={respondida}
-              accessibilityRole="button"
-              accessibilityState={{ selected: marcada, disabled: respondida }}
-              style={[
-                styles.opcion,
-                {
-                  borderColor: respondida && !esCorrecta && !marcada ? t.lineaSuave : t.linea,
-                  borderStyle: respondida && marcada && !esCorrecta ? 'dashed' : 'solid',
-                  backgroundColor: invertir ? t.tinta : t.papel,
-                },
-              ]}>
-              <View style={[styles.letra, { borderColor: invertir ? t.papel : t.linea }]}>
-                <Texto tipo="pequenoFuerte" color={invertir ? 'papel' : 'tinta'}>
-                  {respondida && esCorrecta ? '✓' : respondida && marcada ? '✗' : LETRAS[i]}
-                </Texto>
-              </View>
-              <Texto
-                tipo="cuerpoFuerte"
-                color={invertir ? 'papel' : respondida && !marcada ? 'gris' : 'tinta'}
-                style={styles.flex}>
-                {o}
-              </Texto>
-            </Pulsable>
-          );
-        })}
-      </View>
-
-      {respondida && (
+    <Pantalla
+      atras
+      volverArribaCon={paso}
+      antetitulo="Repaso"
+      titulo={!ronda ? 'Repasa lo aprendido' : undefined}
+      entradilla={
+        !ronda ? 'Diez retos mezclados: primero los que fallaste y luego de las lecciones que ya hiciste.' : undefined
+      }>
+      {!ronda && (
         <>
-          <Bloque>
-            <Etiqueta>{elegida === p.correcta ? 'Correcto' : `Era la ${LETRAS[p.correcta]}`}</Etiqueta>
-            <Texto>{p.explicacion}</Texto>
-            <Enlace href={urlArticulo(p.articulo)}>{nombreArticulo(p.articulo)}</Enlace>
-          </Bloque>
+          <View style={styles.datos}>
+            <Bloque invertido={pendientes > 0} style={styles.dato}>
+              <Etiqueta color={pendientes > 0 ? 'papel' : 'gris'}>Para repasar</Etiqueta>
+              <Texto tipo="dato" color={pendientes > 0 ? 'papel' : 'tinta'}>
+                {pendientes} {pendientes === 1 ? 'fallo' : 'fallos'}
+              </Texto>
+            </Bloque>
+            <Bloque style={styles.dato}>
+              <Etiqueta>Lecciones hechas</Etiqueta>
+              <Texto tipo="dato">
+                {Object.keys(progreso.lecciones).length}/{Lecciones.length}
+              </Texto>
+            </Bloque>
+          </View>
+          {listo && Object.keys(progreso.lecciones).length === 0 && (
+            <Texto color="gris">Aún no has hecho ninguna lección: el repaso saldrá de todo el temario.</Texto>
+          )}
           <Pulsable
-            onPress={() => {
-              setN(n + 1);
-              setElegida(null);
-            }}
+            onPress={empezar}
+            disabled={!listo}
             accessibilityRole="button"
-            style={[styles.boton, { backgroundColor: t.tinta }]}>
+            style={[styles.boton, { backgroundColor: t.tinta, borderColor: t.tinta }]}>
             <Texto tipo="subtitulo" color="papel">
-              {n + 1 < preguntas.length ? 'Siguiente →' : 'Ver resultado →'}
+              Empezar repaso →
             </Texto>
           </Pulsable>
         </>
+      )}
+
+      {ronda && !fin && (
+        <Practica
+          key={vuelta}
+          ejercicios={ronda}
+          onPaso={() => setPaso((p) => p + 1)}
+          onFin={(r) => {
+            terminar(r);
+            setFin(r);
+            setPaso((p) => p + 1);
+          }}
+        />
+      )}
+
+      {ronda && fin && (
+        <Resultado puntos={puntosDe(fin)} aciertos={fin.aciertos} total={fin.total} racha={racha(progreso.dias, hoy)}>
+          <Pulsable
+            onPress={empezar}
+            accessibilityRole="button"
+            style={[styles.boton, { backgroundColor: t.tinta, borderColor: t.tinta }]}>
+            <Texto tipo="subtitulo" color="papel">
+              Otra ronda
+            </Texto>
+          </Pulsable>
+          <Pulsable
+            onPress={() => router.navigate('/aprende')}
+            accessibilityRole="button"
+            style={[styles.boton, { borderColor: t.linea }]}>
+            <Texto tipo="subtitulo">Volver al camino</Texto>
+          </Pulsable>
+        </Resultado>
       )}
     </Pantalla>
   );
 }
 
 const styles = StyleSheet.create({
-  flex: { flex: 1 },
-  progreso: { flexDirection: 'row', gap: Spacing.one },
-  paso: { flex: 1, height: 12, borderWidth: Borde.fino + 0.5 },
-  enunciado: { gap: Spacing.two },
-  opciones: { gap: Spacing.two },
-  opcion: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.three,
-    borderWidth: Borde.grueso,
-    padding: Spacing.three,
-  },
-  letra: { width: 32, height: 32, borderWidth: Borde.grueso, alignItems: 'center', justifyContent: 'center' },
-  boton: { padding: Spacing.three, alignItems: 'center' },
-  resultado: { gap: Spacing.two },
+  datos: { flexDirection: 'row', gap: Spacing.two },
+  dato: { flex: 1 },
+  boton: { padding: Spacing.three, alignItems: 'center', borderWidth: Borde.grueso },
 });

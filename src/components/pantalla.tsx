@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { type ReactNode } from 'react';
+import { type ReactNode, useEffect, useRef } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -16,16 +16,23 @@ type Props = {
   entradilla?: string;
   /** Botón de volver (pantallas de detalle). */
   atras?: boolean;
+  /** Cuando este valor cambia, la pantalla vuelve arriba (pasos de una lección). */
+  volverArribaCon?: string | number;
   children: ReactNode;
 };
 
 /** Contenedor común: scroll, márgenes, ancho máximo y cabecera de papeleta. */
-export function Pantalla({ antetitulo, titulo, entradilla, atras, children }: Props) {
+export function Pantalla({ antetitulo, titulo, entradilla, atras, volverArribaCon, children }: Props) {
   const t = useTheme();
   const insets = useSafeAreaInsets();
+  const scroll = useRef<ScrollView>(null);
+  useEffect(() => {
+    if (volverArribaCon !== undefined) scroll.current?.scrollTo({ y: 0, animated: false });
+  }, [volverArribaCon]);
 
   return (
     <ScrollView
+      ref={scroll}
       style={{ backgroundColor: t.papel }}
       contentContainerStyle={[
         styles.contenido,

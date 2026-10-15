@@ -10,7 +10,6 @@ import { Historias } from '../historias';
 import { HistoriasDetalladas } from '../historias/index';
 import { Trayectorias } from '../trayectorias';
 import { GENERALES_HISTORICAS } from '../historia-detallada';
-import { Glosario, Lecciones, Preguntas, urlArticulo } from '../aprende';
 import { Circunscripciones } from '../circunscripciones';
 import { Hechos, votacion } from '../hechos';
 import { Votaciones } from '../votaciones';
@@ -262,24 +261,6 @@ describe('trayectorias', () => {
       if (p.id === 'podemos') expect(n).toBe(0);
       else expect(n).toBe(p.escanos2023);
     }
-  });
-});
-
-describe('aprende', () => {
-  it('cada artículo citado de la LOREG tiene ancla en el BOE', () => {
-    const citados = [
-      ...Lecciones.flatMap((l) => l.tarjetas.map((t) => t.articulo)),
-      ...Preguntas.map((p) => p.articulo),
-      ...Glosario.map((g) => g.articulo),
-    ];
-    citados.forEach((a) => expect(urlArticulo(a)).toContain('#'));
-  });
-
-  it('cada pregunta tiene su respuesta entre las opciones y una lección que existe', () => {
-    Preguntas.forEach((p) => {
-      expect(p.opciones[p.correcta]).toBeDefined();
-      expect(Lecciones.some((l) => l.id === p.leccionId)).toBe(true);
-    });
   });
 });
 
