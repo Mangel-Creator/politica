@@ -73,6 +73,12 @@ qué han hecho, y cómo votar. En español de España.
   cada nombre con medio, fecha y enlace, medios en orden alfabético). Estudios: manda la ficha
   del Congreso o del parlamento autonómico; Wikipedia solo para contrastar. Webs del PSOE y Vox
   bloquean descargas automáticas (la de Vox se lee con el navegador; la del PSOE pide CAPTCHA).
+- **Anuncios de campaña** (`src/data/anuncios.ts`, apartado «Lo que anuncian los partidos» en Hoy y
+  pantalla `anuncios`): medidas para el 29N que cada partido publica en su propia web desde el 05/10,
+  hasta que salgan los programas. Solo medidas para la próxima legislatura (no críticas, lemas ni
+  decretos del Gobierno). Cada revisión de las webs se apunta en `Revisiones`, haya o no novedades;
+  la del PSOE a veces pide CAPTCHA (se abre bien en el navegador integrado más tarde) y la de Junts
+  da 403 (se lee su copia del Internet Archive).
 - Datos: programas resumidos del 23J (`src/data/programas`), historias, precedentes,
   lecciones y test (comprobados contra el texto del BOE), calendario contrastado con el Real
   Decreto 806/2026, la LOREG, el calendario oficial de la Junta Electoral Central

@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 
+import { FilaAnuncio } from '@/components/anuncios';
 import { GrupoNoticias } from '@/components/grupo-noticias';
 import { Hemiciclo } from '@/components/hemiciclo';
 import { Pantalla } from '@/components/pantalla';
@@ -97,6 +98,21 @@ export default function Hoy() {
           </Nota>
         )}
         <Acceso href="/noticias" etiqueta="Repaso" titulo="Día y semana, medio a medio" simbolo="→" />
+      </Seccion>
+
+      <Seccion titulo="Lo que anuncian los partidos">
+        <Texto tipo="pequeno" color="gris">
+          Medidas publicadas en la web de cada partido desde la convocatoria. No son los programas: aún no se ha
+          publicado ninguno para el 29N.
+        </Texto>
+        <View>
+          {Partidos.map((p) => (
+            <Ir key={p.id} href="/anuncios">
+              <FilaAnuncio p={p} />
+            </Ir>
+          ))}
+        </View>
+        <Acceso href="/anuncios" etiqueta="Campaña" titulo="Todas las medidas, con su fuente" simbolo="→" />
       </Seccion>
 
       <Seccion titulo="El Congreso que se disuelve · 23J 2023">
